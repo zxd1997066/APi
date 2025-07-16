@@ -1,0 +1,194 @@
+Catchpoint 1 (throw)
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff6201640 (LWP 2235317)]
+===================================================== test session starts ======================================================
+platform linux -- Python 3.10.18, pytest-7.3.2, pluggy-1.6.0 -- /home/jenkins/.conda/envs/xpu_op_/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch
+configfile: pytest.ini
+plugins: cpp-2.3.0, xdist-3.3.1, timeout-2.4.0, hypothesis-6.131.27, xdoctest-1.1.0, rerunfailures-14.0, flakefinder-1.1.0, subtests-0.13.1
+collecting ... warning: File "/opt/intel/oneapi/compiler/2025.1/lib/libsycl.so.8.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /opt/intel/oneapi/compiler/2025.1/lib/libsycl.so.8.0.0-gdb.py
+line to your configuration file "/home/jenkins/.config/gdb/gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/jenkins/.config/gdb/gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+`TORCH_CPP_LOG_LEVEL` environment variable cannot be parsed. Valid values are `INFO`, `WARNING`, `ERROR`, and `FATAL` or their numerical equivalents `0`, `1`, `2`, and `3`.
+[New Thread 0x7fff865ff640 (LWP 2235318)]
+[New Thread 0x7fff85dfe640 (LWP 2235319)]
+[New Thread 0x7fff815fd640 (LWP 2235320)]
+[New Thread 0x7fff80dfc640 (LWP 2235321)]
+[New Thread 0x7fff7e5fb640 (LWP 2235322)]
+[New Thread 0x7fff7bdfa640 (LWP 2235323)]
+[New Thread 0x7fff795f9640 (LWP 2235324)]
+[New Thread 0x7fff76df8640 (LWP 2235325)]
+[New Thread 0x7fff745f7640 (LWP 2235326)]
+[New Thread 0x7fff71df6640 (LWP 2235327)]
+[New Thread 0x7fff6f5f5640 (LWP 2235328)]
+[New Thread 0x7fff6adf4640 (LWP 2235329)]
+[New Thread 0x7fff6a5f3640 (LWP 2235330)]
+[New Thread 0x7fff67df2640 (LWP 2235331)]
+[New Thread 0x7fff655f1640 (LWP 2235332)]
+[New Thread 0x7fff62df0640 (LWP 2235333)]
+[New Thread 0x7fff605ef640 (LWP 2235334)]
+[New Thread 0x7fff5ddee640 (LWP 2235335)]
+[New Thread 0x7fff5b5ed640 (LWP 2235336)]
+[New Thread 0x7fff58dec640 (LWP 2235337)]
+[New Thread 0x7fff565eb640 (LWP 2235338)]
+[New Thread 0x7fff53dea640 (LWP 2235339)]
+[New Thread 0x7fff515e9640 (LWP 2235340)]
+[New Thread 0x7fff4ede8640 (LWP 2235341)]
+[New Thread 0x7fff4c5e7640 (LWP 2235342)]
+[New Thread 0x7fff49de6640 (LWP 2235343)]
+[New Thread 0x7fff475e5640 (LWP 2235344)]
+[New Thread 0x7fff44de4640 (LWP 2235345)]
+[New Thread 0x7fff425e3640 (LWP 2235346)]
+[New Thread 0x7fff3dde2640 (LWP 2235347)]
+[New Thread 0x7fff3d5e1640 (LWP 2235348)]
+[New Thread 0x7fff3ade0640 (LWP 2235349)]
+[New Thread 0x7fff385df640 (LWP 2235350)]
+[New Thread 0x7fff35dde640 (LWP 2235351)]
+[New Thread 0x7fff315dd640 (LWP 2235352)]
+[New Thread 0x7fff30ddc640 (LWP 2235353)]
+[New Thread 0x7fff2e5db640 (LWP 2235354)]
+[New Thread 0x7fff2bdda640 (LWP 2235355)]
+[New Thread 0x7fff295d9640 (LWP 2235356)]
+[New Thread 0x7fff24dd8640 (LWP 2235357)]
+[New Thread 0x7fff245d7640 (LWP 2235358)]
+[New Thread 0x7fff21dd6640 (LWP 2235359)]
+[New Thread 0x7fff1f5d5640 (LWP 2235360)]
+[New Thread 0x7fff1cdd4640 (LWP 2235361)]
+[New Thread 0x7fff1a5d3640 (LWP 2235362)]
+[New Thread 0x7fff17dd2640 (LWP 2235363)]
+[New Thread 0x7fff155d1640 (LWP 2235364)]
+[New Thread 0x7fff12dd0640 (LWP 2235365)]
+[New Thread 0x7fff105cf640 (LWP 2235366)]
+[New Thread 0x7fff0ddce640 (LWP 2235367)]
+[New Thread 0x7fff0b5cd640 (LWP 2235368)]
+[New Thread 0x7fff08dcc640 (LWP 2235369)]
+[New Thread 0x7fff065cb640 (LWP 2235370)]
+[New Thread 0x7fff01dca640 (LWP 2235371)]
+[New Thread 0x7fff015c9640 (LWP 2235372)]
+[New Thread 0x7ffefedc8640 (LWP 2235373)]
+[New Thread 0x7ffefc5c7640 (LWP 2235374)]
+[New Thread 0x7ffef9dc6640 (LWP 2235375)]
+[New Thread 0x7ffef75c5640 (LWP 2235376)]
+[New Thread 0x7ffef2dc4640 (LWP 2235377)]
+[New Thread 0x7ffef25c3640 (LWP 2235378)]
+[New Thread 0x7ffeefdc2640 (LWP 2235379)]
+[New Thread 0x7ffeed5c1640 (LWP 2235380)]
+[Detaching after vfork from child process 2235382]
+[New Thread 0x7ffed07ef640 (LWP 2235383)]
+[Thread 0x7ffed07ef640 (LWP 2235383) exited]
+[New Thread 0x7ffed07ef640 (LWP 2235384)]
+[Thread 0x7ffed07ef640 (LWP 2235384) exited]
+[New Thread 0x7ffed07ef640 (LWP 2235385)]
+[Thread 0x7ffed07ef640 (LWP 2235385) exited]
+[New Thread 0x7ffed07ef640 (LWP 2235386)]
+[Thread 0x7ffed07ef640 (LWP 2235386) exited]
+[New Thread 0x7ffed07ef640 (LWP 2235387)]
+collected 1 item
+Running 1 items in this shard
+
+distributed/fsdp/test_fsdp_flatten_params.py::TestFlattenParams::test_empty_module [Detaching after vfork from child process 2235388]
+[Detaching after vfork from child process 2235389]
+`TORCH_CPP_LOG_LEVEL` environment variable cannot be parsed. Valid values are `INFO`, `WARNING`, `ERROR`, and `FATAL` or their numerical equivalents `0`, `1`, `2`, and `3`.
+2025:07:16-03:06:31:(2235389) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:16-03:06:31:(2235389) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+FAILED [10.3784s]                     [100%]
+
+=========================================================== FAILURES ===========================================================
+_____________________________________________ TestFlattenParams.test_empty_module ______________________________________________
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 705, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 969, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1045, in _check_return_codes
+    self.assertEqual(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4170, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -11.
+Absolute difference: 11
+Relative difference: inf
+Expected exit code 0 but got -11 for pid: 2235389
+----------------------------------------------------- Captured stderr call -----------------------------------------------------
+I0716 03:06:28.074000 2235314 site-packages/torch/testing/_internal/common_distributed.py:778] Started process 0 with pid 2235389
+=================================================== short test summary info ====================================================
+FAILED [10.3784s] distributed/fsdp/test_fsdp_flatten_params.py::TestFlattenParams::test_empty_module - AssertionError: Scalar...
+====================================================== 1 failed in 55.28s ======================================================
+[Thread 0x7ffeed5c1640 (LWP 2235380) exited]
+[Thread 0x7ffeefdc2640 (LWP 2235379) exited]
+[Thread 0x7ffef25c3640 (LWP 2235378) exited]
+[Thread 0x7ffef2dc4640 (LWP 2235377) exited]
+[Thread 0x7ffef75c5640 (LWP 2235376) exited]
+[Thread 0x7ffef9dc6640 (LWP 2235375) exited]
+[Thread 0x7ffefc5c7640 (LWP 2235374) exited]
+[Thread 0x7ffefedc8640 (LWP 2235373) exited]
+[Thread 0x7fff015c9640 (LWP 2235372) exited]
+[Thread 0x7fff01dca640 (LWP 2235371) exited]
+[Thread 0x7fff065cb640 (LWP 2235370) exited]
+[Thread 0x7fff08dcc640 (LWP 2235369) exited]
+[Thread 0x7fff0b5cd640 (LWP 2235368) exited]
+[Thread 0x7fff0ddce640 (LWP 2235367) exited]
+[Thread 0x7fff105cf640 (LWP 2235366) exited]
+[Thread 0x7fff12dd0640 (LWP 2235365) exited]
+[Thread 0x7fff155d1640 (LWP 2235364) exited]
+[Thread 0x7fff17dd2640 (LWP 2235363) exited]
+[Thread 0x7fff1a5d3640 (LWP 2235362) exited]
+[Thread 0x7fff1cdd4640 (LWP 2235361) exited]
+[Thread 0x7fff1f5d5640 (LWP 2235360) exited]
+[Thread 0x7fff21dd6640 (LWP 2235359) exited]
+[Thread 0x7fff245d7640 (LWP 2235358) exited]
+[Thread 0x7fff24dd8640 (LWP 2235357) exited]
+[Thread 0x7fff295d9640 (LWP 2235356) exited]
+[Thread 0x7fff2bdda640 (LWP 2235355) exited]
+[Thread 0x7fff2e5db640 (LWP 2235354) exited]
+[Thread 0x7fff30ddc640 (LWP 2235353) exited]
+[Thread 0x7fff315dd640 (LWP 2235352) exited]
+[Thread 0x7fff35dde640 (LWP 2235351) exited]
+[Thread 0x7fff385df640 (LWP 2235350) exited]
+[Thread 0x7fff3ade0640 (LWP 2235349) exited]
+[Thread 0x7fff3d5e1640 (LWP 2235348) exited]
+[Thread 0x7fff3dde2640 (LWP 2235347) exited]
+[Thread 0x7fff425e3640 (LWP 2235346) exited]
+[Thread 0x7fff44de4640 (LWP 2235345) exited]
+[Thread 0x7fff475e5640 (LWP 2235344) exited]
+[Thread 0x7fff49de6640 (LWP 2235343) exited]
+[Thread 0x7fff4c5e7640 (LWP 2235342) exited]
+[Thread 0x7fff4ede8640 (LWP 2235341) exited]
+[Thread 0x7fff515e9640 (LWP 2235340) exited]
+[Thread 0x7fff53dea640 (LWP 2235339) exited]
+[Thread 0x7fff565eb640 (LWP 2235338) exited]
+[Thread 0x7fff58dec640 (LWP 2235337) exited]
+[Thread 0x7fff5b5ed640 (LWP 2235336) exited]
+[Thread 0x7fff5ddee640 (LWP 2235335) exited]
+[Thread 0x7fff605ef640 (LWP 2235334) exited]
+[Thread 0x7fff62df0640 (LWP 2235333) exited]
+[Thread 0x7fff655f1640 (LWP 2235332) exited]
+[Thread 0x7fff67df2640 (LWP 2235331) exited]
+[Thread 0x7fff6a5f3640 (LWP 2235330) exited]
+[Thread 0x7fff6adf4640 (LWP 2235329) exited]
+[Thread 0x7fff6f5f5640 (LWP 2235328) exited]
+[Thread 0x7fff71df6640 (LWP 2235327) exited]
+[Thread 0x7fff745f7640 (LWP 2235326) exited]
+[Thread 0x7fff76df8640 (LWP 2235325) exited]
+[Thread 0x7fff795f9640 (LWP 2235324) exited]
+[Thread 0x7fff7bdfa640 (LWP 2235323) exited]
+[Thread 0x7fff7e5fb640 (LWP 2235322) exited]
+[Thread 0x7fff80dfc640 (LWP 2235321) exited]
+[Thread 0x7fff815fd640 (LWP 2235320) exited]
+[Thread 0x7fff85dfe640 (LWP 2235319) exited]
+[Thread 0x7fff865ff640 (LWP 2235318) exited]
+[Thread 0x7ffed07ef640 (LWP 2235387) exited]
+[Thread 0x7ffff6201640 (LWP 2235317) exited]
+[Inferior 1 (process 2235314) exited with code 01]
+No stack.
