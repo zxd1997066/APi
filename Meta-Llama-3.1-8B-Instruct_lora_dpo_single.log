@@ -1,0 +1,93 @@
+INFO:torchtune.utils._logging:Running LoRADPORecipeSingleDevice with resolved config:
+
+batch_size: 4
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/lora_dpo
+  recipe_checkpoint: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.stack_exchange_paired_dataset
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: true
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.rlhf.loss.DPOLoss
+  beta: 0.1
+  label_smoothing: 0
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/lora_dpo/logs
+model:
+  _component_: torchtune.models.llama3_1.lora_llama3_1_8b
+  apply_lora_to_mlp: true
+  apply_lora_to_output: false
+  lora_alpha: 16
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  - output_proj
+  lora_dropout: 0.0
+  lora_rank: 8
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 0.0005
+  weight_decay: 0.05
+output_dir: /tmp/torchtune/llama3_1_8B/lora_dpo
+resume_from_checkpoint: false
+save_adapter_weights_only: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 256
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+INFO:torchtune.utils._logging:Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
+/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_single_device.py:326: FutureWarning: lora_attn_modules is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  validate_missing_and_unexpected_for_lora(
+/home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_mlp is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  return obj(*args, **kwargs)
+/home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_output is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  return obj(*args, **kwargs)
+INFO:torchtune.utils._logging:Model is initialized with precision torch.bfloat16.
+INFO:torchtune.utils._logging:Memory stats after model init:
+	XPU peak memory active: 15.06 GiB
+	XPU peak memory alloc: 15.06 GiB
+	XPU peak memory reserved: 15.18 GiB
+INFO:torchtune.utils._logging:Tokenizer is initialized from file.
+INFO:torchtune.utils._logging:Optimizer and loss are initialized.
+INFO:torchtune.utils._logging:Loss function is initialized.
+INFO:torchtune.utils._logging:Dataset and Sampler are initialized.
+INFO:torchtune.utils._logging:Learning rate scheduler is initialized.
+Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1753037193.txt
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:14<02:13, 14.80s/it]1|1|Loss: 0.6989704370498657:  10%|█         | 1/10 [00:14<02:13, 14.80s/it]1|1|Loss: 0.6989704370498657:  20%|██        | 2/10 [00:25<01:38, 12.36s/it]1|2|Loss: 0.6878576874732971:  20%|██        | 2/10 [00:25<01:38, 12.36s/it]1|2|Loss: 0.6878576874732971:  30%|███       | 3/10 [00:36<01:21, 11.63s/it]1|3|Loss: 0.7018706798553467:  30%|███       | 3/10 [00:36<01:21, 11.63s/it]1|3|Loss: 0.7018706798553467:  40%|████      | 4/10 [00:46<01:07, 11.24s/it]1|4|Loss: 0.6980375051498413:  40%|████      | 4/10 [00:46<01:07, 11.24s/it]1|4|Loss: 0.6980375051498413:  50%|█████     | 5/10 [00:57<00:55, 11.01s/it]1|5|Loss: 0.6958787441253662:  50%|█████     | 5/10 [00:57<00:55, 11.01s/it]1|5|Loss: 0.6958787441253662:  60%|██████    | 6/10 [01:08<00:43, 10.86s/it]1|6|Loss: 0.6935603618621826:  60%|██████    | 6/10 [01:08<00:43, 10.86s/it]1|6|Loss: 0.6935603618621826:  70%|███████   | 7/10 [01:18<00:32, 10.74s/it]1|7|Loss: 0.6957687139511108:  70%|███████   | 7/10 [01:18<00:32, 10.74s/it]1|7|Loss: 0.6957687139511108:  80%|████████  | 8/10 [01:29<00:21, 10.69s/it]1|8|Loss: 0.6879116296768188:  80%|████████  | 8/10 [01:29<00:21, 10.69s/it]1|8|Loss: 0.6879116296768188:  90%|█████████ | 9/10 [01:39<00:10, 10.64s/it]1|9|Loss: 0.695945680141449:  90%|█████████ | 9/10 [01:39<00:10, 10.64s/it] 1|9|Loss: 0.695945680141449: 100%|██████████| 10/10 [01:50<00:00, 10.64s/it]1|10|Loss: 0.6864108443260193: 100%|██████████| 10/10 [01:50<00:00, 10.64s/it]1|10|Loss: 0.6864108443260193: 100%|██████████| 10/10 [01:50<00:00, 11.03s/it]
+iteration:  1 tokens:  16384 time:  14.798711125011323 tokens_per_second_on_single_device:  1107.12
+iteration:  2 tokens:  16384 time:  10.645537092001177 tokens_per_second_on_single_device:  1539.05
+iteration:  3 tokens:  16384 time:  10.753473819000646 tokens_per_second_on_single_device:  1523.6
+iteration:  4 tokens:  16384 time:  10.617523886990966 tokens_per_second_on_single_device:  1543.11
+iteration:  5 tokens:  16384 time:  10.585532845987473 tokens_per_second_on_single_device:  1547.77
+iteration:  6 tokens:  16384 time:  10.558105887001147 tokens_per_second_on_single_device:  1551.79
+iteration:  7 tokens:  16384 time:  10.495503604004625 tokens_per_second_on_single_device:  1561.05
+iteration:  8 tokens:  16384 time:  10.548025581025286 tokens_per_second_on_single_device:  1553.28
+iteration:  9 tokens:  16384 time:  10.541136746003758 tokens_per_second_on_single_device:  1554.29
+iteration:  10 tokens:  16384 time:  10.606832035991829 tokens_per_second_on_single_device:  1544.66
+avg tokens_per_second_on_single_device:  1547.37

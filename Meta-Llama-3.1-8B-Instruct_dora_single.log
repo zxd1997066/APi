@@ -1,0 +1,111 @@
+INFO:torchtune.utils._logging:Running LoRAFinetuneRecipeSingleDevice with resolved config:
+
+batch_size: 2
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_8B/dora
+  recipe_checkpoint: null
+clip_grad_norm: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  packed: true
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: false
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 1
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.modules.loss.LinearCrossEntropyLoss
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_8B/dora/logs
+model:
+  _component_: torchtune.models.llama3.lora_llama3_8b
+  apply_lora_to_mlp: true
+  apply_lora_to_output: false
+  lora_alpha: 16
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  - output_proj
+  lora_rank: 8
+  use_dora: true
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 0.0003
+  weight_decay: 0.01
+output_dir: /tmp/torchtune/llama3_8B/dora
+profiler:
+  _component_: torchtune.training.setup_torch_profiler
+  active_steps: 2
+  cpu: true
+  cuda: true
+  enabled: false
+  num_cycles: 1
+  output_dir: /tmp/torchtune/llama3_8B/dora/profiling_outputs
+  profile_memory: false
+  record_shapes: true
+  wait_steps: 5
+  warmup_steps: 3
+  with_flops: false
+  with_stack: false
+resume_from_checkpoint: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 256
+  path: /tmp/Meta-Llama-3-8B-Instruct/original/tokenizer.model
+
+/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_single_device.py:436: FutureWarning: lora_attn_modules is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  validate_missing_and_unexpected_for_lora(
+/home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_mlp is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  return obj(*args, **kwargs)
+/home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_output is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  return obj(*args, **kwargs)
+INFO:torchtune.utils._logging:Model is initialized with precision torch.bfloat16.
+INFO:torchtune.utils._logging:Memory stats after model init:
+	XPU peak memory active: 15.45 GiB
+	XPU peak memory alloc: 15.45 GiB
+	XPU peak memory reserved: 15.56 GiB
+INFO:torchtune.utils._logging:Tokenizer is initialized from file.
+INFO:torchtune.utils._logging:Optimizer and loss are initialized.
+INFO:torchtune.utils._logging:Loss is initialized.
+Writing logs to /tmp/torchtune/llama3_8B/dora/logs/log_1753037155.txt
+Packing dataset:   0%|          | 0/51760 [00:00<?, ?it/s]Packing dataset:   0%|          | 159/51760 [00:00<00:32, 1586.70it/s]Packing dataset:   1%|          | 344/51760 [00:00<00:29, 1737.04it/s]Packing dataset:   1%|          | 527/51760 [00:00<00:28, 1776.62it/s]Packing dataset:   1%|▏         | 705/51760 [00:00<00:28, 1760.54it/s]Packing dataset:   2%|▏         | 882/51760 [00:00<00:29, 1746.59it/s]Packing dataset:   2%|▏         | 1063/51760 [00:00<00:28, 1764.88it/s]Packing dataset:   2%|▏         | 1251/51760 [00:00<00:28, 1801.00it/s]Packing dataset:   3%|▎         | 1432/51760 [00:00<00:28, 1794.44it/s]Packing dataset:   3%|▎         | 1612/51760 [00:00<00:28, 1753.51it/s]Packing dataset:   3%|▎         | 1788/51760 [00:01<00:28, 1724.69it/s]Packing dataset:   4%|▍         | 1968/51760 [00:01<00:28, 1746.87it/s]Packing dataset:   4%|▍         | 2143/51760 [00:01<00:28, 1731.26it/s]Packing dataset:   5%|▍         | 2343/51760 [00:01<00:27, 1808.29it/s]Packing dataset:   5%|▍         | 2525/51760 [00:01<00:27, 1802.37it/s]Packing dataset:   5%|▌         | 2719/51760 [00:01<00:26, 1842.67it/s]Packing dataset:   6%|▌         | 2905/51760 [00:01<00:26, 1844.73it/s]Packing dataset:   6%|▌         | 3090/51760 [00:01<00:26, 1840.05it/s]Packing dataset:   6%|▋         | 3275/51760 [00:01<00:26, 1811.46it/s]Packing dataset:   7%|▋         | 3457/51760 [00:01<00:27, 1788.53it/s]Packing dataset:   7%|▋         | 3636/51760 [00:02<00:26, 1783.24it/s]Packing dataset:   7%|▋         | 3819/51760 [00:02<00:26, 1795.30it/s]Packing dataset:   8%|▊         | 3999/51760 [00:02<00:26, 1788.47it/s]Packing dataset:   8%|▊         | 4178/51760 [00:02<00:26, 1777.67it/s]Packing dataset:   8%|▊         | 4369/51760 [00:02<00:26, 1816.85it/s]Packing dataset:   9%|▉         | 4551/51760 [00:02<00:26, 1757.99it/s]Packing dataset:   9%|▉         | 4728/51760 [00:02<00:26, 1754.37it/s]Packing dataset:   9%|▉         | 4905/51760 [00:02<00:26, 1758.38it/s]Packing dataset:  10%|▉         | 5094/51760 [00:02<00:25, 1795.16it/s]Packing dataset:  10%|█         | 5274/51760 [00:02<00:26, 1763.78it/s]Packing dataset:  11%|█         | 5465/51760 [00:03<00:25, 1805.94it/s]Packing dataset:  11%|█         | 5647/51760 [00:03<00:25, 1807.66it/s]Packing dataset:  11%|█▏        | 5837/51760 [00:03<00:25, 1835.03it/s]Packing dataset:  12%|█▏        | 6021/51760 [00:03<00:25, 1764.85it/s]Packing dataset:  12%|█▏        | 6207/51760 [00:03<00:25, 1788.48it/s]Packing dataset:  12%|█▏        | 6388/51760 [00:03<00:25, 1793.80it/s]Packing dataset:  13%|█▎        | 6568/51760 [00:03<00:25, 1741.18it/s]Packing dataset:  13%|█▎        | 6745/51760 [00:03<00:25, 1748.55it/s]Packing dataset:  13%|█▎        | 6923/51760 [00:03<00:25, 1756.21it/s]Packing dataset:  14%|█▎        | 7099/51760 [00:03<00:25, 1749.55it/s]Packing dataset:  14%|█▍        | 7275/51760 [00:04<00:25, 1727.60it/s]Packing dataset:  14%|█▍        | 7448/51760 [00:04<00:25, 1721.12it/s]Packing dataset:  15%|█▍        | 7642/51760 [00:04<00:24, 1784.36it/s]Packing dataset:  15%|█▌        | 7821/51760 [00:04<00:24, 1758.54it/s]Packing dataset:  15%|█▌        | 7998/51760 [00:04<00:24, 1759.08it/s]Packing dataset:  16%|█▌        | 8176/51760 [00:04<00:24, 1762.96it/s]Packing dataset:  16%|█▌        | 8353/51760 [00:04<00:25, 1735.30it/s]Packing dataset:  16%|█▋        | 8540/51760 [00:04<00:24, 1774.74it/s]Packing dataset:  17%|█▋        | 8718/51760 [00:04<00:24, 1727.90it/s]Packing dataset:  17%|█▋        | 9021/51760 [00:05<00:20, 2106.42it/s]Packing dataset:  18%|█▊        | 9303/51760 [00:05<00:18, 2315.53it/s]Packing dataset:  19%|█▊        | 9580/51760 [00:05<00:17, 2449.80it/s]Packing dataset:  19%|█▉        | 9868/51760 [00:05<00:16, 2576.40it/s]Packing dataset:  20%|█▉        | 10167/51760 [00:05<00:15, 2699.34it/s]Packing dataset:  20%|██        | 10464/51760 [00:05<00:14, 2779.06it/s]Packing dataset:  21%|██        | 10757/51760 [00:05<00:14, 2823.73it/s]Packing dataset:  21%|██▏       | 11046/51760 [00:05<00:14, 2840.33it/s]Packing dataset:  22%|██▏       | 11331/51760 [00:05<00:14, 2836.00it/s]Packing dataset:  22%|██▏       | 11623/51760 [00:05<00:14, 2858.83it/s]Packing dataset:  23%|██▎       | 11911/51760 [00:06<00:13, 2864.04it/s]Packing dataset:  24%|██▎       | 12198/51760 [00:06<00:13, 2853.11it/s]Packing dataset:  24%|██▍       | 12495/51760 [00:06<00:13, 2886.11it/s]Packing dataset:  25%|██▍       | 12784/51760 [00:06<00:13, 2868.84it/s]Packing dataset:  25%|██▌       | 13079/51760 [00:06<00:13, 2889.28it/s]Packing dataset:  26%|██▌       | 13368/51760 [00:06<00:13, 2870.70it/s]Packing dataset:  26%|██▋       | 13659/51760 [00:06<00:13, 2879.00it/s]Packing dataset:  27%|██▋       | 13951/51760 [00:06<00:13, 2888.68it/s]Packing dataset:  28%|██▊       | 14240/51760 [00:06<00:13, 2882.45it/s]Packing dataset:  28%|██▊       | 14542/51760 [00:06<00:12, 2920.93it/s]Packing dataset:  29%|██▊       | 14835/51760 [00:07<00:12, 2886.41it/s]Packing dataset:  29%|██▉       | 15127/51760 [00:07<00:12, 2893.78it/s]Packing dataset:  30%|██▉       | 15424/51760 [00:07<00:12, 2912.56it/s]Packing dataset:  30%|███       | 15728/51760 [00:07<00:12, 2948.46it/s]Packing dataset:  31%|███       | 16028/51760 [00:07<00:12, 2960.28it/s]Packing dataset:  32%|███▏      | 16325/51760 [00:07<00:12, 2919.50it/s]Packing dataset:  32%|███▏      | 16618/51760 [00:07<00:12, 2895.30it/s]Packing dataset:  33%|███▎      | 16911/51760 [00:07<00:12, 2902.84it/s]Packing dataset:  33%|███▎      | 17202/51760 [00:07<00:12, 2876.78it/s]Packing dataset:  34%|███▍      | 17490/51760 [00:07<00:11, 2859.93it/s]Packing dataset:  34%|███▍      | 17779/51760 [00:08<00:11, 2865.43it/s]Packing dataset:  35%|███▍      | 18066/51760 [00:08<00:11, 2863.38it/s]Packing dataset:  35%|███▌      | 18353/51760 [00:08<00:11, 2844.13it/s]Packing dataset:  36%|███▌      | 18641/51760 [00:08<00:11, 2853.82it/s]Packing dataset:  37%|███▋      | 18937/51760 [00:08<00:11, 2883.85it/s]Packing dataset:  37%|███▋      | 19233/51760 [00:08<00:11, 2905.78it/s]Packing dataset:  38%|███▊      | 19524/51760 [00:08<00:11, 2856.55it/s]Packing dataset:  38%|███▊      | 19810/51760 [00:08<00:11, 2855.14it/s]Packing dataset:  39%|███▉      | 20096/51760 [00:08<00:11, 2849.87it/s]Packing dataset:  39%|███▉      | 20383/51760 [00:08<00:10, 2855.51it/s]Packing dataset:  40%|███▉      | 20672/51760 [00:09<00:10, 2865.06it/s]Packing dataset:  41%|████      | 20978/51760 [00:09<00:10, 2921.37it/s]Packing dataset:  41%|████      | 21271/51760 [00:09<00:10, 2913.01it/s]Packing dataset:  42%|████▏     | 21565/51760 [00:09<00:10, 2917.06it/s]Packing dataset:  42%|████▏     | 21863/51760 [00:09<00:10, 2932.70it/s]Packing dataset:  43%|████▎     | 22157/51760 [00:09<00:10, 2876.29it/s]Packing dataset:  43%|████▎     | 22453/51760 [00:09<00:10, 2900.14it/s]Packing dataset:  44%|████▍     | 22744/51760 [00:09<00:10, 2842.04it/s]Packing dataset:  45%|████▍     | 23035/51760 [00:09<00:10, 2861.42it/s]Packing dataset:  45%|████▌     | 23332/51760 [00:09<00:09, 2892.73it/s]Packing dataset:  46%|████▌     | 23636/51760 [00:10<00:09, 2935.26it/s]Packing dataset:  46%|████▌     | 23930/51760 [00:10<00:09, 2893.54it/s]Packing dataset:  47%|████▋     | 24223/51760 [00:10<00:09, 2901.55it/s]Packing dataset:  47%|████▋     | 24528/51760 [00:10<00:09, 2941.28it/s]Packing dataset:  48%|████▊     | 24823/51760 [00:10<00:09, 2906.54it/s]Packing dataset:  49%|████▊     | 25114/51760 [00:10<00:09, 2884.06it/s]Packing dataset:  49%|████▉     | 25412/51760 [00:10<00:09, 2911.01it/s]Packing dataset:  50%|████▉     | 25704/51760 [00:10<00:09, 2891.09it/s]Packing dataset:  50%|█████     | 25994/51760 [00:10<00:08, 2876.41it/s]Packing dataset:  51%|█████     | 26282/51760 [00:10<00:08, 2852.89it/s]Packing dataset:  51%|█████▏    | 26572/51760 [00:11<00:08, 2866.65it/s]Packing dataset:  52%|█████▏    | 26867/51760 [00:11<00:08, 2890.89it/s]Packing dataset:  52%|█████▏    | 27166/51760 [00:11<00:08, 2920.10it/s]Packing dataset:  53%|█████▎    | 27460/51760 [00:11<00:08, 2925.79it/s]Packing dataset:  54%|█████▎    | 27753/51760 [00:11<00:08, 2902.54it/s]Packing dataset:  54%|█████▍    | 28044/51760 [00:11<00:08, 2841.08it/s]Packing dataset:  55%|█████▍    | 28329/51760 [00:11<00:08, 2838.18it/s]Packing dataset:  55%|█████▌    | 28614/51760 [00:11<00:08, 2809.64it/s]Packing dataset:  56%|█████▌    | 28903/51760 [00:11<00:08, 2832.85it/s]Packing dataset:  56%|█████▋    | 29187/51760 [00:12<00:07, 2833.85it/s]Packing dataset:  57%|█████▋    | 29471/51760 [00:12<00:07, 2828.73it/s]Packing dataset:  57%|█████▋    | 29758/51760 [00:12<00:07, 2840.29it/s]Packing dataset:  58%|█████▊    | 30043/51760 [00:12<00:07, 2813.13it/s]Packing dataset:  59%|█████▊    | 30344/51760 [00:12<00:07, 2869.08it/s]Packing dataset:  59%|█████▉    | 30632/51760 [00:12<00:07, 2864.98it/s]Packing dataset:  60%|█████▉    | 30919/51760 [00:12<00:10, 1943.89it/s]Packing dataset:  60%|██████    | 31189/51760 [00:12<00:09, 2111.79it/s]Packing dataset:  61%|██████    | 31482/51760 [00:12<00:08, 2309.82it/s]Packing dataset:  61%|██████▏   | 31791/51760 [00:13<00:07, 2507.24it/s]Packing dataset:  62%|██████▏   | 32067/51760 [00:13<00:07, 2573.97it/s]Packing dataset:  63%|██████▎   | 32357/51760 [00:13<00:07, 2664.19it/s]Packing dataset:  63%|██████▎   | 32641/51760 [00:13<00:07, 2713.90it/s]Packing dataset:  64%|██████▎   | 32932/51760 [00:13<00:06, 2769.87it/s]Packing dataset:  64%|██████▍   | 33218/51760 [00:13<00:06, 2795.38it/s]Packing dataset:  65%|██████▍   | 33515/51760 [00:13<00:06, 2845.58it/s]Packing dataset:  65%|██████▌   | 33803/51760 [00:13<00:06, 2838.33it/s]Packing dataset:  66%|██████▌   | 34096/51760 [00:13<00:06, 2864.14it/s]Packing dataset:  66%|██████▋   | 34385/51760 [00:13<00:06, 2859.91it/s]Packing dataset:  67%|██████▋   | 34673/51760 [00:14<00:05, 2865.74it/s]Packing dataset:  68%|██████▊   | 34961/51760 [00:14<00:05, 2858.95it/s]Packing dataset:  68%|██████▊   | 35254/51760 [00:14<00:05, 2878.51it/s]Packing dataset:  69%|██████▊   | 35553/51760 [00:14<00:05, 2910.64it/s]Packing dataset:  69%|██████▉   | 35845/51760 [00:14<00:05, 2834.47it/s]Packing dataset:  70%|██████▉   | 36130/51760 [00:14<00:05, 2833.50it/s]Packing dataset:  70%|███████   | 36423/51760 [00:14<00:05, 2860.77it/s]Packing dataset:  71%|███████   | 36723/51760 [00:14<00:05, 2901.97it/s]Packing dataset:  72%|███████▏  | 37014/51760 [00:14<00:05, 2861.85it/s]Packing dataset:  72%|███████▏  | 37310/51760 [00:15<00:05, 2889.75it/s]Packing dataset:  73%|███████▎  | 37605/51760 [00:15<00:04, 2903.52it/s]Packing dataset:  73%|███████▎  | 37896/51760 [00:15<00:04, 2886.91it/s]Packing dataset:  74%|███████▍  | 38185/51760 [00:15<00:04, 2880.74it/s]Packing dataset:  74%|███████▍  | 38474/51760 [00:15<00:04, 2868.74it/s]Packing dataset:  75%|███████▍  | 38761/51760 [00:15<00:04, 2841.31it/s]Packing dataset:  75%|███████▌  | 39052/51760 [00:15<00:04, 2860.09it/s]Packing dataset:  76%|███████▌  | 39348/51760 [00:15<00:04, 2886.99it/s]Packing dataset:  77%|███████▋  | 39637/51760 [00:15<00:04, 2875.71it/s]Packing dataset:  77%|███████▋  | 39927/51760 [00:15<00:04, 2879.35it/s]Packing dataset:  78%|███████▊  | 40215/51760 [00:16<00:04, 2860.33it/s]Packing dataset:  78%|███████▊  | 40523/51760 [00:16<00:03, 2921.61it/s]Packing dataset:  79%|███████▉  | 40816/51760 [00:16<00:03, 2912.43it/s]Packing dataset:  79%|███████▉  | 41110/51760 [00:16<00:03, 2917.49it/s]Packing dataset:  80%|███████▉  | 41402/51760 [00:16<00:03, 2916.16it/s]Packing dataset:  81%|████████  | 41694/51760 [00:16<00:03, 2897.78it/s]Packing dataset:  81%|████████  | 41984/51760 [00:16<00:03, 2857.34it/s]Packing dataset:  82%|████████▏ | 42271/51760 [00:16<00:03, 2856.63it/s]Packing dataset:  82%|████████▏ | 42557/51760 [00:16<00:03, 2837.57it/s]Packing dataset:  83%|████████▎ | 42841/51760 [00:16<00:03, 2807.42it/s]Packing dataset:  83%|████████▎ | 43122/51760 [00:17<00:03, 2796.45it/s]Packing dataset:  84%|████████▍ | 43412/51760 [00:17<00:02, 2824.77it/s]Packing dataset:  84%|████████▍ | 43703/51760 [00:17<00:02, 2847.75it/s]Packing dataset:  85%|████████▍ | 43988/51760 [00:17<00:02, 2841.00it/s]Packing dataset:  86%|████████▌ | 44279/51760 [00:17<00:02, 2859.85it/s]Packing dataset:  86%|████████▌ | 44566/51760 [00:17<00:02, 2851.20it/s]Packing dataset:  87%|████████▋ | 44865/51760 [00:17<00:02, 2891.20it/s]Packing dataset:  87%|████████▋ | 45156/51760 [00:17<00:02, 2895.10it/s]Packing dataset:  88%|████████▊ | 45454/51760 [00:17<00:02, 2917.91it/s]Packing dataset:  88%|████████▊ | 45746/51760 [00:17<00:02, 2870.89it/s]Packing dataset:  89%|████████▉ | 46034/51760 [00:18<00:02, 2828.67it/s]Packing dataset:  90%|████████▉ | 46326/51760 [00:18<00:01, 2852.94it/s]Packing dataset:  90%|█████████ | 46612/51760 [00:18<00:01, 2839.33it/s]Packing dataset:  91%|█████████ | 46907/51760 [00:18<00:01, 2870.55it/s]Packing dataset:  91%|█████████ | 47195/51760 [00:18<00:01, 2838.86it/s]Packing dataset:  92%|█████████▏| 47484/51760 [00:18<00:01, 2849.89it/s]Packing dataset:  92%|█████████▏| 47770/51760 [00:18<00:01, 2834.77it/s]Packing dataset:  93%|█████████▎| 48054/51760 [00:18<00:01, 2831.78it/s]Packing dataset:  93%|█████████▎| 48340/51760 [00:18<00:01, 2840.11it/s]Packing dataset:  94%|█████████▍| 48629/51760 [00:18<00:01, 2851.95it/s]Packing dataset:  95%|█████████▍| 48917/51760 [00:19<00:00, 2859.33it/s]Packing dataset:  95%|█████████▌| 49209/51760 [00:19<00:00, 2873.06it/s]Packing dataset:  96%|█████████▌| 49500/51760 [00:19<00:00, 2883.12it/s]Packing dataset:  96%|█████████▌| 49789/51760 [00:19<00:00, 2870.50it/s]Packing dataset:  97%|█████████▋| 50079/51760 [00:19<00:00, 2876.28it/s]Packing dataset:  97%|█████████▋| 50367/51760 [00:19<00:00, 2849.27it/s]Packing dataset:  98%|█████████▊| 50666/51760 [00:19<00:00, 2890.64it/s]Packing dataset:  98%|█████████▊| 50956/51760 [00:19<00:00, 2890.58it/s]Packing dataset:  99%|█████████▉| 51246/51760 [00:19<00:00, 2873.65it/s]Packing dataset: 100%|█████████▉| 51541/51760 [00:19<00:00, 2896.34it/s]Packing dataset: 100%|██████████| 51760/51760 [00:20<00:00, 2582.96it/s]
+INFO:torchtune.utils._logging:Learning rate scheduler is initialized.
+WARNING:torchtune.utils._logging: Profiling disabled.
+INFO:torchtune.utils._logging: Profiler config after instantiation: {'enabled': False}
+  0%|          | 0/10 [00:00<?, ?it/s]/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_single_device.py:626: FutureWarning: scale_grads is deprecated and will be removed in future versions. Please use `scale_grads_` instead.
+  training.scale_grads(self._model, 1 / num_tokens)
+ 10%|█         | 1/10 [00:02<00:21,  2.42s/it]1|1|Loss: 2.3019027709960938:  10%|█         | 1/10 [00:02<00:21,  2.42s/it]1|1|Loss: 2.3019027709960938:  20%|██        | 2/10 [00:03<00:11,  1.39s/it]1|2|Loss: 1.959883451461792:  20%|██        | 2/10 [00:03<00:11,  1.39s/it] 1|2|Loss: 1.959883451461792:  30%|███       | 3/10 [00:03<00:07,  1.05s/it]1|3|Loss: 3.4775357246398926:  30%|███       | 3/10 [00:03<00:07,  1.05s/it]1|3|Loss: 3.4775357246398926:  40%|████      | 4/10 [00:04<00:05,  1.12it/s]1|4|Loss: 1.816725492477417:  40%|████      | 4/10 [00:04<00:05,  1.12it/s] 1|4|Loss: 1.816725492477417:  50%|█████     | 5/10 [00:05<00:04,  1.24it/s]1|5|Loss: 2.1793932914733887:  50%|█████     | 5/10 [00:05<00:04,  1.24it/s]1|5|Loss: 2.1793932914733887:  60%|██████    | 6/10 [00:05<00:02,  1.35it/s]1|6|Loss: 2.9214327335357666:  60%|██████    | 6/10 [00:05<00:02,  1.35it/s]1|6|Loss: 2.9214327335357666:  70%|███████   | 7/10 [00:06<00:02,  1.40it/s]1|7|Loss: 3.027693271636963:  70%|███████   | 7/10 [00:06<00:02,  1.40it/s] 1|7|Loss: 3.027693271636963:  80%|████████  | 8/10 [00:06<00:01,  1.46it/s]1|8|Loss: 2.195807456970215:  80%|████████  | 8/10 [00:06<00:01,  1.46it/s]1|8|Loss: 2.195807456970215:  90%|█████████ | 9/10 [00:07<00:00,  1.49it/s]1|9|Loss: 2.4317615032196045:  90%|█████████ | 9/10 [00:07<00:00,  1.49it/s]1|9|Loss: 2.4317615032196045: 100%|██████████| 10/10 [00:08<00:00,  1.51it/s]1|10|Loss: 2.3574395179748535: 100%|██████████| 10/10 [00:08<00:00,  1.51it/s]INFO:torchtune.utils._logging:Starting checkpoint save...
+INFO:torchtune.utils._logging:Checkpoint saved in 0.00 seconds.
+1|10|Loss: 2.3574395179748535: 100%|██████████| 10/10 [00:08<00:00,  1.22it/s]
+iteration:  1 tokens:  330 time:  2.4178916919918265 tokens_per_second_on_single_device:  136.48
+iteration:  2 tokens:  425 time:  0.6636512859840877 tokens_per_second_on_single_device:  640.4
+iteration:  3 tokens:  262 time:  0.6305022370070219 tokens_per_second_on_single_device:  415.54
+iteration:  4 tokens:  508 time:  0.6585348960070405 tokens_per_second_on_single_device:  771.41
+iteration:  5 tokens:  450 time:  0.6453490870189853 tokens_per_second_on_single_device:  697.3
+iteration:  6 tokens:  293 time:  0.624151764990529 tokens_per_second_on_single_device:  469.44
+iteration:  7 tokens:  426 time:  0.6479811689932831 tokens_per_second_on_single_device:  657.43
+iteration:  8 tokens:  307 time:  0.6272068230027799 tokens_per_second_on_single_device:  489.47
+iteration:  9 tokens:  382 time:  0.6360003250010777 tokens_per_second_on_single_device:  600.63
+iteration:  10 tokens:  454 time:  0.6465134019963443 tokens_per_second_on_single_device:  702.23
+avg tokens_per_second_on_single_device:  602.4

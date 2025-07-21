@@ -1,0 +1,236 @@
+W0720 18:28:36.155000 957664 site-packages/torch/distributed/run.py:774] 
+W0720 18:28:36.155000 957664 site-packages/torch/distributed/run.py:774] *****************************************
+W0720 18:28:36.155000 957664 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0720 18:28:36.155000 957664 site-packages/torch/distributed/run.py:774] *****************************************
+INFO:torchtune.utils._logging:Running FullDPORecipeDistributed with resolved config:
+
+batch_size: 4
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/full_dpo
+  recipe_checkpoint: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.stack_exchange_paired_dataset
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: true
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.rlhf.loss.DPOLoss
+  beta: 0.05
+  label_smoothing: 0
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 20
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/full_dpo/logs
+model:
+  _component_: torchtune.models.llama3_1.llama3_1_8b
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 2.0e-05
+  weight_decay: 0.05
+output_dir: /tmp/torchtune/llama3_1_8B/full_dpo
+ref_checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/full_dpo
+  recipe_checkpoint: null
+resume_from_checkpoint: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 256
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+INFO:torchtune.utils._logging:Running FullDPORecipeDistributed with resolved config:
+
+batch_size: 4
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/full_dpo
+  recipe_checkpoint: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.stack_exchange_paired_dataset
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: true
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.rlhf.loss.DPOLoss
+  beta: 0.05
+  label_smoothing: 0
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 20
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/full_dpo/logs
+model:
+  _component_: torchtune.models.llama3_1.llama3_1_8b
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 2.0e-05
+  weight_decay: 0.05
+output_dir: /tmp/torchtune/llama3_1_8B/full_dpo
+ref_checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/full_dpo
+  recipe_checkpoint: null
+resume_from_checkpoint: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 256
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+INFO:torchtune.utils._logging:Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1753036120.txt
+INFO:torchtune.utils._logging:FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
+2025:07:20-18:28:42:(957739) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:20-18:28:42:(957739) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:07:20-18:28:42:(957738) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:20-18:28:42:(957738) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:07:20-18:28:42:(957738) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:07:20-18:28:42:(957738) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+INFO:torchtune.utils._logging:Instantiating model and loading checkpoint took 5.51 secs
+INFO:torchtune.utils._logging:Memory stats after model init:
+	XPU peak memory active: 8.47 GiB
+	XPU peak memory alloc: 8.47 GiB
+	XPU peak memory reserved: 8.62 GiB
+INFO:torchtune.utils._logging:FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
+INFO:torchtune.utils._logging:Instantiating reference model and loading checkpoint took 4.58 secs
+INFO:torchtune.utils._logging:Memory stats after model init:
+	XPU peak memory active: 16.01 GiB
+	XPU peak memory alloc: 16.01 GiB
+	XPU peak memory reserved: 16.15 GiB
+INFO:torchtune.utils._logging:Optimizer and loss are initialized.
+INFO:torchtune.utils._logging:Loss is initialized.
+INFO:torchtune.utils._logging:Dataset and Sampler are initialized.
+INFO:torchtune.utils._logging:Learning rate scheduler is initialized.
+WARNING:torchtune.utils._logging: Profiling disabled.
+INFO:torchtune.utils._logging: Profiler config after instantiation: {'enabled': False}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:40<06:03, 40.36s/it]1|1|Loss: 0.6933454871177673:  10%|█         | 1/10 [00:40<06:03, 40.36s/it]iteration:  1 tokens:  32768 time:  40.36206357399351 tokens_per_second:  811.85
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
+[rank0]:     sys.exit(recipe_main())
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank0]:     sys.exit(recipe_main(conf))
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
+[rank0]:     recipe.train()
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 808, in train
+[rank0]:     policy_chosen_rejected_outputs = self.concatenated_forward(
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 739, in concatenated_forward
+[rank0]:     all_logits = model(concatenated_input_ids)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+[rank0]:     return inner()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1806, in inner
+[rank0]:     args_kwargs_result = hook(self, args, kwargs)  # type: ignore[misc]
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py", line 62, in fsdp_hook_wrapper
+[rank0]:     return torch._dynamo.disable(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1004, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py", line 248, in _pre_forward
+[rank0]:     args, kwargs = self._fsdp_param_group.pre_forward(module, args, kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 387, in pre_forward
+[rank0]:     self.wait_for_unshard()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 340, in wait_for_unshard
+[rank0]:     foreach_all_gather_copy_out(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 410, in foreach_all_gather_copy_out
+[rank0]:     torch.ops.fsdp.split_with_sizes_copy(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_ops.py", line 1254, in __call__
+[rank0]:     return self._op(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 209, in split_with_sizes_copy
+[rank0]:     torch.split_with_sizes_copy(
+[rank0]: RuntimeError: UR backend failed. UR backend returns:40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)
+1|1|Loss: 0.6933454871177673:  10%|█         | 1/10 [01:11<10:39, 71.04s/it]
+W0720 18:30:07.108000 957664 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 957739 closing signal SIGTERM
+E0720 18:30:07.423000 957664 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 957738) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+Running with torchrun...
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 8, in <module>
+    sys.exit(main())
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/tune.py", line 52, in main
+    parser.run(args)
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/tune.py", line 46, in run
+    args.func(args)
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/run.py", line 212, in _run_cmd
+    self._run_distributed(args, is_builtin=is_builtin)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/run.py", line 101, in _run_distributed
+    run(args)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-07-20_18:30:07
+  host      : dut7358
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 957738)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,459 @@
+W0720 17:58:49.861000 955939 site-packages/torch/distributed/run.py:774] 
+W0720 17:58:49.861000 955939 site-packages/torch/distributed/run.py:774] *****************************************
+W0720 17:58:49.861000 955939 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0720 17:58:49.861000 955939 site-packages/torch/distributed/run.py:774] *****************************************
+INFO:torchtune.utils._logging:Running LoRAFinetuneRecipeDistributed with resolved config:
+
+batch_size: 2
+batch_size_val: 2
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/lora
+  recipe_checkpoint: null
+clip_grad_norm: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  packed: true
+  split: train[:95%]
+dataset_val:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  split: train[95%:]
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: false
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.modules.loss.LinearCrossEntropyLoss
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/lora/logs
+model:
+  _component_: torchtune.models.llama3_1.lora_llama3_1_8b
+  apply_lora_to_mlp: true
+  apply_lora_to_output: false
+  lora_alpha: 16
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  - output_proj
+  lora_dropout: 0.0
+  lora_rank: 8
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 0.0003
+  weight_decay: 0.01
+output_dir: /tmp/torchtune/llama3_1_8B/lora
+profiler:
+  _component_: torchtune.training.setup_torch_profiler
+  active_steps: 2
+  cpu: true
+  cuda: true
+  enabled: false
+  num_cycles: 1
+  output_dir: /tmp/torchtune/llama3_1_8B/lora/profiling_outputs
+  profile_memory: false
+  record_shapes: true
+  wait_steps: 5
+  warmup_steps: 3
+  with_flops: false
+  with_stack: false
+resume_from_checkpoint: false
+run_val_every_n_steps: null
+save_adapter_weights_only: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 512
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+INFO:torchtune.utils._logging:Running LoRAFinetuneRecipeDistributed with resolved config:
+
+batch_size: 2
+batch_size_val: 2
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/lora
+  recipe_checkpoint: null
+clip_grad_norm: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  packed: true
+  split: train[:95%]
+dataset_val:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  split: train[95%:]
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: false
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.modules.loss.LinearCrossEntropyLoss
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/lora/logs
+model:
+  _component_: torchtune.models.llama3_1.lora_llama3_1_8b
+  apply_lora_to_mlp: true
+  apply_lora_to_output: false
+  lora_alpha: 16
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  - output_proj
+  lora_dropout: 0.0
+  lora_rank: 8
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 0.0003
+  weight_decay: 0.01
+output_dir: /tmp/torchtune/llama3_1_8B/lora
+profiler:
+  _component_: torchtune.training.setup_torch_profiler
+  active_steps: 2
+  cpu: true
+  cuda: true
+  enabled: false
+  num_cycles: 1
+  output_dir: /tmp/torchtune/llama3_1_8B/lora/profiling_outputs
+  profile_memory: false
+  record_shapes: true
+  wait_steps: 5
+  warmup_steps: 3
+  with_flops: false
+  with_stack: false
+resume_from_checkpoint: false
+run_val_every_n_steps: null
+save_adapter_weights_only: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 512
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+INFO:torchtune.utils._logging:Running LoRAFinetuneRecipeDistributed with resolved config:
+
+batch_size: 2
+batch_size_val: 2
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/lora
+  recipe_checkpoint: null
+clip_grad_norm: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  packed: true
+  split: train[:95%]
+dataset_val:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  split: train[95%:]
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: false
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.modules.loss.LinearCrossEntropyLoss
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/lora/logs
+model:
+  _component_: torchtune.models.llama3_1.lora_llama3_1_8b
+  apply_lora_to_mlp: true
+  apply_lora_to_output: false
+  lora_alpha: 16
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  - output_proj
+  lora_dropout: 0.0
+  lora_rank: 8
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 0.0003
+  weight_decay: 0.01
+output_dir: /tmp/torchtune/llama3_1_8B/lora
+profiler:
+  _component_: torchtune.training.setup_torch_profiler
+  active_steps: 2
+  cpu: true
+  cuda: true
+  enabled: false
+  num_cycles: 1
+  output_dir: /tmp/torchtune/llama3_1_8B/lora/profiling_outputs
+  profile_memory: false
+  record_shapes: true
+  wait_steps: 5
+  warmup_steps: 3
+  with_flops: false
+  with_stack: false
+resume_from_checkpoint: false
+run_val_every_n_steps: null
+save_adapter_weights_only: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 512
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+INFO:torchtune.utils._logging:Running LoRAFinetuneRecipeDistributed with resolved config:
+
+batch_size: 2
+batch_size_val: 2
+checkpointer:
+  _component_: torchtune.training.FullModelHFCheckpointer
+  checkpoint_dir: /tmp/Meta-Llama-3.1-8B-Instruct/
+  checkpoint_files:
+  - model-00001-of-00004.safetensors
+  - model-00002-of-00004.safetensors
+  - model-00003-of-00004.safetensors
+  - model-00004-of-00004.safetensors
+  model_type: LLAMA3
+  output_dir: /tmp/torchtune/llama3_1_8B/lora
+  recipe_checkpoint: null
+clip_grad_norm: null
+compile: false
+dataset:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  packed: true
+  split: train[:95%]
+dataset_val:
+  _component_: torchtune.datasets.alpaca_cleaned_dataset
+  split: train[95%:]
+device: xpu
+dtype: bf16
+enable_activation_checkpointing: false
+enable_activation_offloading: false
+epochs: 1
+gradient_accumulation_steps: 8
+log_every_n_steps: 1
+log_level: INFO
+log_peak_memory_stats: true
+loss:
+  _component_: torchtune.modules.loss.LinearCrossEntropyLoss
+lr_scheduler:
+  _component_: torchtune.training.lr_schedulers.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+max_steps_per_epoch: 10
+metric_logger:
+  _component_: torchtune.training.metric_logging.DiskLogger
+  log_dir: /tmp/torchtune/llama3_1_8B/lora/logs
+model:
+  _component_: torchtune.models.llama3_1.lora_llama3_1_8b
+  apply_lora_to_mlp: true
+  apply_lora_to_output: false
+  lora_alpha: 16
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  - output_proj
+  lora_dropout: 0.0
+  lora_rank: 8
+optimizer:
+  _component_: torch.optim.AdamW
+  fused: true
+  lr: 0.0003
+  weight_decay: 0.01
+output_dir: /tmp/torchtune/llama3_1_8B/lora
+profiler:
+  _component_: torchtune.training.setup_torch_profiler
+  active_steps: 2
+  cpu: true
+  cuda: true
+  enabled: false
+  num_cycles: 1
+  output_dir: /tmp/torchtune/llama3_1_8B/lora/profiling_outputs
+  profile_memory: false
+  record_shapes: true
+  wait_steps: 5
+  warmup_steps: 3
+  with_flops: false
+  with_stack: false
+resume_from_checkpoint: false
+run_val_every_n_steps: null
+save_adapter_weights_only: false
+seed: 123
+shuffle: true
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  max_seq_len: 512
+  path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+Writing logs to /tmp/torchtune/llama3_1_8B/lora/logs/log_1753034334.txt
+INFO:torchtune.utils._logging:FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
+2025:07:20-17:58:55:(956013) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:20-17:58:55:(956013) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:07:20-17:58:55:(956013) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:07:20-17:58:55:(956013) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:07:20-17:58:55:(956016) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:20-17:58:55:(956016) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:07:20-17:58:55:(956014) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:20-17:58:55:(956014) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:07:20-17:58:55:(956015) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:20-17:58:55:(956015) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py:535: FutureWarning: lora_attn_modules is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  validate_missing_and_unexpected_for_lora(
+/home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_mlp is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  return obj(*args, **kwargs)
+/home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_output is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
+  return obj(*args, **kwargs)
+INFO:torchtune.utils._logging:Instantiating model and loading checkpoint took 8.39 secs
+INFO:torchtune.utils._logging:Memory stats after model init:
+	XPU peak memory active: 4.76 GiB
+	XPU peak memory alloc: 4.76 GiB
+	XPU peak memory reserved: 4.86 GiB
+INFO:torchtune.utils._logging:Optimizer is initialized.
+INFO:torchtune.utils._logging:Loss is initialized.
+Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 157/49172 [00:00<00:31, 1569.19it/s]Packing dataset:   1%|          | 464/49172 [00:00<00:19, 2444.65it/s]Packing dataset:   2%|▏         | 761/49172 [00:00<00:18, 2680.23it/s]Packing dataset:   2%|▏         | 1066/49172 [00:00<00:17, 2823.58it/s]Packing dataset:   3%|▎         | 1374/49172 [00:00<00:16, 2915.50it/s]Packing dataset:   3%|▎         | 1666/49172 [00:00<00:16, 2863.15it/s]Packing dataset:   4%|▍         | 1953/49172 [00:00<00:16, 2856.16it/s]Packing dataset:   5%|▍         | 2273/49172 [00:00<00:15, 2963.29it/s]Packing dataset:   5%|▌         | 2595/49172 [00:00<00:15, 3040.03it/s]Packing dataset:   6%|▌         | 2920/49172 [00:01<00:14, 3104.22it/s]Packing dataset:   7%|▋         | 3231/49172 [00:01<00:14, 3071.63it/s]Packing dataset:   7%|▋         | 3539/49172 [00:01<00:15, 3028.42it/s]Packing dataset:   8%|▊         | 3850/49172 [00:01<00:14, 3050.52it/s]Packing dataset:   8%|▊         | 4156/49172 [00:01<00:14, 3010.36it/s]Packing dataset:   9%|▉         | 4468/49172 [00:01<00:14, 3041.40it/s]Packing dataset:  10%|▉         | 4773/49172 [00:01<00:14, 3012.56it/s]Packing dataset:  10%|█         | 5075/49172 [00:01<00:14, 3011.92it/s]Packing dataset:  11%|█         | 5377/49172 [00:01<00:14, 2979.25it/s]Packing dataset:  12%|█▏        | 5707/49172 [00:01<00:14, 3073.85it/s]Packing dataset:  12%|█▏        | 6015/49172 [00:02<00:14, 3050.81it/s]Packing dataset:  13%|█▎        | 6329/49172 [00:02<00:13, 3076.36it/s]Packing dataset:  13%|█▎        | 6637/49172 [00:02<00:14, 2974.42it/s]Packing dataset:  14%|█▍        | 6940/49172 [00:02<00:14, 2988.61it/s]Packing dataset:  15%|█▍        | 7240/49172 [00:02<00:14, 2982.56it/s]Packing dataset:  15%|█▌        | 7539/49172 [00:02<00:13, 2974.92it/s]Packing dataset:  16%|█▌        | 7842/49172 [00:02<00:13, 2986.91it/s]Packing dataset:  17%|█▋        | 8141/49172 [00:02<00:13, 2976.02it/s]Packing dataset:  17%|█▋        | 8439/49172 [00:02<00:13, 2961.47it/s]Packing dataset:  18%|█▊        | 8755/49172 [00:02<00:13, 3019.09it/s]Packing dataset:  18%|█▊        | 9061/49172 [00:03<00:13, 3028.52it/s]Packing dataset:  19%|█▉        | 9364/49172 [00:03<00:13, 3001.01it/s]Packing dataset:  20%|█▉        | 9665/49172 [00:03<00:13, 2915.60it/s]Packing dataset:  20%|██        | 9958/49172 [00:03<00:13, 2901.40it/s]Packing dataset:  21%|██        | 10273/49172 [00:03<00:13, 2974.02it/s]Packing dataset:  22%|██▏       | 10582/49172 [00:03<00:12, 3006.79it/s]Packing dataset:  22%|██▏       | 10884/49172 [00:03<00:12, 2995.94it/s]Packing dataset:  23%|██▎       | 11184/49172 [00:03<00:12, 2978.84it/s]Packing dataset:  23%|██▎       | 11483/49172 [00:03<00:12, 2977.20it/s]Packing dataset:  24%|██▍       | 11791/49172 [00:03<00:12, 3005.10it/s]Packing dataset:  25%|██▍       | 12092/49172 [00:04<00:12, 2955.90it/s]Packing dataset:  25%|██▌       | 12388/49172 [00:04<00:12, 2916.36it/s]Packing dataset:  26%|██▌       | 12691/49172 [00:04<00:12, 2947.56it/s]Packing dataset:  26%|██▋       | 12986/49172 [00:04<00:12, 2900.55it/s]Packing dataset:  27%|██▋       | 13288/49172 [00:04<00:12, 2935.09it/s]Packing dataset:  28%|██▊       | 13582/49172 [00:04<00:12, 2922.56it/s]Packing dataset:  28%|██▊       | 13882/49172 [00:04<00:11, 2943.65it/s]Packing dataset:  29%|██▉       | 14177/49172 [00:04<00:12, 2913.52it/s]Packing dataset:  29%|██▉       | 14487/49172 [00:04<00:11, 2966.03it/s]Packing dataset:  30%|███       | 14784/49172 [00:04<00:11, 2939.68it/s]Packing dataset:  31%|███       | 15079/49172 [00:05<00:11, 2940.44it/s]Packing dataset:  31%|███▏      | 15387/49172 [00:05<00:11, 2981.05it/s]Packing dataset:  32%|███▏      | 15695/49172 [00:05<00:11, 3009.78it/s]Packing dataset:  33%|███▎      | 16012/49172 [00:05<00:10, 3057.19it/s]Packing dataset:  33%|███▎      | 16318/49172 [00:05<00:10, 3006.84it/s]Packing dataset:  34%|███▍      | 16619/49172 [00:05<00:11, 2927.42it/s]Packing dataset:  34%|███▍      | 16916/49172 [00:05<00:10, 2938.49it/s]Packing dataset:  35%|███▌      | 17211/49172 [00:05<00:10, 2916.70it/s]Packing dataset:  36%|███▌      | 17503/49172 [00:05<00:10, 2912.45it/s]Packing dataset:  36%|███▌      | 17795/49172 [00:06<00:10, 2902.15it/s]Packing dataset:  37%|███▋      | 18087/49172 [00:06<00:10, 2905.94it/s]Packing dataset:  37%|███▋      | 18378/49172 [00:06<00:10, 2884.68it/s]Packing dataset:  38%|███▊      | 18684/49172 [00:06<00:10, 2936.52it/s]Packing dataset:  39%|███▊      | 18978/49172 [00:06<00:10, 2935.03it/s]Packing dataset:  39%|███▉      | 19272/49172 [00:06<00:10, 2934.81it/s]Packing dataset:  40%|███▉      | 19566/49172 [00:06<00:10, 2898.76it/s]Packing dataset:  40%|████      | 19857/49172 [00:06<00:10, 2890.16it/s]Packing dataset:  41%|████      | 20151/49172 [00:06<00:09, 2904.03it/s]Packing dataset:  42%|████▏     | 20444/49172 [00:06<00:09, 2910.22it/s]Packing dataset:  42%|████▏     | 20745/49172 [00:07<00:09, 2937.10it/s]Packing dataset:  43%|████▎     | 21058/49172 [00:07<00:09, 2991.38it/s]Packing dataset:  43%|████▎     | 21358/49172 [00:07<00:09, 2978.46it/s]Packing dataset:  44%|████▍     | 21658/49172 [00:07<00:09, 2982.23it/s]Packing dataset:  45%|████▍     | 21957/49172 [00:07<00:09, 2900.14it/s]Packing dataset:  45%|████▌     | 22248/49172 [00:07<00:09, 2844.32it/s]Packing dataset:  46%|████▌     | 22556/49172 [00:07<00:09, 2909.46it/s]Packing dataset:  46%|████▋     | 22848/49172 [00:07<00:09, 2847.37it/s]Packing dataset:  47%|████▋     | 23143/49172 [00:07<00:09, 2874.60it/s]Packing dataset:  48%|████▊     | 23454/49172 [00:07<00:08, 2941.77it/s]Packing dataset:  48%|████▊     | 23749/49172 [00:08<00:08, 2939.95it/s]Packing dataset:  49%|████▉     | 24045/49172 [00:08<00:08, 2945.34it/s]Packing dataset:  50%|████▉     | 24353/49172 [00:08<00:08, 2982.85it/s]Packing dataset:  50%|█████     | 24667/49172 [00:08<00:08, 3028.87it/s]Packing dataset:  51%|█████     | 24971/49172 [00:08<00:08, 2963.76it/s]Packing dataset:  51%|█████▏    | 25268/49172 [00:08<00:08, 2955.74it/s]Packing dataset:  52%|█████▏    | 25569/49172 [00:08<00:07, 2967.13it/s]Packing dataset:  53%|█████▎    | 25866/49172 [00:08<00:08, 2909.01it/s]Packing dataset:  53%|█████▎    | 26174/49172 [00:08<00:07, 2955.91it/s]Packing dataset:  54%|█████▍    | 26470/49172 [00:08<00:07, 2953.55it/s]Packing dataset:  54%|█████▍    | 26766/49172 [00:09<00:07, 2905.87it/s]Packing dataset:  55%|█████▌    | 27089/49172 [00:09<00:07, 2999.85it/s]Packing dataset:  56%|█████▌    | 27391/49172 [00:09<00:07, 3003.81it/s]Packing dataset:  56%|█████▋    | 27692/49172 [00:09<00:07, 2931.45it/s]Packing dataset:  57%|█████▋    | 27986/49172 [00:09<00:07, 2911.09it/s]Packing dataset:  58%|█████▊    | 28278/49172 [00:09<00:07, 2891.60it/s]Packing dataset:  58%|█████▊    | 28568/49172 [00:09<00:07, 2873.80it/s]Packing dataset:  59%|█████▊    | 28856/49172 [00:09<00:07, 2832.64it/s]Packing dataset:  59%|█████▉    | 29140/49172 [00:09<00:07, 2833.47it/s]Packing dataset:  60%|█████▉    | 29425/49172 [00:10<00:06, 2836.77it/s]Packing dataset:  60%|██████    | 29709/49172 [00:10<00:06, 2837.30it/s]Packing dataset:  61%|██████    | 30000/49172 [00:10<00:06, 2856.35it/s]Packing dataset:  62%|██████▏   | 30300/49172 [00:10<00:06, 2899.04it/s]Packing dataset:  62%|██████▏   | 30590/49172 [00:10<00:06, 2885.13it/s]Packing dataset:  63%|██████▎   | 30879/49172 [00:10<00:06, 2877.87it/s]Packing dataset:  63%|██████▎   | 31170/49172 [00:10<00:06, 2885.54it/s]Packing dataset:  64%|██████▍   | 31463/49172 [00:10<00:06, 2896.51it/s]Packing dataset:  65%|██████▍   | 31791/49172 [00:10<00:05, 3007.71it/s]Packing dataset:  65%|██████▌   | 32092/49172 [00:10<00:05, 2945.94it/s]Packing dataset:  66%|██████▌   | 32401/49172 [00:11<00:05, 2985.34it/s]Packing dataset:  67%|██████▋   | 32700/49172 [00:11<00:05, 2959.79it/s]Packing dataset:  67%|██████▋   | 32997/49172 [00:11<00:05, 2959.00it/s]Packing dataset:  68%|██████▊   | 33304/49172 [00:11<00:05, 2991.59it/s]Packing dataset:  68%|██████▊   | 33604/49172 [00:11<00:05, 2986.03it/s]Packing dataset:  69%|██████▉   | 33903/49172 [00:11<00:05, 2980.22it/s]Packing dataset:  70%|██████▉   | 34202/49172 [00:11<00:05, 2974.36it/s]Packing dataset:  70%|███████   | 34501/49172 [00:11<00:04, 2978.43it/s]Packing dataset:  71%|███████   | 34799/49172 [00:11<00:04, 2971.10it/s]Packing dataset:  71%|███████▏  | 35097/49172 [00:11<00:04, 2954.87it/s]Packing dataset:  72%|███████▏  | 35413/49172 [00:12<00:04, 3013.48it/s]Packing dataset:  73%|███████▎  | 35715/49172 [00:12<00:04, 2944.97it/s]Packing dataset:  73%|███████▎  | 36010/49172 [00:12<00:04, 2895.18it/s]Packing dataset:  74%|███████▍  | 36300/49172 [00:12<00:04, 2889.37it/s]Packing dataset:  74%|███████▍  | 36610/49172 [00:12<00:04, 2949.82it/s]Packing dataset:  75%|███████▌  | 36906/49172 [00:12<00:04, 2926.48it/s]Packing dataset:  76%|███████▌  | 37199/49172 [00:12<00:06, 1723.77it/s]Packing dataset:  76%|███████▌  | 37491/49172 [00:12<00:05, 1960.42it/s]Packing dataset:  77%|███████▋  | 37777/49172 [00:13<00:05, 2158.07it/s]Packing dataset:  77%|███████▋  | 38067/49172 [00:13<00:04, 2334.94it/s]Packing dataset:  78%|███████▊  | 38364/49172 [00:13<00:04, 2495.10it/s]Packing dataset:  79%|███████▊  | 38642/49172 [00:13<00:04, 2570.91it/s]Packing dataset:  79%|███████▉  | 38931/49172 [00:13<00:03, 2657.48it/s]Packing dataset:  80%|███████▉  | 39238/49172 [00:13<00:03, 2772.45it/s]Packing dataset:  80%|████████  | 39528/49172 [00:13<00:03, 2808.88it/s]Packing dataset:  81%|████████  | 39824/49172 [00:13<00:03, 2849.88it/s]Packing dataset:  82%|████████▏ | 40116/49172 [00:13<00:03, 2869.74it/s]Packing dataset:  82%|████████▏ | 40419/49172 [00:13<00:03, 2915.32it/s]Packing dataset:  83%|████████▎ | 40718/49172 [00:14<00:02, 2936.50it/s]Packing dataset:  83%|████████▎ | 41022/49172 [00:14<00:02, 2966.52it/s]Packing dataset:  84%|████████▍ | 41321/49172 [00:14<00:02, 2959.12it/s]Packing dataset:  85%|████████▍ | 41618/49172 [00:14<00:02, 2913.29it/s]Packing dataset:  85%|████████▌ | 41911/49172 [00:14<00:02, 2910.74it/s]Packing dataset:  86%|████████▌ | 42203/49172 [00:14<00:02, 2874.99it/s]Packing dataset:  86%|████████▋ | 42501/49172 [00:14<00:02, 2905.78it/s]Packing dataset:  87%|████████▋ | 42792/49172 [00:14<00:02, 2856.91it/s]Packing dataset:  88%|████████▊ | 43079/49172 [00:14<00:02, 2832.01it/s]Packing dataset:  88%|████████▊ | 43369/49172 [00:15<00:02, 2851.04it/s]Packing dataset:  89%|████████▉ | 43663/49172 [00:15<00:01, 2876.33it/s]Packing dataset:  89%|████████▉ | 43952/49172 [00:15<00:01, 2878.25it/s]Packing dataset:  90%|████████▉ | 44243/49172 [00:15<00:01, 2885.48it/s]Packing dataset:  91%|█████████ | 44546/49172 [00:15<00:01, 2925.60it/s]Packing dataset:  91%|█████████ | 44839/49172 [00:15<00:01, 2890.19it/s]Packing dataset:  92%|█████████▏| 45140/49172 [00:15<00:01, 2924.80it/s]Packing dataset:  92%|█████████▏| 45443/49172 [00:15<00:01, 2953.98it/s]Packing dataset:  93%|█████████▎| 45739/49172 [00:15<00:01, 2906.70it/s]Packing dataset:  94%|█████████▎| 46030/49172 [00:15<00:01, 2863.15it/s]Packing dataset:  94%|█████████▍| 46333/49172 [00:16<00:00, 2909.01it/s]Packing dataset:  95%|█████████▍| 46625/49172 [00:16<00:00, 2886.15it/s]Packing dataset:  95%|█████████▌| 46927/49172 [00:16<00:00, 2925.42it/s]Packing dataset:  96%|█████████▌| 47220/49172 [00:16<00:00, 2899.66it/s]Packing dataset:  97%|█████████▋| 47521/49172 [00:16<00:00, 2931.19it/s]Packing dataset:  97%|█████████▋| 47815/49172 [00:16<00:00, 2912.23it/s]Packing dataset:  98%|█████████▊| 48107/49172 [00:16<00:00, 2846.36it/s]Packing dataset:  98%|█████████▊| 48403/49172 [00:16<00:00, 2879.46it/s]Packing dataset:  99%|█████████▉| 48706/49172 [00:16<00:00, 2923.36it/s]Packing dataset: 100%|█████████▉| 48999/49172 [00:16<00:00, 2909.54it/s]Packing dataset: 100%|██████████| 49172/49172 [00:16<00:00, 2893.47it/s]
+INFO:torchtune.utils._logging:Learning rate scheduler is initialized.
+WARNING:torchtune.utils._logging: Profiling disabled.
+INFO:torchtune.utils._logging: Profiler config after instantiation: {'enabled': False}
+  0%|          | 0/10 [00:00<?, ?it/s]/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py:724: FutureWarning: scale_grads is deprecated and will be removed in future versions. Please use `scale_grads_` instead.
+  training.scale_grads(self._model, self.world_size / num_tokens)
+ 10%|█         | 1/10 [00:22<03:23, 22.56s/it]1|1|Loss: 1.7316110134124756:  10%|█         | 1/10 [00:22<03:23, 22.56s/it]iteration:  1 tokens:  24650 time:  22.564526620000834 tokens_per_second:  1092.42
+1|1|Loss: 1.7316110134124756:  20%|██        | 2/10 [00:30<01:51, 13.97s/it]1|2|Loss: 1.7463188171386719:  20%|██        | 2/10 [00:30<01:51, 13.97s/it]iteration:  2 tokens:  24026 time:  7.921727644017665 tokens_per_second:  3032.92
+1|2|Loss: 1.7463188171386719:  30%|███       | 3/10 [00:38<01:18, 11.19s/it]1|3|Loss: 1.7203935384750366:  30%|███       | 3/10 [00:38<01:18, 11.19s/it]iteration:  3 tokens:  25799 time:  7.856082722981228 tokens_per_second:  3283.95
+1|3|Loss: 1.7203935384750366:  40%|████      | 4/10 [00:46<00:59,  9.87s/it]1|4|Loss: 1.8055297136306763:  40%|████      | 4/10 [00:46<00:59,  9.87s/it]iteration:  4 tokens:  24603 time:  7.8224566580029204 tokens_per_second:  3145.18
+1|4|Loss: 1.8055297136306763:  50%|█████     | 5/10 [00:54<00:45,  9.16s/it]1|5|Loss: 1.7397488355636597:  50%|█████     | 5/10 [00:54<00:45,  9.16s/it]iteration:  5 tokens:  26425 time:  7.866793911001878 tokens_per_second:  3359.06
+1|5|Loss: 1.7397488355636597:  60%|██████    | 6/10 [01:01<00:34,  8.71s/it]1|6|Loss: 1.6829928159713745:  60%|██████    | 6/10 [01:01<00:34,  8.71s/it]iteration:  6 tokens:  25210 time:  7.818289265007479 tokens_per_second:  3224.49
+1|6|Loss: 1.6829928159713745:  70%|███████   | 7/10 [01:09<00:25,  8.43s/it]1|7|Loss: 1.7086561918258667:  70%|███████   | 7/10 [01:09<00:25,  8.43s/it]iteration:  7 tokens:  24984 time:  7.815480299002957 tokens_per_second:  3196.73
+1|7|Loss: 1.7086561918258667:  80%|████████  | 8/10 [01:17<00:16,  8.25s/it]1|8|Loss: 1.730770468711853:  80%|████████  | 8/10 [01:17<00:16,  8.25s/it] iteration:  8 tokens:  26299 time:  7.859475617995486 tokens_per_second:  3346.15
+1|8|Loss: 1.730770468711853:  90%|█████████ | 9/10 [01:25<00:08,  8.13s/it]1|9|Loss: 1.7345712184906006:  90%|█████████ | 9/10 [01:25<00:08,  8.13s/it]iteration:  9 tokens:  26188 time:  7.857473912998103 tokens_per_second:  3332.88
+1|9|Loss: 1.7345712184906006: 100%|██████████| 10/10 [01:33<00:00,  8.06s/it]1|10|Loss: 1.64324152469635: 100%|██████████| 10/10 [01:33<00:00,  8.06s/it] iteration:  10 tokens:  24246 time:  7.853429120994406 tokens_per_second:  3087.31
+avg tokens_per_second:  3247.1
+1|10|Loss: 1.64324152469635: 100%|██████████| 10/10 [01:33<00:00,  9.35s/it]
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 912, in <module>
+[rank1]:     sys.exit(recipe_main())
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank1]:     sys.exit(recipe_main(conf))
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 907, in recipe_main
+[rank1]:     recipe.train()
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 808, in train
+[rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
+[rank1]: ZeroDivisionError: division by zero
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 912, in <module>
+[rank2]:     sys.exit(recipe_main())
+[rank2]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank2]:     sys.exit(recipe_main(conf))
+[rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 907, in recipe_main
+[rank2]:     recipe.train()
+[rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 808, in train
+[rank2]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
+[rank2]: ZeroDivisionError: division by zero
+[rank0]:[W720 18:00:57.371212290 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 912, in <module>
+[rank3]:     sys.exit(recipe_main())
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank3]:     sys.exit(recipe_main(conf))
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 907, in recipe_main
+[rank3]:     recipe.train()
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py", line 808, in train
+[rank3]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
+[rank3]: ZeroDivisionError: division by zero
+W0720 18:00:58.604000 955939 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 956013 closing signal SIGTERM
+W0720 18:00:58.605000 955939 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 956016 closing signal SIGTERM
+E0720 18:00:58.770000 955939 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 1 (pid: 956014) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+Running with torchrun...
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 8, in <module>
+    sys.exit(main())
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/tune.py", line 52, in main
+    parser.run(args)
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/tune.py", line 46, in run
+    args.func(args)
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/run.py", line 212, in _run_cmd
+    self._run_distributed(args, is_builtin=is_builtin)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/run.py", line 101, in _run_distributed
+    run(args)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/jenkins/xiangdong/torchtune/recipes/lora_finetune_distributed.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-07-20_18:00:58
+  host      : dut7358
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 956015)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-07-20_18:00:58
+  host      : dut7358
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 956014)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
