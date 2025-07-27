@@ -1,8 +1,8 @@
-W0720 18:36:19.024000 962375 site-packages/torch/distributed/run.py:774] 
-W0720 18:36:19.024000 962375 site-packages/torch/distributed/run.py:774] *****************************************
-W0720 18:36:19.024000 962375 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0720 18:36:19.024000 962375 site-packages/torch/distributed/run.py:774] *****************************************
-INFO:torchtune.utils._logging:Running FullFinetuneRecipeDistributed with resolved config:
+W0727 15:24:25.307000 1709861 site-packages/torch/distributed/run.py:774] 
+W0727 15:24:25.307000 1709861 site-packages/torch/distributed/run.py:774] *****************************************
+W0727 15:24:25.307000 1709861 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0727 15:24:25.307000 1709861 site-packages/torch/distributed/run.py:774] *****************************************
+Running FullFinetuneRecipeDistributed with resolved config:
 
 batch_size: 2
 batch_size_val: 2
@@ -66,7 +66,7 @@ resume_from_checkpoint: false
 run_val_every_n_steps: null
 seed: 123
 shuffle: true
-tensor_parallel_dim: 1
+tensor_parallel_dim: 2
 tensor_parallel_plan:
   _component_: torchtune.models.llama3.base_llama_tp_plan
 tokenizer:
@@ -74,7 +74,7 @@ tokenizer:
   max_seq_len: 512
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
-INFO:torchtune.utils._logging:Running FullFinetuneRecipeDistributed with resolved config:
+Running FullFinetuneRecipeDistributed with resolved config:
 
 batch_size: 2
 batch_size_val: 2
@@ -138,7 +138,7 @@ resume_from_checkpoint: false
 run_val_every_n_steps: null
 seed: 123
 shuffle: true
-tensor_parallel_dim: 1
+tensor_parallel_dim: 2
 tensor_parallel_plan:
   _component_: torchtune.models.llama3.base_llama_tp_plan
 tokenizer:
@@ -148,36 +148,1538 @@ tokenizer:
 
 [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
 [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
-INFO:torchtune.utils._logging:Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full/logs/log_1753036583.txt
-INFO:torchtune.utils._logging:Distributed training is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:07:20-18:36:24:(962450) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:20-18:36:24:(962450) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:07:20-18:36:24:(962449) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:20-18:36:24:(962449) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:07:20-18:36:24:(962449) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:07:20-18:36:24:(962449) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-INFO:torchtune.utils._logging:Instantiating model and loading checkpoint took 5.62 secs
-INFO:torchtune.utils._logging:Memory stats after model init:
+Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
+Writing logs to /tmp/torchtune/llama3_1_8B/full/logs/log_1753629869.txt
+using TP
+Distributed training is enabled. Instantiating model and loading checkpoint on Rank 0 ...
+2025:07:27-15:24:30:(1709936) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:27-15:24:30:(1709936) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+using TP
+2025:07:27-15:24:30:(1709935) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:07:27-15:24:30:(1709935) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:07:27-15:24:30:(1709935) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:07:27-15:24:30:(1709935) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 6.51 secs
+Memory stats after model init:
 	XPU peak memory active: 8.47 GiB
 	XPU peak memory alloc: 8.47 GiB
 	XPU peak memory reserved: 8.62 GiB
-INFO:torchtune.utils._logging:In-backward optimizers are set up.
-INFO:torchtune.utils._logging:Loss is initialized.
-Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 200/49172 [00:00<00:24, 1992.76it/s]Packing dataset:   1%|          | 504/49172 [00:00<00:18, 2605.92it/s]Packing dataset:   2%|▏         | 798/49172 [00:00<00:17, 2750.17it/s]Packing dataset:   2%|▏         | 1099/49172 [00:00<00:16, 2850.68it/s]Packing dataset:   3%|▎         | 1407/49172 [00:00<00:16, 2932.86it/s]Packing dataset:   3%|▎         | 1701/49172 [00:00<00:16, 2906.22it/s]Packing dataset:   4%|▍         | 2000/49172 [00:00<00:16, 2927.63it/s]Packing dataset:   5%|▍         | 2331/49172 [00:00<00:15, 3048.25it/s]Packing dataset:   5%|▌         | 2646/49172 [00:00<00:15, 3078.30it/s]Packing dataset:   6%|▌         | 2972/49172 [00:01<00:14, 3133.53it/s]Packing dataset:   7%|▋         | 3286/49172 [00:01<00:14, 3132.06it/s]Packing dataset:   7%|▋         | 3600/49172 [00:01<00:14, 3092.40it/s]Packing dataset:   8%|▊         | 3918/49172 [00:01<00:14, 3118.51it/s]Packing dataset:   9%|▊         | 4230/49172 [00:01<00:14, 3103.20it/s]Packing dataset:   9%|▉         | 4541/49172 [00:01<00:14, 3013.05it/s]Packing dataset:  10%|▉         | 4847/49172 [00:01<00:14, 3023.18it/s]Packing dataset:  10%|█         | 5159/49172 [00:01<00:14, 3051.42it/s]Packing dataset:  11%|█         | 5465/49172 [00:01<00:14, 3050.24it/s]Packing dataset:  12%|█▏        | 5792/49172 [00:01<00:13, 3114.69it/s]Packing dataset:  12%|█▏        | 6104/49172 [00:02<00:14, 3075.96it/s]Packing dataset:  13%|█▎        | 6415/49172 [00:02<00:13, 3082.20it/s]Packing dataset:  14%|█▎        | 6724/49172 [00:02<00:13, 3040.93it/s]Packing dataset:  14%|█▍        | 7029/49172 [00:02<00:13, 3031.65it/s]Packing dataset:  15%|█▍        | 7333/49172 [00:02<00:13, 3032.63it/s]Packing dataset:  16%|█▌        | 7651/49172 [00:02<00:13, 3073.76it/s]Packing dataset:  16%|█▌        | 7959/49172 [00:02<00:13, 3053.37it/s]Packing dataset:  17%|█▋        | 8265/49172 [00:02<00:13, 2986.00it/s]Packing dataset:  17%|█▋        | 8577/49172 [00:02<00:13, 3022.78it/s]Packing dataset:  18%|█▊        | 8893/49172 [00:02<00:13, 3062.55it/s]Packing dataset:  19%|█▊        | 9200/49172 [00:03<00:13, 3057.28it/s]Packing dataset:  19%|█▉        | 9506/49172 [00:03<00:13, 3035.49it/s]Packing dataset:  20%|█▉        | 9810/49172 [00:03<00:13, 2952.88it/s]Packing dataset:  21%|██        | 10122/49172 [00:03<00:13, 3001.33it/s]Packing dataset:  21%|██        | 10425/49172 [00:03<00:12, 3008.10it/s]Packing dataset:  22%|██▏       | 10747/49172 [00:03<00:12, 3068.00it/s]Packing dataset:  22%|██▏       | 11055/49172 [00:03<00:12, 3053.05it/s]Packing dataset:  23%|██▎       | 11361/49172 [00:03<00:12, 3026.39it/s]Packing dataset:  24%|██▎       | 11664/49172 [00:03<00:12, 3022.62it/s]Packing dataset:  24%|██▍       | 11967/49172 [00:03<00:12, 3011.55it/s]Packing dataset:  25%|██▍       | 12269/49172 [00:04<00:12, 2987.07it/s]Packing dataset:  26%|██▌       | 12568/49172 [00:04<00:12, 2978.04it/s]Packing dataset:  26%|██▌       | 12870/49172 [00:04<00:12, 2989.80it/s]Packing dataset:  27%|██▋       | 13174/49172 [00:04<00:11, 3001.41it/s]Packing dataset:  27%|██▋       | 13475/49172 [00:04<00:11, 2995.08it/s]Packing dataset:  28%|██▊       | 13775/49172 [00:04<00:11, 2982.40it/s]Packing dataset:  29%|██▊       | 14074/49172 [00:04<00:11, 2943.96it/s]Packing dataset:  29%|██▉       | 14396/49172 [00:04<00:11, 3023.67it/s]Packing dataset:  30%|██▉       | 14699/49172 [00:04<00:11, 3004.90it/s]Packing dataset:  31%|███       | 15002/49172 [00:04<00:11, 3012.19it/s]Packing dataset:  31%|███       | 15304/49172 [00:05<00:11, 2987.45it/s]Packing dataset:  32%|███▏      | 15620/49172 [00:05<00:11, 3036.59it/s]Packing dataset:  32%|███▏      | 15939/49172 [00:05<00:10, 3077.96it/s]Packing dataset:  33%|███▎      | 16247/49172 [00:05<00:10, 3052.24it/s]Packing dataset:  34%|███▎      | 16553/49172 [00:05<00:10, 2992.59it/s]Packing dataset:  34%|███▍      | 16861/49172 [00:05<00:10, 3018.03it/s]Packing dataset:  35%|███▍      | 17164/49172 [00:05<00:10, 2990.96it/s]Packing dataset:  36%|███▌      | 17464/49172 [00:05<00:10, 2968.12it/s]Packing dataset:  36%|███▌      | 17763/49172 [00:05<00:10, 2971.61it/s]Packing dataset:  37%|███▋      | 18062/49172 [00:06<00:10, 2974.25it/s]Packing dataset:  37%|███▋      | 18360/49172 [00:06<00:10, 2949.75it/s]Packing dataset:  38%|███▊      | 18662/49172 [00:06<00:10, 2969.36it/s]Packing dataset:  39%|███▊      | 18962/49172 [00:06<00:10, 2978.03it/s]Packing dataset:  39%|███▉      | 19261/49172 [00:06<00:10, 2978.61it/s]Packing dataset:  40%|███▉      | 19559/49172 [00:06<00:10, 2941.67it/s]Packing dataset:  40%|████      | 19854/49172 [00:06<00:09, 2937.75it/s]Packing dataset:  41%|████      | 20150/49172 [00:06<00:09, 2943.58it/s]Packing dataset:  42%|████▏     | 20446/49172 [00:06<00:09, 2947.15it/s]Packing dataset:  42%|████▏     | 20741/49172 [00:06<00:09, 2943.97it/s]Packing dataset:  43%|████▎     | 21055/49172 [00:07<00:09, 2999.56it/s]Packing dataset:  43%|████▎     | 21355/49172 [00:07<00:09, 2974.73it/s]Packing dataset:  44%|████▍     | 21654/49172 [00:07<00:09, 2978.74it/s]Packing dataset:  45%|████▍     | 21952/49172 [00:07<00:09, 2962.13it/s]Packing dataset:  45%|████▌     | 22249/49172 [00:07<00:09, 2885.92it/s]Packing dataset:  46%|████▌     | 22560/49172 [00:07<00:09, 2947.93it/s]Packing dataset:  46%|████▋     | 22856/49172 [00:07<00:09, 2902.19it/s]Packing dataset:  47%|████▋     | 23150/49172 [00:07<00:08, 2910.92it/s]Packing dataset:  48%|████▊     | 23462/49172 [00:07<00:08, 2970.54it/s]Packing dataset:  48%|████▊     | 23762/49172 [00:07<00:08, 2979.08it/s]Packing dataset:  49%|████▉     | 24063/49172 [00:08<00:08, 2987.94it/s]Packing dataset:  50%|████▉     | 24375/49172 [00:08<00:08, 3025.09it/s]Packing dataset:  50%|█████     | 24691/49172 [00:08<00:07, 3064.95it/s]Packing dataset:  51%|█████     | 24998/49172 [00:08<00:08, 2927.42it/s]Packing dataset:  51%|█████▏    | 25294/49172 [00:08<00:08, 2933.86it/s]Packing dataset:  52%|█████▏    | 25591/49172 [00:08<00:08, 2943.32it/s]Packing dataset:  53%|█████▎    | 25887/49172 [00:08<00:08, 2900.98it/s]Packing dataset:  53%|█████▎    | 26199/49172 [00:08<00:07, 2962.35it/s]Packing dataset:  54%|█████▍    | 26496/49172 [00:08<00:07, 2952.91it/s]Packing dataset:  54%|█████▍    | 26792/49172 [00:08<00:07, 2926.69it/s]Packing dataset:  55%|█████▌    | 27117/49172 [00:09<00:07, 3018.38it/s]Packing dataset:  56%|█████▌    | 27420/49172 [00:09<00:07, 3014.13it/s]Packing dataset:  56%|█████▋    | 27722/49172 [00:09<00:07, 2962.03it/s]Packing dataset:  57%|█████▋    | 28019/49172 [00:09<00:07, 2924.45it/s]Packing dataset:  58%|█████▊    | 28312/49172 [00:09<00:07, 2923.11it/s]Packing dataset:  58%|█████▊    | 28605/49172 [00:09<00:07, 2876.89it/s]Packing dataset:  59%|█████▉    | 28901/49172 [00:09<00:06, 2899.25it/s]Packing dataset:  59%|█████▉    | 29192/49172 [00:09<00:06, 2896.65it/s]Packing dataset:  60%|█████▉    | 29484/49172 [00:09<00:06, 2899.32it/s]Packing dataset:  61%|██████    | 29782/49172 [00:09<00:06, 2922.94it/s]Packing dataset:  61%|██████    | 30075/49172 [00:10<00:06, 2882.60it/s]Packing dataset:  62%|██████▏   | 30378/49172 [00:10<00:06, 2924.50it/s]Packing dataset:  62%|██████▏   | 30671/49172 [00:10<00:06, 2918.75it/s]Packing dataset:  63%|██████▎   | 30963/49172 [00:10<00:06, 2905.38it/s]Packing dataset:  64%|██████▎   | 31254/49172 [00:10<00:06, 2869.89it/s]Packing dataset:  64%|██████▍   | 31574/49172 [00:10<00:05, 2965.20it/s]Packing dataset:  65%|██████▍   | 31886/49172 [00:10<00:05, 3010.10it/s]Packing dataset:  65%|██████▌   | 32188/49172 [00:10<00:05, 2941.46it/s]Packing dataset:  66%|██████▌   | 32497/49172 [00:10<00:05, 2984.28it/s]Packing dataset:  67%|██████▋   | 32796/49172 [00:11<00:05, 2964.26it/s]Packing dataset:  67%|██████▋   | 33100/49172 [00:11<00:05, 2982.96it/s]Packing dataset:  68%|██████▊   | 33416/49172 [00:11<00:05, 3034.97it/s]Packing dataset:  69%|██████▊   | 33720/49172 [00:11<00:05, 2976.57it/s]Packing dataset:  69%|██████▉   | 34029/49172 [00:11<00:05, 3008.15it/s]Packing dataset:  70%|██████▉   | 34331/49172 [00:11<00:04, 2981.38it/s]Packing dataset:  70%|███████   | 34630/49172 [00:11<00:04, 2967.19it/s]Packing dataset:  71%|███████   | 34930/49172 [00:11<00:04, 2974.94it/s]Packing dataset:  72%|███████▏  | 35228/49172 [00:11<00:04, 2972.09it/s]Packing dataset:  72%|███████▏  | 35540/49172 [00:11<00:04, 3016.04it/s]Packing dataset:  73%|███████▎  | 35842/49172 [00:12<00:04, 2925.08it/s]Packing dataset:  73%|███████▎  | 36136/49172 [00:12<00:04, 2929.00it/s]Packing dataset:  74%|███████▍  | 36438/49172 [00:12<00:04, 2952.12it/s]Packing dataset:  75%|███████▍  | 36750/49172 [00:12<00:04, 3000.22it/s]Packing dataset:  75%|███████▌  | 37051/49172 [00:12<00:04, 2965.97it/s]Packing dataset:  76%|███████▌  | 37352/49172 [00:12<00:03, 2977.34it/s]Packing dataset:  77%|███████▋  | 37657/49172 [00:12<00:03, 2994.66it/s]Packing dataset:  77%|███████▋  | 37961/49172 [00:12<00:03, 3007.60it/s]Packing dataset:  78%|███████▊  | 38262/49172 [00:12<00:03, 3000.77it/s]Packing dataset:  78%|███████▊  | 38563/49172 [00:12<00:03, 2951.88it/s]Packing dataset:  79%|███████▉  | 38859/49172 [00:13<00:03, 2938.35it/s]Packing dataset:  80%|███████▉  | 39170/49172 [00:13<00:03, 2985.76it/s]Packing dataset:  80%|████████  | 39469/49172 [00:13<00:03, 2965.85it/s]Packing dataset:  81%|████████  | 39771/49172 [00:13<00:03, 2980.76it/s]Packing dataset:  81%|████████▏ | 40075/49172 [00:13<00:03, 2997.49it/s]Packing dataset:  82%|████████▏ | 40375/49172 [00:13<00:02, 2992.61it/s]Packing dataset:  83%|████████▎ | 40681/49172 [00:13<00:02, 3010.07it/s]Packing dataset:  83%|████████▎ | 40983/49172 [00:13<00:02, 3003.91it/s]Packing dataset:  84%|████████▍ | 41284/49172 [00:13<00:02, 2997.39it/s]Packing dataset:  85%|████████▍ | 41584/49172 [00:13<00:02, 2990.98it/s]Packing dataset:  85%|████████▌ | 41884/49172 [00:14<00:02, 2964.03it/s]Packing dataset:  86%|████████▌ | 42181/49172 [00:14<00:02, 2919.77it/s]Packing dataset:  86%|████████▋ | 42491/49172 [00:14<00:02, 2971.17it/s]Packing dataset:  87%|████████▋ | 42789/49172 [00:14<00:02, 2901.39it/s]Packing dataset:  88%|████████▊ | 43080/49172 [00:14<00:02, 2880.01it/s]Packing dataset:  88%|████████▊ | 43373/49172 [00:14<00:02, 2891.27it/s]Packing dataset:  89%|████████▉ | 43670/49172 [00:14<00:01, 2912.19it/s]Packing dataset:  89%|████████▉ | 43962/49172 [00:14<00:01, 2910.38it/s]Packing dataset:  90%|█████████ | 44263/49172 [00:14<00:01, 2939.19it/s]Packing dataset:  91%|█████████ | 44561/49172 [00:14<00:01, 2948.50it/s]Packing dataset:  91%|█████████ | 44868/49172 [00:15<00:01, 2978.17it/s]Packing dataset:  92%|█████████▏| 45166/49172 [00:15<00:02, 1870.45it/s]Packing dataset:  92%|█████████▏| 45472/49172 [00:15<00:01, 2121.39it/s]Packing dataset:  93%|█████████▎| 45742/49172 [00:15<00:01, 2254.86it/s]Packing dataset:  94%|█████████▎| 46018/49172 [00:15<00:01, 2379.11it/s]Packing dataset:  94%|█████████▍| 46321/49172 [00:15<00:01, 2548.21it/s]Packing dataset:  95%|█████████▍| 46600/49172 [00:15<00:00, 2613.55it/s]Packing dataset:  95%|█████████▌| 46901/49172 [00:15<00:00, 2722.66it/s]Packing dataset:  96%|█████████▌| 47186/49172 [00:16<00:00, 2757.50it/s]Packing dataset:  97%|█████████▋| 47479/49172 [00:16<00:00, 2806.66it/s]Packing dataset:  97%|█████████▋| 47766/49172 [00:16<00:00, 2807.13it/s]Packing dataset:  98%|█████████▊| 48055/49172 [00:16<00:00, 2828.84it/s]Packing dataset:  98%|█████████▊| 48354/49172 [00:16<00:00, 2874.24it/s]Packing dataset:  99%|█████████▉| 48650/49172 [00:16<00:00, 2899.45it/s]Packing dataset: 100%|█████████▉| 48948/49172 [00:16<00:00, 2923.41it/s]Packing dataset: 100%|██████████| 49172/49172 [00:16<00:00, 2936.52it/s]
-INFO:torchtune.utils._logging:No learning rate scheduler configured. Using constant learning rate.
-WARNING:torchtune.utils._logging: Profiling disabled.
-INFO:torchtune.utils._logging: Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [01:03<09:30, 63.43s/it]1|1|Loss: 2.1396799087524414:  10%|█         | 1/10 [01:03<09:30, 63.43s/it]iteration:  1 tokens:  1497 time:  63.42662183998618 tokens_per_second:  23.6
-1|1|Loss: 2.1396799087524414:  20%|██        | 2/10 [01:05<03:40, 27.54s/it]1|2|Loss: 1.1712539196014404:  20%|██        | 2/10 [01:05<03:40, 27.54s/it]iteration:  2 tokens:  1561 time:  2.4012316039879806 tokens_per_second:  650.08
-1|2|Loss: 1.1712539196014404:  30%|███       | 3/10 [01:08<01:52, 16.07s/it]1|3|Loss: 1.1587461233139038:  30%|███       | 3/10 [01:08<01:52, 16.07s/it]iteration:  3 tokens:  1666 time:  2.407367656007409 tokens_per_second:  692.04
-1|3|Loss: 1.1587461233139038:  40%|████      | 4/10 [01:10<01:04, 10.67s/it]1|4|Loss: 1.0442707538604736:  40%|████      | 4/10 [01:10<01:04, 10.67s/it]iteration:  4 tokens:  1545 time:  2.3914940399990883 tokens_per_second:  646.04
-1|4|Loss: 1.0442707538604736:  50%|█████     | 5/10 [01:13<00:38,  7.69s/it]1|5|Loss: 0.9377907514572144:  50%|█████     | 5/10 [01:13<00:38,  7.69s/it]iteration:  5 tokens:  1602 time:  2.397695293999277 tokens_per_second:  668.14
-1|5|Loss: 0.9377907514572144:  60%|██████    | 6/10 [01:15<00:23,  5.89s/it]1|6|Loss: 0.892328143119812:  60%|██████    | 6/10 [01:15<00:23,  5.89s/it] iteration:  6 tokens:  1746 time:  2.399748017982347 tokens_per_second:  727.58
-1|6|Loss: 0.892328143119812:  70%|███████   | 7/10 [01:17<00:14,  4.74s/it]1|7|Loss: 0.9704182147979736:  70%|███████   | 7/10 [01:17<00:14,  4.74s/it]iteration:  7 tokens:  1155 time:  2.3703721509955358 tokens_per_second:  487.27
-1|7|Loss: 0.9704182147979736:  80%|████████  | 8/10 [01:20<00:07,  4.00s/it]1|8|Loss: 0.909871518611908:  80%|████████  | 8/10 [01:20<00:07,  4.00s/it] iteration:  8 tokens:  1742 time:  2.395626251003705 tokens_per_second:  727.16
-1|8|Loss: 0.909871518611908:  90%|█████████ | 9/10 [01:22<00:03,  3.50s/it]1|9|Loss: 0.8778821229934692:  90%|█████████ | 9/10 [01:22<00:03,  3.50s/it]iteration:  9 tokens:  1595 time:  2.3930152929970063 tokens_per_second:  666.52
-1|9|Loss: 0.8778821229934692: 100%|██████████| 10/10 [01:25<00:00,  3.16s/it]1|10|Loss: 0.7031288743019104: 100%|██████████| 10/10 [01:25<00:00,  3.16s/it]iteration:  10 tokens:  1578 time:  2.3975713580148295 tokens_per_second:  658.17
+In-backward optimizers are set up.
+Loss is initialized.
+Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 182/49172 [00:00<00:26, 1817.08it/s]Packing dataset:   1%|          | 470/49172 [00:00<00:19, 2441.54it/s]Packing dataset:   2%|▏         | 756/49172 [00:00<00:18, 2629.44it/s]Packing dataset:   2%|▏         | 1048/49172 [00:00<00:17, 2743.37it/s]Packing dataset:   3%|▎         | 1353/49172 [00:00<00:16, 2849.29it/s]Packing dataset:   3%|▎         | 1638/49172 [00:00<00:16, 2821.75it/s]Packing dataset:   4%|▍         | 1921/49172 [00:00<00:16, 2787.82it/s]Packing dataset:   4%|▍         | 2205/49172 [00:00<00:16, 2800.66it/s]Packing dataset:   5%|▌         | 2510/49172 [00:00<00:16, 2876.26it/s]Packing dataset:   6%|▌         | 2837/49172 [00:01<00:15, 2993.50it/s]Packing dataset:   6%|▋         | 3137/49172 [00:01<00:15, 2982.71it/s]Packing dataset:   7%|▋         | 3436/49172 [00:01<00:15, 2950.55it/s]Packing dataset:   8%|▊         | 3733/49172 [00:01<00:15, 2955.02it/s]Packing dataset:   8%|▊         | 4029/49172 [00:01<00:15, 2925.16it/s]Packing dataset:   9%|▉         | 4325/49172 [00:01<00:15, 2934.99it/s]Packing dataset:   9%|▉         | 4619/49172 [00:01<00:15, 2872.59it/s]Packing dataset:  10%|▉         | 4907/49172 [00:01<00:15, 2868.25it/s]Packing dataset:  11%|█         | 5198/49172 [00:01<00:15, 2880.11it/s]Packing dataset:  11%|█         | 5499/49172 [00:01<00:14, 2913.16it/s]Packing dataset:  12%|█▏        | 5814/49172 [00:02<00:14, 2980.30it/s]Packing dataset:  12%|█▏        | 6113/49172 [00:02<00:14, 2943.30it/s]Packing dataset:  13%|█▎        | 6409/49172 [00:02<00:14, 2947.40it/s]Packing dataset:  14%|█▎        | 6704/49172 [00:02<00:14, 2864.92it/s]Packing dataset:  14%|█▍        | 6992/49172 [00:02<00:14, 2864.82it/s]Packing dataset:  15%|█▍        | 7279/49172 [00:02<00:14, 2842.41it/s]Packing dataset:  15%|█▌        | 7577/49172 [00:02<00:14, 2882.35it/s]Packing dataset:  16%|█▌        | 7866/49172 [00:02<00:14, 2849.56it/s]Packing dataset:  17%|█▋        | 8154/49172 [00:02<00:14, 2857.47it/s]Packing dataset:  17%|█▋        | 8440/49172 [00:02<00:14, 2833.24it/s]Packing dataset:  18%|█▊        | 8738/49172 [00:03<00:14, 2875.60it/s]Packing dataset:  18%|█▊        | 9052/49172 [00:03<00:13, 2952.28it/s]Packing dataset:  19%|█▉        | 9348/49172 [00:03<00:13, 2915.15it/s]Packing dataset:  20%|█▉        | 9640/49172 [00:03<00:14, 2812.40it/s]Packing dataset:  20%|██        | 9923/49172 [00:03<00:13, 2813.73it/s]Packing dataset:  21%|██        | 10221/49172 [00:03<00:13, 2861.50it/s]Packing dataset:  21%|██▏       | 10508/49172 [00:03<00:13, 2845.96it/s]Packing dataset:  22%|██▏       | 10810/49172 [00:03<00:13, 2893.97it/s]Packing dataset:  23%|██▎       | 11100/49172 [00:03<00:13, 2879.57it/s]Packing dataset:  23%|██▎       | 11389/49172 [00:03<00:13, 2856.14it/s]Packing dataset:  24%|██▍       | 11682/49172 [00:04<00:13, 2873.52it/s]Packing dataset:  24%|██▍       | 11970/49172 [00:04<00:13, 2859.02it/s]Packing dataset:  25%|██▍       | 12257/49172 [00:04<00:12, 2843.07it/s]Packing dataset:  26%|██▌       | 12542/49172 [00:04<00:12, 2829.59it/s]Packing dataset:  26%|██▌       | 12835/49172 [00:04<00:12, 2858.99it/s]Packing dataset:  27%|██▋       | 13123/49172 [00:04<00:12, 2863.32it/s]Packing dataset:  27%|██▋       | 13410/49172 [00:04<00:12, 2806.87it/s]Packing dataset:  28%|██▊       | 13695/49172 [00:04<00:12, 2818.18it/s]Packing dataset:  28%|██▊       | 13979/49172 [00:04<00:12, 2824.19it/s]Packing dataset:  29%|██▉       | 14262/49172 [00:04<00:12, 2794.27it/s]Packing dataset:  30%|██▉       | 14564/49172 [00:05<00:12, 2857.42it/s]Packing dataset:  30%|███       | 14850/49172 [00:05<00:12, 2826.22it/s]Packing dataset:  31%|███       | 15142/49172 [00:05<00:11, 2851.26it/s]Packing dataset:  31%|███▏      | 15431/49172 [00:05<00:11, 2857.15it/s]Packing dataset:  32%|███▏      | 15732/49172 [00:05<00:11, 2900.89it/s]Packing dataset:  33%|███▎      | 16029/49172 [00:05<00:11, 2921.11it/s]Packing dataset:  33%|███▎      | 16322/49172 [00:05<00:11, 2868.07it/s]Packing dataset:  34%|███▍      | 16610/49172 [00:05<00:11, 2837.45it/s]Packing dataset:  34%|███▍      | 16903/49172 [00:05<00:11, 2863.92it/s]Packing dataset:  35%|███▍      | 17190/49172 [00:06<00:11, 2855.63it/s]Packing dataset:  36%|███▌      | 17476/49172 [00:06<00:11, 2819.75it/s]Packing dataset:  36%|███▌      | 17759/49172 [00:06<00:11, 2805.41it/s]Packing dataset:  37%|███▋      | 18040/49172 [00:06<00:11, 2787.84it/s]Packing dataset:  37%|███▋      | 18319/49172 [00:06<00:11, 2782.14it/s]Packing dataset:  38%|███▊      | 18598/49172 [00:06<00:11, 2750.25it/s]Packing dataset:  38%|███▊      | 18890/49172 [00:06<00:10, 2798.04it/s]Packing dataset:  39%|███▉      | 19183/49172 [00:06<00:10, 2833.08it/s]Packing dataset:  40%|███▉      | 19467/49172 [00:06<00:10, 2795.21it/s]Packing dataset:  40%|████      | 19747/49172 [00:06<00:10, 2782.44it/s]Packing dataset:  41%|████      | 20027/49172 [00:07<00:10, 2787.48it/s]Packing dataset:  41%|████▏     | 20316/49172 [00:07<00:10, 2815.09it/s]Packing dataset:  42%|████▏     | 20598/49172 [00:07<00:10, 2788.39it/s]Packing dataset:  42%|████▏     | 20893/49172 [00:07<00:09, 2832.57it/s]Packing dataset:  43%|████▎     | 21198/49172 [00:07<00:09, 2896.68it/s]Packing dataset:  44%|████▎     | 21488/49172 [00:07<00:09, 2859.23it/s]Packing dataset:  44%|████▍     | 21775/49172 [00:07<00:09, 2860.01it/s]Packing dataset:  45%|████▍     | 22062/49172 [00:07<00:09, 2816.53it/s]Packing dataset:  45%|████▌     | 22350/49172 [00:07<00:09, 2835.07it/s]Packing dataset:  46%|████▌     | 22634/49172 [00:07<00:09, 2810.36it/s]Packing dataset:  47%|████▋     | 22916/49172 [00:08<00:09, 2778.01it/s]Packing dataset:  47%|████▋     | 23194/49172 [00:08<00:09, 2757.14it/s]Packing dataset:  48%|████▊     | 23497/49172 [00:08<00:09, 2836.92it/s]Packing dataset:  48%|████▊     | 23781/49172 [00:08<00:09, 2820.68it/s]Packing dataset:  49%|████▉     | 24064/49172 [00:08<00:08, 2800.98it/s]Packing dataset:  50%|████▉     | 24360/49172 [00:08<00:08, 2840.19it/s]Packing dataset:  50%|█████     | 24658/49172 [00:08<00:08, 2881.35it/s]Packing dataset:  51%|█████     | 24947/49172 [00:08<00:08, 2830.21it/s]Packing dataset:  51%|█████▏    | 25231/49172 [00:08<00:08, 2805.29it/s]Packing dataset:  52%|█████▏    | 25535/49172 [00:08<00:08, 2873.41it/s]Packing dataset:  53%|█████▎    | 25823/49172 [00:09<00:08, 2802.35it/s]Packing dataset:  53%|█████▎    | 26114/49172 [00:09<00:08, 2833.22it/s]Packing dataset:  54%|█████▎    | 26398/49172 [00:09<00:08, 2832.28it/s]Packing dataset:  54%|█████▍    | 26682/49172 [00:09<00:08, 2803.51it/s]Packing dataset:  55%|█████▍    | 26987/49172 [00:09<00:07, 2874.68it/s]Packing dataset:  55%|█████▌    | 27278/49172 [00:09<00:07, 2883.90it/s]Packing dataset:  56%|█████▌    | 27567/49172 [00:09<00:07, 2843.58it/s]Packing dataset:  57%|█████▋    | 27852/49172 [00:09<00:07, 2802.02it/s]Packing dataset:  57%|█████▋    | 28133/49172 [00:09<00:07, 2769.51it/s]Packing dataset:  58%|█████▊    | 28411/49172 [00:10<00:07, 2752.68it/s]Packing dataset:  58%|█████▊    | 28688/49172 [00:10<00:07, 2756.30it/s]Packing dataset:  59%|█████▉    | 28966/49172 [00:10<00:07, 2760.93it/s]Packing dataset:  59%|█████▉    | 29244/49172 [00:10<00:07, 2764.22it/s]Packing dataset:  60%|██████    | 29526/49172 [00:10<00:07, 2780.52it/s]Packing dataset:  61%|██████    | 29810/49172 [00:10<00:06, 2794.22it/s]Packing dataset:  61%|██████    | 30090/49172 [00:10<00:06, 2776.03it/s]Packing dataset:  62%|██████▏   | 30377/49172 [00:10<00:06, 2803.31it/s]Packing dataset:  62%|██████▏   | 30658/49172 [00:10<00:06, 2801.84it/s]Packing dataset:  63%|██████▎   | 30939/49172 [00:10<00:06, 2782.75it/s]Packing dataset:  63%|██████▎   | 31218/49172 [00:11<00:06, 2756.93it/s]Packing dataset:  64%|██████▍   | 31517/49172 [00:11<00:06, 2823.52it/s]Packing dataset:  65%|██████▍   | 31824/49172 [00:11<00:05, 2891.55it/s]Packing dataset:  65%|██████▌   | 32114/49172 [00:11<00:06, 2832.33it/s]Packing dataset:  66%|██████▌   | 32410/49172 [00:11<00:05, 2867.84it/s]Packing dataset:  66%|██████▋   | 32698/49172 [00:11<00:05, 2847.65it/s]Packing dataset:  67%|██████▋   | 32984/49172 [00:11<00:05, 2849.66it/s]Packing dataset:  68%|██████▊   | 33279/49172 [00:11<00:05, 2876.71it/s]Packing dataset:  68%|██████▊   | 33568/49172 [00:11<00:05, 2877.70it/s]Packing dataset:  69%|██████▉   | 33856/49172 [00:11<00:05, 2864.76it/s]Packing dataset:  69%|██████▉   | 34145/49172 [00:12<00:05, 2868.85it/s]Packing dataset:  70%|███████   | 34432/49172 [00:12<00:05, 2839.71it/s]Packing dataset:  71%|███████   | 34729/49172 [00:12<00:05, 2877.79it/s]Packing dataset:  71%|███████   | 35017/49172 [00:12<00:04, 2867.45it/s]Packing dataset:  72%|███████▏  | 35304/49172 [00:12<00:04, 2855.36it/s]Packing dataset:  72%|███████▏  | 35590/49172 [00:12<00:04, 2846.01it/s]Packing dataset:  73%|███████▎  | 35875/49172 [00:12<00:04, 2770.54it/s]Packing dataset:  74%|███████▎  | 36153/49172 [00:12<00:04, 2763.49it/s]Packing dataset:  74%|███████▍  | 36441/49172 [00:12<00:04, 2794.59it/s]Packing dataset:  75%|███████▍  | 36740/49172 [00:12<00:04, 2852.29it/s]Packing dataset:  75%|███████▌  | 37026/49172 [00:13<00:04, 2761.60it/s]Packing dataset:  76%|███████▌  | 37312/49172 [00:13<00:04, 2788.37it/s]Packing dataset:  76%|███████▋  | 37601/49172 [00:13<00:04, 2818.16it/s]Packing dataset:  77%|███████▋  | 37886/49172 [00:13<00:03, 2825.96it/s]Packing dataset:  78%|███████▊  | 38169/49172 [00:13<00:03, 2801.99it/s]Packing dataset:  78%|███████▊  | 38452/49172 [00:13<00:03, 2809.48it/s]Packing dataset:  79%|███████▉  | 38734/49172 [00:13<00:03, 2805.14it/s]Packing dataset:  79%|███████▉  | 39015/49172 [00:13<00:03, 2770.85it/s]Packing dataset:  80%|███████▉  | 39313/49172 [00:13<00:03, 2829.15it/s]Packing dataset:  81%|████████  | 39599/49172 [00:13<00:03, 2834.56it/s]Packing dataset:  81%|████████  | 39885/49172 [00:14<00:03, 2841.03it/s]Packing dataset:  82%|████████▏ | 40170/49172 [00:14<00:03, 2811.97it/s]Packing dataset:  82%|████████▏ | 40464/49172 [00:14<00:03, 2849.03it/s]Packing dataset:  83%|████████▎ | 40755/49172 [00:14<00:02, 2861.70it/s]Packing dataset:  83%|████████▎ | 41046/49172 [00:14<00:02, 2871.84it/s]Packing dataset:  84%|████████▍ | 41334/49172 [00:14<00:02, 2858.23it/s]Packing dataset:  85%|████████▍ | 41620/49172 [00:14<00:02, 2826.97it/s]Packing dataset:  85%|████████▌ | 41903/49172 [00:14<00:02, 2827.11it/s]Packing dataset:  86%|████████▌ | 42186/49172 [00:14<00:02, 2769.14it/s]Packing dataset:  86%|████████▋ | 42480/49172 [00:14<00:02, 2814.06it/s]Packing dataset:  87%|████████▋ | 42762/49172 [00:15<00:02, 2745.41it/s]Packing dataset:  88%|████████▊ | 43038/49172 [00:15<00:02, 2713.03it/s]Packing dataset:  88%|████████▊ | 43310/49172 [00:15<00:02, 2710.60it/s]Packing dataset:  89%|████████▊ | 43592/49172 [00:15<00:02, 2741.54it/s]Packing dataset:  89%|████████▉ | 43867/49172 [00:15<00:01, 2740.78it/s]Packing dataset:  90%|████████▉ | 44145/49172 [00:15<00:01, 2746.89it/s]Packing dataset:  90%|█████████ | 44427/49172 [00:15<00:01, 2765.96it/s]Packing dataset:  91%|█████████ | 44704/49172 [00:15<00:01, 2751.70it/s]Packing dataset:  91%|█████████▏| 44986/49172 [00:15<00:01, 2770.08it/s]Packing dataset:  92%|█████████▏| 45278/49172 [00:16<00:01, 2813.99it/s]Packing dataset:  93%|█████████▎| 45578/49172 [00:16<00:01, 2868.82it/s]Packing dataset:  93%|█████████▎| 45865/49172 [00:16<00:01, 2771.91it/s]Packing dataset:  94%|█████████▍| 46143/49172 [00:16<00:01, 2763.28it/s]Packing dataset:  94%|█████████▍| 46431/49172 [00:16<00:00, 2797.20it/s]Packing dataset:  95%|█████████▌| 46714/49172 [00:16<00:00, 2804.87it/s]Packing dataset:  96%|█████████▌| 46995/49172 [00:16<00:00, 2793.82it/s]Packing dataset:  96%|█████████▌| 47275/49172 [00:16<00:00, 2783.87it/s]Packing dataset:  97%|█████████▋| 47569/49172 [00:16<00:00, 2828.87it/s]Packing dataset:  97%|█████████▋| 47853/49172 [00:16<00:00, 2808.35it/s]Packing dataset:  98%|█████████▊| 48134/49172 [00:17<00:00, 2778.85it/s]Packing dataset:  98%|█████████▊| 48424/49172 [00:17<00:00, 2811.07it/s]Packing dataset:  99%|█████████▉| 48718/49172 [00:17<00:00, 2848.70it/s]Packing dataset: 100%|█████████▉| 49004/49172 [00:17<00:00, 2827.69it/s]Packing dataset: 100%|██████████| 49172/49172 [00:17<00:00, 2827.81it/s]
+No learning rate scheduler configured. Using constant learning rate.
+ Profiling disabled.
+ Profiler config after instantiation: {'enabled': False}
+  0%|          | 0/10 [00:00<?, ?it/s]In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:34: warning: ‘atomic64’ is deprecated: use sycl::aspect::atomic64 instead [-Wdeprecated-declarations]
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      |                                  ^~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:34: note: declared here
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      |                                  ^~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘atomic64’ is deprecated: use sycl::aspect::atomic64 instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:34: note: declared here
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      |                                  ^~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:34: warning: ‘image_max_array_size’ is deprecated: support for image arrays has been removed in SYCL 2020 [-Wdeprecated-declarations]
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:34: note: declared here
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘image_max_array_size’ is deprecated: support for image arrays has been removed in SYCL 2020 [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:34: note: declared here
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:34: warning: ‘opencl_c_version’ is deprecated: use device::get_backend_info instead [-Wdeprecated-declarations]
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:34: note: declared here
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘opencl_c_version’ is deprecated: use device::get_backend_info instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:34: note: declared here
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:34: warning: ‘ext_intel_pci_address’ is deprecated: use ext::intel::info::device::pci_address instead [-Wdeprecated-declarations]
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:34: note: declared here
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_pci_address’ is deprecated: use ext::intel::info::device::pci_address instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:34: note: declared here
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:34: warning: ‘ext_intel_gpu_eu_count’ is deprecated: use ext::intel::info::device::gpu_eu_count instead [-Wdeprecated-declarations]
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:34: note: declared here
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_eu_count’ is deprecated: use ext::intel::info::device::gpu_eu_count instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:34: note: declared here
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:34: warning: ‘ext_intel_gpu_eu_simd_width’ is deprecated: use ext::intel::info::device::gpu_eu_simd_width instead [-Wdeprecated-declarations]
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:34: note: declared here
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_eu_simd_width’ is deprecated: use ext::intel::info::device::gpu_eu_simd_width instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:34: note: declared here
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:34: warning: ‘ext_intel_gpu_slices’ is deprecated: use ext::intel::info::device::gpu_slices instead [-Wdeprecated-declarations]
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:34: note: declared here
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_slices’ is deprecated: use ext::intel::info::device::gpu_slices instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:34: note: declared here
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:34: warning: ‘ext_intel_gpu_subslices_per_slice’ is deprecated: use ext::intel::info::device::gpu_subslices_per_slice instead [-Wdeprecated-declarations]
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:34: note: declared here
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_subslices_per_slice’ is deprecated: use ext::intel::info::device::gpu_subslices_per_slice instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:34: note: declared here
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:34: warning: ‘ext_intel_gpu_hw_threads_per_eu’ is deprecated: use ext::intel::info::device::gpu_hw_threads_per_eu instead [-Wdeprecated-declarations]
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:34: note: declared here
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_hw_threads_per_eu’ is deprecated: use ext::intel::info::device::gpu_hw_threads_per_eu instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:34: note: declared here
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:34: warning: ‘ext_intel_device_info_uuid’ is deprecated: use ext::intel::info::device::uuid instead [-Wdeprecated-declarations]
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:34: note: declared here
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_device_info_uuid’ is deprecated: use ext::intel::info::device::uuid instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:34: note: declared here
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:34: warning: ‘ext_intel_max_mem_bandwidth’ is deprecated: use ext::intel::info::device::max_mem_bandwidth instead [-Wdeprecated-declarations]
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:34: note: declared here
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_max_mem_bandwidth’ is deprecated: use ext::intel::info::device::max_mem_bandwidth instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:34: note: declared here
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:34: warning: ‘ext_oneapi_max_work_groups_1d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<1> instead [-Wdeprecated-declarations]
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:34: note: declared here
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_work_groups_1d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<1> instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:34: note: declared here
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:34: warning: ‘ext_oneapi_max_work_groups_2d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<2> instead [-Wdeprecated-declarations]
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:34: note: declared here
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_work_groups_2d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<2> instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:34: note: declared here
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:34: warning: ‘atomic64’ is deprecated: use sycl::aspect::atomic64 instead [-Wdeprecated-declarations]
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      |                                  ^~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:34: warning: ‘ext_oneapi_max_work_groups_3d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<3> instead [-Wdeprecated-declarations]
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:34: note: declared here
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_work_groups_3d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<3> instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:34: note: declared here
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:34: note: declared here
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      |                                  ^~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:34: warning: ‘ext_oneapi_max_global_work_groups’ is deprecated: use ext::oneapi::experimental::info::device::max_global_work_groups instead [-Wdeprecated-declarations]
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:34: note: declared here
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_global_work_groups’ is deprecated: use ext::oneapi::experimental::info::device::max_global_work_groups instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmpefj6epsi/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:34: note: declared here
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘atomic64’ is deprecated: use sycl::aspect::atomic64 instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:183:34: note: declared here
+  183 | __SYCL_PARAM_TRAITS_SPEC(device, atomic64, bool,UR_DEVICE_INFO_ATOMIC_64)
+      |                                  ^~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:34: warning: ‘image_max_array_size’ is deprecated: support for image arrays has been removed in SYCL 2020 [-Wdeprecated-declarations]
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:34: note: declared here
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘image_max_array_size’ is deprecated: support for image arrays has been removed in SYCL 2020 [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:199:34: note: declared here
+  199 | __SYCL_PARAM_TRAITS_SPEC(device, image_max_array_size, size_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:34: warning: ‘opencl_c_version’ is deprecated: use device::get_backend_info instead [-Wdeprecated-declarations]
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:34: note: declared here
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘opencl_c_version’ is deprecated: use device::get_backend_info instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:202:34: note: declared here
+  202 | __SYCL_PARAM_TRAITS_SPEC(device, opencl_c_version, std::string, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:34: warning: ‘ext_intel_pci_address’ is deprecated: use ext::intel::info::device::pci_address instead [-Wdeprecated-declarations]
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:34: note: declared here
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_pci_address’ is deprecated: use ext::intel::info::device::pci_address instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:213:34: note: declared here
+  213 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_pci_address, std::string,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:34: warning: ‘ext_intel_gpu_eu_count’ is deprecated: use ext::intel::info::device::gpu_eu_count instead [-Wdeprecated-declarations]
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:34: note: declared here
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_eu_count’ is deprecated: use ext::intel::info::device::gpu_eu_count instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:215:34: note: declared here
+  215 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_count, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:34: warning: ‘ext_intel_gpu_eu_simd_width’ is deprecated: use ext::intel::info::device::gpu_eu_simd_width instead [-Wdeprecated-declarations]
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:34: note: declared here
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_eu_simd_width’ is deprecated: use ext::intel::info::device::gpu_eu_simd_width instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:217:34: note: declared here
+  217 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_eu_simd_width, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:34: warning: ‘ext_intel_gpu_slices’ is deprecated: use ext::intel::info::device::gpu_slices instead [-Wdeprecated-declarations]
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:34: note: declared here
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_slices’ is deprecated: use ext::intel::info::device::gpu_slices instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:219:34: note: declared here
+  219 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_slices, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:34: warning: ‘ext_intel_gpu_subslices_per_slice’ is deprecated: use ext::intel::info::device::gpu_subslices_per_slice instead [-Wdeprecated-declarations]
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:34: note: declared here
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_subslices_per_slice’ is deprecated: use ext::intel::info::device::gpu_subslices_per_slice instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:221:34: note: declared here
+  221 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_subslices_per_slice, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:34: warning: ‘ext_intel_gpu_hw_threads_per_eu’ is deprecated: use ext::intel::info::device::gpu_hw_threads_per_eu instead [-Wdeprecated-declarations]
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:34: note: declared here
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_gpu_hw_threads_per_eu’ is deprecated: use ext::intel::info::device::gpu_hw_threads_per_eu instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:225:34: note: declared here
+  225 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_gpu_hw_threads_per_eu, uint32_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:34: warning: ‘ext_intel_device_info_uuid’ is deprecated: use ext::intel::info::device::uuid instead [-Wdeprecated-declarations]
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:34: note: declared here
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_device_info_uuid’ is deprecated: use ext::intel::info::device::uuid instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:227:34: note: declared here
+  227 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_device_info_uuid, detail::uuid_type,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:34: warning: ‘ext_intel_max_mem_bandwidth’ is deprecated: use ext::intel::info::device::max_mem_bandwidth instead [-Wdeprecated-declarations]
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:34: note: declared here
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_intel_max_mem_bandwidth’ is deprecated: use ext::intel::info::device::max_mem_bandwidth instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:229:34: note: declared here
+  229 | __SYCL_PARAM_TRAITS_SPEC(device, ext_intel_max_mem_bandwidth, uint64_t,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:34: warning: ‘ext_oneapi_max_work_groups_1d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<1> instead [-Wdeprecated-declarations]
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:34: note: declared here
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_work_groups_1d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<1> instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:232:34: note: declared here
+  232 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_1d, id<1>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:34: warning: ‘ext_oneapi_max_work_groups_2d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<2> instead [-Wdeprecated-declarations]
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:34: note: declared here
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_work_groups_2d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<2> instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:233:34: note: declared here
+  233 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_2d, id<2>, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:34: warning: ‘ext_oneapi_max_work_groups_3d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<3> instead [-Wdeprecated-declarations]
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:34: note: declared here
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_work_groups_3d’ is deprecated: use ext::oneapi::experimental::info::device::max_work_groups<3> instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:234:34: note: declared here
+  234 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_work_groups_3d, id<3>,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:34: warning: ‘ext_oneapi_max_global_work_groups’ is deprecated: use ext::oneapi::experimental::info::device::max_global_work_groups instead [-Wdeprecated-declarations]
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:106:52: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  106 |   struct is_##DescType##_info_desc<info::DescType::Desc> : std::true_type {    \
+      |                                                    ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:34: note: declared here
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:107:47: warning: ‘ext_oneapi_max_global_work_groups’ is deprecated: use ext::oneapi::experimental::info::device::max_global_work_groups instead [-Wdeprecated-declarations]
+  107 |     using return_type = info::DescType::Desc::return_type;                     \
+      |                                               ^~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:1: note: in expansion of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/info_desc_helpers.hpp:31,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/context.hpp:15,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/properties/buffer_properties.hpp:11,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/accessor.hpp:33,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/detail/core.hpp:21,
+                 from /home/jenkins/.conda/envs/xpu_op_/include/sycl/sycl.hpp:25,
+                 from /tmp/tmp4rtntshg/main.cpp:7:
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/device_traits.def:236:34: note: declared here
+  236 | __SYCL_PARAM_TRAITS_SPEC(device, ext_oneapi_max_global_work_groups, size_t, __SYCL_TRAIT_HANDLED_IN_RT)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jenkins/.conda/envs/xpu_op_/include/sycl/info/info_desc.hpp:54:10: note: in definition of macro ‘__SYCL_PARAM_TRAITS_SPEC’
+   54 |   struct Desc {                                                                \
+      |          ^~~~
+ 10%|█         | 1/10 [01:34<14:09, 94.38s/it]1|1|Loss: 1.8307127952575684:  10%|█         | 1/10 [01:34<14:09, 94.38s/it]iteration:  1 tokens:  1506 time:  94.37759329099208 tokens_per_second:  15.96
+1|1|Loss: 1.8307127952575684:  20%|██        | 2/10 [01:36<05:22, 40.29s/it]1|2|Loss: 1.4200732707977295:  20%|██        | 2/10 [01:36<05:22, 40.29s/it]iteration:  2 tokens:  1488 time:  2.409333453979343 tokens_per_second:  617.6
+1|2|Loss: 1.4200732707977295:  30%|███       | 3/10 [01:38<02:39, 22.85s/it]1|3|Loss: 1.1244834661483765:  30%|███       | 3/10 [01:38<02:39, 22.85s/it]iteration:  3 tokens:  1596 time:  2.086760609061457 tokens_per_second:  764.82
+1|3|Loss: 1.1244834661483765:  40%|████      | 4/10 [01:40<01:27, 14.64s/it]1|4|Loss: 0.9213817119598389:  40%|████      | 4/10 [01:40<01:27, 14.64s/it]iteration:  4 tokens:  1526 time:  2.04945845506154 tokens_per_second:  744.59
+1|4|Loss: 0.9213817119598389:  50%|█████     | 5/10 [01:42<00:50, 10.08s/it]1|5|Loss: 0.981120765209198:  50%|█████     | 5/10 [01:42<00:50, 10.08s/it] iteration:  5 tokens:  1524 time:  2.0081992690684274 tokens_per_second:  758.89
+1|5|Loss: 0.981120765209198:  60%|██████    | 6/10 [01:44<00:29,  7.32s/it]1|6|Loss: 1.2796754837036133:  60%|██████    | 6/10 [01:44<00:29,  7.32s/it]iteration:  6 tokens:  1808 time:  1.9598980060545728 tokens_per_second:  922.5
+1|6|Loss: 1.2796754837036133:  70%|███████   | 7/10 [01:46<00:16,  5.57s/it]1|7|Loss: 1.088971734046936:  70%|███████   | 7/10 [01:46<00:16,  5.57s/it] iteration:  7 tokens:  1666 time:  1.9705176989082247 tokens_per_second:  845.46
+1|7|Loss: 1.088971734046936:  80%|████████  | 8/10 [01:48<00:08,  4.42s/it]1|8|Loss: 0.9417006373405457:  80%|████████  | 8/10 [01:48<00:08,  4.42s/it]iteration:  8 tokens:  1424 time:  1.9472800759831443 tokens_per_second:  731.28
+1|8|Loss: 0.9417006373405457:  90%|█████████ | 9/10 [01:51<00:03,  3.88s/it]1|9|Loss: 0.9434050917625427:  90%|█████████ | 9/10 [01:51<00:03,  3.88s/it]iteration:  9 tokens:  1386 time:  2.673990833107382 tokens_per_second:  518.33
+1|9|Loss: 0.9434050917625427: 100%|██████████| 10/10 [01:53<00:00,  3.29s/it]1|10|Loss: 0.9161943197250366: 100%|██████████| 10/10 [01:53<00:00,  3.29s/it]iteration:  10 tokens:  1818 time:  1.9857319589937106 tokens_per_second:  915.53
 [rank1]: Traceback (most recent call last):
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
 [rank1]:     sys.exit(recipe_main())
@@ -188,11 +1690,11 @@ INFO:torchtune.utils._logging: Profiler config after instantiation: {'enabled': 
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1098, in train
 [rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
 [rank1]: ZeroDivisionError: division by zero
-avg tokens_per_second:  659.38
-1|10|Loss: 0.7031288743019104: 100%|██████████| 10/10 [01:25<00:00,  8.50s/it]
-[rank0]:[W720 18:38:24.500913896 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
-W0720 18:38:26.575000 962375 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 962449 closing signal SIGTERM
-E0720 18:38:26.890000 962375 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 1 (pid: 962450) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+avg tokens_per_second:  764.18
+1|10|Loss: 0.9161943197250366: 100%|██████████| 10/10 [01:53<00:00, 11.35s/it]
+[rank0]:[W727 15:27:00.691922988 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
+W0727 15:27:03.698000 1709861 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1709935 closing signal SIGTERM
+E0727 15:27:03.965000 1709861 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 1 (pid: 1709936) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 8, in <module>
@@ -222,10 +1724,10 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-07-20_18:38:26
+  time      : 2025-07-27_15:27:03
   host      : dut7358
   rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 962450)
+  exitcode  : 1 (pid: 1709936)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
