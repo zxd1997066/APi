@@ -1,7 +1,7 @@
-W0727 15:15:37.464000 1704285 site-packages/torch/distributed/run.py:774] 
-W0727 15:15:37.464000 1704285 site-packages/torch/distributed/run.py:774] *****************************************
-W0727 15:15:37.464000 1704285 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0727 15:15:37.464000 1704285 site-packages/torch/distributed/run.py:774] *****************************************
+W0803 15:09:18.056000 2461104 site-packages/torch/distributed/run.py:803] 
+W0803 15:09:18.056000 2461104 site-packages/torch/distributed/run.py:803] *****************************************
+W0803 15:09:18.056000 2461104 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0803 15:09:18.056000 2461104 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullDPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -130,24 +130,24 @@ tokenizer:
   max_seq_len: 256
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
-[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
-[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 11 is connected to 
+1 peer ranks. Expected number of connected peer ranks is : 1
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1753629341.txt
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1754233761.txt
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:07:27-15:15:43:(1704359) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:27-15:15:43:(1704359) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:07:27-15:15:43:(1704359) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:07:27-15:15:43:(1704359) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:07:27-15:15:44:(1704360) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:27-15:15:44:(1704360) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 5.91 secs
+2025:08:03-15:09:23:(2461178) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:03-15:09:23:(2461178) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:08:03-15:09:23:(2461178) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:08:03-15:09:23:(2461178) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:03-15:09:23:(2461179) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:03-15:09:23:(2461179) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 6.31 secs
 Memory stats after model init:
 	XPU peak memory active: 8.47 GiB
 	XPU peak memory alloc: 8.47 GiB
 	XPU peak memory reserved: 8.62 GiB
 FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
-Instantiating reference model and loading checkpoint took 4.73 secs
+Instantiating reference model and loading checkpoint took 5.14 secs
 Memory stats after model init:
 	XPU peak memory active: 16.01 GiB
 	XPU peak memory alloc: 16.01 GiB
@@ -158,7 +158,7 @@ Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:40<06:00, 40.10s/it]1|1|Loss: 0.6952460408210754:  10%|█         | 1/10 [00:40<06:00, 40.10s/it]iteration:  1 tokens:  32768 time:  40.101498155039735 tokens_per_second:  817.13
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:40<06:05, 40.66s/it]1|1|Loss: 0.6937825679779053:  10%|█         | 1/10 [00:40<06:05, 40.66s/it]iteration:  1 tokens:  32768 time:  40.65862764813937 tokens_per_second:  805.93
 [rank1]: Traceback (most recent call last):
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
 [rank1]:     sys.exit(recipe_main())
@@ -231,12 +231,12 @@ Learning rate scheduler is initialized.
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 209, in split_with_sizes_copy
 [rank0]:     torch.split_with_sizes_copy(
 [rank0]: RuntimeError: UR backend failed. UR backend returns:40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)
-1|1|Loss: 0.6952460408210754:  10%|█         | 1/10 [01:11<10:41, 71.23s/it]
-W0727 15:17:08.840000 1704285 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1704359 closing signal SIGTERM
-E0727 15:17:09.004000 1704285 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 1 (pid: 1704360) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+1|1|Loss: 0.6937825679779053:  10%|█         | 1/10 [01:11<10:43, 71.47s/it]
+W0803 15:10:49.291000 2461104 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461178 closing signal SIGTERM
+E0803 15:10:49.307000 2461104 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 1 (pid: 2461179) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 8, in <module>
+  File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
     sys.exit(main())
   File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/tune.py", line 52, in main
     parser.run(args)
@@ -248,11 +248,11 @@ Traceback (most recent call last):
     return f(*args, **kwargs)
   File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/run.py", line 101, in _run_distributed
     run(args)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 927, in run
     elastic_launch(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 151, in __call__
     return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 288, in launch_agent
     raise ChildFailedError(
 torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
 ============================================================
@@ -263,10 +263,10 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-07-27_15:17:08
+  time      : 2025-08-03_15:10:49
   host      : dut7358
   rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 1704360)
+  exitcode  : 1 (pid: 2461179)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

@@ -1,7 +1,7 @@
-W0727 15:17:14.011000 1704499 site-packages/torch/distributed/run.py:774] 
-W0727 15:17:14.011000 1704499 site-packages/torch/distributed/run.py:774] *****************************************
-W0727 15:17:14.011000 1704499 site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0727 15:17:14.011000 1704499 site-packages/torch/distributed/run.py:774] *****************************************
+W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] 
+W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] *****************************************
+W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullDPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -258,30 +258,30 @@ tokenizer:
   max_seq_len: 256
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
-[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1753629438.txt
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1754233856.txt
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:07:27-15:17:20:(1704574) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:27-15:17:20:(1704574) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:07:27-15:17:20:(1704575) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:27-15:17:20:(1704575) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:07:27-15:17:21:(1704576) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:27-15:17:21:(1704576) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:07:27-15:17:21:(1704573) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:07:27-15:17:21:(1704573) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:07:27-15:17:21:(1704573) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:07:27-15:17:21:(1704573) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 8.12 secs
+2025:08:03-15:10:59:(2461391) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:03-15:10:59:(2461391) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:08:03-15:10:59:(2461391) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:08:03-15:10:59:(2461391) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:03-15:10:59:(2461393) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:03-15:10:59:(2461393) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:03-15:10:59:(2461392) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:03-15:10:59:(2461392) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:03-15:10:59:(2461394) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:03-15:10:59:(2461394) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 8.54 secs
 Memory stats after model init:
 	XPU peak memory active: 4.75 GiB
 	XPU peak memory alloc: 4.75 GiB
 	XPU peak memory reserved: 4.85 GiB
 FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
-Instantiating reference model and loading checkpoint took 7.04 secs
+Instantiating reference model and loading checkpoint took 6.79 secs
 Memory stats after model init:
 	XPU peak memory active: 8.55 GiB
 	XPU peak memory alloc: 8.55 GiB
@@ -292,19 +292,18 @@ Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:35<05:21, 35.71s/it]1|1|Loss: 0.6939234733581543:  10%|█         | 1/10 [00:35<05:21, 35.71s/it]iteration:  1 tokens:  65536 time:  35.70819289900828 tokens_per_second:  1835.32
-1|1|Loss: 0.6939234733581543:  20%|██        | 2/10 [00:53<03:21, 25.18s/it]1|2|Loss: 0.6956382989883423:  20%|██        | 2/10 [00:53<03:21, 25.18s/it]iteration:  2 tokens:  65536 time:  17.796879388042726 tokens_per_second:  3682.44
-1|2|Loss: 0.6956382989883423:  30%|███       | 3/10 [01:12<02:34, 22.14s/it]1|3|Loss: 0.6918164491653442:  30%|███       | 3/10 [01:12<02:34, 22.14s/it]iteration:  3 tokens:  65496 time:  18.50464513001498 tokens_per_second:  3539.44
-1|3|Loss: 0.6918164491653442:  40%|████      | 4/10 [01:29<02:02, 20.44s/it]1|4|Loss: 0.6926964521408081:  40%|████      | 4/10 [01:29<02:02, 20.44s/it]iteration:  4 tokens:  65536 time:  17.82010067300871 tokens_per_second:  3677.64
-1|4|Loss: 0.6926964521408081:  50%|█████     | 5/10 [01:47<01:37, 19.49s/it]1|5|Loss: 0.6883882880210876:  50%|█████     | 5/10 [01:47<01:37, 19.49s/it]iteration:  5 tokens:  65536 time:  17.785324753029272 tokens_per_second:  3684.84
-1|5|Loss: 0.6883882880210876:  60%|██████    | 6/10 [02:05<01:15, 18.93s/it]1|6|Loss: 0.6886996626853943:  60%|██████    | 6/10 [02:05<01:15, 18.93s/it]iteration:  6 tokens:  65536 time:  17.848267544992268 tokens_per_second:  3671.84
-1|6|Loss: 0.6886996626853943:  70%|███████   | 7/10 [02:23<00:55, 18.57s/it]1|7|Loss: 0.6890478134155273:  70%|███████   | 7/10 [02:23<00:55, 18.57s/it]iteration:  7 tokens:  65536 time:  17.810038514086045 tokens_per_second:  3679.72
-1|7|Loss: 0.6890478134155273:  80%|████████  | 8/10 [02:41<00:36, 18.32s/it]1|8|Loss: 0.6745381951332092:  80%|████████  | 8/10 [02:41<00:36, 18.32s/it]iteration:  8 tokens:  65536 time:  17.781585372053087 tokens_per_second:  3685.61
-1|8|Loss: 0.6745381951332092:  90%|█████████ | 9/10 [02:59<00:18, 18.32s/it]1|9|Loss: 0.6805105209350586:  90%|█████████ | 9/10 [02:59<00:18, 18.32s/it]iteration:  9 tokens:  65304 time:  18.287363059003837 tokens_per_second:  3570.99
-1|9|Loss: 0.6805105209350586: 100%|██████████| 10/10 [03:17<00:00, 18.16s/it]1|10|Loss: 0.6724166870117188: 100%|██████████| 10/10 [03:17<00:00, 18.16s/it]iteration:  10 tokens:  65536 time:  17.7827612409601 tokens_per_second:  3685.37
-avg tokens_per_second:  3648.63
-1|10|Loss: 0.6724166870117188: 100%|██████████| 10/10 [03:17<00:00, 19.73s/it]
-[rank0]:[W727 15:20:55.907882645 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:36<05:31, 36.85s/it]1|1|Loss: 0.6927428245544434:  10%|█         | 1/10 [00:36<05:31, 36.85s/it]iteration:  1 tokens:  65536 time:  36.84734719293192 tokens_per_second:  1778.58
+1|1|Loss: 0.6927428245544434:  20%|██        | 2/10 [00:54<03:25, 25.65s/it]1|2|Loss: 0.6948547959327698:  20%|██        | 2/10 [00:54<03:25, 25.65s/it]iteration:  2 tokens:  65536 time:  17.80720995203592 tokens_per_second:  3680.31
+1|2|Loss: 0.6948547959327698:  30%|███       | 3/10 [01:12<02:35, 22.28s/it]1|3|Loss: 0.6929548978805542:  30%|███       | 3/10 [01:12<02:35, 22.28s/it]iteration:  3 tokens:  65496 time:  18.246117372997105 tokens_per_second:  3589.59
+1|3|Loss: 0.6929548978805542:  40%|████      | 4/10 [01:30<02:03, 20.52s/it]1|4|Loss: 0.6924029588699341:  40%|████      | 4/10 [01:30<02:03, 20.52s/it]iteration:  4 tokens:  65536 time:  17.81070670695044 tokens_per_second:  3679.58
+1|4|Loss: 0.6924029588699341:  50%|█████     | 5/10 [01:48<01:37, 19.55s/it]1|5|Loss: 0.6898798942565918:  50%|█████     | 5/10 [01:48<01:37, 19.55s/it]iteration:  5 tokens:  65536 time:  17.806745677953586 tokens_per_second:  3680.4
+1|5|Loss: 0.6898798942565918:  60%|██████    | 6/10 [02:06<01:15, 18.98s/it]1|6|Loss: 0.6884745955467224:  60%|██████    | 6/10 [02:06<01:15, 18.98s/it]iteration:  6 tokens:  65536 time:  17.865625416161492 tokens_per_second:  3668.27
+1|6|Loss: 0.6884745955467224:  70%|███████   | 7/10 [02:24<00:55, 18.60s/it]1|7|Loss: 0.6873471736907959:  70%|███████   | 7/10 [02:24<00:55, 18.60s/it]iteration:  7 tokens:  65536 time:  17.817715278826654 tokens_per_second:  3678.14
+1|7|Loss: 0.6873471736907959:  80%|████████  | 8/10 [02:42<00:36, 18.34s/it]1|8|Loss: 0.6742876768112183:  80%|████████  | 8/10 [02:42<00:36, 18.34s/it]iteration:  8 tokens:  65536 time:  17.767701730830595 tokens_per_second:  3688.49
+1|8|Loss: 0.6742876768112183:  90%|█████████ | 9/10 [03:00<00:18, 18.33s/it]1|9|Loss: 0.6796866655349731:  90%|█████████ | 9/10 [03:00<00:18, 18.33s/it]iteration:  9 tokens:  65304 time:  18.31292483001016 tokens_per_second:  3566.01
+1|9|Loss: 0.6796866655349731: 100%|██████████| 10/10 [03:18<00:00, 18.18s/it]1|10|Loss: 0.6729483008384705: 100%|██████████| 10/10 [03:18<00:00, 18.18s/it]iteration:  10 tokens:  65536 time:  17.829612342873588 tokens_per_second:  3675.68
+avg tokens_per_second:  3652.77
+1|10|Loss: 0.6729483008384705: 100%|██████████| 10/10 [03:18<00:00, 19.82s/it]
 [rank3]: Traceback (most recent call last):
 [rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
 [rank3]:     sys.exit(recipe_main())
@@ -315,6 +314,7 @@ avg tokens_per_second:  3648.63
 [rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
 [rank3]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
 [rank3]: ZeroDivisionError: division by zero
+[rank0]:[W803 15:14:34.651352910 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
 [rank1]: Traceback (most recent call last):
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
 [rank1]:     sys.exit(recipe_main())
@@ -335,13 +335,13 @@ avg tokens_per_second:  3648.63
 [rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
 [rank2]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
 [rank2]: ZeroDivisionError: division by zero
-W0727 15:20:57.129000 1704499 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1704573 closing signal SIGTERM
-W0727 15:20:57.132000 1704499 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1704575 closing signal SIGTERM
-W0727 15:20:57.132000 1704499 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1704576 closing signal SIGTERM
-E0727 15:20:57.347000 1704499 site-packages/torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 1 (pid: 1704574) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+W0803 15:14:35.554000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461391 closing signal SIGTERM
+W0803 15:14:35.555000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461393 closing signal SIGTERM
+W0803 15:14:35.556000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461394 closing signal SIGTERM
+E0803 15:14:35.771000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 1 (pid: 2461392) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 8, in <module>
+  File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
     sys.exit(main())
   File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/tune.py", line 52, in main
     parser.run(args)
@@ -353,11 +353,11 @@ Traceback (most recent call last):
     return f(*args, **kwargs)
   File "/home/jenkins/xiangdong/torchtune/torchtune/_cli/run.py", line 101, in _run_distributed
     run(args)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 927, in run
     elastic_launch(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 151, in __call__
     return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 277, in launch_agent
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 288, in launch_agent
     raise ChildFailedError(
 torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
 ============================================================
@@ -368,10 +368,10 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-07-27_15:20:57
+  time      : 2025-08-03_15:14:35
   host      : dut7358
   rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 1704574)
+  exitcode  : 1 (pid: 2461392)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
