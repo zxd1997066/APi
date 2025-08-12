@@ -1,7 +1,7 @@
-W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] 
-W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] *****************************************
-W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0803 15:10:53.029000 2461317 site-packages/torch/distributed/run.py:803] *****************************************
+W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] 
+W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] *****************************************
+W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullDPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -263,25 +263,25 @@ Hint: enable_activation_checkpointing is True, but enable_activation_offloading 
 [Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1754233856.txt
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1754827533.txt
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:08:03-15:10:59:(2461391) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:03-15:10:59:(2461391) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:08:03-15:10:59:(2461391) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:08:03-15:10:59:(2461391) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:03-15:10:59:(2461393) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:03-15:10:59:(2461393) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:03-15:10:59:(2461392) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:03-15:10:59:(2461392) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:03-15:10:59:(2461394) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:03-15:10:59:(2461394) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 8.54 secs
+2025:08:10-12:05:36:(3165897) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:10-12:05:36:(3165897) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:10-12:05:36:(3165899) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:10-12:05:36:(3165899) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:10-12:05:36:(3165896) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:10-12:05:36:(3165896) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:08:10-12:05:36:(3165896) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:08:10-12:05:36:(3165896) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:10-12:05:36:(3165898) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:10-12:05:36:(3165898) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 8.08 secs
 Memory stats after model init:
 	XPU peak memory active: 4.75 GiB
 	XPU peak memory alloc: 4.75 GiB
 	XPU peak memory reserved: 4.85 GiB
 FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
-Instantiating reference model and loading checkpoint took 6.79 secs
+Instantiating reference model and loading checkpoint took 6.60 secs
 Memory stats after model init:
 	XPU peak memory active: 8.55 GiB
 	XPU peak memory alloc: 8.55 GiB
@@ -292,39 +292,16 @@ Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:36<05:31, 36.85s/it]1|1|Loss: 0.6927428245544434:  10%|█         | 1/10 [00:36<05:31, 36.85s/it]iteration:  1 tokens:  65536 time:  36.84734719293192 tokens_per_second:  1778.58
-1|1|Loss: 0.6927428245544434:  20%|██        | 2/10 [00:54<03:25, 25.65s/it]1|2|Loss: 0.6948547959327698:  20%|██        | 2/10 [00:54<03:25, 25.65s/it]iteration:  2 tokens:  65536 time:  17.80720995203592 tokens_per_second:  3680.31
-1|2|Loss: 0.6948547959327698:  30%|███       | 3/10 [01:12<02:35, 22.28s/it]1|3|Loss: 0.6929548978805542:  30%|███       | 3/10 [01:12<02:35, 22.28s/it]iteration:  3 tokens:  65496 time:  18.246117372997105 tokens_per_second:  3589.59
-1|3|Loss: 0.6929548978805542:  40%|████      | 4/10 [01:30<02:03, 20.52s/it]1|4|Loss: 0.6924029588699341:  40%|████      | 4/10 [01:30<02:03, 20.52s/it]iteration:  4 tokens:  65536 time:  17.81070670695044 tokens_per_second:  3679.58
-1|4|Loss: 0.6924029588699341:  50%|█████     | 5/10 [01:48<01:37, 19.55s/it]1|5|Loss: 0.6898798942565918:  50%|█████     | 5/10 [01:48<01:37, 19.55s/it]iteration:  5 tokens:  65536 time:  17.806745677953586 tokens_per_second:  3680.4
-1|5|Loss: 0.6898798942565918:  60%|██████    | 6/10 [02:06<01:15, 18.98s/it]1|6|Loss: 0.6884745955467224:  60%|██████    | 6/10 [02:06<01:15, 18.98s/it]iteration:  6 tokens:  65536 time:  17.865625416161492 tokens_per_second:  3668.27
-1|6|Loss: 0.6884745955467224:  70%|███████   | 7/10 [02:24<00:55, 18.60s/it]1|7|Loss: 0.6873471736907959:  70%|███████   | 7/10 [02:24<00:55, 18.60s/it]iteration:  7 tokens:  65536 time:  17.817715278826654 tokens_per_second:  3678.14
-1|7|Loss: 0.6873471736907959:  80%|████████  | 8/10 [02:42<00:36, 18.34s/it]1|8|Loss: 0.6742876768112183:  80%|████████  | 8/10 [02:42<00:36, 18.34s/it]iteration:  8 tokens:  65536 time:  17.767701730830595 tokens_per_second:  3688.49
-1|8|Loss: 0.6742876768112183:  90%|█████████ | 9/10 [03:00<00:18, 18.33s/it]1|9|Loss: 0.6796866655349731:  90%|█████████ | 9/10 [03:00<00:18, 18.33s/it]iteration:  9 tokens:  65304 time:  18.31292483001016 tokens_per_second:  3566.01
-1|9|Loss: 0.6796866655349731: 100%|██████████| 10/10 [03:18<00:00, 18.18s/it]1|10|Loss: 0.6729483008384705: 100%|██████████| 10/10 [03:18<00:00, 18.18s/it]iteration:  10 tokens:  65536 time:  17.829612342873588 tokens_per_second:  3675.68
-avg tokens_per_second:  3652.77
-1|10|Loss: 0.6729483008384705: 100%|██████████| 10/10 [03:18<00:00, 19.82s/it]
-[rank3]: Traceback (most recent call last):
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
-[rank3]:     sys.exit(recipe_main())
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank3]:     sys.exit(recipe_main(conf))
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
-[rank3]:     recipe.train()
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
-[rank3]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
-[rank3]: ZeroDivisionError: division by zero
-[rank0]:[W803 15:14:34.651352910 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
-[rank1]:     sys.exit(recipe_main())
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank1]:     sys.exit(recipe_main(conf))
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
-[rank1]:     recipe.train()
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
-[rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
-[rank1]: ZeroDivisionError: division by zero
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:36<05:25, 36.14s/it]1|1|Loss: 0.6927170157432556:  10%|█         | 1/10 [00:36<05:25, 36.14s/it]iteration:  1 tokens:  65536 time:  36.146086242981255 tokens_per_second:  1813.09
+1|1|Loss: 0.6927170157432556:  20%|██        | 2/10 [00:53<03:22, 25.36s/it]1|2|Loss: 0.6941081881523132:  20%|██        | 2/10 [00:53<03:22, 25.36s/it]iteration:  2 tokens:  65536 time:  17.797815598081797 tokens_per_second:  3682.25
+1|2|Loss: 0.6941081881523132:  30%|███       | 3/10 [01:12<02:34, 22.11s/it]1|3|Loss: 0.693568229675293:  30%|███       | 3/10 [01:12<02:34, 22.11s/it] iteration:  3 tokens:  65496 time:  18.22071387199685 tokens_per_second:  3594.59
+1|3|Loss: 0.693568229675293:  40%|████      | 4/10 [01:29<02:02, 20.41s/it]1|4|Loss: 0.6923317909240723:  40%|████      | 4/10 [01:29<02:02, 20.41s/it]iteration:  4 tokens:  65536 time:  17.783574000000954 tokens_per_second:  3685.2
+1|4|Loss: 0.6923317909240723:  50%|█████     | 5/10 [01:47<01:37, 19.47s/it]1|5|Loss: 0.6900782585144043:  50%|█████     | 5/10 [01:47<01:37, 19.47s/it]iteration:  5 tokens:  65536 time:  17.79213879816234 tokens_per_second:  3683.42
+1|5|Loss: 0.6900782585144043:  60%|██████    | 6/10 [02:05<01:15, 18.92s/it]1|6|Loss: 0.68992018699646:  60%|██████    | 6/10 [02:05<01:15, 18.92s/it]  iteration:  6 tokens:  65536 time:  17.8386657780502 tokens_per_second:  3673.82
+1|6|Loss: 0.68992018699646:  70%|███████   | 7/10 [02:23<00:55, 18.56s/it]1|7|Loss: 0.6885507106781006:  70%|███████   | 7/10 [02:23<00:55, 18.56s/it]iteration:  7 tokens:  65536 time:  17.798998982878402 tokens_per_second:  3682.0
+1|7|Loss: 0.6885507106781006:  80%|████████  | 8/10 [02:41<00:36, 18.31s/it]1|8|Loss: 0.6745709180831909:  80%|████████  | 8/10 [02:41<00:36, 18.31s/it]iteration:  8 tokens:  65536 time:  17.76719805994071 tokens_per_second:  3688.6
+1|8|Loss: 0.6745709180831909:  90%|█████████ | 9/10 [02:59<00:18, 18.30s/it]1|9|Loss: 0.6803498268127441:  90%|█████████ | 9/10 [02:59<00:18, 18.30s/it]iteration:  9 tokens:  65304 time:  18.259489614982158 tokens_per_second:  3576.44
+1|9|Loss: 0.6803498268127441: 100%|██████████| 10/10 [03:17<00:00, 18.15s/it]1|10|Loss: 0.673865795135498: 100%|██████████| 10/10 [03:17<00:00, 18.15s/it]iteration:  10 tokens:  65536 time:  17.79645949997939 tokens_per_second:  3682.53
 [rank2]: Traceback (most recent call last):
 [rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
 [rank2]:     sys.exit(recipe_main())
@@ -335,10 +312,31 @@ avg tokens_per_second:  3652.77
 [rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
 [rank2]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
 [rank2]: ZeroDivisionError: division by zero
-W0803 15:14:35.554000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461391 closing signal SIGTERM
-W0803 15:14:35.555000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461393 closing signal SIGTERM
-W0803 15:14:35.556000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2461394 closing signal SIGTERM
-E0803 15:14:35.771000 2461317 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 1 (pid: 2461392) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
+[rank3]:     sys.exit(recipe_main())
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank3]:     sys.exit(recipe_main(conf))
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
+[rank3]:     recipe.train()
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
+[rank3]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
+[rank3]: ZeroDivisionError: division by zero
+avg tokens_per_second:  3657.87
+1|10|Loss: 0.673865795135498: 100%|██████████| 10/10 [03:17<00:00, 19.74s/it]
+[rank0]:[W810 12:09:10.548359597 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
+[rank1]:     sys.exit(recipe_main())
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank1]:     sys.exit(recipe_main(conf))
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
+[rank1]:     recipe.train()
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
+[rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
+[rank1]: ZeroDivisionError: division by zero
+W0810 12:09:11.619000 3165822 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 3165896 closing signal SIGTERM
+E0810 12:09:11.836000 3165822 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 1 (pid: 3165897) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -364,14 +362,27 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 /home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py FAILED
 ------------------------------------------------------------
 Failures:
-  <NO_OTHER_FAILURES>
+[1]:
+  time      : 2025-08-10_12:09:11
+  host      : dut7358
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 3165898)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2025-08-10_12:09:11
+  host      : dut7358
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 3165899)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-08-03_15:14:35
+  time      : 2025-08-10_12:09:11
   host      : dut7358
   rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 2461392)
+  exitcode  : 1 (pid: 3165897)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

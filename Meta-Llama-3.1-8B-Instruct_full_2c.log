@@ -1,7 +1,7 @@
-W0803 15:15:49.174000 2462902 site-packages/torch/distributed/run.py:803] 
-W0803 15:15:49.174000 2462902 site-packages/torch/distributed/run.py:803] *****************************************
-W0803 15:15:49.174000 2462902 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0803 15:15:49.174000 2462902 site-packages/torch/distributed/run.py:803] *****************************************
+W0810 12:10:28.725000 3167539 site-packages/torch/distributed/run.py:803] 
+W0810 12:10:28.725000 3167539 site-packages/torch/distributed/run.py:803] *****************************************
+W0810 12:10:28.725000 3167539 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0810 12:10:28.725000 3167539 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullFinetuneRecipeDistributed with resolved config:
 
 batch_size: 2
@@ -140,106 +140,29 @@ tokenizer:
   max_seq_len: 512
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
-[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
 [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full/logs/log_1754234152.txt
+Writing logs to /tmp/torchtune/llama3_1_8B/full/logs/log_1754827832.txt
 Distributed training is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:08:03-15:15:53:(2462977) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:03-15:15:53:(2462977) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:03-15:15:54:(2462976) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:03-15:15:54:(2462976) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:08:03-15:15:54:(2462976) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:08:03-15:15:54:(2462976) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 6.80 secs
+2025:08:10-12:10:33:(3167614) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:10-12:10:33:(3167614) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:08:10-12:10:33:(3167614) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:08:10-12:10:33:(3167614) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:10-12:10:33:(3167615) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:10-12:10:33:(3167615) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 6.50 secs
 Memory stats after model init:
 	XPU peak memory active: 8.47 GiB
 	XPU peak memory alloc: 8.47 GiB
 	XPU peak memory reserved: 8.62 GiB
 In-backward optimizers are set up.
 Loss is initialized.
-Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 210/49172 [00:00<00:23, 2095.06it/s]Packing dataset:   1%|          | 515/49172 [00:00<00:18, 2654.10it/s]Packing dataset:   2%|▏         | 811/49172 [00:00<00:17, 2792.64it/s]Packing dataset:   2%|▏         | 1130/49172 [00:00<00:16, 2945.64it/s]Packing dataset:   3%|▎         | 1446/49172 [00:00<00:15, 3021.60it/s]Packing dataset:   4%|▎         | 1749/49172 [00:00<00:16, 2838.29it/s]Packing dataset:   4%|▍         | 2050/49172 [00:00<00:16, 2890.75it/s]Packing dataset:   5%|▍         | 2385/49172 [00:00<00:15, 3030.47it/s]Packing dataset:   6%|▌         | 2714/49172 [00:00<00:14, 3109.10it/s]Packing dataset:   6%|▌         | 3038/49172 [00:01<00:14, 3146.18it/s]Packing dataset:   7%|▋         | 3354/49172 [00:01<00:14, 3114.67it/s]Packing dataset:   7%|▋         | 3667/49172 [00:01<00:14, 3100.60it/s]Packing dataset:   8%|▊         | 3983/49172 [00:01<00:14, 3115.88it/s]Packing dataset:   9%|▊         | 4299/49172 [00:01<00:14, 3124.21it/s]Packing dataset:   9%|▉         | 4612/49172 [00:01<00:14, 3090.12it/s]Packing dataset:  10%|█         | 4922/49172 [00:01<00:14, 3086.84it/s]Packing dataset:  11%|█         | 5231/49172 [00:01<00:14, 3063.97it/s]Packing dataset:  11%|█▏        | 5556/49172 [00:01<00:13, 3118.92it/s]Packing dataset:  12%|█▏        | 5875/49172 [00:01<00:13, 3139.00it/s]Packing dataset:  13%|█▎        | 6190/49172 [00:02<00:13, 3129.55it/s]Packing dataset:  13%|█▎        | 6504/49172 [00:02<00:13, 3102.75it/s]Packing dataset:  14%|█▍        | 6815/49172 [00:02<00:13, 3054.42it/s]Packing dataset:  14%|█▍        | 7125/49172 [00:02<00:13, 3065.66it/s]Packing dataset:  15%|█▌        | 7432/49172 [00:02<00:13, 3037.98it/s]Packing dataset:  16%|█▌        | 7755/49172 [00:02<00:13, 3094.16it/s]Packing dataset:  16%|█▋        | 8065/49172 [00:02<00:13, 3063.28it/s]Packing dataset:  17%|█▋        | 8372/49172 [00:02<00:13, 3012.53it/s]Packing dataset:  18%|█▊        | 8688/49172 [00:02<00:13, 3055.71it/s]Packing dataset:  18%|█▊        | 9020/49172 [00:02<00:12, 3131.61it/s]Packing dataset:  19%|█▉        | 9334/49172 [00:03<00:12, 3078.91it/s]Packing dataset:  20%|█▉        | 9643/49172 [00:03<00:13, 2990.59it/s]Packing dataset:  20%|██        | 9943/49172 [00:03<00:13, 2986.95it/s]Packing dataset:  21%|██        | 10261/49172 [00:03<00:12, 3040.58it/s]Packing dataset:  22%|██▏       | 10578/49172 [00:03<00:12, 3075.25it/s]Packing dataset:  22%|██▏       | 10886/49172 [00:03<00:12, 3052.99it/s]Packing dataset:  23%|██▎       | 11192/49172 [00:03<00:12, 3039.89it/s]Packing dataset:  23%|██▎       | 11497/49172 [00:03<00:12, 3031.75it/s]Packing dataset:  24%|██▍       | 11810/49172 [00:03<00:12, 3058.09it/s]Packing dataset:  25%|██▍       | 12116/49172 [00:03<00:12, 3019.87it/s]Packing dataset:  25%|██▌       | 12420/49172 [00:04<00:12, 3024.90it/s]Packing dataset:  26%|██▌       | 12724/49172 [00:04<00:12, 3027.64it/s]Packing dataset:  26%|██▋       | 13027/49172 [00:04<00:12, 2993.28it/s]Packing dataset:  27%|██▋       | 13330/49172 [00:04<00:11, 3001.22it/s]Packing dataset:  28%|██▊       | 13631/49172 [00:04<00:11, 2977.15it/s]Packing dataset:  28%|██▊       | 13931/49172 [00:04<00:11, 2983.88it/s]Packing dataset:  29%|██▉       | 14230/49172 [00:04<00:11, 2972.51it/s]Packing dataset:  30%|██▉       | 14547/49172 [00:04<00:11, 3030.30it/s]Packing dataset:  30%|███       | 14851/49172 [00:04<00:11, 2997.15it/s]Packing dataset:  31%|███       | 15158/49172 [00:04<00:11, 3017.98it/s]Packing dataset:  31%|███▏      | 15464/49172 [00:05<00:11, 3025.70it/s]Packing dataset:  32%|███▏      | 15777/49172 [00:05<00:10, 3053.84it/s]Packing dataset:  33%|███▎      | 16093/49172 [00:05<00:10, 3081.74it/s]Packing dataset:  33%|███▎      | 16402/49172 [00:05<00:10, 3024.00it/s]Packing dataset:  34%|███▍      | 16705/49172 [00:05<00:10, 2952.42it/s]Packing dataset:  35%|███▍      | 17001/49172 [00:05<00:10, 2931.43it/s]Packing dataset:  35%|███▌      | 17297/49172 [00:05<00:10, 2936.00it/s]Packing dataset:  36%|███▌      | 17592/49172 [00:05<00:10, 2938.39it/s]Packing dataset:  36%|███▋      | 17886/49172 [00:05<00:10, 2917.37it/s]Packing dataset:  37%|███▋      | 18189/49172 [00:06<00:10, 2949.24it/s]Packing dataset:  38%|███▊      | 18485/49172 [00:06<00:10, 2929.96it/s]Packing dataset:  38%|███▊      | 18799/49172 [00:06<00:10, 2991.40it/s]Packing dataset:  39%|███▉      | 19099/49172 [00:06<00:10, 2985.84it/s]Packing dataset:  39%|███▉      | 19400/49172 [00:06<00:09, 2991.51it/s]Packing dataset:  40%|████      | 19700/49172 [00:06<00:09, 2953.79it/s]Packing dataset:  41%|████      | 19996/49172 [00:06<00:09, 2948.76it/s]Packing dataset:  41%|████▏     | 20301/49172 [00:06<00:09, 2973.88it/s]Packing dataset:  42%|████▏     | 20599/49172 [00:06<00:09, 2937.16it/s]Packing dataset:  43%|████▎     | 20907/49172 [00:06<00:09, 2976.96it/s]Packing dataset:  43%|████▎     | 21231/49172 [00:07<00:09, 3050.93it/s]Packing dataset:  44%|████▍     | 21537/49172 [00:07<00:09, 3012.83it/s]Packing dataset:  44%|████▍     | 21847/49172 [00:07<00:09, 3034.68it/s]Packing dataset:  45%|████▌     | 22151/49172 [00:07<00:09, 2949.78it/s]Packing dataset:  46%|████▌     | 22461/49172 [00:07<00:08, 2992.44it/s]Packing dataset:  46%|████▋     | 22761/49172 [00:07<00:09, 2923.62it/s]Packing dataset:  47%|████▋     | 23062/49172 [00:07<00:08, 2946.56it/s]Packing dataset:  48%|████▊     | 23367/49172 [00:07<00:08, 2975.94it/s]Packing dataset:  48%|████▊     | 23678/49172 [00:07<00:08, 3014.23it/s]Packing dataset:  49%|████▉     | 23980/49172 [00:07<00:08, 3002.08it/s]Packing dataset:  49%|████▉     | 24281/49172 [00:08<00:08, 2965.59it/s]Packing dataset:  50%|█████     | 24601/49172 [00:08<00:08, 3033.71it/s]Packing dataset:  51%|█████     | 24905/49172 [00:08<00:08, 2979.28it/s]Packing dataset:  51%|█████▏    | 25204/49172 [00:08<00:08, 2952.16it/s]Packing dataset:  52%|█████▏    | 25519/49172 [00:08<00:07, 3009.63it/s]Packing dataset:  53%|█████▎    | 25821/49172 [00:08<00:07, 2925.29it/s]Packing dataset:  53%|█████▎    | 26115/49172 [00:08<00:12, 1780.11it/s]Packing dataset:  54%|█████▎    | 26409/49172 [00:09<00:11, 2013.39it/s]Packing dataset:  54%|█████▍    | 26687/49172 [00:09<00:10, 2184.32it/s]Packing dataset:  55%|█████▍    | 26976/49172 [00:09<00:09, 2354.12it/s]Packing dataset:  55%|█████▌    | 27273/49172 [00:09<00:08, 2510.67it/s]Packing dataset:  56%|█████▌    | 27564/49172 [00:09<00:08, 2615.62it/s]Packing dataset:  57%|█████▋    | 27847/49172 [00:09<00:07, 2672.15it/s]Packing dataset:  57%|█████▋    | 28128/49172 [00:09<00:07, 2705.84it/s]Packing dataset:  58%|█████▊    | 28409/49172 [00:09<00:07, 2730.03it/s]Packing dataset:  58%|█████▊    | 28695/49172 [00:09<00:07, 2766.85it/s]Packing dataset:  59%|█████▉    | 28981/49172 [00:09<00:07, 2792.89it/s]Packing dataset:  60%|█████▉    | 29269/49172 [00:10<00:07, 2817.18it/s]Packing dataset:  60%|██████    | 29563/49172 [00:10<00:06, 2853.47it/s]Packing dataset:  61%|██████    | 29854/49172 [00:10<00:06, 2866.27it/s]Packing dataset:  61%|██████▏   | 30155/49172 [00:10<00:06, 2906.64it/s]Packing dataset:  62%|██████▏   | 30447/49172 [00:10<00:06, 2886.06it/s]Packing dataset:  63%|██████▎   | 30742/49172 [00:10<00:06, 2902.62it/s]Packing dataset:  63%|██████▎   | 31033/49172 [00:10<00:06, 2885.90it/s]Packing dataset:  64%|██████▎   | 31325/49172 [00:10<00:06, 2894.22it/s]Packing dataset:  64%|██████▍   | 31641/49172 [00:10<00:05, 2972.98it/s]Packing dataset:  65%|██████▍   | 31947/49172 [00:10<00:05, 2996.12it/s]Packing dataset:  66%|██████▌   | 32247/49172 [00:11<00:05, 2946.78it/s]Packing dataset:  66%|██████▌   | 32548/49172 [00:11<00:05, 2961.82it/s]Packing dataset:  67%|██████▋   | 32857/49172 [00:11<00:05, 2994.80it/s]Packing dataset:  67%|██████▋   | 33157/49172 [00:11<00:05, 2983.41it/s]Packing dataset:  68%|██████▊   | 33472/49172 [00:11<00:05, 3031.26it/s]Packing dataset:  69%|██████▊   | 33776/49172 [00:11<00:05, 3002.50it/s]Packing dataset:  69%|██████▉   | 34078/49172 [00:11<00:05, 3005.48it/s]Packing dataset:  70%|██████▉   | 34379/49172 [00:11<00:04, 2978.23it/s]Packing dataset:  71%|███████   | 34685/49172 [00:11<00:04, 2999.12it/s]Packing dataset:  71%|███████   | 34986/49172 [00:11<00:04, 2984.01it/s]Packing dataset:  72%|███████▏  | 35295/49172 [00:12<00:04, 3015.11it/s]Packing dataset:  72%|███████▏  | 35597/49172 [00:12<00:04, 3003.11it/s]Packing dataset:  73%|███████▎  | 35898/49172 [00:12<00:04, 2934.34it/s]Packing dataset:  74%|███████▎  | 36192/49172 [00:12<00:04, 2923.26it/s]Packing dataset:  74%|███████▍  | 36498/49172 [00:12<00:04, 2962.91it/s]Packing dataset:  75%|███████▍  | 36803/49172 [00:12<00:04, 2987.78it/s]Packing dataset:  75%|███████▌  | 37102/49172 [00:12<00:04, 2988.32it/s]Packing dataset:  76%|███████▌  | 37401/49172 [00:12<00:03, 2981.36it/s]Packing dataset:  77%|███████▋  | 37706/49172 [00:12<00:03, 3000.73it/s]Packing dataset:  77%|███████▋  | 38009/49172 [00:12<00:03, 3005.66it/s]Packing dataset:  78%|███████▊  | 38313/49172 [00:13<00:03, 3010.63it/s]Packing dataset:  79%|███████▊  | 38615/49172 [00:13<00:03, 2951.09it/s]Packing dataset:  79%|███████▉  | 38915/49172 [00:13<00:03, 2964.51it/s]Packing dataset:  80%|███████▉  | 39223/49172 [00:13<00:03, 2995.95it/s]Packing dataset:  80%|████████  | 39523/49172 [00:13<00:03, 2971.61it/s]Packing dataset:  81%|████████  | 39827/49172 [00:13<00:03, 2989.80it/s]Packing dataset:  82%|████████▏ | 40127/49172 [00:13<00:03, 2969.01it/s]Packing dataset:  82%|████████▏ | 40436/49172 [00:13<00:02, 3004.02it/s]Packing dataset:  83%|████████▎ | 40739/49172 [00:13<00:02, 3010.12it/s]Packing dataset:  83%|████████▎ | 41042/49172 [00:13<00:02, 3015.24it/s]Packing dataset:  84%|████████▍ | 41344/49172 [00:14<00:02, 2999.66it/s]Packing dataset:  85%|████████▍ | 41645/49172 [00:14<00:02, 2962.17it/s]Packing dataset:  85%|████████▌ | 41942/49172 [00:14<00:02, 2937.08it/s]Packing dataset:  86%|████████▌ | 42236/49172 [00:14<00:02, 2927.87it/s]Packing dataset:  86%|████████▋ | 42529/49172 [00:14<00:02, 2927.22it/s]Packing dataset:  87%|████████▋ | 42822/49172 [00:14<00:02, 2881.26it/s]Packing dataset:  88%|████████▊ | 43111/49172 [00:14<00:02, 2856.84it/s]Packing dataset:  88%|████████▊ | 43406/49172 [00:14<00:02, 2881.36it/s]Packing dataset:  89%|████████▉ | 43701/49172 [00:14<00:01, 2900.65it/s]Packing dataset:  89%|████████▉ | 43992/49172 [00:14<00:01, 2903.31it/s]Packing dataset:  90%|█████████ | 44293/49172 [00:15<00:01, 2934.36it/s]Packing dataset:  91%|█████████ | 44587/49172 [00:15<00:01, 2934.71it/s]Packing dataset:  91%|█████████▏| 44888/49172 [00:15<00:01, 2951.25it/s]Packing dataset:  92%|█████████▏| 45187/49172 [00:15<00:01, 2962.76it/s]Packing dataset:  93%|█████████▎| 45509/49172 [00:15<00:01, 3037.68it/s]Packing dataset:  93%|█████████▎| 45813/49172 [00:15<00:01, 2954.62it/s]Packing dataset:  94%|█████████▍| 46109/49172 [00:15<00:01, 2918.64it/s]Packing dataset:  94%|█████████▍| 46407/49172 [00:15<00:00, 2931.87it/s]Packing dataset:  95%|█████████▍| 46701/49172 [00:15<00:00, 2918.21it/s]Packing dataset:  96%|█████████▌| 46995/49172 [00:16<00:00, 2923.85it/s]Packing dataset:  96%|█████████▌| 47288/49172 [00:16<00:00, 2903.52it/s]Packing dataset:  97%|█████████▋| 47590/49172 [00:16<00:00, 2934.26it/s]Packing dataset:  97%|█████████▋| 47884/49172 [00:16<00:00, 2913.25it/s]Packing dataset:  98%|█████████▊| 48176/49172 [00:16<00:00, 2895.29it/s]Packing dataset:  99%|█████████▊| 48473/49172 [00:16<00:00, 2914.92it/s]Packing dataset:  99%|█████████▉| 48779/49172 [00:16<00:00, 2954.03it/s]Packing dataset: 100%|█████████▉| 49075/49172 [00:16<00:00, 2947.66it/s]Packing dataset: 100%|██████████| 49172/49172 [00:16<00:00, 2937.38it/s]
+Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 204/49172 [00:00<00:24, 2037.84it/s]Packing dataset:   1%|          | 525/49172 [00:00<00:17, 2725.60it/s]Packing dataset:   2%|▏         | 834/49172 [00:00<00:16, 2888.23it/s]Packing dataset:   2%|▏         | 1167/49172 [00:00<00:15, 3060.64it/s]Packing dataset:   3%|▎         | 1474/49172 [00:00<00:15, 2996.36it/s]Packing dataset:   4%|▎         | 1774/49172 [00:00<00:16, 2953.42it/s]Packing dataset:   4%|▍         | 2086/49172 [00:00<00:15, 3001.63it/s]Packing dataset:   5%|▍         | 2438/49172 [00:00<00:14, 3163.50it/s]Packing dataset:   6%|▌         | 2789/49172 [00:00<00:14, 3269.28it/s]Packing dataset:   6%|▋         | 3117/49172 [00:01<00:14, 3267.97it/s]Packing dataset:   7%|▋         | 3445/49172 [00:01<00:14, 3245.38it/s]Packing dataset:   8%|▊         | 3770/49172 [00:01<00:14, 3241.75it/s]Packing dataset:   8%|▊         | 4095/49172 [00:01<00:14, 3194.21it/s]Packing dataset:   9%|▉         | 4423/49172 [00:01<00:13, 3219.29it/s]Packing dataset:  10%|▉         | 4746/49172 [00:01<00:13, 3209.08it/s]Packing dataset:  10%|█         | 5071/49172 [00:01<00:13, 3219.26it/s]Packing dataset:  11%|█         | 5394/49172 [00:01<00:13, 3182.87it/s]Packing dataset:  12%|█▏        | 5742/49172 [00:01<00:13, 3269.83it/s]Packing dataset:  12%|█▏        | 6070/49172 [00:01<00:13, 3220.53it/s]Packing dataset:  13%|█▎        | 6401/49172 [00:02<00:13, 3246.57it/s]Packing dataset:  14%|█▎        | 6726/49172 [00:02<00:13, 3182.02it/s]Packing dataset:  14%|█▍        | 7045/49172 [00:02<00:13, 3175.47it/s]Packing dataset:  15%|█▍        | 7363/49172 [00:02<00:13, 3161.85it/s]Packing dataset:  16%|█▌        | 7696/49172 [00:02<00:12, 3210.38it/s]Packing dataset:  16%|█▋        | 8018/49172 [00:02<00:13, 3154.56it/s]Packing dataset:  17%|█▋        | 8334/49172 [00:02<00:13, 3111.51it/s]Packing dataset:  18%|█▊        | 8669/49172 [00:02<00:12, 3180.61it/s]Packing dataset:  18%|█▊        | 9003/49172 [00:02<00:12, 3226.57it/s]Packing dataset:  19%|█▉        | 9326/49172 [00:02<00:12, 3194.14it/s]Packing dataset:  20%|█▉        | 9646/49172 [00:03<00:12, 3104.22it/s]Packing dataset:  20%|██        | 9958/49172 [00:03<00:12, 3095.73it/s]Packing dataset:  21%|██        | 10292/49172 [00:03<00:12, 3164.69it/s]Packing dataset:  22%|██▏       | 10613/49172 [00:03<00:12, 3177.87it/s]Packing dataset:  22%|██▏       | 10932/49172 [00:03<00:12, 3174.55it/s]Packing dataset:  23%|██▎       | 11250/49172 [00:03<00:12, 3149.66it/s]Packing dataset:  24%|██▎       | 11566/49172 [00:03<00:11, 3150.19it/s]Packing dataset:  24%|██▍       | 11883/49172 [00:03<00:11, 3152.79it/s]Packing dataset:  25%|██▍       | 12199/49172 [00:03<00:11, 3110.48it/s]Packing dataset:  25%|██▌       | 12518/49172 [00:03<00:11, 3131.61it/s]Packing dataset:  26%|██▌       | 12832/49172 [00:04<00:11, 3132.48it/s]Packing dataset:  27%|██▋       | 13146/49172 [00:04<00:11, 3125.99it/s]Packing dataset:  27%|██▋       | 13461/49172 [00:04<00:11, 3130.70it/s]Packing dataset:  28%|██▊       | 13775/49172 [00:04<00:11, 3118.81it/s]Packing dataset:  29%|██▊       | 14087/49172 [00:04<00:11, 3052.96it/s]Packing dataset:  29%|██▉       | 14418/49172 [00:04<00:11, 3128.11it/s]Packing dataset:  30%|██▉       | 14732/49172 [00:04<00:11, 3099.33it/s]Packing dataset:  31%|███       | 15046/49172 [00:04<00:10, 3106.94it/s]Packing dataset:  31%|███       | 15359/49172 [00:04<00:10, 3112.61it/s]Packing dataset:  32%|███▏      | 15685/49172 [00:04<00:10, 3155.92it/s]Packing dataset:  33%|███▎      | 16014/49172 [00:05<00:10, 3193.17it/s]Packing dataset:  33%|███▎      | 16334/49172 [00:05<00:10, 3140.52it/s]Packing dataset:  34%|███▍      | 16649/49172 [00:05<00:10, 3130.54it/s]Packing dataset:  34%|███▍      | 16963/49172 [00:05<00:10, 3029.85it/s]Packing dataset:  35%|███▌      | 17272/49172 [00:05<00:10, 3046.99it/s]Packing dataset:  36%|███▌      | 17578/49172 [00:05<00:10, 3032.83it/s]Packing dataset:  36%|███▋      | 17882/49172 [00:05<00:10, 3022.23it/s]Packing dataset:  37%|███▋      | 18200/49172 [00:05<00:10, 3065.77it/s]Packing dataset:  38%|███▊      | 18507/49172 [00:05<00:10, 3042.11it/s]Packing dataset:  38%|███▊      | 18837/49172 [00:06<00:09, 3117.89it/s]Packing dataset:  39%|███▉      | 19151/49172 [00:06<00:09, 3122.38it/s]Packing dataset:  40%|███▉      | 19464/49172 [00:06<00:09, 3079.24it/s]Packing dataset:  40%|████      | 19773/49172 [00:06<00:09, 3053.69it/s]Packing dataset:  41%|████      | 20087/49172 [00:06<00:09, 3075.53it/s]Packing dataset:  41%|████▏     | 20395/49172 [00:06<00:09, 3072.27it/s]Packing dataset:  42%|████▏     | 20710/49172 [00:06<00:09, 3094.52it/s]Packing dataset:  43%|████▎     | 21034/49172 [00:06<00:08, 3137.35it/s]Packing dataset:  43%|████▎     | 21348/49172 [00:06<00:08, 3137.44it/s]Packing dataset:  44%|████▍     | 21662/49172 [00:06<00:08, 3133.78it/s]Packing dataset:  45%|████▍     | 21976/49172 [00:07<00:08, 3103.39it/s]Packing dataset:  45%|████▌     | 22287/49172 [00:07<00:08, 3076.66it/s]Packing dataset:  46%|████▌     | 22604/49172 [00:07<00:08, 3100.62it/s]Packing dataset:  47%|████▋     | 22915/49172 [00:07<00:08, 3066.33it/s]Packing dataset:  47%|████▋     | 23222/49172 [00:07<00:08, 3056.26it/s]Packing dataset:  48%|████▊     | 23553/49172 [00:07<00:08, 3130.57it/s]Packing dataset:  49%|████▊     | 23867/49172 [00:07<00:08, 3116.98it/s]Packing dataset:  49%|████▉     | 24185/49172 [00:07<00:07, 3134.24it/s]Packing dataset:  50%|████▉     | 24511/49172 [00:07<00:07, 3171.26it/s]Packing dataset:  50%|█████     | 24829/49172 [00:07<00:07, 3117.28it/s]Packing dataset:  51%|█████     | 25141/49172 [00:08<00:07, 3081.44it/s]Packing dataset:  52%|█████▏    | 25464/49172 [00:08<00:07, 3122.83it/s]Packing dataset:  52%|█████▏    | 25777/49172 [00:08<00:07, 3040.38it/s]Packing dataset:  53%|█████▎    | 26082/49172 [00:08<00:10, 2123.02it/s]Packing dataset:  54%|█████▎    | 26376/49172 [00:08<00:09, 2306.21it/s]Packing dataset:  54%|█████▍    | 26679/49172 [00:08<00:09, 2481.32it/s]Packing dataset:  55%|█████▍    | 27005/49172 [00:08<00:08, 2681.28it/s]Packing dataset:  56%|█████▌    | 27324/49172 [00:08<00:07, 2818.04it/s]Packing dataset:  56%|█████▌    | 27623/49172 [00:09<00:07, 2783.51it/s]Packing dataset:  57%|█████▋    | 27920/49172 [00:09<00:07, 2833.49it/s]Packing dataset:  57%|█████▋    | 28213/49172 [00:09<00:07, 2853.09it/s]Packing dataset:  58%|█████▊    | 28505/49172 [00:09<00:07, 2862.39it/s]Packing dataset:  59%|█████▊    | 28813/49172 [00:09<00:06, 2925.55it/s]Packing dataset:  59%|█████▉    | 29110/49172 [00:09<00:06, 2936.10it/s]Packing dataset:  60%|█████▉    | 29415/49172 [00:09<00:06, 2969.67it/s]Packing dataset:  60%|██████    | 29714/49172 [00:09<00:06, 2962.04it/s]Packing dataset:  61%|██████    | 30014/49172 [00:09<00:06, 2973.02it/s]Packing dataset:  62%|██████▏   | 30334/49172 [00:09<00:06, 3037.38it/s]Packing dataset:  62%|██████▏   | 30639/49172 [00:10<00:06, 3018.96it/s]Packing dataset:  63%|██████▎   | 30942/49172 [00:10<00:06, 3020.63it/s]Packing dataset:  64%|██████▎   | 31245/49172 [00:10<00:05, 2993.96it/s]Packing dataset:  64%|██████▍   | 31570/49172 [00:10<00:05, 3068.96it/s]Packing dataset:  65%|██████▍   | 31892/49172 [00:10<00:05, 3107.61it/s]Packing dataset:  65%|██████▌   | 32203/49172 [00:10<00:05, 3055.79it/s]Packing dataset:  66%|██████▌   | 32524/49172 [00:10<00:05, 3100.48it/s]Packing dataset:  67%|██████▋   | 32835/49172 [00:10<00:05, 3086.28it/s]Packing dataset:  67%|██████▋   | 33147/49172 [00:10<00:05, 3095.01it/s]Packing dataset:  68%|██████▊   | 33473/49172 [00:10<00:04, 3143.83it/s]Packing dataset:  69%|██████▊   | 33788/49172 [00:11<00:04, 3112.62it/s]Packing dataset:  69%|██████▉   | 34104/49172 [00:11<00:04, 3125.15it/s]Packing dataset:  70%|██████▉   | 34417/49172 [00:11<00:04, 3088.93it/s]Packing dataset:  71%|███████   | 34737/49172 [00:11<00:04, 3120.50it/s]Packing dataset:  71%|███████▏  | 35050/49172 [00:11<00:04, 3115.37it/s]Packing dataset:  72%|███████▏  | 35367/49172 [00:11<00:04, 3129.38it/s]Packing dataset:  73%|███████▎  | 35681/49172 [00:11<00:04, 3094.28it/s]Packing dataset:  73%|███████▎  | 35991/49172 [00:11<00:04, 3043.47it/s]Packing dataset:  74%|███████▍  | 36296/49172 [00:11<00:04, 3034.05it/s]Packing dataset:  74%|███████▍  | 36622/49172 [00:11<00:04, 3099.48it/s]Packing dataset:  75%|███████▌  | 36933/49172 [00:12<00:03, 3087.42it/s]Packing dataset:  76%|███████▌  | 37255/49172 [00:12<00:03, 3126.63it/s]Packing dataset:  76%|███████▋  | 37570/49172 [00:12<00:03, 3132.83it/s]Packing dataset:  77%|███████▋  | 37884/49172 [00:12<00:03, 3131.42it/s]Packing dataset:  78%|███████▊  | 38198/49172 [00:12<00:03, 3100.75it/s]Packing dataset:  78%|███████▊  | 38509/49172 [00:12<00:03, 3093.67it/s]Packing dataset:  79%|███████▉  | 38819/49172 [00:12<00:03, 3049.57it/s]Packing dataset:  80%|███████▉  | 39136/49172 [00:12<00:03, 3084.02it/s]Packing dataset:  80%|████████  | 39447/49172 [00:12<00:03, 3088.72it/s]Packing dataset:  81%|████████  | 39757/49172 [00:12<00:03, 3089.34it/s]Packing dataset:  81%|████████▏ | 40074/49172 [00:13<00:02, 3108.56it/s]Packing dataset:  82%|████████▏ | 40386/49172 [00:13<00:02, 3110.15it/s]Packing dataset:  83%|████████▎ | 40702/49172 [00:13<00:02, 3122.90it/s]Packing dataset:  83%|████████▎ | 41020/49172 [00:13<00:02, 3138.63it/s]Packing dataset:  84%|████████▍ | 41334/49172 [00:13<00:02, 3106.22it/s]Packing dataset:  85%|████████▍ | 41645/49172 [00:13<00:02, 3074.49it/s]Packing dataset:  85%|████████▌ | 41953/49172 [00:13<00:02, 3057.19it/s]Packing dataset:  86%|████████▌ | 42259/49172 [00:13<00:02, 3054.97it/s]Packing dataset:  87%|████████▋ | 42565/49172 [00:13<00:02, 3030.69it/s]Packing dataset:  87%|████████▋ | 42869/49172 [00:13<00:02, 3025.98it/s]Packing dataset:  88%|████████▊ | 43172/49172 [00:14<00:02, 2978.61it/s]Packing dataset:  88%|████████▊ | 43479/49172 [00:14<00:01, 3002.05it/s]Packing dataset:  89%|████████▉ | 43789/49172 [00:14<00:01, 3028.42it/s]Packing dataset:  90%|████████▉ | 44095/49172 [00:14<00:01, 3033.95it/s]Packing dataset:  90%|█████████ | 44410/49172 [00:14<00:01, 3065.78it/s]Packing dataset:  91%|█████████ | 44717/49172 [00:14<00:01, 3057.74it/s]Packing dataset:  92%|█████████▏| 45023/49172 [00:14<00:01, 3057.18it/s]Packing dataset:  92%|█████████▏| 45349/49172 [00:14<00:01, 3114.61it/s]Packing dataset:  93%|█████████▎| 45661/49172 [00:14<00:01, 3105.74it/s]Packing dataset:  93%|█████████▎| 45972/49172 [00:15<00:01, 3041.88it/s]Packing dataset:  94%|█████████▍| 46290/49172 [00:15<00:00, 3082.01it/s]Packing dataset:  95%|█████████▍| 46599/49172 [00:15<00:00, 3059.68it/s]Packing dataset:  95%|█████████▌| 46915/49172 [00:15<00:00, 3088.95it/s]Packing dataset:  96%|█████████▌| 47225/49172 [00:15<00:00, 3045.76it/s]Packing dataset:  97%|█████████▋| 47537/49172 [00:15<00:00, 3066.33it/s]Packing dataset:  97%|█████████▋| 47844/49172 [00:15<00:00, 3028.12it/s]Packing dataset:  98%|█████████▊| 48148/49172 [00:15<00:00, 3002.58it/s]Packing dataset:  99%|█████████▊| 48458/49172 [00:15<00:00, 3029.81it/s]Packing dataset:  99%|█████████▉| 48770/49172 [00:15<00:00, 3055.58it/s]Packing dataset: 100%|█████████▉| 49076/49172 [00:16<00:00, 3044.91it/s]Packing dataset: 100%|██████████| 49172/49172 [00:16<00:00, 3063.57it/s]
 No learning rate scheduler configured. Using constant learning rate.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s][rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
-[rank0]:     sys.exit(recipe_main())
-[rank0]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank0]:     sys.exit(recipe_main(conf))
-[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1119, in recipe_main
-[rank0]:     recipe.train()
-[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 959, in train
-[rank0]:     current_loss.backward()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_tensor.py", line 625, in backward
-[rank0]:     torch.autograd.backward(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
-[rank0]:     _engine_run_backward(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
-[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
-[rank0]:     return user_fn(self, *args)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 803, in backward
-[rank0]:     ctx.param_group.post_backward()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 492, in post_backward
-[rank0]:     ) = foreach_reduce(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 620, in foreach_reduce
-[rank0]:     hook(fsdp_param.sharded_param)
-[rank0]:   File "/home/jenkins/xiangdong/torchtune/torchtune/training/memory.py", line 237, in optim_step
-[rank0]:     optim_dict[param].step()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/optim/optimizer.py", line 516, in wrapper
-[rank0]:     out = func(*args, **kwargs)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
-[rank0]:     return func(*args, **kwargs)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torchao/optim/adam.py", line 142, in step
-[rank0]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
-[rank0]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 979, in _compile_fx_inner
-[rank0]:     raise InductorError(e, currentframe()).with_traceback(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
-[rank0]:     mb_compiled_graph = fx_codegen_and_compile(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1643, in fx_codegen_and_compile
-[rank0]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
-[rank0]:     compiled_module = graph.compile_to_module()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
-[rank0]:     return self._compile_to_module()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2328, in _compile_to_module
-[rank0]:     mod = self._compile_to_module_lines(wrapper_code)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2396, in _compile_to_module_lines
-[rank0]:     mod = PyCodeCache.load_by_key_path(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 3458, in load_by_key_path
-[rank0]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 31, in _reload_python_module
-[rank0]:     exec(code, mod.__dict__, mod.__dict__)
-[rank0]:   File "/tmp/torchinductor_jenkins/vz/cvznqmtnm24l5oocnsmtvpuihhlkrpcdhclut3d52x3ifuy3sltv.py", line 273, in <module>
-[rank0]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 486, in triton
-[rank0]:     kernel.precompile(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
-[rank0]:     self._make_launchers()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 603, in _make_launchers
-[rank0]:     launchers.append(result.make_launcher())
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1638, in make_launcher
-[rank0]:     binary._init_handles()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
-[rank0]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 711, in __init__
-[rank0]:     self.mod = compile_module_from_src(src, "__triton_launcher")
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 281, in compile_module_from_src
-[rank0]:     return TritonLauncher(cache_path)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 227, in __init__
-[rank0]:     self.shared_library = ctypes.PyDLL(cache_path)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/ctypes/__init__.py", line 374, in __init__
-[rank0]:     self._handle = _dlopen(self._name, mode)
-[rank0]: torch._inductor.exc.InductorError: OSError: /tmp/torchinductor_jenkins/triton/0/V4OAKOLVJ2OHMUE5Z4WRPED4DDDEMRQ623WX4YJONLPDZWSJHKAQ/__triton_launcher.so: undefined symbol: _ZN4sycl3_V15queue22submit_with_event_implERKNS0_6detail19type_erased_cgfo_tyERKNS2_14SubmissionInfoERKNS2_13code_locationEb
-
-[rank0]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
-
-[rank1]: Traceback (most recent call last):
+  0%|          | 0/10 [00:00<?, ?it/s][rank1]: Traceback (most recent call last):
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
 [rank1]:     sys.exit(recipe_main())
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
@@ -278,7 +201,7 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank1]:     raise InductorError(e, currentframe()).with_traceback(
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
 [rank1]:     mb_compiled_graph = fx_codegen_and_compile(
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1643, in fx_codegen_and_compile
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1652, in fx_codegen_and_compile
 [rank1]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
 [rank1]:     compiled_module = graph.compile_to_module()
@@ -288,13 +211,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank1]:     mod = self._compile_to_module_lines(wrapper_code)
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2396, in _compile_to_module_lines
 [rank1]:     mod = PyCodeCache.load_by_key_path(
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 3458, in load_by_key_path
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 3466, in load_by_key_path
 [rank1]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 31, in _reload_python_module
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
 [rank1]:     exec(code, mod.__dict__, mod.__dict__)
-[rank1]:   File "/tmp/torchinductor_jenkins/wi/cwiul2q2ltynov55u4q3fvrlchye4y3ngguno7vbz5jdjmi6hrfb.py", line 273, in <module>
+[rank1]:   File "/tmp/torchinductor_jenkins/2w/c2wwc7sirclhemyyvwglmpfk3ol7ihhrfwpefrwt5ju55fnrss7l.py", line 274, in <module>
 [rank1]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 486, in triton
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
 [rank1]:     kernel.precompile(
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
 [rank1]:     self._make_launchers()
@@ -316,7 +239,91 @@ No learning rate scheduler configured. Using constant learning rate.
 
 [rank1]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
 
-Exception ignored in: <function TritonLauncher.__del__ at 0x7f6c3a368dc0>
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
+[rank0]:     sys.exit(recipe_main())
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank0]:     sys.exit(recipe_main(conf))
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1119, in recipe_main
+[rank0]:     recipe.train()
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 959, in train
+[rank0]:     current_loss.backward()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_tensor.py", line 625, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
+[rank0]:     return user_fn(self, *args)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 803, in backward
+[rank0]:     ctx.param_group.post_backward()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 492, in post_backward
+[rank0]:     ) = foreach_reduce(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 620, in foreach_reduce
+[rank0]:     hook(fsdp_param.sharded_param)
+[rank0]:   File "/home/jenkins/xiangdong/torchtune/torchtune/training/memory.py", line 237, in optim_step
+[rank0]:     optim_dict[param].step()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/optim/optimizer.py", line 516, in wrapper
+[rank0]:     out = func(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torchao/optim/adam.py", line 142, in step
+[rank0]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
+[rank0]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 979, in _compile_fx_inner
+[rank0]:     raise InductorError(e, currentframe()).with_traceback(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
+[rank0]:     mb_compiled_graph = fx_codegen_and_compile(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1652, in fx_codegen_and_compile
+[rank0]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
+[rank0]:     compiled_module = graph.compile_to_module()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
+[rank0]:     return self._compile_to_module()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2328, in _compile_to_module
+[rank0]:     mod = self._compile_to_module_lines(wrapper_code)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2396, in _compile_to_module_lines
+[rank0]:     mod = PyCodeCache.load_by_key_path(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 3466, in load_by_key_path
+[rank0]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
+[rank0]:     exec(code, mod.__dict__, mod.__dict__)
+[rank0]:   File "/tmp/torchinductor_jenkins/ip/cipzaogm54a56qgy3we4on6hbdd64lexozq4gq74ehnaq54a5hiv.py", line 274, in <module>
+[rank0]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
+[rank0]:     kernel.precompile(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
+[rank0]:     self._make_launchers()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 603, in _make_launchers
+[rank0]:     launchers.append(result.make_launcher())
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1638, in make_launcher
+[rank0]:     binary._init_handles()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
+[rank0]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 711, in __init__
+[rank0]:     self.mod = compile_module_from_src(src, "__triton_launcher")
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 281, in compile_module_from_src
+[rank0]:     return TritonLauncher(cache_path)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 227, in __init__
+[rank0]:     self.shared_library = ctypes.PyDLL(cache_path)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/ctypes/__init__.py", line 374, in __init__
+[rank0]:     self._handle = _dlopen(self._name, mode)
+[rank0]: torch._inductor.exc.InductorError: OSError: /tmp/torchinductor_jenkins/triton/0/V4OAKOLVJ2OHMUE5Z4WRPED4DDDEMRQ623WX4YJONLPDZWSJHKAQ/__triton_launcher.so: undefined symbol: _ZN4sycl3_V15queue22submit_with_event_implERKNS0_6detail19type_erased_cgfo_tyERKNS2_14SubmissionInfoERKNS2_13code_locationEb
+
+[rank0]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+Exception ignored in: <function TritonLauncher.__del__ at 0x7f50c2a8d480>
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
+    handle = self.shared_library._handle
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
+    return super().__getattribute__(name)
+AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
+Exception ignored in: <function TritonLauncher.__del__ at 0x7f7cc9345480>
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
     handle = self.shared_library._handle
@@ -324,15 +331,8 @@ Traceback (most recent call last):
     return super().__getattribute__(name)
 AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
   0%|          | 0/10 [00:16<?, ?it/s]
-Exception ignored in: <function TritonLauncher.__del__ at 0x7f0067ad8dc0>
-Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
-    handle = self.shared_library._handle
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
-    return super().__getattribute__(name)
-AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
-W0803 15:16:48.702000 2462902 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 2462977 closing signal SIGTERM
-E0803 15:16:49.019000 2462902 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 0 (pid: 2462976) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+W0810 12:11:25.205000 3167539 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 3167614 closing signal SIGTERM
+E0810 12:11:25.421000 3167539 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 1 (pid: 3167615) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -362,10 +362,10 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-08-03_15:16:48
+  time      : 2025-08-10_12:11:25
   host      : dut7358
-  rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 2462976)
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3167615)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

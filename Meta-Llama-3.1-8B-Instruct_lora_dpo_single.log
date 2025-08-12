@@ -78,16 +78,16 @@ Optimizer and loss are initialized.
 Loss function is initialized.
 Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
-Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1754234629.txt
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:15<02:17, 15.28s/it]1|1|Loss: 0.6932533979415894:  10%|█         | 1/10 [00:15<02:17, 15.28s/it]1|1|Loss: 0.6932533979415894:  20%|██        | 2/10 [00:25<01:40, 12.53s/it]1|2|Loss: 0.69440096616745:  20%|██        | 2/10 [00:25<01:40, 12.53s/it]  1|2|Loss: 0.69440096616745:  30%|███       | 3/10 [00:36<01:22, 11.76s/it]1|3|Loss: 0.6900501251220703:  30%|███       | 3/10 [00:36<01:22, 11.76s/it]1|3|Loss: 0.6900501251220703:  40%|████      | 4/10 [00:47<01:07, 11.29s/it]1|4|Loss: 0.6935625076293945:  40%|████      | 4/10 [00:47<01:07, 11.29s/it]1|4|Loss: 0.6935625076293945:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6966068744659424:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6966068744659424:  60%|██████    | 6/10 [01:08<00:43, 10.99s/it]1|6|Loss: 0.6901597380638123:  60%|██████    | 6/10 [01:08<00:43, 10.99s/it]1|6|Loss: 0.6901597380638123:  70%|███████   | 7/10 [01:19<00:32, 10.84s/it]1|7|Loss: 0.6912969350814819:  70%|███████   | 7/10 [01:19<00:32, 10.84s/it]1|7|Loss: 0.6912969350814819:  80%|████████  | 8/10 [01:29<00:21, 10.76s/it]1|8|Loss: 0.703407347202301:  80%|████████  | 8/10 [01:29<00:21, 10.76s/it] 1|8|Loss: 0.703407347202301:  90%|█████████ | 9/10 [01:40<00:10, 10.70s/it]1|9|Loss: 0.6975682377815247:  90%|█████████ | 9/10 [01:40<00:10, 10.70s/it]1|9|Loss: 0.6975682377815247: 100%|██████████| 10/10 [01:51<00:00, 10.70s/it]1|10|Loss: 0.6961557865142822: 100%|██████████| 10/10 [01:51<00:00, 10.70s/it]1|10|Loss: 0.6961557865142822: 100%|██████████| 10/10 [01:51<00:00, 11.13s/it]
-iteration:  1 tokens:  16384 time:  15.286590848118067 tokens_per_second_on_single_device:  1071.79
-iteration:  2 tokens:  16384 time:  10.58889604313299 tokens_per_second_on_single_device:  1547.28
-iteration:  3 tokens:  16384 time:  10.838872838998213 tokens_per_second_on_single_device:  1511.6
-iteration:  4 tokens:  16384 time:  10.547517362050712 tokens_per_second_on_single_device:  1553.35
-iteration:  5 tokens:  16384 time:  10.815878889057785 tokens_per_second_on_single_device:  1514.81
-iteration:  6 tokens:  16384 time:  10.732787858927622 tokens_per_second_on_single_device:  1526.54
-iteration:  7 tokens:  16384 time:  10.499445440014824 tokens_per_second_on_single_device:  1560.46
-iteration:  8 tokens:  16384 time:  10.573390049859881 tokens_per_second_on_single_device:  1549.55
-iteration:  9 tokens:  16384 time:  10.569943506969139 tokens_per_second_on_single_device:  1550.06
-iteration:  10 tokens:  16384 time:  10.668175114085898 tokens_per_second_on_single_device:  1535.78
-avg tokens_per_second_on_single_device:  1537.57
+Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1754828300.txt
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:15<02:18, 15.33s/it]1|1|Loss: 0.6931912899017334:  10%|█         | 1/10 [00:15<02:18, 15.33s/it]1|1|Loss: 0.6931912899017334:  20%|██        | 2/10 [00:25<01:40, 12.55s/it]1|2|Loss: 0.6912117600440979:  20%|██        | 2/10 [00:25<01:40, 12.55s/it]1|2|Loss: 0.6912117600440979:  30%|███       | 3/10 [00:36<01:22, 11.80s/it]1|3|Loss: 0.6883127093315125:  30%|███       | 3/10 [00:36<01:22, 11.80s/it]1|3|Loss: 0.6883127093315125:  40%|████      | 4/10 [00:47<01:07, 11.31s/it]1|4|Loss: 0.6942160725593567:  40%|████      | 4/10 [00:47<01:07, 11.31s/it]1|4|Loss: 0.6942160725593567:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6908750534057617:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6908750534057617:  60%|██████    | 6/10 [01:08<00:43, 10.93s/it]1|6|Loss: 0.6912686824798584:  60%|██████    | 6/10 [01:08<00:43, 10.93s/it]1|6|Loss: 0.6912686824798584:  70%|███████   | 7/10 [01:19<00:32, 10.79s/it]1|7|Loss: 0.6915894150733948:  70%|███████   | 7/10 [01:19<00:32, 10.79s/it]1|7|Loss: 0.6915894150733948:  80%|████████  | 8/10 [01:29<00:21, 10.75s/it]1|8|Loss: 0.6916107535362244:  80%|████████  | 8/10 [01:29<00:21, 10.75s/it]1|8|Loss: 0.6916107535362244:  90%|█████████ | 9/10 [01:40<00:10, 10.70s/it]1|9|Loss: 0.6906535625457764:  90%|█████████ | 9/10 [01:40<00:10, 10.70s/it]1|9|Loss: 0.6906535625457764: 100%|██████████| 10/10 [01:51<00:00, 10.67s/it]1|10|Loss: 0.6915289163589478: 100%|██████████| 10/10 [01:51<00:00, 10.67s/it]1|10|Loss: 0.6915289163589478: 100%|██████████| 10/10 [01:51<00:00, 11.11s/it]
+iteration:  1 tokens:  16384 time:  15.336430522147566 tokens_per_second_on_single_device:  1068.31
+iteration:  2 tokens:  16384 time:  10.5826288650278 tokens_per_second_on_single_device:  1548.2
+iteration:  3 tokens:  16384 time:  10.906731805065647 tokens_per_second_on_single_device:  1502.19
+iteration:  4 tokens:  16384 time:  10.541439587948844 tokens_per_second_on_single_device:  1554.25
+iteration:  5 tokens:  16384 time:  10.760521166957915 tokens_per_second_on_single_device:  1522.6
+iteration:  6 tokens:  16384 time:  10.560604776022956 tokens_per_second_on_single_device:  1551.43
+iteration:  7 tokens:  16384 time:  10.492644971003756 tokens_per_second_on_single_device:  1561.47
+iteration:  8 tokens:  16384 time:  10.648754660971463 tokens_per_second_on_single_device:  1538.58
+iteration:  9 tokens:  16384 time:  10.565901760011911 tokens_per_second_on_single_device:  1550.65
+iteration:  10 tokens:  16384 time:  10.61365342605859 tokens_per_second_on_single_device:  1543.67
+avg tokens_per_second_on_single_device:  1540.39
