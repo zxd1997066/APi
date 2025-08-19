@@ -62,6 +62,8 @@ tokenizer:
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
 /home/jenkins/xiangdong/torchtune/recipes/lora_dpo_single_device.py:326: FutureWarning: lora_attn_modules is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
   validate_missing_and_unexpected_for_lora(
 /home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_mlp is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
@@ -78,16 +80,16 @@ Optimizer and loss are initialized.
 Loss function is initialized.
 Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
-Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1754828300.txt
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:15<02:18, 15.33s/it]1|1|Loss: 0.6931912899017334:  10%|█         | 1/10 [00:15<02:18, 15.33s/it]1|1|Loss: 0.6931912899017334:  20%|██        | 2/10 [00:25<01:40, 12.55s/it]1|2|Loss: 0.6912117600440979:  20%|██        | 2/10 [00:25<01:40, 12.55s/it]1|2|Loss: 0.6912117600440979:  30%|███       | 3/10 [00:36<01:22, 11.80s/it]1|3|Loss: 0.6883127093315125:  30%|███       | 3/10 [00:36<01:22, 11.80s/it]1|3|Loss: 0.6883127093315125:  40%|████      | 4/10 [00:47<01:07, 11.31s/it]1|4|Loss: 0.6942160725593567:  40%|████      | 4/10 [00:47<01:07, 11.31s/it]1|4|Loss: 0.6942160725593567:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6908750534057617:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6908750534057617:  60%|██████    | 6/10 [01:08<00:43, 10.93s/it]1|6|Loss: 0.6912686824798584:  60%|██████    | 6/10 [01:08<00:43, 10.93s/it]1|6|Loss: 0.6912686824798584:  70%|███████   | 7/10 [01:19<00:32, 10.79s/it]1|7|Loss: 0.6915894150733948:  70%|███████   | 7/10 [01:19<00:32, 10.79s/it]1|7|Loss: 0.6915894150733948:  80%|████████  | 8/10 [01:29<00:21, 10.75s/it]1|8|Loss: 0.6916107535362244:  80%|████████  | 8/10 [01:29<00:21, 10.75s/it]1|8|Loss: 0.6916107535362244:  90%|█████████ | 9/10 [01:40<00:10, 10.70s/it]1|9|Loss: 0.6906535625457764:  90%|█████████ | 9/10 [01:40<00:10, 10.70s/it]1|9|Loss: 0.6906535625457764: 100%|██████████| 10/10 [01:51<00:00, 10.67s/it]1|10|Loss: 0.6915289163589478: 100%|██████████| 10/10 [01:51<00:00, 10.67s/it]1|10|Loss: 0.6915289163589478: 100%|██████████| 10/10 [01:51<00:00, 11.11s/it]
-iteration:  1 tokens:  16384 time:  15.336430522147566 tokens_per_second_on_single_device:  1068.31
-iteration:  2 tokens:  16384 time:  10.5826288650278 tokens_per_second_on_single_device:  1548.2
-iteration:  3 tokens:  16384 time:  10.906731805065647 tokens_per_second_on_single_device:  1502.19
-iteration:  4 tokens:  16384 time:  10.541439587948844 tokens_per_second_on_single_device:  1554.25
-iteration:  5 tokens:  16384 time:  10.760521166957915 tokens_per_second_on_single_device:  1522.6
-iteration:  6 tokens:  16384 time:  10.560604776022956 tokens_per_second_on_single_device:  1551.43
-iteration:  7 tokens:  16384 time:  10.492644971003756 tokens_per_second_on_single_device:  1561.47
-iteration:  8 tokens:  16384 time:  10.648754660971463 tokens_per_second_on_single_device:  1538.58
-iteration:  9 tokens:  16384 time:  10.565901760011911 tokens_per_second_on_single_device:  1550.65
-iteration:  10 tokens:  16384 time:  10.61365342605859 tokens_per_second_on_single_device:  1543.67
-avg tokens_per_second_on_single_device:  1540.39
+Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1755444069.txt
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:15<02:16, 15.20s/it]1|1|Loss: 0.6930654048919678:  10%|█         | 1/10 [00:15<02:16, 15.20s/it]1|1|Loss: 0.6930654048919678:  20%|██        | 2/10 [00:25<01:39, 12.49s/it]1|2|Loss: 0.6898865699768066:  20%|██        | 2/10 [00:25<01:39, 12.49s/it]1|2|Loss: 0.6898865699768066:  30%|███       | 3/10 [00:36<01:22, 11.80s/it]1|3|Loss: 0.6937469840049744:  30%|███       | 3/10 [00:36<01:22, 11.80s/it]1|3|Loss: 0.6937469840049744:  40%|████      | 4/10 [00:47<01:07, 11.31s/it]1|4|Loss: 0.6896151304244995:  40%|████      | 4/10 [00:47<01:07, 11.31s/it]1|4|Loss: 0.6896151304244995:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6894177198410034:  50%|█████     | 5/10 [00:58<00:55, 11.12s/it]1|5|Loss: 0.6894177198410034:  60%|██████    | 6/10 [01:08<00:43, 10.94s/it]1|6|Loss: 0.6935621500015259:  60%|██████    | 6/10 [01:08<00:43, 10.94s/it]1|6|Loss: 0.6935621500015259:  70%|███████   | 7/10 [01:19<00:32, 10.81s/it]1|7|Loss: 0.6951629519462585:  70%|███████   | 7/10 [01:19<00:32, 10.81s/it]1|7|Loss: 0.6951629519462585:  80%|████████  | 8/10 [01:29<00:21, 10.76s/it]1|8|Loss: 0.6901639699935913:  80%|████████  | 8/10 [01:29<00:21, 10.76s/it]1|8|Loss: 0.6901639699935913:  90%|█████████ | 9/10 [01:40<00:10, 10.71s/it]1|9|Loss: 0.6975571513175964:  90%|█████████ | 9/10 [01:40<00:10, 10.71s/it]1|9|Loss: 0.6975571513175964: 100%|██████████| 10/10 [01:51<00:00, 10.69s/it]1|10|Loss: 0.6939425468444824: 100%|██████████| 10/10 [01:51<00:00, 10.69s/it]1|10|Loss: 0.6939425468444824: 100%|██████████| 10/10 [01:51<00:00, 11.12s/it]
+iteration:  1 tokens:  16384 time:  15.20563152199611 tokens_per_second_on_single_device:  1077.5
+iteration:  2 tokens:  16384 time:  10.580399414058775 tokens_per_second_on_single_device:  1548.52
+iteration:  3 tokens:  16384 time:  10.96198991080746 tokens_per_second_on_single_device:  1494.62
+iteration:  4 tokens:  16384 time:  10.558124610688537 tokens_per_second_on_single_device:  1551.79
+iteration:  5 tokens:  16384 time:  10.76918076723814 tokens_per_second_on_single_device:  1521.38
+iteration:  6 tokens:  16384 time:  10.577733887825161 tokens_per_second_on_single_device:  1548.91
+iteration:  7 tokens:  16384 time:  10.517835629638284 tokens_per_second_on_single_device:  1557.73
+iteration:  8 tokens:  16384 time:  10.655356891918927 tokens_per_second_on_single_device:  1537.63
+iteration:  9 tokens:  16384 time:  10.587055070791394 tokens_per_second_on_single_device:  1547.55
+iteration:  10 tokens:  16384 time:  10.635250949300826 tokens_per_second_on_single_device:  1540.54
+avg tokens_per_second_on_single_device:  1537.28

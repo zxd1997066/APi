@@ -1,7 +1,7 @@
-W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] 
-W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] *****************************************
-W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0810 12:05:30.021000 3165822 site-packages/torch/distributed/run.py:803] *****************************************
+W0817 15:10:40.437000 3990850 site-packages/torch/distributed/run.py:803] 
+W0817 15:10:40.437000 3990850 site-packages/torch/distributed/run.py:803] *****************************************
+W0817 15:10:40.437000 3990850 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0817 15:10:40.437000 3990850 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullDPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -259,29 +259,37 @@ tokenizer:
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
 [Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1754827533.txt
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1755443443.txt
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:08:10-12:05:36:(3165897) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:05:36:(3165897) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:10-12:05:36:(3165899) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:05:36:(3165899) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:10-12:05:36:(3165896) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:05:36:(3165896) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:08:10-12:05:36:(3165896) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:08:10-12:05:36:(3165896) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:10-12:05:36:(3165898) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:05:36:(3165898) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 8.08 secs
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+2025:08:17-15:10:46:(3990926) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:10:46:(3990926) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:17-15:10:46:(3990925) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:10:46:(3990925) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:17-15:10:46:(3990924) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:10:46:(3990924) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:08:17-15:10:46:(3990924) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:08:17-15:10:46:(3990924) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+2025:08:17-15:10:46:(3990927) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:10:46:(3990927) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 7.94 secs
 Memory stats after model init:
 	XPU peak memory active: 4.75 GiB
 	XPU peak memory alloc: 4.75 GiB
 	XPU peak memory reserved: 4.85 GiB
 FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
-Instantiating reference model and loading checkpoint took 6.60 secs
+Instantiating reference model and loading checkpoint took 6.71 secs
 Memory stats after model init:
 	XPU peak memory active: 8.55 GiB
 	XPU peak memory alloc: 8.55 GiB
@@ -292,51 +300,15 @@ Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:36<05:25, 36.14s/it]1|1|Loss: 0.6927170157432556:  10%|█         | 1/10 [00:36<05:25, 36.14s/it]iteration:  1 tokens:  65536 time:  36.146086242981255 tokens_per_second:  1813.09
-1|1|Loss: 0.6927170157432556:  20%|██        | 2/10 [00:53<03:22, 25.36s/it]1|2|Loss: 0.6941081881523132:  20%|██        | 2/10 [00:53<03:22, 25.36s/it]iteration:  2 tokens:  65536 time:  17.797815598081797 tokens_per_second:  3682.25
-1|2|Loss: 0.6941081881523132:  30%|███       | 3/10 [01:12<02:34, 22.11s/it]1|3|Loss: 0.693568229675293:  30%|███       | 3/10 [01:12<02:34, 22.11s/it] iteration:  3 tokens:  65496 time:  18.22071387199685 tokens_per_second:  3594.59
-1|3|Loss: 0.693568229675293:  40%|████      | 4/10 [01:29<02:02, 20.41s/it]1|4|Loss: 0.6923317909240723:  40%|████      | 4/10 [01:29<02:02, 20.41s/it]iteration:  4 tokens:  65536 time:  17.783574000000954 tokens_per_second:  3685.2
-1|4|Loss: 0.6923317909240723:  50%|█████     | 5/10 [01:47<01:37, 19.47s/it]1|5|Loss: 0.6900782585144043:  50%|█████     | 5/10 [01:47<01:37, 19.47s/it]iteration:  5 tokens:  65536 time:  17.79213879816234 tokens_per_second:  3683.42
-1|5|Loss: 0.6900782585144043:  60%|██████    | 6/10 [02:05<01:15, 18.92s/it]1|6|Loss: 0.68992018699646:  60%|██████    | 6/10 [02:05<01:15, 18.92s/it]  iteration:  6 tokens:  65536 time:  17.8386657780502 tokens_per_second:  3673.82
-1|6|Loss: 0.68992018699646:  70%|███████   | 7/10 [02:23<00:55, 18.56s/it]1|7|Loss: 0.6885507106781006:  70%|███████   | 7/10 [02:23<00:55, 18.56s/it]iteration:  7 tokens:  65536 time:  17.798998982878402 tokens_per_second:  3682.0
-1|7|Loss: 0.6885507106781006:  80%|████████  | 8/10 [02:41<00:36, 18.31s/it]1|8|Loss: 0.6745709180831909:  80%|████████  | 8/10 [02:41<00:36, 18.31s/it]iteration:  8 tokens:  65536 time:  17.76719805994071 tokens_per_second:  3688.6
-1|8|Loss: 0.6745709180831909:  90%|█████████ | 9/10 [02:59<00:18, 18.30s/it]1|9|Loss: 0.6803498268127441:  90%|█████████ | 9/10 [02:59<00:18, 18.30s/it]iteration:  9 tokens:  65304 time:  18.259489614982158 tokens_per_second:  3576.44
-1|9|Loss: 0.6803498268127441: 100%|██████████| 10/10 [03:17<00:00, 18.15s/it]1|10|Loss: 0.673865795135498: 100%|██████████| 10/10 [03:17<00:00, 18.15s/it]iteration:  10 tokens:  65536 time:  17.79645949997939 tokens_per_second:  3682.53
-[rank2]: Traceback (most recent call last):
-[rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
-[rank2]:     sys.exit(recipe_main())
-[rank2]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank2]:     sys.exit(recipe_main(conf))
-[rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
-[rank2]:     recipe.train()
-[rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
-[rank2]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
-[rank2]: ZeroDivisionError: division by zero
-[rank3]: Traceback (most recent call last):
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
-[rank3]:     sys.exit(recipe_main())
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank3]:     sys.exit(recipe_main(conf))
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
-[rank3]:     recipe.train()
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
-[rank3]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
-[rank3]: ZeroDivisionError: division by zero
-avg tokens_per_second:  3657.87
-1|10|Loss: 0.673865795135498: 100%|██████████| 10/10 [03:17<00:00, 19.74s/it]
-[rank0]:[W810 12:09:10.548359597 ProcessGroup.hpp:941] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
-[rank1]:     sys.exit(recipe_main())
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank1]:     sys.exit(recipe_main(conf))
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1003, in recipe_main
-[rank1]:     recipe.train()
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 970, in train
-[rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
-[rank1]: ZeroDivisionError: division by zero
-W0810 12:09:11.619000 3165822 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 3165896 closing signal SIGTERM
-E0810 12:09:11.836000 3165822 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 1 (pid: 3165897) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:36<05:30, 36.69s/it]1|1|Loss: 0.6943654417991638:  10%|█         | 1/10 [00:36<05:30, 36.69s/it]iteration:  1 tokens:  65536 time:  36.68889224808663 tokens_per_second:  1786.26
+Segmentation fault from GPU at 0xff030008f0ec0000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
+Segmentation fault from GPU at 0xff030008f0ec0000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
+Abort was called at 288 line in file:
+./shared/source/os_interface/linux/drm_neo.cpp
+W0817 15:12:00.652000 3990850 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3990924 closing signal SIGTERM
+W0817 15:12:00.653000 3990850 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3990925 closing signal SIGTERM
+W0817 15:12:00.654000 3990850 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3990926 closing signal SIGTERM
+E0817 15:12:00.968000 3990850 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: -6) local_rank: 3 (pid: 3990927) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -353,36 +325,24 @@ Traceback (most recent call last):
     run(args)
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 927, in run
     elastic_launch(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 151, in __call__
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 157, in __call__
     return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 288, in launch_agent
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 294, in launch_agent
     raise ChildFailedError(
 torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
 ============================================================
 /home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py FAILED
 ------------------------------------------------------------
 Failures:
-[1]:
-  time      : 2025-08-10_12:09:11
-  host      : dut7358
-  rank      : 2 (local_rank: 2)
-  exitcode  : 1 (pid: 3165898)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-[2]:
-  time      : 2025-08-10_12:09:11
-  host      : dut7358
-  rank      : 3 (local_rank: 3)
-  exitcode  : 1 (pid: 3165899)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+  <NO_OTHER_FAILURES>
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-08-10_12:09:11
+  time      : 2025-08-17_15:12:00
   host      : dut7358
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 3165897)
+  rank      : 3 (local_rank: 3)
+  exitcode  : -6 (pid: 3990927)
   error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+  traceback : Signal 6 (SIGABRT) received by PID 3990927
 ============================================================
+[W817 15:12:01.716820981 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

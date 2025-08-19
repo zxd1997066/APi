@@ -1,7 +1,7 @@
-W0810 12:09:15.610000 3166170 site-packages/torch/distributed/run.py:803] 
-W0810 12:09:15.610000 3166170 site-packages/torch/distributed/run.py:803] *****************************************
-W0810 12:09:15.610000 3166170 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0810 12:09:15.610000 3166170 site-packages/torch/distributed/run.py:803] *****************************************
+W0817 15:12:05.917000 3991204 site-packages/torch/distributed/run.py:803] 
+W0817 15:12:05.917000 3991204 site-packages/torch/distributed/run.py:803] *****************************************
+W0817 15:12:05.917000 3991204 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0817 15:12:05.917000 3991204 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullFinetuneRecipeDistributed with resolved config:
 
 batch_size: 2
@@ -279,30 +279,38 @@ tokenizer:
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
 [Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3[Gloo] Rank 
-2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full/logs/log_1754827759.txt
+Writing logs to /tmp/torchtune/llama3_1_8B/full/logs/log_1755443530.txt
 Distributed training is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:08:10-12:09:20:(3166246) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:09:20:(3166246) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:10-12:09:20:(3166245) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:09:20:(3166245) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:10-12:09:20:(3166247) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:09:20:(3166247) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:08:10-12:09:20:(3166244) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:10-12:09:20:(3166244) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:08:10-12:09:20:(3166244) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:08:10-12:09:20:(3166244) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 7.63 secs
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+2025:08:17-15:12:11:(3991279) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:12:11:(3991279) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+2025:08:17-15:12:11:(3991281) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:12:11:(3991281) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
+  return func(*args, **kwargs)
+2025:08:17-15:12:11:(3991280) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:12:11:(3991280) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:08:17-15:12:11:(3991278) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:08:17-15:12:11:(3991278) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:08:17-15:12:11:(3991278) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:08:17-15:12:11:(3991278) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 8.22 secs
 Memory stats after model init:
 	XPU peak memory active: 4.75 GiB
 	XPU peak memory alloc: 4.75 GiB
 	XPU peak memory reserved: 4.85 GiB
 In-backward optimizers are set up.
 Loss is initialized.
-Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 178/49172 [00:00<00:27, 1773.95it/s]Packing dataset:   1%|          | 399/49172 [00:00<00:24, 2028.80it/s]Packing dataset:   1%|          | 602/49172 [00:00<00:24, 1979.41it/s]Packing dataset:   2%|▏         | 801/49172 [00:00<00:24, 1978.35it/s]Packing dataset:   2%|▏         | 999/49172 [00:00<00:24, 1974.14it/s]Packing dataset:   3%|▎         | 1230/49172 [00:00<00:23, 2084.42it/s]Packing dataset:   3%|▎         | 1439/49172 [00:00<00:23, 2071.80it/s]Packing dataset:   3%|▎         | 1647/49172 [00:00<00:23, 2014.63it/s]Packing dataset:   4%|▍         | 1849/49172 [00:00<00:23, 1974.94it/s]Packing dataset:   4%|▍         | 2047/49172 [00:01<00:24, 1958.75it/s]Packing dataset:   5%|▍         | 2272/49172 [00:01<00:22, 2045.29it/s]Packing dataset:   5%|▌         | 2477/49172 [00:01<00:22, 2038.41it/s]Packing dataset:   5%|▌         | 2697/49172 [00:01<00:22, 2084.53it/s]Packing dataset:   6%|▌         | 2912/49172 [00:01<00:21, 2103.93it/s]Packing dataset:   6%|▋         | 3129/49172 [00:01<00:21, 2122.65it/s]Packing dataset:   7%|▋         | 3342/49172 [00:01<00:22, 2081.29it/s]Packing dataset:   7%|▋         | 3551/49172 [00:01<00:22, 2053.41it/s]Packing dataset:   8%|▊         | 3758/49172 [00:01<00:22, 2056.24it/s]Packing dataset:   8%|▊         | 3964/49172 [00:01<00:22, 2042.85it/s]Packing dataset:   8%|▊         | 4169/49172 [00:02<00:22, 2011.29it/s]Packing dataset:   9%|▉         | 4387/49172 [00:02<00:21, 2059.83it/s]Packing dataset:   9%|▉         | 4594/49172 [00:02<00:21, 2032.58it/s]Packing dataset:  10%|▉         | 4804/49172 [00:02<00:21, 2051.38it/s]Packing dataset:  10%|█         | 5010/49172 [00:02<00:21, 2026.18it/s]Packing dataset:  11%|█         | 5213/49172 [00:02<00:21, 2002.19it/s]Packing dataset:  11%|█         | 5422/49172 [00:02<00:21, 2027.08it/s]Packing dataset:  11%|█▏        | 5634/49172 [00:02<00:21, 2050.38it/s]Packing dataset:  12%|█▏        | 5849/49172 [00:02<00:20, 2076.72it/s]Packing dataset:  12%|█▏        | 6057/49172 [00:02<00:20, 2053.48it/s]Packing dataset:  13%|█▎        | 6271/49172 [00:03<00:20, 2077.50it/s]Packing dataset:  13%|█▎        | 6479/49172 [00:03<00:20, 2045.77it/s]Packing dataset:  14%|█▎        | 6684/49172 [00:03<00:21, 2004.82it/s]Packing dataset:  14%|█▍        | 6896/49172 [00:03<00:20, 2036.20it/s]Packing dataset:  14%|█▍        | 7100/49172 [00:03<00:21, 1996.19it/s]Packing dataset:  15%|█▍        | 7301/49172 [00:03<00:20, 1999.84it/s]Packing dataset:  15%|█▌        | 7503/49172 [00:03<00:20, 2004.59it/s]Packing dataset:  16%|█▌        | 7719/49172 [00:03<00:20, 2047.46it/s]Packing dataset:  16%|█▌        | 7924/49172 [00:03<00:20, 2037.78it/s]Packing dataset:  17%|█▋        | 8128/49172 [00:04<00:20, 1993.14it/s]Packing dataset:  17%|█▋        | 8328/49172 [00:04<00:20, 1963.31it/s]Packing dataset:  17%|█▋        | 8548/49172 [00:04<00:19, 2031.79it/s]Packing dataset:  18%|█▊        | 8752/49172 [00:04<00:19, 2031.35it/s]Packing dataset:  18%|█▊        | 8973/49172 [00:04<00:19, 2081.48it/s]Packing dataset:  19%|█▊        | 9182/49172 [00:04<00:19, 2059.50it/s]Packing dataset:  19%|█▉        | 9389/49172 [00:04<00:19, 2028.36it/s]Packing dataset:  20%|█▉        | 9593/49172 [00:04<00:20, 1940.89it/s]Packing dataset:  20%|█▉        | 9788/49172 [00:04<00:20, 1932.68it/s]Packing dataset:  20%|██        | 9999/49172 [00:04<00:19, 1981.18it/s]Packing dataset:  21%|██        | 10208/49172 [00:05<00:19, 2012.61it/s]Packing dataset:  21%|██▏       | 10534/49172 [00:05<00:16, 2378.21it/s]Packing dataset:  22%|██▏       | 10849/49172 [00:05<00:14, 2604.73it/s]Packing dataset:  23%|██▎       | 11164/49172 [00:05<00:13, 2765.69it/s]Packing dataset:  23%|██▎       | 11476/49172 [00:05<00:13, 2868.85it/s]Packing dataset:  24%|██▍       | 11799/49172 [00:05<00:12, 2975.51it/s]Packing dataset:  25%|██▍       | 12101/49172 [00:05<00:12, 2986.93it/s]Packing dataset:  25%|██▌       | 12415/49172 [00:05<00:12, 3032.00it/s]Packing dataset:  26%|██▌       | 12734/49172 [00:05<00:11, 3078.61it/s]Packing dataset:  27%|██▋       | 13043/49172 [00:05<00:11, 3075.58it/s]Packing dataset:  27%|██▋       | 13351/49172 [00:06<00:11, 3072.23it/s]Packing dataset:  28%|██▊       | 13659/49172 [00:06<00:11, 3065.04it/s]Packing dataset:  28%|██▊       | 13970/49172 [00:06<00:11, 3078.10it/s]Packing dataset:  29%|██▉       | 14292/49172 [00:06<00:11, 3119.02it/s]Packing dataset:  30%|██▉       | 14616/49172 [00:06<00:10, 3154.60it/s]Packing dataset:  30%|███       | 14932/49172 [00:06<00:10, 3126.32it/s]Packing dataset:  31%|███       | 15245/49172 [00:06<00:10, 3120.10it/s]Packing dataset:  32%|███▏      | 15569/49172 [00:06<00:10, 3154.88it/s]Packing dataset:  32%|███▏      | 15890/49172 [00:06<00:10, 3167.68it/s]Packing dataset:  33%|███▎      | 16207/49172 [00:06<00:10, 3139.23it/s]Packing dataset:  34%|███▎      | 16522/49172 [00:07<00:10, 3130.23it/s]Packing dataset:  34%|███▍      | 16836/49172 [00:07<00:10, 3110.86it/s]Packing dataset:  35%|███▍      | 17151/49172 [00:07<00:10, 3119.05it/s]Packing dataset:  36%|███▌      | 17463/49172 [00:07<00:10, 3104.48it/s]Packing dataset:  36%|███▌      | 17779/49172 [00:07<00:10, 3117.24it/s]Packing dataset:  37%|███▋      | 18091/49172 [00:07<00:10, 3098.11it/s]Packing dataset:  37%|███▋      | 18401/49172 [00:07<00:10, 3059.84it/s]Packing dataset:  38%|███▊      | 18736/49172 [00:07<00:09, 3144.12it/s]Packing dataset:  39%|███▊      | 19051/49172 [00:07<00:09, 3101.97it/s]Packing dataset:  39%|███▉      | 19362/49172 [00:07<00:09, 3100.40it/s]Packing dataset:  40%|████      | 19673/49172 [00:08<00:09, 3052.55it/s]Packing dataset:  41%|████      | 19984/49172 [00:08<00:09, 3066.67it/s]Packing dataset:  41%|████▏     | 20293/49172 [00:08<00:09, 3073.03it/s]Packing dataset:  42%|████▏     | 20601/49172 [00:08<00:09, 3040.95it/s]Packing dataset:  43%|████▎     | 20928/49172 [00:08<00:09, 3108.42it/s]Packing dataset:  43%|████▎     | 21252/49172 [00:08<00:08, 3146.27it/s]Packing dataset:  44%|████▍     | 21567/49172 [00:08<00:08, 3114.33it/s]Packing dataset:  44%|████▍     | 21879/49172 [00:08<00:08, 3109.35it/s]Packing dataset:  45%|████▌     | 22191/49172 [00:08<00:08, 3063.88it/s]Packing dataset:  46%|████▌     | 22510/49172 [00:08<00:08, 3100.50it/s]Packing dataset:  46%|████▋     | 22821/49172 [00:09<00:08, 3029.38it/s]Packing dataset:  47%|████▋     | 23136/49172 [00:09<00:08, 3061.92it/s]Packing dataset:  48%|████▊     | 23459/49172 [00:09<00:08, 3110.79it/s]Packing dataset:  48%|████▊     | 23774/49172 [00:09<00:08, 3120.09it/s]Packing dataset:  49%|████▉     | 24087/49172 [00:09<00:08, 3111.03it/s]Packing dataset:  50%|████▉     | 24425/49172 [00:09<00:07, 3190.64it/s]Packing dataset:  50%|█████     | 24745/49172 [00:09<00:07, 3180.83it/s]Packing dataset:  51%|█████     | 25064/49172 [00:09<00:07, 3118.68it/s]Packing dataset:  52%|█████▏    | 25387/49172 [00:09<00:07, 3149.74it/s]Packing dataset:  52%|█████▏    | 25703/49172 [00:10<00:07, 3124.93it/s]Packing dataset:  53%|█████▎    | 26016/49172 [00:10<00:10, 2169.58it/s]Packing dataset:  54%|█████▎    | 26317/49172 [00:10<00:09, 2357.29it/s]Packing dataset:  54%|█████▍    | 26631/49172 [00:10<00:08, 2547.12it/s]Packing dataset:  55%|█████▍    | 26949/49172 [00:10<00:08, 2710.45it/s]Packing dataset:  55%|█████▌    | 27273/49172 [00:10<00:07, 2853.05it/s]Packing dataset:  56%|█████▌    | 27576/49172 [00:10<00:07, 2900.64it/s]Packing dataset:  57%|█████▋    | 27879/49172 [00:10<00:07, 2926.93it/s]Packing dataset:  57%|█████▋    | 28181/49172 [00:10<00:07, 2926.70it/s]Packing dataset:  58%|█████▊    | 28480/49172 [00:11<00:07, 2927.44it/s]Packing dataset:  59%|█████▊    | 28792/49172 [00:11<00:06, 2981.77it/s]Packing dataset:  59%|█████▉    | 29094/49172 [00:11<00:06, 2983.20it/s]Packing dataset:  60%|█████▉    | 29402/49172 [00:11<00:06, 3011.70it/s]Packing dataset:  60%|██████    | 29705/49172 [00:11<00:06, 3004.58it/s]Packing dataset:  61%|██████    | 30008/49172 [00:11<00:06, 3010.10it/s]Packing dataset:  62%|██████▏   | 30331/49172 [00:11<00:06, 3071.49it/s]Packing dataset:  62%|██████▏   | 30639/49172 [00:11<00:06, 3054.94it/s]Packing dataset:  63%|██████▎   | 30946/49172 [00:11<00:05, 3055.79it/s]Packing dataset:  64%|██████▎   | 31252/49172 [00:11<00:05, 3011.89it/s]Packing dataset:  64%|██████▍   | 31580/49172 [00:12<00:05, 3090.32it/s]Packing dataset:  65%|██████▍   | 31902/49172 [00:12<00:05, 3128.67it/s]Packing dataset:  66%|██████▌   | 32216/49172 [00:12<00:05, 3036.80it/s]Packing dataset:  66%|██████▌   | 32530/49172 [00:12<00:05, 3066.41it/s]Packing dataset:  67%|██████▋   | 32838/49172 [00:12<00:05, 3054.46it/s]Packing dataset:  67%|██████▋   | 33146/49172 [00:12<00:05, 3061.11it/s]Packing dataset:  68%|██████▊   | 33470/49172 [00:12<00:05, 3110.06it/s]Packing dataset:  69%|██████▊   | 33782/49172 [00:12<00:04, 3083.84it/s]Packing dataset:  69%|██████▉   | 34096/49172 [00:12<00:04, 3098.25it/s]Packing dataset:  70%|██████▉   | 34406/49172 [00:12<00:04, 3068.52it/s]Packing dataset:  71%|███████   | 34726/49172 [00:13<00:04, 3105.88it/s]Packing dataset:  71%|███████▏  | 35037/49172 [00:13<00:04, 3042.62it/s]Packing dataset:  72%|███████▏  | 35349/49172 [00:13<00:04, 3063.03it/s]Packing dataset:  73%|███████▎  | 35656/49172 [00:13<00:04, 3038.56it/s]Packing dataset:  73%|███████▎  | 35961/49172 [00:13<00:04, 3010.82it/s]Packing dataset:  74%|███████▎  | 36263/49172 [00:13<00:04, 3006.07it/s]Packing dataset:  74%|███████▍  | 36582/49172 [00:13<00:04, 3059.74it/s]Packing dataset:  75%|███████▌  | 36889/49172 [00:13<00:04, 3044.84it/s]Packing dataset:  76%|███████▌  | 37207/49172 [00:13<00:03, 3084.06it/s]Packing dataset:  76%|███████▋  | 37521/49172 [00:14<00:03, 3098.15it/s]Packing dataset:  77%|███████▋  | 37831/49172 [00:14<00:03, 3076.02it/s]Packing dataset:  78%|███████▊  | 38139/49172 [00:14<00:03, 3067.58it/s]Packing dataset:  78%|███████▊  | 38446/49172 [00:14<00:03, 3067.81it/s]Packing dataset:  79%|███████▉  | 38753/49172 [00:14<00:03, 3037.83it/s]Packing dataset:  79%|███████▉  | 39061/49172 [00:14<00:03, 3049.22it/s]Packing dataset:  80%|████████  | 39376/49172 [00:14<00:03, 3078.06it/s]Packing dataset:  81%|████████  | 39684/49172 [00:14<00:03, 3071.51it/s]Packing dataset:  81%|████████▏ | 39994/49172 [00:14<00:02, 3076.33it/s]Packing dataset:  82%|████████▏ | 40307/49172 [00:14<00:02, 3092.30it/s]Packing dataset:  83%|████████▎ | 40625/49172 [00:15<00:02, 3113.04it/s]Packing dataset:  83%|████████▎ | 40937/49172 [00:15<00:02, 3113.44it/s]Packing dataset:  84%|████████▍ | 41249/49172 [00:15<00:02, 3113.51it/s]Packing dataset:  85%|████████▍ | 41561/49172 [00:15<00:02, 3099.17it/s]Packing dataset:  85%|████████▌ | 41871/49172 [00:15<00:02, 3081.09it/s]Packing dataset:  86%|████████▌ | 42180/49172 [00:15<00:02, 3029.29it/s]Packing dataset:  86%|████████▋ | 42498/49172 [00:15<00:02, 3070.17it/s]Packing dataset:  87%|████████▋ | 42806/49172 [00:15<00:02, 3013.86it/s]Packing dataset:  88%|████████▊ | 43108/49172 [00:15<00:02, 2991.95it/s]Packing dataset:  88%|████████▊ | 43416/49172 [00:15<00:01, 3016.58it/s]Packing dataset:  89%|████████▉ | 43726/49172 [00:16<00:01, 3039.03it/s]Packing dataset:  90%|████████▉ | 44031/49172 [00:16<00:01, 3028.85it/s]Packing dataset:  90%|█████████ | 44349/49172 [00:16<00:01, 3069.40it/s]Packing dataset:  91%|█████████ | 44657/49172 [00:16<00:01, 3011.22it/s]Packing dataset:  91%|█████████▏| 44965/49172 [00:16<00:01, 3029.94it/s]Packing dataset:  92%|█████████▏| 45283/49172 [00:16<00:01, 3074.29it/s]Packing dataset:  93%|█████████▎| 45607/49172 [00:16<00:01, 3122.45it/s]Packing dataset:  93%|█████████▎| 45920/49172 [00:16<00:01, 3032.29it/s]Packing dataset:  94%|█████████▍| 46228/49172 [00:16<00:00, 3045.89it/s]Packing dataset:  95%|█████████▍| 46534/49172 [00:16<00:00, 3030.50it/s]Packing dataset:  95%|█████████▌| 46845/49172 [00:17<00:00, 3052.68it/s]Packing dataset:  96%|█████████▌| 47151/49172 [00:17<00:00, 3043.87it/s]Packing dataset:  97%|█████████▋| 47459/49172 [00:17<00:00, 3048.87it/s]Packing dataset:  97%|█████████▋| 47765/49172 [00:17<00:00, 3019.09it/s]Packing dataset:  98%|█████████▊| 48068/49172 [00:17<00:00, 2973.75it/s]Packing dataset:  98%|█████████▊| 48377/49172 [00:17<00:00, 3006.28it/s]Packing dataset:  99%|█████████▉| 48691/49172 [00:17<00:00, 3042.97it/s]Packing dataset: 100%|█████████▉| 48998/49172 [00:17<00:00, 3050.75it/s]Packing dataset: 100%|██████████| 49172/49172 [00:17<00:00, 2757.96it/s]
+Packing dataset:   0%|          | 0/49172 [00:00<?, ?it/s]Packing dataset:   0%|          | 199/49172 [00:00<00:24, 1989.64it/s]Packing dataset:   1%|          | 518/49172 [00:00<00:18, 2693.60it/s]Packing dataset:   2%|▏         | 826/49172 [00:00<00:16, 2866.72it/s]Packing dataset:   2%|▏         | 1158/49172 [00:00<00:15, 3045.24it/s]Packing dataset:   3%|▎         | 1480/49172 [00:00<00:15, 3105.97it/s]Packing dataset:   4%|▎         | 1791/49172 [00:00<00:15, 3037.19it/s]Packing dataset:   4%|▍         | 2099/49172 [00:00<00:15, 3050.83it/s]Packing dataset:   5%|▍         | 2447/49172 [00:00<00:14, 3185.02it/s]Packing dataset:   6%|▌         | 2796/49172 [00:00<00:14, 3278.93it/s]Packing dataset:   6%|▋         | 3125/49172 [00:01<00:14, 3257.74it/s]Packing dataset:   7%|▋         | 3451/49172 [00:01<00:14, 3181.39it/s]Packing dataset:   8%|▊         | 3778/49172 [00:01<00:14, 3204.13it/s]Packing dataset:   8%|▊         | 4099/49172 [00:01<00:14, 3170.16it/s]Packing dataset:   9%|▉         | 4424/49172 [00:01<00:14, 3191.28it/s]Packing dataset:  10%|▉         | 4744/49172 [00:01<00:13, 3192.91it/s]Packing dataset:  10%|█         | 5069/49172 [00:01<00:13, 3209.07it/s]Packing dataset:  11%|█         | 5391/49172 [00:01<00:13, 3147.07it/s]Packing dataset:  12%|█▏        | 5725/49172 [00:01<00:13, 3201.21it/s]Packing dataset:  12%|█▏        | 6046/49172 [00:01<00:13, 3180.67it/s]Packing dataset:  13%|█▎        | 6372/49172 [00:02<00:13, 3202.21it/s]Packing dataset:  14%|█▎        | 6693/49172 [00:02<00:13, 3127.47it/s]Packing dataset:  14%|█▍        | 7013/49172 [00:02<00:13, 3146.96it/s]Packing dataset:  15%|█▍        | 7329/49172 [00:02<00:13, 3125.62it/s]Packing dataset:  16%|█▌        | 7657/49172 [00:02<00:13, 3169.81it/s]Packing dataset:  16%|█▌        | 7975/49172 [00:02<00:13, 3112.61it/s]Packing dataset:  17%|█▋        | 8287/49172 [00:02<00:13, 3090.42it/s]Packing dataset:  18%|█▊        | 8607/49172 [00:02<00:12, 3122.57it/s]Packing dataset:  18%|█▊        | 8935/49172 [00:02<00:12, 3166.79it/s]Packing dataset:  19%|█▉        | 9252/49172 [00:02<00:12, 3136.35it/s]Packing dataset:  19%|█▉        | 9566/49172 [00:03<00:12, 3078.38it/s]Packing dataset:  20%|██        | 9875/49172 [00:03<00:12, 3062.12it/s]Packing dataset:  21%|██        | 10198/49172 [00:03<00:12, 3110.19it/s]Packing dataset:  21%|██▏       | 10510/49172 [00:03<00:12, 3096.40it/s]Packing dataset:  22%|██▏       | 10832/49172 [00:03<00:12, 3128.24it/s]Packing dataset:  23%|██▎       | 11145/49172 [00:03<00:12, 3084.50it/s]Packing dataset:  23%|██▎       | 11454/49172 [00:03<00:12, 3066.95it/s]Packing dataset:  24%|██▍       | 11764/49172 [00:03<00:12, 3075.45it/s]Packing dataset:  25%|██▍       | 12072/49172 [00:03<00:12, 3055.88it/s]Packing dataset:  25%|██▌       | 12384/49172 [00:03<00:11, 3074.40it/s]Packing dataset:  26%|██▌       | 12703/49172 [00:04<00:11, 3108.30it/s]Packing dataset:  26%|██▋       | 13014/49172 [00:04<00:11, 3068.08it/s]Packing dataset:  27%|██▋       | 13332/49172 [00:04<00:11, 3097.65it/s]Packing dataset:  28%|██▊       | 13643/49172 [00:04<00:11, 3101.23it/s]Packing dataset:  28%|██▊       | 13960/49172 [00:04<00:11, 3117.54it/s]Packing dataset:  29%|██▉       | 14272/49172 [00:04<00:11, 3095.95it/s]Packing dataset:  30%|██▉       | 14593/49172 [00:04<00:11, 3126.71it/s]Packing dataset:  30%|███       | 14906/49172 [00:04<00:11, 3080.41it/s]Packing dataset:  31%|███       | 15215/49172 [00:04<00:11, 3075.57it/s]Packing dataset:  32%|███▏      | 15535/49172 [00:04<00:10, 3109.60it/s]Packing dataset:  32%|███▏      | 15847/49172 [00:05<00:10, 3075.97it/s]Packing dataset:  33%|███▎      | 16166/49172 [00:05<00:10, 3107.37it/s]Packing dataset:  34%|███▎      | 16477/49172 [00:05<00:10, 3070.36it/s]Packing dataset:  34%|███▍      | 16788/49172 [00:05<00:10, 3077.68it/s]Packing dataset:  35%|███▍      | 17096/49172 [00:05<00:10, 3058.30it/s]Packing dataset:  35%|███▌      | 17402/49172 [00:05<00:10, 3052.57it/s]Packing dataset:  36%|███▌      | 17708/49172 [00:05<00:10, 3032.30it/s]Packing dataset:  37%|███▋      | 18012/49172 [00:05<00:10, 3028.36it/s]Packing dataset:  37%|███▋      | 18317/49172 [00:05<00:10, 3034.65it/s]Packing dataset:  38%|███▊      | 18621/49172 [00:06<00:10, 3004.21it/s]Packing dataset:  38%|███▊      | 18931/49172 [00:06<00:09, 3032.06it/s]Packing dataset:  39%|███▉      | 19240/49172 [00:06<00:09, 3043.78it/s]Packing dataset:  40%|███▉      | 19545/49172 [00:06<00:09, 2994.60it/s]Packing dataset:  40%|████      | 19845/49172 [00:06<00:09, 2967.25it/s]Packing dataset:  41%|████      | 20147/49172 [00:06<00:09, 2981.62it/s]Packing dataset:  42%|████▏     | 20449/49172 [00:06<00:09, 2991.60it/s]Packing dataset:  42%|████▏     | 20766/49172 [00:06<00:09, 3044.29it/s]Packing dataset:  43%|████▎     | 21085/49172 [00:06<00:09, 3087.25it/s]Packing dataset:  44%|████▎     | 21396/49172 [00:06<00:08, 3093.43it/s]Packing dataset:  44%|████▍     | 21706/49172 [00:07<00:08, 3063.98it/s]Packing dataset:  45%|████▍     | 22013/49172 [00:07<00:08, 3029.04it/s]Packing dataset:  45%|████▌     | 22317/49172 [00:07<00:08, 3024.99it/s]Packing dataset:  46%|████▌     | 22628/49172 [00:07<00:08, 3046.76it/s]Packing dataset:  47%|████▋     | 22933/49172 [00:07<00:08, 3013.82it/s]Packing dataset:  47%|████▋     | 23235/49172 [00:07<00:08, 3009.91it/s]Packing dataset:  48%|████▊     | 23560/49172 [00:07<00:08, 3080.74it/s]Packing dataset:  49%|████▊     | 23869/49172 [00:07<00:08, 3033.35it/s]Packing dataset:  49%|████▉     | 24178/49172 [00:07<00:08, 3049.43it/s]Packing dataset:  50%|████▉     | 24500/49172 [00:07<00:07, 3097.83it/s]Packing dataset:  50%|█████     | 24810/49172 [00:08<00:07, 3082.07it/s]Packing dataset:  51%|█████     | 25119/49172 [00:08<00:07, 3025.85it/s]Packing dataset:  52%|█████▏    | 25435/49172 [00:08<00:07, 3063.63it/s]Packing dataset:  52%|█████▏    | 25742/49172 [00:08<00:07, 3000.69it/s]Packing dataset:  53%|█████▎    | 26043/49172 [00:08<00:12, 1830.49it/s]Packing dataset:  54%|█████▎    | 26336/49172 [00:08<00:11, 2052.55it/s]Packing dataset:  54%|█████▍    | 26645/49172 [00:08<00:09, 2284.54it/s]Packing dataset:  55%|█████▍    | 26958/49172 [00:08<00:08, 2488.01it/s]Packing dataset:  55%|█████▌    | 27273/49172 [00:09<00:08, 2656.59it/s]Packing dataset:  56%|█████▌    | 27571/49172 [00:09<00:07, 2742.99it/s]Packing dataset:  57%|█████▋    | 27866/49172 [00:09<00:07, 2788.52it/s]Packing dataset:  57%|█████▋    | 28160/49172 [00:09<00:07, 2800.30it/s]Packing dataset:  58%|█████▊    | 28450/49172 [00:09<00:07, 2826.08it/s]Packing dataset:  58%|█████▊    | 28751/49172 [00:09<00:07, 2878.43it/s]Packing dataset:  59%|█████▉    | 29044/49172 [00:09<00:06, 2886.87it/s]Packing dataset:  60%|█████▉    | 29347/49172 [00:09<00:06, 2926.49it/s]Packing dataset:  60%|██████    | 29643/49172 [00:09<00:06, 2926.55it/s]Packing dataset:  61%|██████    | 29944/49172 [00:09<00:06, 2950.60it/s]Packing dataset:  62%|██████▏   | 30252/49172 [00:10<00:06, 2987.76it/s]Packing dataset:  62%|██████▏   | 30552/49172 [00:10<00:06, 2958.77it/s]Packing dataset:  63%|██████▎   | 30854/49172 [00:10<00:06, 2975.82it/s]Packing dataset:  63%|██████▎   | 31155/49172 [00:10<00:06, 2985.30it/s]Packing dataset:  64%|██████▍   | 31454/49172 [00:10<00:05, 2977.16it/s]Packing dataset:  65%|██████▍   | 31791/49172 [00:10<00:05, 3093.22it/s]Packing dataset:  65%|██████▌   | 32101/49172 [00:10<00:05, 3037.88it/s]Packing dataset:  66%|██████▌   | 32414/49172 [00:10<00:05, 3062.13it/s]Packing dataset:  67%|██████▋   | 32721/49172 [00:10<00:05, 3046.27it/s]Packing dataset:  67%|██████▋   | 33026/49172 [00:10<00:05, 3042.24it/s]Packing dataset:  68%|██████▊   | 33341/49172 [00:11<00:05, 3072.75it/s]Packing dataset:  68%|██████▊   | 33651/49172 [00:11<00:05, 3079.58it/s]Packing dataset:  69%|██████▉   | 33960/49172 [00:11<00:04, 3076.09it/s]Packing dataset:  70%|██████▉   | 34268/49172 [00:11<00:04, 3041.16it/s]Packing dataset:  70%|███████   | 34581/49172 [00:11<00:04, 3067.37it/s]Packing dataset:  71%|███████   | 34888/49172 [00:11<00:04, 3055.32it/s]Packing dataset:  72%|███████▏  | 35194/49172 [00:11<00:04, 3045.65it/s]Packing dataset:  72%|███████▏  | 35514/49172 [00:11<00:04, 3088.94it/s]Packing dataset:  73%|███████▎  | 35823/49172 [00:11<00:04, 3012.65it/s]Packing dataset:  73%|███████▎  | 36125/49172 [00:12<00:04, 3008.65it/s]Packing dataset:  74%|███████▍  | 36436/49172 [00:12<00:04, 3035.33it/s]Packing dataset:  75%|███████▍  | 36754/49172 [00:12<00:04, 3075.83it/s]Packing dataset:  75%|███████▌  | 37062/49172 [00:12<00:03, 3041.98it/s]Packing dataset:  76%|███████▌  | 37369/49172 [00:12<00:03, 3049.47it/s]Packing dataset:  77%|███████▋  | 37684/49172 [00:12<00:03, 3078.00it/s]Packing dataset:  77%|███████▋  | 37992/49172 [00:12<00:03, 3055.65it/s]Packing dataset:  78%|███████▊  | 38298/49172 [00:12<00:03, 3041.42it/s]Packing dataset:  79%|███████▊  | 38603/49172 [00:12<00:03, 2974.01it/s]Packing dataset:  79%|███████▉  | 38907/49172 [00:12<00:03, 2990.23it/s]Packing dataset:  80%|███████▉  | 39217/49172 [00:13<00:03, 3021.05it/s]Packing dataset:  80%|████████  | 39520/49172 [00:13<00:03, 2962.00it/s]Packing dataset:  81%|████████  | 39824/49172 [00:13<00:03, 2983.01it/s]Packing dataset:  82%|████████▏ | 40123/49172 [00:13<00:03, 2972.91it/s]Packing dataset:  82%|████████▏ | 40435/49172 [00:13<00:02, 3015.49it/s]Packing dataset:  83%|████████▎ | 40741/49172 [00:13<00:02, 3027.00it/s]Packing dataset:  83%|████████▎ | 41049/49172 [00:13<00:02, 3042.02it/s]Packing dataset:  84%|████████▍ | 41354/49172 [00:13<00:02, 3032.34it/s]Packing dataset:  85%|████████▍ | 41658/49172 [00:13<00:02, 2977.79it/s]Packing dataset:  85%|████████▌ | 41957/49172 [00:13<00:02, 2959.08it/s]Packing dataset:  86%|████████▌ | 42255/49172 [00:14<00:02, 2964.39it/s]Packing dataset:  87%|████████▋ | 42552/49172 [00:14<00:02, 2952.53it/s]Packing dataset:  87%|████████▋ | 42848/49172 [00:14<00:02, 2940.72it/s]Packing dataset:  88%|████████▊ | 43143/49172 [00:14<00:02, 2934.37it/s]Packing dataset:  88%|████████▊ | 43441/49172 [00:14<00:01, 2944.10it/s]Packing dataset:  89%|████████▉ | 43744/49172 [00:14<00:01, 2968.24it/s]Packing dataset:  90%|████████▉ | 44041/49172 [00:14<00:01, 2966.08it/s]Packing dataset:  90%|█████████ | 44350/49172 [00:14<00:01, 3002.18it/s]Packing dataset:  91%|█████████ | 44651/49172 [00:14<00:01, 2973.15it/s]Packing dataset:  91%|█████████▏| 44961/49172 [00:14<00:01, 3008.19it/s]Packing dataset:  92%|█████████▏| 45273/49172 [00:15<00:01, 3041.38it/s]Packing dataset:  93%|█████████▎| 45599/49172 [00:15<00:01, 3105.32it/s]Packing dataset:  93%|█████████▎| 45910/49172 [00:15<00:01, 2955.34it/s]Packing dataset:  94%|█████████▍| 46212/49172 [00:15<00:00, 2973.47it/s]Packing dataset:  95%|█████████▍| 46511/49172 [00:15<00:00, 2957.91it/s]Packing dataset:  95%|█████████▌| 46831/49172 [00:15<00:00, 3024.88it/s]Packing dataset:  96%|█████████▌| 47135/49172 [00:15<00:00, 3004.86it/s]Packing dataset:  96%|█████████▋| 47436/49172 [00:15<00:00, 3002.87it/s]Packing dataset:  97%|█████████▋| 47737/49172 [00:15<00:00, 2924.08it/s]Packing dataset:  98%|█████████▊| 48033/49172 [00:15<00:00, 2931.64it/s]Packing dataset:  98%|█████████▊| 48331/49172 [00:16<00:00, 2944.92it/s]Packing dataset:  99%|█████████▉| 48639/49172 [00:16<00:00, 2984.50it/s]Packing dataset: 100%|█████████▉| 48949/49172 [00:16<00:00, 3018.14it/s]Packing dataset: 100%|██████████| 49172/49172 [00:16<00:00, 3004.52it/s]
 No learning rate scheduler configured. Using constant learning rate.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
@@ -319,13 +327,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank2]:     torch.autograd.backward(
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
 [rank2]:     _engine_run_backward(
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
 [rank2]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
 [rank2]:     return user_fn(self, *args)
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 803, in backward
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 855, in backward
 [rank2]:     ctx.param_group.post_backward()
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 492, in post_backward
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 544, in post_backward
 [rank2]:     ) = foreach_reduce(
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
 [rank2]:     return func(*args, **kwargs)
@@ -341,13 +349,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank2]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
 [rank2]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 979, in _compile_fx_inner
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 982, in _compile_fx_inner
 [rank2]:     raise InductorError(e, currentframe()).with_traceback(
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 966, in _compile_fx_inner
 [rank2]:     mb_compiled_graph = fx_codegen_and_compile(
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1652, in fx_codegen_and_compile
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1644, in fx_codegen_and_compile
 [rank2]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1498, in codegen_and_compile
 [rank2]:     compiled_module = graph.compile_to_module()
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
 [rank2]:     return self._compile_to_module()
@@ -359,15 +367,15 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank2]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
 [rank2]:     exec(code, mod.__dict__, mod.__dict__)
-[rank2]:   File "/tmp/torchinductor_jenkins/f3/cf3pzb42ujsuciipgldgyyagqbmasbusxnfhbhwh5wjtqmsv2gyj.py", line 274, in <module>
-[rank2]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
+[rank2]:   File "/tmp/torchinductor_jenkins/f3/cf3v6khsl7uptmfwekzajd4po4zthr6dvuo4u4eqrnelccvcqhia.py", line 278, in <module>
+[rank2]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0', '''
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
 [rank2]:     kernel.precompile(
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 439, in precompile
 [rank2]:     self._make_launchers()
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 603, in _make_launchers
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 602, in _make_launchers
 [rank2]:     launchers.append(result.make_launcher())
-[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1638, in make_launcher
+[rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1641, in make_launcher
 [rank2]:     binary._init_handles()
 [rank2]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
 [rank2]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
@@ -383,83 +391,6 @@ No learning rate scheduler configured. Using constant learning rate.
 
 [rank2]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
 
-[rank3]: Traceback (most recent call last):
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
-[rank3]:     sys.exit(recipe_main())
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank3]:     sys.exit(recipe_main(conf))
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1119, in recipe_main
-[rank3]:     recipe.train()
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 959, in train
-[rank3]:     current_loss.backward()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_tensor.py", line 625, in backward
-[rank3]:     torch.autograd.backward(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
-[rank3]:     _engine_run_backward(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
-[rank3]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
-[rank3]:     return user_fn(self, *args)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 803, in backward
-[rank3]:     ctx.param_group.post_backward()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 492, in post_backward
-[rank3]:     ) = foreach_reduce(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
-[rank3]:     return func(*args, **kwargs)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 620, in foreach_reduce
-[rank3]:     hook(fsdp_param.sharded_param)
-[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/training/memory.py", line 237, in optim_step
-[rank3]:     optim_dict[param].step()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/optim/optimizer.py", line 516, in wrapper
-[rank3]:     out = func(*args, **kwargs)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
-[rank3]:     return func(*args, **kwargs)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torchao/optim/adam.py", line 142, in step
-[rank3]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
-[rank3]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 979, in _compile_fx_inner
-[rank3]:     raise InductorError(e, currentframe()).with_traceback(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
-[rank3]:     mb_compiled_graph = fx_codegen_and_compile(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1652, in fx_codegen_and_compile
-[rank3]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
-[rank3]:     compiled_module = graph.compile_to_module()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
-[rank3]:     return self._compile_to_module()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2328, in _compile_to_module
-[rank3]:     mod = self._compile_to_module_lines(wrapper_code)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2396, in _compile_to_module_lines
-[rank3]:     mod = PyCodeCache.load_by_key_path(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 3466, in load_by_key_path
-[rank3]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
-[rank3]:     exec(code, mod.__dict__, mod.__dict__)
-[rank3]:   File "/tmp/torchinductor_jenkins/d5/cd5tniohswrovaf2rizmz6suaakpb2jhqlnxkofabr634s33rdmt.py", line 274, in <module>
-[rank3]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
-[rank3]:     kernel.precompile(
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
-[rank3]:     self._make_launchers()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 603, in _make_launchers
-[rank3]:     launchers.append(result.make_launcher())
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1638, in make_launcher
-[rank3]:     binary._init_handles()
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
-[rank3]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 711, in __init__
-[rank3]:     self.mod = compile_module_from_src(src, "__triton_launcher")
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 281, in compile_module_from_src
-[rank3]:     return TritonLauncher(cache_path)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 227, in __init__
-[rank3]:     self.shared_library = ctypes.PyDLL(cache_path)
-[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/ctypes/__init__.py", line 374, in __init__
-[rank3]:     self._handle = _dlopen(self._name, mode)
-[rank3]: torch._inductor.exc.InductorError: OSError: /tmp/torchinductor_jenkins/triton/3/V4OAKOLVJ2OHMUE5Z4WRPED4DDDEMRQ623WX4YJONLPDZWSJHKAQ/__triton_launcher.so: undefined symbol: _ZN4sycl3_V15queue22submit_with_event_implERKNS0_6detail19type_erased_cgfo_tyERKNS2_14SubmissionInfoERKNS2_13code_locationEb
-
-[rank3]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
-
 [rank1]: Traceback (most recent call last):
 [rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
 [rank1]:     sys.exit(recipe_main())
@@ -473,13 +404,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank1]:     torch.autograd.backward(
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
 [rank1]:     _engine_run_backward(
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
 [rank1]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
 [rank1]:     return user_fn(self, *args)
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 803, in backward
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 855, in backward
 [rank1]:     ctx.param_group.post_backward()
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 492, in post_backward
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 544, in post_backward
 [rank1]:     ) = foreach_reduce(
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
 [rank1]:     return func(*args, **kwargs)
@@ -495,13 +426,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank1]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
 [rank1]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 979, in _compile_fx_inner
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 982, in _compile_fx_inner
 [rank1]:     raise InductorError(e, currentframe()).with_traceback(
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 966, in _compile_fx_inner
 [rank1]:     mb_compiled_graph = fx_codegen_and_compile(
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1652, in fx_codegen_and_compile
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1644, in fx_codegen_and_compile
 [rank1]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1498, in codegen_and_compile
 [rank1]:     compiled_module = graph.compile_to_module()
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
 [rank1]:     return self._compile_to_module()
@@ -513,15 +444,15 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank1]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
 [rank1]:     exec(code, mod.__dict__, mod.__dict__)
-[rank1]:   File "/tmp/torchinductor_jenkins/mt/cmtr6s5yqm6hhuuox4nokmpnri6onukk4rely46t7igbiy2if2oy.py", line 274, in <module>
-[rank1]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
+[rank1]:   File "/tmp/torchinductor_jenkins/np/cnpc2zxyh3wx7wntwl2sqpteltvhkaxztan7tir6tevjtyojc5go.py", line 278, in <module>
+[rank1]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0', '''
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
 [rank1]:     kernel.precompile(
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 439, in precompile
 [rank1]:     self._make_launchers()
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 603, in _make_launchers
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 602, in _make_launchers
 [rank1]:     launchers.append(result.make_launcher())
-[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1638, in make_launcher
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1641, in make_launcher
 [rank1]:     binary._init_handles()
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
 [rank1]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
@@ -550,13 +481,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank0]:     torch.autograd.backward(
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
 [rank0]:     _engine_run_backward(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
 [rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
 [rank0]:     return user_fn(self, *args)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 803, in backward
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 855, in backward
 [rank0]:     ctx.param_group.post_backward()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 492, in post_backward
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 544, in post_backward
 [rank0]:     ) = foreach_reduce(
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
 [rank0]:     return func(*args, **kwargs)
@@ -572,13 +503,13 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank0]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
 [rank0]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 979, in _compile_fx_inner
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 982, in _compile_fx_inner
 [rank0]:     raise InductorError(e, currentframe()).with_traceback(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 963, in _compile_fx_inner
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 966, in _compile_fx_inner
 [rank0]:     mb_compiled_graph = fx_codegen_and_compile(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1652, in fx_codegen_and_compile
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1644, in fx_codegen_and_compile
 [rank0]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1506, in codegen_and_compile
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1498, in codegen_and_compile
 [rank0]:     compiled_module = graph.compile_to_module()
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
 [rank0]:     return self._compile_to_module()
@@ -590,15 +521,15 @@ No learning rate scheduler configured. Using constant learning rate.
 [rank0]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
 [rank0]:     exec(code, mod.__dict__, mod.__dict__)
-[rank0]:   File "/tmp/torchinductor_jenkins/37/c37lt5zn3eq4adokbeohcb7rhxm4qwb3spjw5lxmw3wufczjmaj5.py", line 274, in <module>
-[rank0]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_sqrt_sub_view_where_0', '''
+[rank0]:   File "/tmp/torchinductor_jenkins/gw/cgwvbsrcnjmdvb64no4uujrlfrtnfnfl77plqg3y5xsqnfg3mpfo.py", line 278, in <module>
+[rank0]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0', '''
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
 [rank0]:     kernel.precompile(
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 440, in precompile
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 439, in precompile
 [rank0]:     self._make_launchers()
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 603, in _make_launchers
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 602, in _make_launchers
 [rank0]:     launchers.append(result.make_launcher())
-[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1638, in make_launcher
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1641, in make_launcher
 [rank0]:     binary._init_handles()
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
 [rank0]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
@@ -614,39 +545,116 @@ No learning rate scheduler configured. Using constant learning rate.
 
 [rank0]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
 
-Exception ignored in: <function TritonLauncher.__del__ at 0x7fee12f45480>
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1124, in <module>
+[rank3]:     sys.exit(recipe_main())
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank3]:     sys.exit(recipe_main(conf))
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 1119, in recipe_main
+[rank3]:     recipe.train()
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_finetune_distributed.py", line 959, in train
+[rank3]:     current_loss.backward()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_tensor.py", line 625, in backward
+[rank3]:     torch.autograd.backward(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/__init__.py", line 354, in backward
+[rank3]:     _engine_run_backward(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
+[rank3]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/function.py", line 315, in apply
+[rank3]:     return user_fn(self, *args)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 855, in backward
+[rank3]:     ctx.param_group.post_backward()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 544, in post_backward
+[rank3]:     ) = foreach_reduce(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank3]:     return func(*args, **kwargs)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 620, in foreach_reduce
+[rank3]:     hook(fsdp_param.sharded_param)
+[rank3]:   File "/home/jenkins/xiangdong/torchtune/torchtune/training/memory.py", line 237, in optim_step
+[rank3]:     optim_dict[param].step()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/optim/optimizer.py", line 516, in wrapper
+[rank3]:     out = func(*args, **kwargs)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank3]:     return func(*args, **kwargs)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torchao/optim/adam.py", line 142, in step
+[rank3]:     torch.compile(single_param_adam, fullgraph=True, dynamic=False)(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 817, in compile_wrapper
+[rank3]:     raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 982, in _compile_fx_inner
+[rank3]:     raise InductorError(e, currentframe()).with_traceback(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 966, in _compile_fx_inner
+[rank3]:     mb_compiled_graph = fx_codegen_and_compile(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1644, in fx_codegen_and_compile
+[rank3]:     return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 1498, in codegen_and_compile
+[rank3]:     compiled_module = graph.compile_to_module()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2318, in compile_to_module
+[rank3]:     return self._compile_to_module()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2328, in _compile_to_module
+[rank3]:     mod = self._compile_to_module_lines(wrapper_code)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/graph.py", line 2396, in _compile_to_module_lines
+[rank3]:     mod = PyCodeCache.load_by_key_path(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 3466, in load_by_key_path
+[rank3]:     mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/compile_tasks.py", line 33, in _reload_python_module
+[rank3]:     exec(code, mod.__dict__, mod.__dict__)
+[rank3]:   File "/tmp/torchinductor_jenkins/gn/cgnu2jgq6nkbveholk3scrqkcpsan3w3i3aa7wae435kylacob3l.py", line 278, in <module>
+[rank3]:     triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0 = async_compile.triton('triton_red_fused__to_copy_abs_add_amax_clamp_copy_copy__div_ge_index_lerp_mul_pow_rsub_scalar_tensor_select_sqrt_sub_view_where_0', '''
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/async_compile.py", line 489, in triton
+[rank3]:     kernel.precompile(
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 439, in precompile
+[rank3]:     self._make_launchers()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 602, in _make_launchers
+[rank3]:     launchers.append(result.make_launcher())
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 1641, in make_launcher
+[rank3]:     binary._init_handles()
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/compiler/compiler.py", line 411, in _init_handles
+[rank3]:     self.run = driver.active.launcher_cls(self.src, self.metadata)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 711, in __init__
+[rank3]:     self.mod = compile_module_from_src(src, "__triton_launcher")
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 281, in compile_module_from_src
+[rank3]:     return TritonLauncher(cache_path)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 227, in __init__
+[rank3]:     self.shared_library = ctypes.PyDLL(cache_path)
+[rank3]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/ctypes/__init__.py", line 374, in __init__
+[rank3]:     self._handle = _dlopen(self._name, mode)
+[rank3]: torch._inductor.exc.InductorError: OSError: /tmp/torchinductor_jenkins/triton/3/V4OAKOLVJ2OHMUE5Z4WRPED4DDDEMRQ623WX4YJONLPDZWSJHKAQ/__triton_launcher.so: undefined symbol: _ZN4sycl3_V15queue22submit_with_event_implERKNS0_6detail19type_erased_cgfo_tyERKNS2_14SubmissionInfoERKNS2_13code_locationEb
+
+[rank3]: Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+Exception ignored in: <function TritonLauncher.__del__ at 0x7f2dfba02d40>
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
     handle = self.shared_library._handle
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
     return super().__getattribute__(name)
 AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
-Exception ignored in: <function TritonLauncher.__del__ at 0x7f3a9dfa5480>
-Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
-Exception ignored in: <function TritonLauncher.__del__ at 0x7efd9054d480>
-Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
-    handle = self.shared_library._handle
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
-    handle = self.shared_library._handle
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
-    return super().__getattribute__(name)
-AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
-    return super().__getattribute__(name)
-AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
-  0%|          | 0/10 [00:23<?, ?it/s]
-Exception ignored in: <function TritonLauncher.__del__ at 0x7f4613dd1480>
+Exception ignored in: <function TritonLauncher.__del__ at 0x7f4ce5c16d40>
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
     handle = self.shared_library._handle
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
     return super().__getattribute__(name)
 AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
-W0810 12:10:23.062000 3166170 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 3166244 closing signal SIGTERM
-W0810 12:10:23.063000 3166170 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 3166245 closing signal SIGTERM
-W0810 12:10:23.064000 3166170 site-packages/torch/distributed/elastic/multiprocessing/api.py:906] Sending process 3166247 closing signal SIGTERM
-E0810 12:10:23.608000 3166170 site-packages/torch/distributed/elastic/multiprocessing/api.py:880] failed (exitcode: 1) local_rank: 2 (pid: 3166246) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+Exception ignored in: <function TritonLauncher.__del__ at 0x7f7560f5ed40>
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
+    handle = self.shared_library._handle
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
+    return super().__getattribute__(name)
+AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
+  0%|          | 0/10 [00:20<?, ?it/s]
+Exception ignored in: <function TritonLauncher.__del__ at 0x7f27d59f6d40>
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 241, in __del__
+    handle = self.shared_library._handle
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/triton/backends/intel/driver.py", line 236, in __getattribute__
+    return super().__getattribute__(name)
+AttributeError: 'TritonLauncher' object has no attribute 'shared_library'
+W0817 15:13:10.653000 3991204 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3991278 closing signal SIGTERM
+W0817 15:13:10.655000 3991204 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3991279 closing signal SIGTERM
+W0817 15:13:10.655000 3991204 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3991281 closing signal SIGTERM
+E0817 15:13:11.172000 3991204 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 2 (pid: 3991280) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -663,9 +671,9 @@ Traceback (most recent call last):
     run(args)
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 927, in run
     elastic_launch(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 151, in __call__
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 157, in __call__
     return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 288, in launch_agent
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 294, in launch_agent
     raise ChildFailedError(
 torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
 ============================================================
@@ -676,10 +684,11 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-08-10_12:10:23
+  time      : 2025-08-17_15:13:10
   host      : dut7358
   rank      : 2 (local_rank: 2)
-  exitcode  : 1 (pid: 3166246)
+  exitcode  : 1 (pid: 3991280)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
+[W817 15:13:12.256351528 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
