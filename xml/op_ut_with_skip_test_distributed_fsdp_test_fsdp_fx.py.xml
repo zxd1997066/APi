@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="2.371" timestamp="2025-08-30T07:17:38.359554" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_fx.TestSymbolicTracingXPU" name="test_symbolic_tracing_outputs_xpu" time="0.015" /></testsuite></testsuites>

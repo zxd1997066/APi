@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="7" skipped="4" tests="59" time="374.472" timestamp="2025-08-30T10:51:00.724810" hostname="dut7358"><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_all_to_all_recompute_is_always_banned_override_with_ac_False" time="11.823"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2278470">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2278470</failure></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_all_to_all_recompute_is_always_banned_override_with_ac_True" time="10.820"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2279154">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2279154</failure></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_all_to_all_single_inductor" time="16.529"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2279823">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2279823</failure></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_all_to_all_single_inductor_split_sizes_none" time="16.028"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2280932">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2280932</failure></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allgather_contiguous_input" time="15.326" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allgather_into_tensor_inductor" time="16.028" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allgather_output_buffer_reuse" time="15.427" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allgather_scalar_tensor_input" time="14.926" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allreduce_inductor" time="27.345" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allreduce_inductor_cudagraph_trees" time="27.045" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_allreduce_input_buffer_reuse" time="25.642" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_broadcast_inductor" time="15.728" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_c10d_functional_tagged_pt2_compliant" time="11.120" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_eager_allreduce_inductor_wait" time="27.045" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_eager_async_allreduce_inductor_wait" time="29.949"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 1919, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py&quot;, line 313, in test_eager_async_allreduce_inductor_wait&#10;    work, y, out_ref = _run_loop_collective_wait(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py&quot;, line 305, in _run_loop_collective_wait&#10;    out = wait_fn(work, y)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py&quot;, line 279, in all_reduce_wait&#10;    work.wait(datetime.timedelta(seconds=10))&#10;RuntimeError: Work ran time out after 18255 milliseconds.&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_inductor_collectives.py TestCollectivesMultiProc.test_eager_async_allreduce_inductor_wait&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1919, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py", line 313, in test_eager_async_allreduce_inductor_wait
+    work, y, out_ref = _run_loop_collective_wait(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py", line 305, in _run_loop_collective_wait
+    out = wait_fn(work, y)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py", line 279, in all_reduce_wait
+    work.wait(datetime.timedelta(seconds=10))
+RuntimeError: Work ran time out after 18255 milliseconds.
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_inductor_collectives.py TestCollectivesMultiProc.test_eager_async_allreduce_inductor_wait
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_inductor_allreduce_eager_wait" time="27.045" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_permute_tensor" time="12.222"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2293086">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2293086</failure></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesMultiProc" name="test_reduce_scatter_tensor_inductor" time="30.448" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_all_gather_bucket" time="0.003"><skipped type="pytest.skip" message="bfloat16">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py:1525: bfloat16</skipped></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_all_gather_bucket_path" time="0.000"><skipped type="pytest.skip" message="bfloat16">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py:1590: bfloat16</skipped></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_backwards" time="0.953" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_get_world_group_source_GroupMember_WORLD" time="0.040" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_get_world_group_source__get_default_group" time="0.038" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_get_world_group_source_group_WORLD" time="0.035" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_graphbreaks_unsupported_async_op" time="0.057" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_pg_var" time="0.024" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_all_gather" time="0.034" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_all_gather_args_match" time="0.033" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_all_gather_list" time="0.039" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_all_to_all_single" time="0.034" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_pg_mode_kwargs" time="0.031" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_pg_mode_kwargs_none" time="0.032" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_pg_mode_positional" time="0.031" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_pg_mode_positional_none" time="0.031" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_pg_mode_unspecified" time="0.031" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_reduce_op_reduce_op0" time="0.031" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_reduce_op_reduce_op1" time="0.031" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_reduce_op_reduce_op2" time="0.030" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_reduce_op_reduce_op3" time="0.030" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_allreduce_reduce_op_reduce_op4" time="0.030" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_rewrite_dist_reduce_scatter" time="0.033" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_support_collective_op_with_async_op_False" time="0.032" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_trace_all_gather_tensor" time="0.030" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_trace_all_gather_tensor_pg" time="0.030" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_trace_allgather_coalesced" time="0.026" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_trace_allreduce" time="0.029" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_dynamo_trace_reduce_scatter_tensor" time="0.030" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_inductor_all_gather_coalesced" time="1.412" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_inductor_doesnt_mutate_shared" time="0.192" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_inductor_doesnt_mutate_shared_graph_partition" time="0.045" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_inductor_reduce_scatter_coalesced" time="0.109" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_inductor_single_op" time="0.282" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_inductor_steal_buffer" time="0.259" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_meta" time="0.001" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_reduce_scatter_bucket" time="0.000"><skipped type="pytest.skip" message="bfloat16">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py:1643: bfloat16</skipped></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_reorder_peak_memory" time="0.189" /><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_reorder_peak_memory_bucketed" time="0.000"><skipped type="pytest.skip" message="bfloat16">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_inductor_collectives.py:1710: bfloat16</skipped></testcase><testcase classname="test.distributed.test_inductor_collectives.TestCollectivesInductor" name="test_reorder_respects_wait_dep" time="0.077" /><testcase classname="test.distributed.test_inductor_collectives.TestSyncDecisionCrossRanks" name="test_sync_decision_cross_ranks" time="11.220"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2294966">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2294966</failure></testcase></testsuite></testsuites>

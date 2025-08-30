@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="1" tests="7" time="87.421" timestamp="2025-08-30T13:48:29.190152" hostname="dut7358"><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_complicated_dict" time="16.433" /><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_cpu_and_ranks_only" time="16.030" /><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_cpu_offload_for_dtensor" time="4.010"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2502950">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2502950</failure></testcase><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_create_cpu_state_dict" time="0.000"><skipped type="pytest.skip" message="XPU does not support pin_memory from cudart">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/checkpoint/test_state_dict_utils.py:131: XPU does not support pin_memory from cudart</skipped></testcase><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_gather_state_dict_dtensor" time="16.231" /><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_gather_with_cpu_and_ranks_only" time="15.930" /><testcase classname="test.distributed.checkpoint.test_state_dict_utils.TestStateDictUtils" name="test_state_dict_util_distribute_tensors" time="16.431" /></testsuite></testsuites>

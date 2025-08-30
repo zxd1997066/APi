@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="6" time="161.435" timestamp="2025-08-30T07:20:56.507634" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_fsdp_hybrid_shard_basic_setup" time="43.775" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_fsdp_hybrid_shard_parity" time="34.745"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py&quot;, line 340, in test_fsdp_hybrid_shard_parity&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py&quot;, line 378, in _test_fsdp_hybrid_shard_parity&#10;    self.assertEqual(losses[0], losses[1])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected -298.03204345703125 but got -297.7454833984375.&#10;Absolute difference: 0.28656005859375 (up to 1e-05 allowed)&#10;Relative difference: 0.0009615075455303006 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_hybrid_shard.py TestFSDPHybridShard.test_fsdp_hybrid_shard_parity&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py&quot;, line 340, in test_fsdp_hybrid_shard_parity&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py&quot;, line 378, in _test_fsdp_hybrid_shard_parity&#10;    self.assertEqual(losses[0], losses[1])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected -298.03204345703125 but got -297.946044921875.&#10;Absolute difference: 0.08599853515625 (up to 1e-05 allowed)&#10;Relative difference: 0.0002885546606287952 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_hybrid_shard.py TestFSDPHybridShard.test_fsdp_hybrid_shard_parity&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py", line 340, in test_fsdp_hybrid_shard_parity
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py", line 378, in _test_fsdp_hybrid_shard_parity
+    self.assertEqual(losses[0], losses[1])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected -298.03204345703125 but got -297.7454833984375.
+Absolute difference: 0.28656005859375 (up to 1e-05 allowed)
+Relative difference: 0.0009615075455303006 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_hybrid_shard.py TestFSDPHybridShard.test_fsdp_hybrid_shard_parity
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py", line 340, in test_fsdp_hybrid_shard_parity
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_hybrid_shard.py", line 378, in _test_fsdp_hybrid_shard_parity
+    self.assertEqual(losses[0], losses[1])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected -298.03204345703125 but got -297.946044921875.
+Absolute difference: 0.08599853515625 (up to 1e-05 allowed)
+Relative difference: 0.0002885546606287952 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_hybrid_shard.py TestFSDPHybridShard.test_fsdp_hybrid_shard_parity
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_hsdp_save_load_state_dict" time="31.852"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2088705">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -6.
+Absolute difference: 6
+Relative difference: inf
+Expected exit code 0 but got -6 for pid: 2088705</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_hsdp_sync_module_state" time="16.832" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_invalid_pg_specification_raises" time="16.030" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_raises_manual_wrap_hybrid_shard_when_none_policy" time="15.930" /></testsuite></testsuites>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="302.517" timestamp="2025-08-30T12:28:33.189829" hostname="dut7358"><testcase classname="test.distributed._composable.fsdp.test_fully_shard_grad_scaler.TestFullyShardGradientScaler" name="test_gradient_scaler" time="300.167"><failure message="RuntimeError: Process 0 terminated or timed out after 300.05914998054504 seconds">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.05914998054504 seconds</failure></testcase></testsuite></testsuites>
