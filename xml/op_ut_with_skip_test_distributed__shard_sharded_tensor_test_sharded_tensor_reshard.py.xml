@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="22.115" timestamp="2025-08-30T13:07:43.016923" hostname="dut7358"><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor_reshard.TestReshard" name="test_sharded_tensor_reshard" time="3.831"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -6.&#10;Absolute difference: 6&#10;Relative difference: inf&#10;Expected exit code 0 but got -6 for pid: 2463391">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
-    self._join_processes(fn)
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
-    self._check_return_codes(fn, elapsed_time)
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
-    self.assertEqual(
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
-    raise error_metas.pop()[0].to_error(  # type: ignore[index]
-AssertionError: Scalars are not equal!
-
-Expected 0 but got -6.
-Absolute difference: 6
-Relative difference: inf
-Expected exit code 0 but got -6 for pid: 2463391</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor_reshard.TestReshard" name="test_sharded_tensor_reshard_errors" time="15.930" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="35.305" timestamp="2025-08-31T02:33:56.653647" hostname="dut7358"><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor_reshard.TestReshard" name="test_sharded_tensor_reshard" time="16.733" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor_reshard.TestReshard" name="test_sharded_tensor_reshard_errors" time="16.228" /></testsuite></testsuites>
