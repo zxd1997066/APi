@@ -1,7 +1,7 @@
-W0824 15:41:17.182000 594251 site-packages/torch/distributed/run.py:803] 
-W0824 15:41:17.182000 594251 site-packages/torch/distributed/run.py:803] *****************************************
-W0824 15:41:17.182000 594251 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0824 15:41:17.182000 594251 site-packages/torch/distributed/run.py:803] *****************************************
+W0901 15:27:40.737000 3751121 site-packages/torch/distributed/run.py:803] 
+W0901 15:27:40.737000 3751121 site-packages/torch/distributed/run.py:803] *****************************************
+W0901 15:27:40.737000 3751121 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0901 15:27:40.737000 3751121 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullDPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -130,28 +130,24 @@ tokenizer:
   max_seq_len: 256
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
-[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
-[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1[Gloo] Rank  peer ranks. Expected number of connected peer ranks is : 1
+1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1756050080.txt
-/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
-  return func(*args, **kwargs)
-2025:08:24-15:41:22:(594326) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:24-15:41:22:(594326) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1756740463.txt
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_device.py:103: UserWarning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (Triggered internally at /home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/c10/core/AllocatorConfig.cpp:28.)
-  return func(*args, **kwargs)
-2025:08:24-15:41:23:(594325) |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:08:24-15:41:23:(594325) |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:08:24-15:41:23:(594325) |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:08:24-15:41:23:(594325) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 6.69 secs
+2025:09:01-15:27:45:3751199 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:09:01-15:27:45:3751199 |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:09:01-15:27:45:3751199 |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:09:01-15:27:45:3751199 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:09:01-15:27:45:3751200 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:09:01-15:27:45:3751200 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 5.68 secs
 Memory stats after model init:
 	XPU peak memory active: 8.47 GiB
 	XPU peak memory alloc: 8.47 GiB
 	XPU peak memory reserved: 8.62 GiB
 FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
-Instantiating reference model and loading checkpoint took 5.97 secs
+Instantiating reference model and loading checkpoint took 4.61 secs
 Memory stats after model init:
 	XPU peak memory active: 16.01 GiB
 	XPU peak memory alloc: 16.01 GiB
@@ -177,6 +173,20 @@ Learning rate scheduler is initialized.
 [rank1]:     _engine_run_backward(
 [rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
 [rank1]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py", line 305, in _root_post_backward_final_callback
+[rank1]:     fsdp_param_group.post_backward()
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 544, in post_backward
+[rank1]:     ) = foreach_reduce(
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 514, in foreach_reduce
+[rank1]:     foreach_reduce_scatter_copy_in(unsharded_grads, reduce_scatter_input, world_size)
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 644, in foreach_reduce_scatter_copy_in
+[rank1]:     torch.ops.fsdp.chunk_cat(
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_ops.py", line 1254, in __call__
+[rank1]:     return self._op(*args, **kwargs)
+[rank1]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 232, in chunk_cat
+[rank1]:     torch._chunk_cat(tensors, dim, num_chunks, out=out)
 [rank1]: RuntimeError: UR backend failed. UR backend returns:40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)
 [rank0]: Traceback (most recent call last):
 [rank0]:   File "/home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py", line 1008, in <module>
@@ -193,10 +203,26 @@ Learning rate scheduler is initialized.
 [rank0]:     _engine_run_backward(
 [rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
 [rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py", line 305, in _root_post_backward_final_callback
+[rank0]:     fsdp_param_group.post_backward()
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 544, in post_backward
+[rank0]:     ) = foreach_reduce(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 514, in foreach_reduce
+[rank0]:     foreach_reduce_scatter_copy_in(unsharded_grads, reduce_scatter_input, world_size)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 644, in foreach_reduce_scatter_copy_in
+[rank0]:     torch.ops.fsdp.chunk_cat(
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/_ops.py", line 1254, in __call__
+[rank0]:     return self._op(*args, **kwargs)
+[rank0]:   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 232, in chunk_cat
+[rank0]:     torch._chunk_cat(tensors, dim, num_chunks, out=out)
 [rank0]: RuntimeError: UR backend failed. UR backend returns:40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)
-  0%|          | 0/10 [01:20<?, ?it/s]
-W0824 15:42:59.407000 594251 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 594326 closing signal SIGTERM
-E0824 15:42:59.573000 594251 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 0 (pid: 594325) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+  0%|          | 0/10 [01:30<?, ?it/s]
+[rank0]:[W901 15:29:28.839002054 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[rank1]:[W901 15:29:28.900346669 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W0901 15:29:29.069000 3751121 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3751200 closing signal SIGTERM
+E0901 15:29:29.101000 3751121 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 0 (pid: 3751199) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -213,9 +239,9 @@ Traceback (most recent call last):
     run(args)
   File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/run.py", line 927, in run
     elastic_launch(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 159, in __call__
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
     return launch_agent(self._config, self._entrypoint, list(args))
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 296, in launch_agent
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
     raise ChildFailedError(
 torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
 ============================================================
@@ -226,11 +252,11 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-08-24_15:42:59
+  time      : 2025-09-01_15:29:29
   host      : dut7358
   rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 594325)
+  exitcode  : 1 (pid: 3751199)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
-[W824 15:43:00.635514050 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[W901 15:29:29.690123990 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
