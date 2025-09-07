@@ -1,1 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="6" time="153.672" timestamp="2025-08-31T02:45:52.491588" hostname="dut7358"><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_1d_fsdp_cpu_offload_full_model_state_dict" time="16.333" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_1d_fsdp_get_model_state_dict" time="17.129" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_fsdp1_and_load_with_fsdp2" time="32.458" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_fsdp1_and_load_with_fsdp2_tp" time="33.260" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_fsdp2_tp_and_load_with_tp" time="34.260" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_tp_and_load_with_fsdp2_tp" time="17.834" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="6" time="682.430" timestamp="2025-08-22T14:59:42.707999" hostname="dut7358"><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_1d_fsdp_cpu_offload_full_model_state_dict" time="15.955" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_1d_fsdp_get_model_state_dict" time="15.545" /><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_fsdp1_and_load_with_fsdp2" time="300.116"><failure message="RuntimeError: Process 0 terminated or timed out after 300.10370564460754 seconds">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.10370564460754 seconds</failure></testcase><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_fsdp1_and_load_with_fsdp2_tp" time="31.481"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/checkpoint_utils.py&quot;, line 153, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/checkpoint/fsdp/test_fsdp_dsd.py&quot;, line 268, in test_save_with_fsdp1_and_load_with_fsdp2_tp&#10;    dcp.save(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/logger.py&quot;, line 87, in wrapper&#10;    result = func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 475, in inner_func&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py&quot;, line 193, in save&#10;    return _save_state_dict(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py&quot;, line 456, in _save_state_dict&#10;    central_plan = distW.reduce_scatter(&quot;plan&quot;, local_step, global_step)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 217, in reduce_scatter&#10;    result = self.scatter_object(all_results)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 162, in scatter_object&#10;    dist.scatter_object_list(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 81, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 3787, in scatter_object_list&#10;    scatter_object_output_list[0] = _tensor_to_object(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 3092, in _tensor_to_object&#10;    return _unpickler(io.BytesIO(buf)).load()&#10;_pickle.UnpicklingError: pickle data was truncated&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/checkpoint/fsdp/test_fsdp_dsd.py TestFullyShardWithDistributedStateDict.test_save_with_fsdp1_and_load_with_fsdp2_tp&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/checkpoint_utils.py&quot;, line 153, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/checkpoint/fsdp/test_fsdp_dsd.py&quot;, line 268, in test_save_with_fsdp1_and_load_with_fsdp2_tp&#10;    dcp.save(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/logger.py&quot;, line 87, in wrapper&#10;    result = func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 475, in inner_func&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py&quot;, line 193, in save&#10;    return _save_state_dict(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py&quot;, line 456, in _save_state_dict&#10;    central_plan = distW.reduce_scatter(&quot;plan&quot;, local_step, global_step)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 217, in reduce_scatter&#10;    result = self.scatter_object(all_results)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 162, in scatter_object&#10;    dist.scatter_object_list(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 81, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 3787, in scatter_object_list&#10;    scatter_object_output_list[0] = _tensor_to_object(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 3092, in _tensor_to_object&#10;    return _unpickler(io.BytesIO(buf)).load()&#10;_pickle.UnpicklingError: pickle data was truncated&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/checkpoint/fsdp/test_fsdp_dsd.py TestFullyShardWithDistributedStateDict.test_save_with_fsdp1_and_load_with_fsdp2_tp&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/checkpoint_utils.py", line 153, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/checkpoint/fsdp/test_fsdp_dsd.py", line 268, in test_save_with_fsdp1_and_load_with_fsdp2_tp
+    dcp.save(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/logger.py", line 87, in wrapper
+    result = func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 475, in inner_func
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 193, in save
+    return _save_state_dict(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 456, in _save_state_dict
+    central_plan = distW.reduce_scatter("plan", local_step, global_step)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 217, in reduce_scatter
+    result = self.scatter_object(all_results)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 162, in scatter_object
+    dist.scatter_object_list(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 3787, in scatter_object_list
+    scatter_object_output_list[0] = _tensor_to_object(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 3092, in _tensor_to_object
+    return _unpickler(io.BytesIO(buf)).load()
+_pickle.UnpicklingError: pickle data was truncated
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/checkpoint/fsdp/test_fsdp_dsd.py TestFullyShardWithDistributedStateDict.test_save_with_fsdp1_and_load_with_fsdp2_tp
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/checkpoint_utils.py", line 153, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/checkpoint/fsdp/test_fsdp_dsd.py", line 268, in test_save_with_fsdp1_and_load_with_fsdp2_tp
+    dcp.save(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/logger.py", line 87, in wrapper
+    result = func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 475, in inner_func
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 193, in save
+    return _save_state_dict(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 456, in _save_state_dict
+    central_plan = distW.reduce_scatter("plan", local_step, global_step)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 217, in reduce_scatter
+    result = self.scatter_object(all_results)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 162, in scatter_object
+    dist.scatter_object_list(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 3787, in scatter_object_list
+    scatter_object_output_list[0] = _tensor_to_object(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 3092, in _tensor_to_object
+    return _unpickler(io.BytesIO(buf)).load()
+_pickle.UnpicklingError: pickle data was truncated
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/checkpoint/fsdp/test_fsdp_dsd.py TestFullyShardWithDistributedStateDict.test_save_with_fsdp1_and_load_with_fsdp2_tp
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_fsdp2_tp_and_load_with_tp" time="300.114"><failure message="RuntimeError: Process 0 terminated or timed out after 300.10883712768555 seconds">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.10883712768555 seconds</failure></testcase><testcase classname="test.distributed.checkpoint.fsdp.test_fsdp_dsd.TestFullyShardWithDistributedStateDict" name="test_save_with_tp_and_load_with_fsdp2_tp" time="16.543"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/checkpoint_utils.py&quot;, line 153, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/checkpoint/fsdp/test_fsdp_dsd.py&quot;, line 403, in test_save_with_tp_and_load_with_fsdp2_tp&#10;    dcp.save(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/logger.py&quot;, line 87, in wrapper&#10;    result = func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 475, in inner_func&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py&quot;, line 193, in save&#10;    return _save_state_dict(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py&quot;, line 456, in _save_state_dict&#10;    central_plan = distW.reduce_scatter(&quot;plan&quot;, local_step, global_step)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 217, in reduce_scatter&#10;    result = self.scatter_object(all_results)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py&quot;, line 162, in scatter_object&#10;    dist.scatter_object_list(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 81, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 3787, in scatter_object_list&#10;    scatter_object_output_list[0] = _tensor_to_object(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 3092, in _tensor_to_object&#10;    return _unpickler(io.BytesIO(buf)).load()&#10;_pickle.UnpicklingError: pickle data was truncated&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/checkpoint/fsdp/test_fsdp_dsd.py TestFullyShardWithDistributedStateDict.test_save_with_tp_and_load_with_fsdp2_tp&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/checkpoint_utils.py", line 153, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/checkpoint/fsdp/test_fsdp_dsd.py", line 403, in test_save_with_tp_and_load_with_fsdp2_tp
+    dcp.save(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/logger.py", line 87, in wrapper
+    result = func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 475, in inner_func
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 193, in save
+    return _save_state_dict(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 456, in _save_state_dict
+    central_plan = distW.reduce_scatter("plan", local_step, global_step)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 217, in reduce_scatter
+    result = self.scatter_object(all_results)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/checkpoint/utils.py", line 162, in scatter_object
+    dist.scatter_object_list(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 3787, in scatter_object_list
+    scatter_object_output_list[0] = _tensor_to_object(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 3092, in _tensor_to_object
+    return _unpickler(io.BytesIO(buf)).load()
+_pickle.UnpicklingError: pickle data was truncated
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/checkpoint/fsdp/test_fsdp_dsd.py TestFullyShardWithDistributedStateDict.test_save_with_tp_and_load_with_fsdp2_tp
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase></testsuite></testsuites>

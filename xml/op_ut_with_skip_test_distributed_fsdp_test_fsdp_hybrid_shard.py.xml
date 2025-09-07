@@ -1,8 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="6" time="427.715" timestamp="2025-08-30T20:46:50.325651" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_fsdp_hybrid_shard_basic_setup" time="44.075" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_fsdp_hybrid_shard_parity" time="300.045"><failure message="RuntimeError: Process 0 terminated or timed out after 300.04077315330505 seconds">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="6" time="412.123" timestamp="2025-08-22T09:30:02.519501" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_fsdp_hybrid_shard_basic_setup" time="30.348"><failure message="AssertionError: Scalars are not equal!&#10;&#10;Expected 0 but got -11.&#10;Absolute difference: 11&#10;Relative difference: inf&#10;Expected exit code 0 but got -11 for pid: 139879">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
     self._join_processes(fn)
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
     self._check_return_codes(fn, elapsed_time)
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1056, in _check_return_codes
+    self.assertEqual(
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 0 but got -11.
+Absolute difference: 11
+Relative difference: inf
+Expected exit code 0 but got -11 for pid: 139879</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_fsdp_hybrid_shard_parity" time="300.095"><failure message="RuntimeError: Process 0 terminated or timed out after 300.0802974700928 seconds">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
     raise RuntimeError(
-RuntimeError: Process 0 terminated or timed out after 300.04077315330505 seconds</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_hsdp_save_load_state_dict" time="32.541" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_hsdp_sync_module_state" time="16.732" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_invalid_pg_specification_raises" time="16.031" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_raises_manual_wrap_hybrid_shard_when_none_policy" time="15.927" /></testsuite></testsuites>
+RuntimeError: Process 0 terminated or timed out after 300.0802974700928 seconds</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_hsdp_save_load_state_dict" time="30.354" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_hsdp_sync_module_state" time="16.844" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_invalid_pg_specification_raises" time="16.037" /><testcase classname="test.distributed.fsdp.test_fsdp_hybrid_shard.TestFSDPHybridShard" name="test_raises_manual_wrap_hybrid_shard_when_none_policy" time="16.148" /></testsuite></testsuites>

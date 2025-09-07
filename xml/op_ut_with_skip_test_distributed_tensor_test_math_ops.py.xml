@@ -1,1 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="20" time="350.029" timestamp="2025-08-31T01:05:40.832709" hostname="dut7358"><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_conj_complex_dtensor" time="16.434" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_cumsum" time="16.630" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_foreach_add_different_mesh" time="16.523" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_foreach_norm" time="16.131" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_foreach_norm_different_mesh" time="16.231" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_histc" time="16.632" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_layer_norm_bwd" time="17.233" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_layer_norm_bwd_req_grad" time="32.457" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_layer_norm_fwd" time="16.832" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_linalg_eigh" time="16.531" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_linear_op_reductions" time="17.233" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_mean" time="16.231" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_nll_loss_and_cross_entropy" time="16.933" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_rotary_embedding_complex_ops" time="16.532" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_shard0_svd" time="16.331" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_shard_math_ops" time="16.732" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_softmax_fwd" time="16.628" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_softmax_with_bwd" time="16.930" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_topk" time="16.328" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_upsampling" time="16.128" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="12" time="181.978" timestamp="2025-08-22T13:37:02.677505" hostname="dut7358"><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_conj_complex_dtensor" time="15.845" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_foreach_add_different_mesh" time="14.943" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_foreach_norm" time="14.830" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_foreach_norm_different_mesh" time="15.746" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_histc" time="16.058" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_linalg_eigh" time="15.447" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_mean" time="15.646"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 491, in wrapper&#10;    raise e&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 488, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/tensor/test_math_ops.py&quot;, line 94, in test_mean&#10;    self.linear_op_reductions(&quot;mean&quot;)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/tensor/test_math_ops.py&quot;, line 80, in linear_op_reductions&#10;    self.assertEqual(dt_dim_reduced_tensor, dim_reduced_tensor)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Tensor-likes are not close!&#10;&#10;Mismatched elements: 48 / 96 (50.0%)&#10;Greatest absolute difference: 1.2121303081512451 at index (6, 0, 1) (up to 1e-05 allowed)&#10;Greatest relative difference: 172.16748046875 at index (11, 0, 0) (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_math_ops.py DistMathOpsTest.test_mean&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 491, in wrapper
+    raise e
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 488, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/tensor/test_math_ops.py", line 94, in test_mean
+    self.linear_op_reductions("mean")
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/tensor/test_math_ops.py", line 80, in linear_op_reductions
+    self.assertEqual(dt_dim_reduced_tensor, dim_reduced_tensor)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 48 / 96 (50.0%)
+Greatest absolute difference: 1.2121303081512451 at index (6, 0, 1) (up to 1e-05 allowed)
+Greatest relative difference: 172.16748046875 at index (11, 0, 0) (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_math_ops.py DistMathOpsTest.test_mean
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_nll_loss_and_cross_entropy" time="5.424"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 491, in wrapper&#10;    raise e&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 488, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/tensor/test_math_ops.py&quot;, line 223, in test_nll_loss_and_cross_entropy&#10;    self.assertEqual(dist_y.full_tensor(), y)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Tensor-likes are not close!&#10;&#10;Mismatched elements: 4 / 8 (50.0%)&#10;Greatest absolute difference: 0.7168439626693726 at index (7,) (up to 1e-05 allowed)&#10;Greatest relative difference: 1.779810905456543 at index (3,) (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_math_ops.py DistMathOpsTest.test_nll_loss_and_cross_entropy&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 491, in wrapper
+    raise e
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 488, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/tensor/test_math_ops.py", line 223, in test_nll_loss_and_cross_entropy
+    self.assertEqual(dist_y.full_tensor(), y)
+  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 4 / 8 (50.0%)
+Greatest absolute difference: 0.7168439626693726 at index (7,) (up to 1e-05 allowed)
+Greatest relative difference: 1.779810905456543 at index (3,) (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_math_ops.py DistMathOpsTest.test_nll_loss_and_cross_entropy
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_rotary_embedding_complex_ops" time="15.648" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_shard_math_ops" time="17.051" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_softmax_with_bwd" time="16.642" /><testcase classname="test.distributed.tensor.test_math_ops.DistMathOpsTest" name="test_upsampling" time="16.049" /></testsuite></testsuites>
