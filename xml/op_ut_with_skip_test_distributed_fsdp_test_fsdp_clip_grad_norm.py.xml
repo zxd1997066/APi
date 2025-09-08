@@ -1,37 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="4" time="104.775" timestamp="2025-08-22T08:13:10.342099" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_ddp_parity_xpu" time="36.073"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 426, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 78, in test_ddp_parity&#10;    self.run_subtests(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 236, in _test_ddp_parity&#10;    self.assertEqual(ddp_total_norm, fsdp_total_norm)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 597.7222900390625 but got 597.8594970703125.&#10;Absolute difference: 0.13720703125 (up to 1e-05 allowed)&#10;Relative difference: 0.0002295497985210376 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 426, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 78, in test_ddp_parity&#10;    self.run_subtests(&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 236, in _test_ddp_parity&#10;    self.assertEqual(ddp_total_norm, fsdp_total_norm)&#10;  File &quot;/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 597.7222900390625 but got 597.8594970703125.&#10;Absolute difference: 0.13720703125 (up to 1e-05 allowed)&#10;Relative difference: 0.0002295497985210376 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="4" time="98.032" timestamp="2025-09-05T10:42:51.815692" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_ddp_parity_xpu" time="32.053"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 856, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 710, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 426, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 78, in test_ddp_parity&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1139, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 236, in _test_ddp_parity&#10;    self.assertEqual(ddp_total_norm, fsdp_total_norm)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23679.998046875 but got 23686.31640625.&#10;Absolute difference: 6.318359375 (up to 1e-05 allowed)&#10;Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 856, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 710, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 426, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 78, in test_ddp_parity&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1139, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 236, in _test_ddp_parity&#10;    self.assertEqual(ddp_total_norm, fsdp_total_norm)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23679.998046875 but got 23686.31640625.&#10;Absolute difference: 6.318359375 (up to 1e-05 allowed)&#10;Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 856, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 710, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 426, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 78, in test_ddp_parity&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1139, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 236, in _test_ddp_parity&#10;    self.assertEqual(ddp_total_norm, fsdp_total_norm)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23679.998046875 but got 23686.31640625.&#10;Absolute difference: 6.318359375 (up to 1e-05 allowed)&#10;Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 856, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 710, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 426, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 78, in test_ddp_parity&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1139, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py&quot;, line 236, in _test_ddp_parity&#10;    self.assertEqual(ddp_total_norm, fsdp_total_norm)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23679.998046875 but got 23686.31640625.&#10;Absolute difference: 6.318359375 (up to 1e-05 allowed)&#10;Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 708, in wrapper
     self._join_processes(fn)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 972, in _join_processes
     self._check_return_codes(fn, elapsed_time)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1012, in _check_return_codes
     raise RuntimeError(error)
-RuntimeError: Process 1 exited with error code 10 and exception:
+RuntimeError: Process 0 exited with error code 10 and exception:
 Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 856, in run_test
     getattr(self, test_name)()
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 710, in wrapper
     fn()
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
     method(*args, **kwargs)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 426, in instantiated_test
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 426, in instantiated_test
     result = test(self, **param_kwargs)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
     return func(*args, **kwargs)
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 78, in test_ddp_parity
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 78, in test_ddp_parity
     self.run_subtests(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
     return run_subtests(self, *args, **kwargs)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1139, in run_subtests
     test_fn(*test_args, **test_kwargs, **subtest_kwargs)
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 236, in _test_ddp_parity
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 236, in _test_ddp_parity
     self.assertEqual(ddp_total_norm, fsdp_total_norm)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
     raise error_metas.pop()[0].to_error(  # type: ignore[index]
 AssertionError: Scalars are not close!
 
-Expected 597.7222900390625 but got 597.8594970703125.
-Absolute difference: 0.13720703125 (up to 1e-05 allowed)
-Relative difference: 0.0002295497985210376 (up to 1.3e-06 allowed)
+Expected 23679.998046875 but got 23686.31640625.
+Absolute difference: 6.318359375 (up to 1e-05 allowed)
+Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 856, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 710, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 426, in instantiated_test
+    result = test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 78, in test_ddp_parity
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1139, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 236, in _test_ddp_parity
+    self.assertEqual(ddp_total_norm, fsdp_total_norm)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected 23679.998046875 but got 23686.31640625.
+Absolute difference: 6.318359375 (up to 1e-05 allowed)
+Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 856, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 710, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 426, in instantiated_test
+    result = test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 78, in test_ddp_parity
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1139, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 236, in _test_ddp_parity
+    self.assertEqual(ddp_total_norm, fsdp_total_norm)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected 23679.998046875 but got 23686.31640625.
+Absolute difference: 6.318359375 (up to 1e-05 allowed)
+Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)
 
 To execute this test, run the following from the base repo dir:
     PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu
@@ -40,33 +106,33 @@ This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
 
 Process 3 exited with error code 10 and exception:
 Traceback (most recent call last):
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 856, in run_test
     getattr(self, test_name)()
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 710, in wrapper
     fn()
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
     method(*args, **kwargs)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 426, in instantiated_test
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 426, in instantiated_test
     result = test(self, **param_kwargs)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
     return func(*args, **kwargs)
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 78, in test_ddp_parity
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 78, in test_ddp_parity
     self.run_subtests(
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
     return run_subtests(self, *args, **kwargs)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1139, in run_subtests
     test_fn(*test_args, **test_kwargs, **subtest_kwargs)
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 236, in _test_ddp_parity
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_clip_grad_norm.py", line 236, in _test_ddp_parity
     self.assertEqual(ddp_total_norm, fsdp_total_norm)
-  File "/home/jenkins/.conda/envs/xpu_op_/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
     raise error_metas.pop()[0].to_error(  # type: ignore[index]
 AssertionError: Scalars are not close!
 
-Expected 597.7222900390625 but got 597.8594970703125.
-Absolute difference: 0.13720703125 (up to 1e-05 allowed)
-Relative difference: 0.0002295497985210376 (up to 1.3e-06 allowed)
+Expected 23679.998046875 but got 23686.31640625.
+Absolute difference: 6.318359375 (up to 1e-05 allowed)
+Relative difference: 0.00026682263074906886 (up to 1.3e-06 allowed)
 
 To execute this test, run the following from the base repo dir:
     PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_clip_grad_norm.py TestClipGradNormXPU.test_ddp_parity_xpu
 
-This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_low_precision_grads_xpu" time="18.955" /><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_no_gradients_xpu" time="16.940" /><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_non_root_xpu" time="29.454" /></testsuite></testsuites>
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_low_precision_grads_xpu" time="16.932" /><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_no_gradients_xpu" time="15.830" /><testcase classname="test.distributed.fsdp.test_fsdp_clip_grad_norm.TestClipGradNormXPU" name="test_non_root_xpu" time="31.155" /></testsuite></testsuites>
