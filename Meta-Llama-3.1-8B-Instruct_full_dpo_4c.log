@@ -1,7 +1,7 @@
-W0901 15:29:32.222000 3751357 site-packages/torch/distributed/run.py:803] 
-W0901 15:29:32.222000 3751357 site-packages/torch/distributed/run.py:803] *****************************************
-W0901 15:29:32.222000 3751357 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W0901 15:29:32.222000 3751357 site-packages/torch/distributed/run.py:803] *****************************************
+W0908 04:07:46.017000 707787 site-packages/torch/distributed/run.py:803] 
+W0908 04:07:46.017000 707787 site-packages/torch/distributed/run.py:803] *****************************************
+W0908 04:07:46.017000 707787 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0908 04:07:46.017000 707787 site-packages/torch/distributed/run.py:803] *****************************************
 Running FullDPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -260,28 +260,28 @@ tokenizer:
 
 [Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1756740575.txt
+Writing logs to /tmp/torchtune/llama3_1_8B/full_dpo/logs/log_1757304468.txt
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:09:01-15:29:37:3751437 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:09:01-15:29:37:3751437 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:09:01-15:29:37:3751438 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:09:01-15:29:37:3751438 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:09:01-15:29:37:3751436 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:09:01-15:29:37:3751436 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:09:01-15:29:37:3751435 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:09:01-15:29:37:3751435 |CCL_WARN| value of CCL_RECV changed to be direct (default:)
-2025:09:01-15:29:37:3751435 |CCL_WARN| value of CCL_SEND changed to be direct (default:)
-2025:09:01-15:29:37:3751435 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-Instantiating model and loading checkpoint took 6.76 secs
+2025:09:08-04:07:50:707862 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:09:08-04:07:50:707862 |CCL_WARN| value of CCL_RECV changed to be direct (default:)
+2025:09:08-04:07:50:707862 |CCL_WARN| value of CCL_SEND changed to be direct (default:)
+2025:09:08-04:07:50:707862 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:09:08-04:07:50:707863 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:09:08-04:07:50:707863 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:09:08-04:07:50:707865 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:09:08-04:07:50:707865 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:09:08-04:07:50:707864 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:09:08-04:07:50:707864 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+Instantiating model and loading checkpoint took 7.41 secs
 Memory stats after model init:
 	XPU peak memory active: 4.75 GiB
 	XPU peak memory alloc: 4.75 GiB
 	XPU peak memory reserved: 4.85 GiB
 FSDP is enabled. Instantiating reference model and loading checkpoint on Rank 0 ...
-Instantiating reference model and loading checkpoint took 5.31 secs
+Instantiating reference model and loading checkpoint took 6.17 secs
 Memory stats after model init:
 	XPU peak memory active: 8.55 GiB
 	XPU peak memory alloc: 8.55 GiB
@@ -292,15 +292,18 @@ Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
  Profiling disabled.
  Profiler config after instantiation: {'enabled': False}
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:38<05:42, 38.11s/it]1|1|Loss: 0.6925901174545288:  10%|█         | 1/10 [00:38<05:42, 38.11s/it]iteration:  1 tokens:  65536 time:  38.106377222109586 tokens_per_second:  1719.82
-Segmentation fault from GPU at 0xff0300091a414000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
-Segmentation fault from GPU at 0xff0300091a414000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:36<05:29, 36.62s/it]1|1|Loss: 0.6940131783485413:  10%|█         | 1/10 [00:36<05:29, 36.62s/it]iteration:  1 tokens:  65536 time:  36.623916887678206 tokens_per_second:  1789.43
+Segmentation fault from GPU at 0xff0300091b620000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
+Segmentation fault from GPU at 0xff0300091b620000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
 Abort was called at 288 line in file:
 ./shared/source/os_interface/linux/drm_neo.cpp
-W0901 15:31:01.601000 3751357 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3751435 closing signal SIGTERM
-W0901 15:31:01.601000 3751357 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3751436 closing signal SIGTERM
-W0901 15:31:01.601000 3751357 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 3751437 closing signal SIGTERM
-E0901 15:31:01.966000 3751357 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: -6) local_rank: 3 (pid: 3751438) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+Segmentation fault from GPU at 0xff02000918846000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
+Segmentation fault from GPU at 0xff02000918846000, ctx_id: 1 (CCS) type: 0 (NotPresent), level: 1 (PDE), access: 1 (Write), banned: 1, aborting.
+Abort was called at 288 line in file:
+./shared/source/os_interface/linux/drm_neo.cpp
+W0908 04:09:15.370000 707787 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 707862 closing signal SIGTERM
+W0908 04:09:15.371000 707787 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 707863 closing signal SIGTERM
+E0908 04:09:15.635000 707787 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: -6) local_rank: 2 (pid: 707864) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -326,15 +329,21 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 /home/jenkins/xiangdong/torchtune/recipes/full_dpo_distributed.py FAILED
 ------------------------------------------------------------
 Failures:
-  <NO_OTHER_FAILURES>
+[1]:
+  time      : 2025-09-08_04:09:15
+  host      : dut7358
+  rank      : 3 (local_rank: 3)
+  exitcode  : -6 (pid: 707865)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 707865
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-09-01_15:31:01
+  time      : 2025-09-08_04:09:15
   host      : dut7358
-  rank      : 3 (local_rank: 3)
-  exitcode  : -6 (pid: 3751438)
+  rank      : 2 (local_rank: 2)
+  exitcode  : -6 (pid: 707864)
   error_file: <N/A>
-  traceback : Signal 6 (SIGABRT) received by PID 3751438
+  traceback : Signal 6 (SIGABRT) received by PID 707864
 ============================================================
-[W901 15:31:02.652700447 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[W908 04:09:16.237565139 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
