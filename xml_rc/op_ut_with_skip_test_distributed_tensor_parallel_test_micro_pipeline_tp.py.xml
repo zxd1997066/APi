@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="38" skipped="0" tests="45" time="57.973" timestamp="2025-09-11T15:21:43.641630+00:00" hostname="dut7358"><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_dtensor_seq_par_shard_dim_0" time="0.008"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_dtensor_seq_par_shard_dim_0&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 483, in test_dtensor_seq_par
+    model = parallelize_module(model, device_mesh, parallelize_plan)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/api.py", line 130, in parallelize_module
+    parallelize_module(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/api.py", line 86, in parallelize_module
+    return parallelize_plan._apply(module, device_mesh)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/style.py", line 158, in _apply
+    return distribute_module(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/_api.py", line 931, in distribute_module
+    partition_fn(name, submod, device_mesh)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/style.py", line 124, in _partition_linear_fn
+    distribute_tensor(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/_api.py", line 765, in distribute_tensor
+    local_tensor = placement._shard_tensor(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/placement_types.py", line 183, in _shard_tensor
+    mesh_scatter(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/_collective_utils.py", line 110, in mesh_scatter
+    fut = scatter(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4361, in scatter
+    work = group.scatter(output_tensors, input_tensors, opts)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_dtensor_seq_par_shard_dim_0
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_dtensor_seq_par_shard_dim_1" time="0.003"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_dtensor_seq_par_shard_dim_1&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 483, in test_dtensor_seq_par
+    model = parallelize_module(model, device_mesh, parallelize_plan)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/api.py", line 130, in parallelize_module
+    parallelize_module(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/api.py", line 86, in parallelize_module
+    return parallelize_plan._apply(module, device_mesh)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/style.py", line 158, in _apply
+    return distribute_module(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/_api.py", line 931, in distribute_module
+    partition_fn(name, submod, device_mesh)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/parallel/style.py", line 124, in _partition_linear_fn
+    distribute_tensor(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/_api.py", line 765, in distribute_tensor
+    local_tensor = placement._shard_tensor(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/placement_types.py", line 183, in _shard_tensor
+    mesh_scatter(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/tensor/_collective_utils.py", line 110, in mesh_scatter
+    fut = scatter(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4361, in scatter
+    work = group.scatter(output_tensors, input_tensors, opts)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_dtensor_seq_par_shard_dim_1
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_find_all_gather_patterns" time="0.034" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_find_reduce_scatter_patterns" time="0.004"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_find_reduce_scatter_patterns&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 149, in test_find_reduce_scatter_patterns
+    gm = make_fx(func)(inp)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 2429, in wrapped
+    return make_fx_tracer.trace(f, *args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 2356, in trace
+    return self._trace_inner(f, *args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 2318, in _trace_inner
+    t = dispatch_trace(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_compile.py", line 53, in inner
+    return disable_fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1303, in dispatch_trace
+    graph = tracer.trace(root, concrete_args)  # type: ignore[arg-type]
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/_symbolic_trace.py", line 868, in trace
+    (self.create_arg(fn(*args)),),
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1361, in wrapped
+    out = f(*tensors)  # type:ignore[call-arg]
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 143, in func
+    a = reduce_scatter_tensor(inp, "sum", scatter_dim=0, group=group.group_name)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/_functional_collectives.py", line 282, in reduce_scatter_tensor
+    tensor = torch.ops._c10d_functional.reduce_scatter_tensor(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1409, in __torch_function__
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/utils/_stats.py", line 28, in wrapper
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1534, in __torch_dispatch__
+    return proxy_call(self, func, self.pre_dispatch, args, kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 994, in proxy_call
+    out = func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_find_reduce_scatter_patterns
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_2_gather_dim_0_return_A_False" time="3.949"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_0_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpe57dzlpg/eo/ceodyy46lsuwsabqjj3x7yjhg5pa3ix3tams2ycwrzou6udp4fzv.py", line 54, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_0_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_2_gather_dim_0_return_A_True" time="0.110"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_0_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmp36gw5bfv/zd/czd3s4ft2zvjzjycblnwtkchjd34j3ejkssntf6rqzqrgcyov3yi.py", line 54, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_0_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_2_gather_dim_1_return_A_False" time="3.011"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_1_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpj0f09phv/4y/c4yn5zvwy7443hh3yj35fto3cfu2hhi4zd4loum34x4xemihrfwe.py", line 109, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_1_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_2_gather_dim_1_return_A_True" time="2.949"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_1_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpzu3lwllu/rt/crtnfrvm3uwt6jadivgcwqymlxamwsrsyniziupfkpavksv3kzid.py", line 109, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_2_gather_dim_1_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_2_gather_dim_2_return_A_False" time="0.001" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_2_gather_dim_2_return_A_True" time="0.001" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_3_gather_dim_0_return_A_False" time="0.119"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_0_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpkfoe6n00/wr/cwrdvqneemeq4r62wkucvjkbwrjram6ezu3o6kvciddzcv2j3tik.py", line 54, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_0_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_3_gather_dim_0_return_A_True" time="0.111"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_0_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmp00zizq2f/zo/czoqrxaetqtyrtnbt2vpwxp2go6ydsabv5p4cphkez4ngsthzhy7.py", line 54, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_0_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_3_gather_dim_1_return_A_False" time="2.990"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_1_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpetvl0qbd/36/c36b7iypkptn3mldvtveq2wi72h2peiolcormf4a5nogtcrkdaku.py", line 110, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_1_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_3_gather_dim_1_return_A_True" time="2.948"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_1_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpmylnqtbg/4i/c4i3elmijgqq4zx6lvm6lcenzqmlietrvulw7p3hd3e47zvj7hnp.py", line 110, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_1_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_3_gather_dim_2_return_A_False" time="2.952"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_2_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpoxokjvup/wp/cwp4nohs65y5wdypfm5m4h5rzlxv2ewx5snshwekq3ry25bzmtyb.py", line 109, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_2_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_matmul_A_dims_3_gather_dim_2_return_A_True" time="2.943"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_2_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 232, in test_fuse_all_gather_matmul
+    code = run_and_get_triton_code(compiled, A_shard, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 212, in func
+    def func(A_shard: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmptacktjbg/fx/cfxc4xlczvb5r5nxvetpoehys2z7cwdrguc3nmg5k2pujuagqvcu.py", line 109, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_matmul_A_dims_3_gather_dim_2_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_0_return_A_False" time="0.027"><failure message="AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%wait_tensor, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    return (None, _scaled_mm)'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_0_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 303, in test_fuse_all_gather_scaled_matmul
+    self.assertIn("fused_all_gather_scaled_matmul", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%wait_tensor, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    return (None, _scaled_mm)'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_0_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_0_return_A_True" time="0.008"><failure message="AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=2] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%wait_tensor, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    return (wait_tensor, _scaled_mm)'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_0_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 303, in test_fuse_all_gather_scaled_matmul
+    self.assertIn("fused_all_gather_scaled_matmul", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=2] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%wait_tensor, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    return (wait_tensor, _scaled_mm)'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_0_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_1_return_A_False" time="2.995"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_1_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 312, in test_fuse_all_gather_scaled_matmul
+    code = run_and_get_triton_code(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 259, in func
+    def func(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpl3l_nu75/sa/csakgkhtkivl4vr5rgxvhtfx3w7cvsj6c7dkpx4myosymfepshyd.py", line 126, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_1_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_1_return_A_True" time="2.991"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_1_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 312, in test_fuse_all_gather_scaled_matmul
+    code = run_and_get_triton_code(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 259, in func
+    def func(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpm9q0qk88/zn/czn3dhhgn4vwayuzp7bgwunii4ih2h4gr7aqjsi45dixrla4jznu.py", line 125, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_1_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_2_return_A_False" time="0.002" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_2_gather_dim_2_return_A_True" time="0.001" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_0_return_A_False" time="0.013"><failure message="AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%wait_tensor, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (None, view_2)'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_0_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 303, in test_fuse_all_gather_scaled_matmul
+    self.assertIn("fused_all_gather_scaled_matmul", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%wait_tensor, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (None, view_2)'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_0_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_0_return_A_True" time="0.009"><failure message="AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=2] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%wait_tensor, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (wait_tensor, view_2)'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_0_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 303, in test_fuse_all_gather_scaled_matmul
+    self.assertIn("fused_all_gather_scaled_matmul", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=2] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%wait_tensor, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (wait_tensor, view_2)'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_0_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_1_return_A_False" time="0.013"><failure message="AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%wait_tensor, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %view : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem, torch.uint8), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem_1, torch.uint8), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%view, %view_1], 1), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%cat, torch.float8_e4m3fn), kwargs = {})\n    %view_3 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%view_2, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_3, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_4 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (None, view_4)'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_1_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 303, in test_fuse_all_gather_scaled_matmul
+    self.assertIn("fused_all_gather_scaled_matmul", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%wait_tensor, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %view : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem, torch.uint8), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem_1, torch.uint8), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%view, %view_1], 1), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%cat, torch.float8_e4m3fn), kwargs = {})\n    %view_3 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%view_2, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_3, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_4 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (None, view_4)'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_1_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_1_return_A_True" time="0.012"><failure message="AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%wait_tensor, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %view : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem, torch.uint8), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem_1, torch.uint8), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%view, %view_1], 1), kwargs = {})\n    %view_2 : [num_users=2] = call_function[target=torch.ops.aten.view.dtype](args = (%cat, torch.float8_e4m3fn), kwargs = {})\n    %view_3 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%view_2, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_3, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_4 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (view_2, view_4)'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_1_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 303, in test_fuse_all_gather_scaled_matmul
+    self.assertIn("fused_all_gather_scaled_matmul", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_all_gather_scaled_matmul' not found in 'graph():\n    %a_shard_1 : [num_users=1] = placeholder[target=A_shard_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %all_gather_into_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.all_gather_into_tensor.default](args = (%a_shard_1, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%all_gather_into_tensor,), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%wait_tensor, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %view : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem, torch.uint8), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.view.dtype](args = (%getitem_1, torch.uint8), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%view, %view_1], 1), kwargs = {})\n    %view_2 : [num_users=2] = call_function[target=torch.ops.aten.view.dtype](args = (%cat, torch.float8_e4m3fn), kwargs = {})\n    %view_3 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%view_2, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view_3, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_4 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, -1]), kwargs = {})\n    return (view_2, view_4)'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_1_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_2_return_A_False" time="3.183"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_2_return_A_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 312, in test_fuse_all_gather_scaled_matmul
+    code = run_and_get_triton_code(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 259, in func
+    def func(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpuahigc95/jf/cjfg27ctjjcgldjltrfmecfj4nh6g46rsfuxa2iw6iyff3ifpod2.py", line 128, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_2_return_A_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_2_return_A_True" time="3.010"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_2_return_A_True&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 312, in test_fuse_all_gather_scaled_matmul
+    code = run_and_get_triton_code(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 259, in func
+    def func(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpiabrb5tb/xw/cxwunoeaog5xa5xn6il47olshltkymncjrzooetykejbiuyiqjyk.py", line 125, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_all_gather_scaled_matmul_A_dims_3_gather_dim_2_return_A_True
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_0" time="0.118"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_0&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 346, in test_fuse_matmul_reduce_scatter
+    code = run_and_get_triton_code(compiled, A, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 333, in func
+    def func(A: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpjbvsb5_w/a6/ca6svgw4tfsu4iabeaw2qpgzeagj6ivz4ck5d4pitmq564jlcd7q.py", line 59, in call
+    buf1 = torch.ops._c10d_functional.reduce_scatter_tensor.default(buf0, 'avg', 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_0
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_1" time="3.027"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_1&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 346, in test_fuse_matmul_reduce_scatter
+    code = run_and_get_triton_code(compiled, A, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 333, in func
+    def func(A: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmp18b3_r4t/dv/cdv5nmorfda3kbuqcnpjre76x6mrxtju2w422vae5vnhmd76a5t3.py", line 121, in call
+    buf2 = torch.ops._c10d_functional.reduce_scatter_tensor.default(buf1, 'avg', 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_1
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_matmul_reduce_scatter_A_dims_2_scatter_dim_2" time="0.002" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_0" time="0.119"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_0&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 346, in test_fuse_matmul_reduce_scatter
+    code = run_and_get_triton_code(compiled, A, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 333, in func
+    def func(A: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpekrg4sr4/l5/cl57a5372mbckhjkb4fmfjiytopseeq225sz7q2khuwxz5snrxim.py", line 59, in call
+    buf1 = torch.ops._c10d_functional.reduce_scatter_tensor.default(reinterpret_tensor(buf0, (2, 64, 16), (1024, 16, 1), 0), 'avg', 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_0
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_1" time="3.073"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_1&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 346, in test_fuse_matmul_reduce_scatter
+    code = run_and_get_triton_code(compiled, A, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 333, in func
+    def func(A: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmppziemdn2/vc/cvcl7h6d2jgkg3zvgzx6eicullkqgpse3d5qdbc337r5vtqrqcqy.py", line 123, in call
+    buf2 = torch.ops._c10d_functional.reduce_scatter_tensor.default(buf1, 'avg', 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_1
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_2" time="3.075"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_2&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 346, in test_fuse_matmul_reduce_scatter
+    code = run_and_get_triton_code(compiled, A, B)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 333, in func
+    def func(A: torch.Tensor, B: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpalrzdud2/j4/cj4qifpmps2kxpszbie5ofxlwckkbbsrukvaie5fcwxggt3epwpq.py", line 124, in call
+    buf2 = torch.ops._c10d_functional.reduce_scatter_tensor.default(buf1, 'avg', 2, '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_matmul_reduce_scatter_A_dims_3_scatter_dim_2
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_0" time="0.008"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%a_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%_scaled_mm, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_0&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 391, in test_fuse_scaled_matmul_reduce_scatter
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%a_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%_scaled_mm, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_0
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_1" time="0.009"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%a_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%_scaled_mm, 8, 1), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_1&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 391, in test_fuse_scaled_matmul_reduce_scatter
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%a_1, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%_scaled_mm, 8, 1), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_1
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_A_dims_2_scatter_dim_2" time="0.001" /><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_0" time="0.008"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, 16]), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%view_1, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_0&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 391, in test_fuse_scaled_matmul_reduce_scatter
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, 16]), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%view_1, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_0
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_1" time="0.010"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, 16]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_1, 32, 1), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_1&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 391, in test_fuse_scaled_matmul_reduce_scatter
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, 16]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_1, 32, 1), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_1
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_2" time="0.010"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, 16]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_1, 8, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_2&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 391, in test_fuse_scaled_matmul_reduce_scatter
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [128, 32]), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %a_scale_1, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 64, 16]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_1, 8, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, avg, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_A_dims_3_scatter_dim_2
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_0" time="0.012"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [-1, 32]), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_scale_1, [-1, 1]), kwargs = {})\n    %reciprocal : [num_users=1] = call_function[target=torch.ops.aten.reciprocal.default](args = (%view_1,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %reciprocal, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 16, 64]), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%view_2, sum, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_0&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 455, in test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [-1, 32]), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_scale_1, [-1, 1]), kwargs = {})\n    %reciprocal : [num_users=1] = call_function[target=torch.ops.aten.reciprocal.default](args = (%view_1,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %reciprocal, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 16, 64]), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%view_2, sum, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_0
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_1" time="0.011"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [-1, 32]), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_scale_1, [-1, 1]), kwargs = {})\n    %reciprocal : [num_users=1] = call_function[target=torch.ops.aten.reciprocal.default](args = (%view_1,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %reciprocal, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 16, 64]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_2, 8, 1), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, sum, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_1&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 455, in test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [-1, 32]), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_scale_1, [-1, 1]), kwargs = {})\n    %reciprocal : [num_users=1] = call_function[target=torch.ops.aten.reciprocal.default](args = (%view_1,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %reciprocal, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 16, 64]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_2, 8, 1), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, sum, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_1
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_2" time="0.011"><failure message="AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [-1, 32]), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_scale_1, [-1, 1]), kwargs = {})\n    %reciprocal : [num_users=1] = call_function[target=torch.ops.aten.reciprocal.default](args = (%view_1,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %reciprocal, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 16, 64]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_2, 32, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, sum, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_2&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 1956, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 455, in test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape
+    self.assertIn("fused_scaled_matmul_reduce_scatter", str(gm.graph))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 1112, in assertIn
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 675, in fail
+    raise self.failureException(msg)
+AssertionError: 'fused_scaled_matmul_reduce_scatter' not found in 'graph():\n    %a_1 : [num_users=1] = placeholder[target=A_1]\n    %b_1 : [num_users=1] = placeholder[target=B_1]\n    %a_scale_1 : [num_users=1] = placeholder[target=A_scale_1]\n    %b_scale_1 : [num_users=1] = placeholder[target=B_scale_1]\n    %out_dtype_1 : [num_users=0] = placeholder[target=out_dtype_1]\n    %view : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_1, [-1, 32]), kwargs = {})\n    %view_1 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%a_scale_1, [-1, 1]), kwargs = {})\n    %reciprocal : [num_users=1] = call_function[target=torch.ops.aten.reciprocal.default](args = (%view_1,), kwargs = {})\n    %_scaled_mm : [num_users=1] = call_function[target=torch.ops.aten._scaled_mm.default](args = (%view, %b_1, %reciprocal, %b_scale_1, None, None, torch.bfloat16), kwargs = {})\n    %view_2 : [num_users=1] = call_function[target=torch.ops.aten.reshape.default](args = (%_scaled_mm, [2, 16, 64]), kwargs = {})\n    %split : [num_users=2] = call_function[target=torch.ops.aten.split.Tensor](args = (%view_2, 32, 2), kwargs = {})\n    %getitem : [num_users=1] = call_function[target=operator.getitem](args = (%split, 0), kwargs = {})\n    %getitem_1 : [num_users=1] = call_function[target=operator.getitem](args = (%split, 1), kwargs = {})\n    %cat : [num_users=1] = call_function[target=torch.ops.aten.cat.default](args = ([%getitem, %getitem_1],), kwargs = {})\n    %reduce_scatter_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.reduce_scatter_tensor.default](args = (%cat, sum, 2, 0), kwargs = {})\n    %wait_tensor : [num_users=1] = call_function[target=torch.ops._c10d_functional.wait_tensor.default](args = (%reduce_scatter_tensor,), kwargs = {})\n    return wait_tensor'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_fuse_scaled_matmul_reduce_scatter_rowwise_scales_reshape_mm_reshape_scatter_dim_2
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTPTest" name="test_get_unexposed_collectives" time="0.017"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_get_unexposed_collectives&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 194, in test_get_unexposed_collectives
+    gm = make_fx(func)(inp)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 2429, in wrapped
+    return make_fx_tracer.trace(f, *args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 2356, in trace
+    return self._trace_inner(f, *args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 2318, in _trace_inner
+    t = dispatch_trace(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_compile.py", line 53, in inner
+    return disable_fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1303, in dispatch_trace
+    graph = tracer.trace(root, concrete_args)  # type: ignore[arg-type]
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/_symbolic_trace.py", line 868, in trace
+    (self.create_arg(fn(*args)),),
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1361, in wrapped
+    out = f(*tensors)  # type:ignore[call-arg]
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 184, in func
+    b = all_gather_tensor(inp, gather_dim=0, group=group.group_name)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/_functional_collectives.py", line 203, in all_gather_tensor
+    tensor = torch.ops._c10d_functional.all_gather_into_tensor(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1409, in __torch_function__
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/utils/_stats.py", line 28, in wrapper
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 1534, in __torch_dispatch__
+    return proxy_call(self, func, self.pre_dispatch, args, kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/fx/experimental/proxy_tensor.py", line 994, in proxy_call
+    out = func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTPTest.test_get_unexposed_collectives
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.parallel.test_micro_pipeline_tp.MicroPipelineTP4GPUTest" name="test_extra_collectives" time="2.944"><failure message="RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTP4GPUTest.test_extra_collectives&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 545, in test_extra_collectives
+    code = run_and_get_triton_code(compiled, inp, w1, w2)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2224, in run_and_get_triton_code
+    _, source_codes = run_and_get_code(fn, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2146, in run_and_get_code
+    result = fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/tensor/parallel/test_micro_pipeline_tp.py", line 532, in func
+    def func(inp: torch.Tensor, w1: torch.Tensor, w2: torch.Tensor) -&gt; torch.Tensor:
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/tmpbgz4j0yl/vi/cvizsjj6o2u4gfdqunx7kxilphyyxjgvbnmmbphiapj2x3mtpqwo.py", line 120, in call
+    buf0 = torch.ops._c10d_functional.all_gather_into_tensor.default(arg0_1, 2, '1')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/parallel/test_micro_pipeline_tp.py MicroPipelineTP4GPUTest.test_extra_collectives
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="2" tests="16" time="1263.451" timestamp="2025-09-11T17:48:48.011377+00:00" hostname="dut7358"><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoad" name="test_read_write_only_tensor_thread_count_1" time="0.197" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoad" name="test_read_write_only_tensor_thread_count_2" time="0.006" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoadRot13" name="test_read_write_tensor_and_blob_thread_count_1" time="0.010" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoadRot13" name="test_read_write_tensor_and_blob_thread_count_2" time="0.010" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoadZStandard" name="test_read_write_only_tensor_thread_count_1" time="0.007" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoadZStandard" name="test_read_write_only_tensor_thread_count_2" time="0.007" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoadWithSharedTensor" name="test_read_write_shard_tensor_thread_count_1" time="15.321" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedStateDictSaveLoadWithSharedTensor" name="test_read_write_shard_tensor_thread_count_2" time="15.326" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_load_rowwise_to_colwise_thread_count_1" time="300.019"><failure message="RuntimeError: Process 0 terminated or timed out after 300.01650953292847 seconds">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.01650953292847 seconds</failure></testcase><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_load_rowwise_to_colwise_thread_count_2" time="300.018"><failure message="RuntimeError: Process 0 terminated or timed out after 300.01518082618713 seconds">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.01518082618713 seconds</failure></testcase><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_load_with_different_shard_plan_thread_count_1" time="300.026"><failure message="RuntimeError: Process 0 terminated or timed out after 300.02228307724 seconds">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.02228307724 seconds</failure></testcase><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_load_with_different_shard_plan_thread_count_2" time="300.021"><failure message="RuntimeError: Process 0 terminated or timed out after 300.0175132751465 seconds">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.0175132751465 seconds</failure></testcase><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_save_load_bytes_thread_count_1" time="15.224" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_save_load_bytes_thread_count_2" time="15.226" /><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_switch_between_sharded_tensor_to_tensor_thread_count_1" time="0.000"><skipped type="pytest.skip" message="XPU does not support gloo backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/checkpoint/test_file_system_checkpoint_cpu.py:475: XPU does not support gloo backend</skipped></testcase><testcase classname="test.distributed.checkpoint.test_file_system_checkpoint_cpu.TestDistributedReshardOnLoad" name="test_switch_between_sharded_tensor_to_tensor_thread_count_2" time="0.000"><skipped type="pytest.skip" message="XPU does not support gloo backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/checkpoint/test_file_system_checkpoint_cpu.py:475: XPU does not support gloo backend</skipped></testcase></testsuite></testsuites>

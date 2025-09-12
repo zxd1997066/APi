@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="8" time="215.818" timestamp="2025-09-11T15:00:38.990836+00:00" hostname="dut7358"><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_grouped_scheduler_node" time="29.149" /><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_inductor_default_comms_ordering" time="18.631"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py&quot;, line 79, in inner&#10;    return func(*args, **kwds)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_compute_comm_reordering.py&quot;, line 465, in test_inductor_default_comms_ordering&#10;    fn(g1, g2, g3)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py&quot;, line 832, in compile_wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_compute_comm_reordering.py&quot;, line 444, in fn&#10;    @torch.compile&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py&quot;, line 1044, in _fn&#10;    return fn(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py&quot;, line 1130, in forward&#10;    return compiled_fn(full_args)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py&quot;, line 353, in runtime_wrapper&#10;    all_outs = call_func_at_runtime_with_args(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py&quot;, line 129, in call_func_at_runtime_with_args&#10;    out = normalize_as_list(f(args))&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py&quot;, line 724, in inner_fn&#10;    outs = compiled_fn(args)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py&quot;, line 526, in wrapper&#10;    return compiled_fn(runtime_args)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py&quot;, line 613, in __call__&#10;    return self.current_callable(inputs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py&quot;, line 2959, in run&#10;    out = model(new_inputs)&#10;  File &quot;/tmp/torchinductor_jenkins/tmpkz56lbbw/2n/c2nwjs6v7qwjcb37nqsu52hfelwumcmc3ihdsqkkxsx657wsxgjf.py&quot;, line 173, in call&#10;    torch.ops._c10d_functional.all_reduce_.default(buf0, 'avg', '0')&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py&quot;, line 841, in __call__&#10;    return self._op(*args, **kwargs)&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_compute_comm_reordering.py TestComputeCommReorderingMultiProc.test_inductor_default_comms_ordering&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_compute_comm_reordering.py", line 465, in test_inductor_default_comms_ordering
+    fn(g1, g2, g3)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 832, in compile_wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_compute_comm_reordering.py", line 444, in fn
+    @torch.compile
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1130, in forward
+    return compiled_fn(full_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 353, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 129, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 724, in inner_fn
+    outs = compiled_fn(args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 526, in wrapper
+    return compiled_fn(runtime_args)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 613, in __call__
+    return self.current_callable(inputs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2959, in run
+    out = model(new_inputs)
+  File "/tmp/torchinductor_jenkins/tmpkz56lbbw/2n/c2nwjs6v7qwjcb37nqsu52hfelwumcmc3ihdsqkkxsx657wsxgjf.py", line 173, in call
+    torch.ops._c10d_functional.all_reduce_.default(buf0, 'avg', '0')
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/_ops.py", line 841, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_compute_comm_reordering.py TestComputeCommReorderingMultiProc.test_inductor_default_comms_ordering
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_nccl_heuristics" time="13.725" /><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_raise_comms" time="27.645" /><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_reorder_compute_for_overlap" time="29.246" /><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_reorder_compute_for_overlap_custom_runtime_estimation" time="28.546" /><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_sink_waits" time="27.445" /><testcase classname="test.distributed.test_compute_comm_reordering.TestComputeCommReorderingMultiProc" name="test_sink_waits_raise_comms" time="30.149" /></testsuite></testsuites>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="25" time="1297.517" timestamp="2025-09-11T14:21:19.549452+00:00" hostname="dut7358"><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_hyperparams_cpu_offload_sharding_strategy_str_full_shard" time="54.585" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_hyperparams_cpu_offload_sharding_strategy_str_no_shard" time="39.758" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_hyperparams_cpu_offload_sharding_strategy_str_shard_grad_op" time="54.582" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_hyperparams_sharding_strategy_str_full_shard" time="56.287"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 553, in instantiated_test&#10;    test(self, **param_kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py&quot;, line 287, in test_diff_hyperparams&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py&quot;, line 374, in _test_diff_hyperparams&#10;    self._check_train_parity(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py&quot;, line 197, in _check_train_parity&#10;    torch.testing.assert_close(iter_losses[0], iter_losses[1])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_comparison.py&quot;, line 1589, in assert_close&#10;    raise error_metas[0].to_error(msg)&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 0.5508145093917847 but got 0.4790288209915161.&#10;Absolute difference: 0.07178568840026855 (up to 1e-05 allowed)&#10;Relative difference: 0.13032642963515084 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_use_orig_params.py TestFSDPUseOrigParamsMultipleParamGroups.test_diff_hyperparams_sharding_strategy_str_full_shard&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 553, in instantiated_test&#10;    test(self, **param_kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py&quot;, line 287, in test_diff_hyperparams&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py&quot;, line 374, in _test_diff_hyperparams&#10;    self._check_train_parity(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py&quot;, line 197, in _check_train_parity&#10;    torch.testing.assert_close(iter_losses[0], iter_losses[1])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_comparison.py&quot;, line 1589, in assert_close&#10;    raise error_metas[0].to_error(msg)&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 0.5508145093917847 but got 0.4790288209915161.&#10;Absolute difference: 0.07178568840026855 (up to 1e-05 allowed)&#10;Relative difference: 0.13032642963515084 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_use_orig_params.py TestFSDPUseOrigParamsMultipleParamGroups.test_diff_hyperparams_sharding_strategy_str_full_shard&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py", line 287, in test_diff_hyperparams
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py", line 374, in _test_diff_hyperparams
+    self._check_train_parity(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py", line 197, in _check_train_parity
+    torch.testing.assert_close(iter_losses[0], iter_losses[1])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Scalars are not close!
+
+Expected 0.5508145093917847 but got 0.4790288209915161.
+Absolute difference: 0.07178568840026855 (up to 1e-05 allowed)
+Relative difference: 0.13032642963515084 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_use_orig_params.py TestFSDPUseOrigParamsMultipleParamGroups.test_diff_hyperparams_sharding_strategy_str_full_shard
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 553, in instantiated_test
+    test(self, **param_kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py", line 287, in test_diff_hyperparams
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py", line 374, in _test_diff_hyperparams
+    self._check_train_parity(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/fsdp/test_fsdp_use_orig_params.py", line 197, in _check_train_parity
+    torch.testing.assert_close(iter_losses[0], iter_losses[1])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Scalars are not close!
+
+Expected 0.5508145093917847 but got 0.4790288209915161.
+Absolute difference: 0.07178568840026855 (up to 1e-05 allowed)
+Relative difference: 0.13032642963515084 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_use_orig_params.py TestFSDPUseOrigParamsMultipleParamGroups.test_diff_hyperparams_sharding_strategy_str_full_shard
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_hyperparams_sharding_strategy_str_no_shard" time="82.020" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_hyperparams_sharding_strategy_str_shard_grad_op" time="300.022"><failure message="RuntimeError: Process 0 terminated or timed out after 300.0185160636902 seconds">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1025, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.0185160636902 seconds</failure></testcase><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_diff_trainability" time="56.379" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_fsdp_compile" time="74.402" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsMultipleParamGroups" name="test_multiple_optimizers" time="53.981" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsUnshardReshard" name="test_multiple_forward_offload_params_False" time="43.067" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsUnshardReshard" name="test_multiple_forward_offload_params_True" time="42.761" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsUnshardReshard" name="test_summon_between_two_forwards_offload_params_False" time="42.568" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsUnshardReshard" name="test_summon_between_two_forwards_offload_params_True" time="42.568" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsParamAccess" name="test_access_params_after_forward" time="41.065" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsWriteback" name="test_grad_writeback" time="41.663" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsWriteback" name="test_no_reshard_and_mixed_precision" time="41.667" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsWriteback" name="test_param_writeback" time="25.942" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsWriteback" name="test_writeback_between_fwd_and_bwd_for_no_reshard_raises" time="25.942" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsWriteback" name="test_writeback_shape_mismatch" time="25.733" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsFQNs" name="test_named_parameters_in_forward" time="29.652" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsNoSync" name="test_no_sync_correctness" time="41.166" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsNoSync" name="test_no_sync_mixed_precision" time="40.965" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestFSDPUseOrigParamsInit" name="test_non_uniform_requires_grad" time="29.454" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestMultiTensorApply" name="test_multi_tensor_apply_size0_tensors_cpu" time="0.006" /><testcase classname="test.distributed.fsdp.test_fsdp_use_orig_params.TestMultiTensorApply" name="test_multi_tensor_apply_size0_tensors_cuda" time="0.018" /></testsuite></testsuites>

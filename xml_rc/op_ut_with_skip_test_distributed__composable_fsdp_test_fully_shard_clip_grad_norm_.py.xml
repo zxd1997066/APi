@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="68.186" timestamp="2025-09-11T16:23:50.412714+00:00" hostname="dut7358"><testcase classname="test.distributed._composable.fsdp.test_fully_shard_clip_grad_norm_.TestClipGradNormWorldSize2" name="test_clip_grad_norm_1d" time="32.740" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_clip_grad_norm_.TestClipGradNormWorldSize4" name="test_clip_grad_norm_2d" time="33.459"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 151, in test_clip_grad_norm_2d&#10;    self._test_clip_grad_norm(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 74, in _test_clip_grad_norm&#10;    self.assertEqual(ref_total_norm, total_norm.full_tensor())&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23.613964080810547 but got 23.613920211791992.&#10;Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)&#10;Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 151, in test_clip_grad_norm_2d&#10;    self._test_clip_grad_norm(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 74, in _test_clip_grad_norm&#10;    self.assertEqual(ref_total_norm, total_norm.full_tensor())&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23.613964080810547 but got 23.613920211791992.&#10;Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)&#10;Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 151, in test_clip_grad_norm_2d&#10;    self._test_clip_grad_norm(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 74, in _test_clip_grad_norm&#10;    self.assertEqual(ref_total_norm, total_norm.full_tensor())&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23.613964080810547 but got 23.613920211791992.&#10;Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)&#10;Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3226, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 151, in test_clip_grad_norm_2d&#10;    self._test_clip_grad_norm(&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py&quot;, line 74, in _test_clip_grad_norm&#10;    self.assertEqual(ref_total_norm, total_norm.full_tensor())&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4181, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected 23.613964080810547 but got 23.613920211791992.&#10;Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)&#10;Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 151, in test_clip_grad_norm_2d
+    self._test_clip_grad_norm(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 74, in _test_clip_grad_norm
+    self.assertEqual(ref_total_norm, total_norm.full_tensor())
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected 23.613964080810547 but got 23.613920211791992.
+Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)
+Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 151, in test_clip_grad_norm_2d
+    self._test_clip_grad_norm(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 74, in _test_clip_grad_norm
+    self.assertEqual(ref_total_norm, total_norm.full_tensor())
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected 23.613964080810547 but got 23.613920211791992.
+Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)
+Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 151, in test_clip_grad_norm_2d
+    self._test_clip_grad_norm(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 74, in _test_clip_grad_norm
+    self.assertEqual(ref_total_norm, total_norm.full_tensor())
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected 23.613964080810547 but got 23.613920211791992.
+Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)
+Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3226, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 151, in test_clip_grad_norm_2d
+    self._test_clip_grad_norm(
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py", line 74, in _test_clip_grad_norm
+    self.assertEqual(ref_total_norm, total_norm.full_tensor())
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4181, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected 23.613964080810547 but got 23.613920211791992.
+Absolute difference: 4.38690185546875e-05 (up to 1e-05 allowed)
+Relative difference: 1.8577574863991958e-06 (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_clip_grad_norm_.py TestClipGradNormWorldSize4.test_clip_grad_norm_2d
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase></testsuite></testsuites>
