@@ -1,1 +1,331 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="12" tests="24" time="501.694" timestamp="2025-09-05T17:04:59.225592" hostname="dut7358"><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardForwardInputs" name="test_root_move_forward_input_to_device" time="0.001"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:70: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardRegisteredParams" name="test_param_registration_after_backward" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:164: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardRegisteredParams" name="test_param_registration_after_forward" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:103: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardCastAfterInit" name="test_to_float64_after_init" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:218: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_explicit_prefetching" time="32.452" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_multi_forward_module" time="31.858" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_non_root_forward_backward" time="0.001"><skipped type="pytest.skip" message="Sleep is not supported on XPU">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:499: Sleep is not supported on XPU</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_post_optim_event" time="0.000"><skipped type="pytest.skip" message="Sleep is not supported on HPU/XPU">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:630: Sleep is not supported on HPU/XPU</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_multi_group" time="0.000"><skipped type="pytest.skip" message="Sleep kernel not supported for HPU/XPU">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:328: Sleep kernel not supported for HPU/XPU</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_multi_group_cpu_offload_eager" time="0.000"><skipped type="pytest.skip" message="sleep kernel not supported on HPU/XPU">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:351: sleep kernel not supported on HPU/XPU</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_multi_group_unshard_async_op" time="0.000"><skipped type="pytest.skip" message="sleep kernel not supported on HPU/XPU">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:375: sleep kernel not supported on HPU/XPU</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_single_group_shard_dim0" time="31.759" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_single_group_shard_largest_dim" time="31.339" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCompose" name="test_train_parity_with_activation_checkpointing" time="42.767"><skipped type="pytest.xfail" message="" /></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardShardPlacementFnMultiProcess" name="test_train_parity_shard_placement_fn_shard_largest_dim" time="32.250" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardShardPlacementFnMultiThread" name="test_shard_placement_fn_contiguous_params_grads" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:845: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardSharedParams" name="test_train_parity_with_shared_params" time="33.460" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardGradientAccumulation" name="test_1f1b_microbatching" time="32.541"><failure message="Unexpected success">Unexpected success</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardGradientAccumulation" name="test_gradient_accumulation" time="72.799"><failure message="Unexpected success">Unexpected success</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardNDTraining" name="test_2d_mlp_with_nd_mesh" time="46.678" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardHSDP3DTraining" name="test_3d_mlp_with_nd_mesh" time="15.630"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:1280: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardHSDPTraining" name="test_train_parity_hsdp" time="50.283" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardCustomForwardMethod" name="test_register_fsdp_forward_method" time="42.066" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardWorldSize1" name="test_train_parity_single_worldsize1" time="3.808" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="6" tests="24" time="691.127" timestamp="2025-09-12T16:11:57.185816+00:00" hostname="dut7358"><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardForwardInputs" name="test_root_move_forward_input_to_device" time="0.001"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:68: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardRegisteredParams" name="test_param_registration_after_backward" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:162: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardRegisteredParams" name="test_param_registration_after_forward" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:101: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardCastAfterInit" name="test_to_float64_after_init" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:216: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_explicit_prefetching" time="32.762" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_multi_forward_module" time="31.557" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_non_root_forward_backward" time="30.856"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 532, in test_non_root_forward_backward&#10;    torch.get_device_module(device_type)._sleep(int(100 * get_cycles_per_ms()))&#10;AttributeError: module 'torch.xpu' has no attribute '_sleep'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_non_root_forward_backward&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 532, in test_non_root_forward_backward
+    torch.get_device_module(device_type)._sleep(int(100 * get_cycles_per_ms()))
+AttributeError: module 'torch.xpu' has no attribute '_sleep'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_non_root_forward_backward
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_post_optim_event" time="31.758"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 667, in test_post_optim_event&#10;    torch.get_device_module(device_type)._sleep(int(25 * get_cycles_per_ms()))&#10;AttributeError: module 'torch.xpu' has no attribute '_sleep'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_post_optim_event&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 667, in test_post_optim_event&#10;    torch.get_device_module(device_type)._sleep(int(25 * get_cycles_per_ms()))&#10;AttributeError: module 'torch.xpu' has no attribute '_sleep'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_post_optim_event&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 667, in test_post_optim_event&#10;    torch.get_device_module(device_type)._sleep(int(25 * get_cycles_per_ms()))&#10;AttributeError: module 'torch.xpu' has no attribute '_sleep'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_post_optim_event&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 667, in test_post_optim_event
+    torch.get_device_module(device_type)._sleep(int(25 * get_cycles_per_ms()))
+AttributeError: module 'torch.xpu' has no attribute '_sleep'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_post_optim_event
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 667, in test_post_optim_event
+    torch.get_device_module(device_type)._sleep(int(25 * get_cycles_per_ms()))
+AttributeError: module 'torch.xpu' has no attribute '_sleep'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_post_optim_event
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 667, in test_post_optim_event
+    torch.get_device_module(device_type)._sleep(int(25 * get_cycles_per_ms()))
+AttributeError: module 'torch.xpu' has no attribute '_sleep'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_post_optim_event
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_multi_group" time="43.578"><failure message="RuntimeError: Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1540, in wrapper&#10;    func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 335, in test_train_parity_multi_group&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 491, in _test_train_parity_multi_group&#10;    torch.get_device_module(test_device_type)._sleep(&#10;AttributeError: module 'torch.xpu' has no attribute '_sleep'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1540, in wrapper
+    func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 335, in test_train_parity_multi_group
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 491, in _test_train_parity_multi_group
+    torch.get_device_module(test_device_type)._sleep(
+AttributeError: module 'torch.xpu' has no attribute '_sleep'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_multi_group_cpu_offload_eager" time="43.475"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 356, in test_train_parity_multi_group_cpu_offload_eager&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 491, in _test_train_parity_multi_group&#10;    torch.get_device_module(test_device_type)._sleep(&#10;AttributeError: module 'torch.xpu' has no attribute '_sleep'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group_cpu_offload_eager&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 356, in test_train_parity_multi_group_cpu_offload_eager
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 491, in _test_train_parity_multi_group
+    torch.get_device_module(test_device_type)._sleep(
+AttributeError: module 'torch.xpu' has no attribute '_sleep'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group_cpu_offload_eager
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_multi_group_unshard_async_op" time="43.276"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1540, in wrapper&#10;    func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 381, in test_train_parity_multi_group_unshard_async_op&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 495, in _test_train_parity_multi_group&#10;    self.assertEqual(losses[0], losses[1])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4180, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected nan but got 8957.5947265625.&#10;Absolute difference: nan (up to 1e-05 allowed)&#10;Relative difference: nan (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group_unshard_async_op&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1540, in wrapper&#10;    func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 381, in test_train_parity_multi_group_unshard_async_op&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 495, in _test_train_parity_multi_group&#10;    self.assertEqual(losses[0], losses[1])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4180, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not close!&#10;&#10;Expected nan but got 7376.07421875.&#10;Absolute difference: nan (up to 1e-05 allowed)&#10;Relative difference: nan (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group_unshard_async_op&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1540, in wrapper
+    func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 381, in test_train_parity_multi_group_unshard_async_op
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 495, in _test_train_parity_multi_group
+    self.assertEqual(losses[0], losses[1])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4180, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected nan but got 8957.5947265625.
+Absolute difference: nan (up to 1e-05 allowed)
+Relative difference: nan (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group_unshard_async_op
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1540, in wrapper
+    func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 381, in test_train_parity_multi_group_unshard_async_op
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 495, in _test_train_parity_multi_group
+    self.assertEqual(losses[0], losses[1])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4180, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not close!
+
+Expected nan but got 7376.07421875.
+Absolute difference: nan (up to 1e-05 allowed)
+Relative difference: nan (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCore.test_train_parity_multi_group_unshard_async_op
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_single_group_shard_dim0" time="31.456" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCore" name="test_train_parity_single_group_shard_largest_dim" time="31.557" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShard1DTrainingCompose" name="test_train_parity_with_activation_checkpointing" time="42.466"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1540, in wrapper&#10;    func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 686, in test_train_parity_with_activation_checkpointing&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 775, in _test_train_parity_with_activation_checkpointing&#10;    check_sharded_parity(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1123, in check_sharded_parity&#10;    cls.assertEqual(sharded_param.grad.to_local(), sharded_ref_grad.to_local())&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4180, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Tensor-likes are not close!&#10;&#10;Mismatched elements: 2 / 128 (1.6%)&#10;Greatest absolute difference: 1.621246337890625e-05 at index (3, 3) (up to 1e-05 allowed)&#10;Greatest relative difference: 7.053498393361224e-06 at index (2, 6) (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCompose.test_train_parity_with_activation_checkpointing&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1540, in wrapper&#10;    func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 686, in test_train_parity_with_activation_checkpointing&#10;    self.run_subtests(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1188, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1147, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py&quot;, line 775, in _test_train_parity_with_activation_checkpointing&#10;    check_sharded_parity(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py&quot;, line 1123, in check_sharded_parity&#10;    cls.assertEqual(sharded_param.grad.to_local(), sharded_ref_grad.to_local())&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4180, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Tensor-likes are not close!&#10;&#10;Mismatched elements: 1 / 128 (0.8%)&#10;Greatest absolute difference: 1.0728836059570312e-05 at index (3, 12) (up to 1e-05 allowed)&#10;Greatest relative difference: 0.00028740588459186256 at index (3, 12) (up to 1.3e-06 allowed)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCompose.test_train_parity_with_activation_checkpointing&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1540, in wrapper
+    func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 686, in test_train_parity_with_activation_checkpointing
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 775, in _test_train_parity_with_activation_checkpointing
+    check_sharded_parity(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1123, in check_sharded_parity
+    cls.assertEqual(sharded_param.grad.to_local(), sharded_ref_grad.to_local())
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4180, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 2 / 128 (1.6%)
+Greatest absolute difference: 1.621246337890625e-05 at index (3, 3) (up to 1e-05 allowed)
+Greatest relative difference: 7.053498393361224e-06 at index (2, 6) (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCompose.test_train_parity_with_activation_checkpointing
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1540, in wrapper
+    func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 686, in test_train_parity_with_activation_checkpointing
+    self.run_subtests(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1188, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1147, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py", line 775, in _test_train_parity_with_activation_checkpointing
+    check_sharded_parity(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_fsdp.py", line 1123, in check_sharded_parity
+    cls.assertEqual(sharded_param.grad.to_local(), sharded_ref_grad.to_local())
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4180, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 1 / 128 (0.8%)
+Greatest absolute difference: 1.0728836059570312e-05 at index (3, 12) (up to 1e-05 allowed)
+Greatest relative difference: 0.00028740588459186256 at index (3, 12) (up to 1.3e-06 allowed)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_composable/fsdp/test_fully_shard_training.py TestFullyShard1DTrainingCompose.test_train_parity_with_activation_checkpointing
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardShardPlacementFnMultiProcess" name="test_train_parity_shard_placement_fn_shard_largest_dim" time="31.656" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardShardPlacementFnMultiThread" name="test_shard_placement_fn_contiguous_params_grads" time="0.000"><skipped type="pytest.skip" message="not-support-multithread">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:841: not-support-multithread</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardSharedParams" name="test_train_parity_with_shared_params" time="33.259" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardGradientAccumulation" name="test_1f1b_microbatching" time="32.358" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardGradientAccumulation" name="test_gradient_accumulation" time="71.818" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardNDTraining" name="test_2d_mlp_with_nd_mesh" time="46.479" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardHSDP3DTraining" name="test_3d_mlp_with_nd_mesh" time="15.530"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/_composable/fsdp/test_fully_shard_training.py:1274: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardHSDPTraining" name="test_train_parity_hsdp" time="49.984" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardCustomForwardMethod" name="test_register_fsdp_forward_method" time="41.666" /><testcase classname="test.distributed._composable.fsdp.test_fully_shard_training.TestFullyShardWorldSize1" name="test_train_parity_single_worldsize1" time="3.608" /></testsuite></testsuites>

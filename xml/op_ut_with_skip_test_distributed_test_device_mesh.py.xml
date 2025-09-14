@@ -1,1 +1,382 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="7" tests="55" time="765.119" timestamp="2025-09-05T15:02:00.237413" hostname="dut7358"><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestGlooBackend" name="test_device_mesh_reuse_default_group" time="0.000"><skipped type="pytest.skip" message="XPU does not support gloo backend.">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:60: XPU does not support gloo backend.</skipped></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshSetDeviceTest" name="test_auto_set_device_from_heuristic" time="16.404" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshSetDeviceTest" name="test_auto_set_device_from_local_rank" time="16.129" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshSetDeviceTest" name="test_manual_set_device" time="15.730" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_2d_mesh_eager_init_subgroup" time="15.623" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_2d_mesh_non_eager_init_subgroup" time="15.429" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_assert_invalid_mesh_tensor" time="15.522" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_device_mesh_2d" time="15.525" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_device_mesh_init_backend" time="15.629" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_fake_pg_device_mesh" time="2.809" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_from_group_with_global_pg" time="15.430" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_from_group_with_invalid_mesh" time="15.725" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_get_group_and_get_all_groups" time="15.627" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_get_local_rank" time="15.729" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_get_local_rank_raises_exception" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_init_process_group" time="16.329" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_raises_invalid_device_type" time="2.909" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_set_mesh_dim_group_options" time="15.628" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_device_mesh_hash" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_device_mesh_nd" time="2.709"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:350: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_device_mesh_parent_child_hash" time="15.727" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_from_group_with_mesh_shape_2d" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_from_group_with_mesh_shape_3d" time="15.429" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_get_local_rank_3d" time="2.909"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:385: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_dict_with_idx_and_backend_eager" time="15.730" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_dict_with_idx_and_backend_lazy" time="15.430" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_dict_with_name_and_options" time="2.909" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_errors" time="15.735" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_init_device_mesh" time="15.530" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_raises_duplicate_mesh_dim_names" time="15.630" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_raises_mesh_shape_mesh_dim_names_mismatch" time="15.630" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_cache_and_reuse_submesh_slice_result" time="15.529" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_flatten_mesh_3d" time="15.430" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_flatten_mesh_4d" time="2.908"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:883: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_1d" time="15.530" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_2d" time="15.730" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_3d" time="2.909"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:759: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_3d_noncontiguous_slicing" time="2.812"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:811: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_raises_invalid_mesh_dim_name" time="15.528" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_raises_no_mesh_dim_found" time="15.527" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_reconstruct_mesh_with_flatten_dim" time="2.809"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:901: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_all_submeshes" time="15.623" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_mesh_dim_by_name" time="15.630" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_root_mesh" time="15.530" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_root_mesh_dim_exist" time="15.623" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_root_mesh_dim_not_exist" time="15.522" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_mesh_slice_fake_tensor_mode" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_all_gather_uneven" time="16.031" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_broadcast_1d" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_broadcast_nd" time="16.531" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_reduce_scatter_contiguous" time="30.956" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_reduce_scatter_uneven" time="30.855" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_scatter_1d" time="15.930" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_scatter_nd" time="16.631" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_scatter_uneven" time="15.830" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="6" tests="56" time="714.621" timestamp="2025-09-12T14:25:06.791291+00:00" hostname="dut7358"><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestGlooBackend" name="test_device_mesh_reuse_default_group" time="2.904"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 507, in wrapper&#10;    self.destroy_pg()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 437, in destroy_pg&#10;    dist.barrier(device_ids=[device_id])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 81, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 4881, in barrier&#10;    work = group.barrier(opts=opts)&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshTestGlooBackend.test_device_mesh_reuse_default_group&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 507, in wrapper&#10;    self.destroy_pg()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 437, in destroy_pg&#10;    dist.barrier(device_ids=[device_id])&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 81, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 4881, in barrier&#10;    work = group.barrier(opts=opts)&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshTestGlooBackend.test_device_mesh_reuse_default_group&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 507, in wrapper
+    self.destroy_pg()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 437, in destroy_pg
+    dist.barrier(device_ids=[device_id])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4881, in barrier
+    work = group.barrier(opts=opts)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshTestGlooBackend.test_device_mesh_reuse_default_group
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 507, in wrapper
+    self.destroy_pg()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 437, in destroy_pg
+    dist.barrier(device_ids=[device_id])
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+    return func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4881, in barrier
+    work = group.barrier(opts=opts)
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshTestGlooBackend.test_device_mesh_reuse_default_group
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshSetDeviceTest" name="test_auto_set_device_from_heuristic" time="2.709"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 125, in test_auto_set_device_from_heuristic&#10;    self.assertEqual(torch.cuda.current_device(), self.rank)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 1069, in current_device&#10;    _lazy_init()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 403, in _lazy_init&#10;    raise AssertionError(&quot;Torch not compiled with CUDA enabled&quot;)&#10;AssertionError: Torch not compiled with CUDA enabled&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_heuristic&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 125, in test_auto_set_device_from_heuristic&#10;    self.assertEqual(torch.cuda.current_device(), self.rank)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 1069, in current_device&#10;    _lazy_init()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 403, in _lazy_init&#10;    raise AssertionError(&quot;Torch not compiled with CUDA enabled&quot;)&#10;AssertionError: Torch not compiled with CUDA enabled&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_heuristic&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 125, in test_auto_set_device_from_heuristic&#10;    self.assertEqual(torch.cuda.current_device(), self.rank)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 1069, in current_device&#10;    _lazy_init()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 403, in _lazy_init&#10;    raise AssertionError(&quot;Torch not compiled with CUDA enabled&quot;)&#10;AssertionError: Torch not compiled with CUDA enabled&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_heuristic&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 125, in test_auto_set_device_from_heuristic
+    self.assertEqual(torch.cuda.current_device(), self.rank)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_device
+    _lazy_init()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_heuristic
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 125, in test_auto_set_device_from_heuristic
+    self.assertEqual(torch.cuda.current_device(), self.rank)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_device
+    _lazy_init()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_heuristic
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 125, in test_auto_set_device_from_heuristic
+    self.assertEqual(torch.cuda.current_device(), self.rank)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_device
+    _lazy_init()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_heuristic
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshSetDeviceTest" name="test_auto_set_device_from_local_rank" time="2.810"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 106, in test_auto_set_device_from_local_rank&#10;    self.assertEqual(torch.cuda.current_device(), local_rank)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 1069, in current_device&#10;    _lazy_init()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 403, in _lazy_init&#10;    raise AssertionError(&quot;Torch not compiled with CUDA enabled&quot;)&#10;AssertionError: Torch not compiled with CUDA enabled&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_local_rank&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 106, in test_auto_set_device_from_local_rank&#10;    self.assertEqual(torch.cuda.current_device(), local_rank)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 1069, in current_device&#10;    _lazy_init()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 403, in _lazy_init&#10;    raise AssertionError(&quot;Torch not compiled with CUDA enabled&quot;)&#10;AssertionError: Torch not compiled with CUDA enabled&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_local_rank&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 106, in test_auto_set_device_from_local_rank
+    self.assertEqual(torch.cuda.current_device(), local_rank)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_device
+    _lazy_init()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_local_rank
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 106, in test_auto_set_device_from_local_rank
+    self.assertEqual(torch.cuda.current_device(), local_rank)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_device
+    _lazy_init()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_auto_set_device_from_local_rank
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshSetDeviceTest" name="test_manual_set_device" time="2.712"><failure message="RuntimeError: Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 221, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 78, in test_manual_set_device&#10;    torch.cuda.set_device((self.rank + 2) % self.world_size)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py&quot;, line 567, in set_device&#10;    torch._C._cuda_setDevice(device)&#10;AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_manual_set_device&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 221, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 78, in test_manual_set_device
+    torch.cuda.set_device((self.rank + 2) % self.world_size)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
+    torch._C._cuda_setDevice(device)
+AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py DeviceMeshSetDeviceTest.test_manual_set_device
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_2d_mesh_eager_init_subgroup" time="15.632" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_2d_mesh_non_eager_init_subgroup" time="15.529" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_assert_invalid_mesh_tensor" time="15.429" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_device_mesh_2d" time="15.727" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_device_mesh_init_backend" time="15.627" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_fake_pg_device_mesh" time="2.808" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_from_group_with_global_pg" time="15.429" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_from_group_with_invalid_mesh" time="15.426" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_get_group_and_get_all_groups" time="15.629" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_get_local_rank" time="15.528" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_get_local_rank_raises_exception" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_init_process_group" time="16.130" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_raises_invalid_device_type" time="2.809" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTest" name="test_set_mesh_dim_group_options" time="15.528" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_device_mesh_hash" time="15.730" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_device_mesh_nd" time="2.709"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:345: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_device_mesh_parent_child_hash" time="15.429" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_from_group_with_mesh_shape_2d" time="15.722" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_from_group_with_mesh_shape_3d" time="15.529" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshTestNDim" name="test_get_local_rank_3d" time="2.808"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:380: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_dict_with_idx_and_backend_eager" time="2.609"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 505, in wrapper&#10;    raise e&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 502, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 632, in test_backend_override_argument_dict_with_idx_and_backend_eager&#10;    self._test_backend_override_argument_dict_with_idx_and_backend()&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 593, in _test_backend_override_argument_dict_with_idx_and_backend&#10;    mesh = init_device_mesh(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py&quot;, line 1170, in init_device_mesh&#10;    device_mesh = DeviceMesh(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py&quot;, line 484, in __init__&#10;    self._init_process_groups(backend_override)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py&quot;, line 659, in _init_process_groups&#10;    dim_group = new_group(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 95, in wrapper&#10;    func_return = func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 5280, in new_group&#10;    return _new_group_with_tag(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 5370, in _new_group_with_tag&#10;    pg, pg_store = _new_process_group_helper(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 2132, in _new_process_group_helper&#10;    if device_id and pg._get_backend(device_id).supports_splitting:&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_idx_and_backend_eager&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 505, in wrapper&#10;    raise e&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 502, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 632, in test_backend_override_argument_dict_with_idx_and_backend_eager&#10;    self._test_backend_override_argument_dict_with_idx_and_backend()&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 593, in _test_backend_override_argument_dict_with_idx_and_backend&#10;    mesh = init_device_mesh(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py&quot;, line 1170, in init_device_mesh&#10;    device_mesh = DeviceMesh(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py&quot;, line 484, in __init__&#10;    self._init_process_groups(backend_override)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py&quot;, line 659, in _init_process_groups&#10;    dim_group = new_group(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py&quot;, line 95, in wrapper&#10;    func_return = func(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 5280, in new_group&#10;    return _new_group_with_tag(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 5370, in _new_group_with_tag&#10;    pg, pg_store = _new_process_group_helper(&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py&quot;, line 2132, in _new_process_group_helper&#10;    if device_id and pg._get_backend(device_id).supports_splitting:&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_idx_and_backend_eager&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 505, in wrapper
+    raise e
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 502, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 632, in test_backend_override_argument_dict_with_idx_and_backend_eager
+    self._test_backend_override_argument_dict_with_idx_and_backend()
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 593, in _test_backend_override_argument_dict_with_idx_and_backend
+    mesh = init_device_mesh(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py", line 1170, in init_device_mesh
+    device_mesh = DeviceMesh(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py", line 484, in __init__
+    self._init_process_groups(backend_override)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py", line 659, in _init_process_groups
+    dim_group = new_group(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 95, in wrapper
+    func_return = func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 5280, in new_group
+    return _new_group_with_tag(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 5370, in _new_group_with_tag
+    pg, pg_store = _new_process_group_helper(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 2132, in _new_process_group_helper
+    if device_id and pg._get_backend(device_id).supports_splitting:
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_idx_and_backend_eager
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 505, in wrapper
+    raise e
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 502, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 632, in test_backend_override_argument_dict_with_idx_and_backend_eager
+    self._test_backend_override_argument_dict_with_idx_and_backend()
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 593, in _test_backend_override_argument_dict_with_idx_and_backend
+    mesh = init_device_mesh(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py", line 1170, in init_device_mesh
+    device_mesh = DeviceMesh(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py", line 484, in __init__
+    self._init_process_groups(backend_override)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/device_mesh.py", line 659, in _init_process_groups
+    dim_group = new_group(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 95, in wrapper
+    func_return = func(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 5280, in new_group
+    return _new_group_with_tag(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 5370, in _new_group_with_tag
+    pg, pg_store = _new_process_group_helper(
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 2132, in _new_process_group_helper
+    if device_id and pg._get_backend(device_id).supports_splitting:
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_idx_and_backend_eager
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_dict_with_idx_and_backend_lazy" time="2.610"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 505, in wrapper&#10;    raise e&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 502, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 628, in test_backend_override_argument_dict_with_idx_and_backend_lazy&#10;    self._test_backend_override_argument_dict_with_idx_and_backend()&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 612, in _test_backend_override_argument_dict_with_idx_and_backend&#10;    self.assertIsNone(get_opts(mesh, 0))&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 603, in get_opts&#10;    ._get_backend(torch.device(f&quot;{self.device_type}:{self.rank}&quot;))&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_idx_and_backend_lazy&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 505, in wrapper
+    raise e
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 502, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 628, in test_backend_override_argument_dict_with_idx_and_backend_lazy
+    self._test_backend_override_argument_dict_with_idx_and_backend()
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 612, in _test_backend_override_argument_dict_with_idx_and_backend
+    self.assertIsNone(get_opts(mesh, 0))
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 603, in get_opts
+    ._get_backend(torch.device(f"{self.device_type}:{self.rank}"))
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_idx_and_backend_lazy
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_dict_with_name_and_options" time="2.610"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 864, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 718, in wrapper&#10;    fn()&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3225, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 505, in wrapper&#10;    raise e&#10;  File &quot;/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 502, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 653, in test_backend_override_argument_dict_with_name_and_options&#10;    self.assertIsNone(get_opts(mesh, 0))&#10;  File &quot;/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py&quot;, line 649, in get_opts&#10;    ._get_backend(torch.device(f&quot;{self.device_type}:{self.rank}&quot;))&#10;RuntimeError: No backend type associated with device type xpu&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_name_and_options&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 716, in wrapper
+    self._join_processes(fn)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 980, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1020, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 864, in run_test
+    getattr(self, test_name)()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 718, in wrapper
+    fn()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 505, in wrapper
+    raise e
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 502, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 653, in test_backend_override_argument_dict_with_name_and_options
+    self.assertIsNone(get_opts(mesh, 0))
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py", line 649, in get_opts
+    ._get_backend(torch.device(f"{self.device_type}:{self.rank}"))
+RuntimeError: No backend type associated with device type xpu
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_device_mesh.py InitDeviceMeshTest.test_backend_override_argument_dict_with_name_and_options
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_backend_override_argument_errors" time="15.530" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_init_device_mesh" time="15.530" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_raises_duplicate_mesh_dim_names" time="15.430" /><testcase classname="test.distributed.test_device_mesh.InitDeviceMeshTest" name="test_raises_mesh_shape_mesh_dim_names_mismatch" time="15.530" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_cache_and_reuse_submesh_slice_result" time="15.530" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_flatten_mesh_1d" time="15.630" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_flatten_mesh_3d" time="15.628" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_flatten_mesh_4d" time="2.808"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:894: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_1d" time="15.529" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_2d" time="15.630" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_3d" time="2.908"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:754: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_get_item_3d_noncontiguous_slicing" time="2.909"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:806: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_raises_invalid_mesh_dim_name" time="15.329" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_raises_no_mesh_dim_found" time="15.429" /><testcase classname="test.distributed.test_device_mesh.TestDeviceMeshGetItem" name="test_reconstruct_mesh_with_flatten_dim" time="2.808"><skipped type="pytest.skip" message="Need at least 8 CUDA devices">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_device_mesh.py:912: Need at least 8 CUDA devices</skipped></testcase><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_all_submeshes" time="15.530" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_mesh_dim_by_name" time="15.630" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_root_mesh" time="15.530" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_root_mesh_dim_exist" time="15.430" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_get_root_mesh_dim_not_exist" time="15.630" /><testcase classname="test.distributed.test_device_mesh.TestMeshEnv" name="test_mesh_slice_fake_tensor_mode" time="15.630" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_all_gather_uneven" time="15.830" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_broadcast_1d" time="15.530" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_broadcast_nd" time="16.531" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_reduce_scatter_contiguous" time="30.755" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_reduce_scatter_uneven" time="30.855" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_scatter_1d" time="15.730" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_scatter_nd" time="16.531" /><testcase classname="test.distributed.test_device_mesh.DeviceMeshCollectiveTest" name="test_scatter_uneven" time="15.630" /></testsuite></testsuites>
