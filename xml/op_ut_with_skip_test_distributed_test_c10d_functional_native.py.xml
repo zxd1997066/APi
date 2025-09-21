@@ -1,144 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="13" skipped="16" tests="32" time="29.711" timestamp="2025-09-12T18:14:51.998461+00:00" hostname="dut7358"><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_gather_into_tensor_coalesced" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:283: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_gather_into_tensor_single" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:181: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_coalesced" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:134: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_coalesced_" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:163: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_single" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:93: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_single_" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:119: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_to_all_single" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:372: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_broadcast" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:407: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_fixed_striding" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:506: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_functional_collectives_inference_mode" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:225: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_inductor_dtypeview_memory_leak" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:246: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_reduce_scatter_tensor_coalesced" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:345: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_reduce_scatter_tensor_single" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:319: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_threading" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:464: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_unwaited" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:449: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_wait_tensor" time="0.000"><skipped type="pytest.skip" message="c10d was not compiled with the NCCL backend">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:433: c10d was not compiled with the NCCL backend</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.PyWorkTest" name="test_collectives" time="0.363" /><testcase classname="test.distributed.test_c10d_functional_native.PyWorkTest" name="test_wait_tensor" time="0.079" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTestCPU" name="test_inductor_all_reduce_cpu" time="18.056" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_gather_into_tensor_coalesced" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="1" tests="32" time="429.787" timestamp="2025-09-19T17:04:34.486139+00:00" hostname="dut7358"><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_gather_into_tensor_coalesced" time="14.726" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_gather_into_tensor_single" time="14.927" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_coalesced" time="25.942" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_coalesced_" time="26.043" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_single" time="26.242" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_reduce_single_" time="25.840" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_all_to_all_single" time="14.324" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_broadcast" time="14.724" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_fixed_striding" time="0.000"><skipped type="pytest.skip" message="_scaled_mm currently only supports sm&gt;=90 on cuda and gfx94/95 on ROCm">/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py:509: _scaled_mm currently only supports sm&gt;=90 on cuda and gfx94/95 on ROCm</skipped></testcase><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_functional_collectives_inference_mode" time="14.525" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_inductor_dtypeview_memory_leak" time="17.529" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_reduce_scatter_tensor_coalesced" time="29.848" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_reduce_scatter_tensor_single" time="29.548" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_threading" time="32.454" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_unwaited" time="25.942" /><testcase classname="test.distributed.test_c10d_functional_native.TestWithNCCL" name="test_wait_tensor" time="25.841" /><testcase classname="test.distributed.test_c10d_functional_native.PyWorkTest" name="test_collectives" time="0.351" /><testcase classname="test.distributed.test_c10d_functional_native.PyWorkTest" name="test_wait_tensor" time="0.076" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTestCPU" name="test_inductor_all_reduce_cpu" time="18.060" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_gather_into_tensor_coalesced" time="0.184"><failure message="RuntimeError: Expected to find &quot;buf0 = torch.ops._c10d_functional.all_gather_into_tensor_coalesced.default([arg3_1, arg2_1, arg1_1, arg0_1]&quot; but did not find it&#10;Searched string:&#10;# AOT ID: ['4_inference']&#10;~~~~~~~~~~~~~~~~~~~~~~~~~&#10;from ctypes import c_void_p, c_long, c_int&#10;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#10;import torch&#10;~~~~~~~~~~~~&#10;import math&#10;~~~~~~~~~~~&#10;import random&#10;~~~~~~~~~~~~~ &lt;--- HERE&#10;import os&#10;import tempfile&#10;From CHECK: buf0 = torch.ops._c10d_functional.all_gather_into_tensor_coalesced.default([arg3_1, arg2_1, arg1_1, arg0_1]&#10;&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_c10d_functional_native.py CompileTest.test_inductor_all_gather_into_tensor_coalesced&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
   File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
     yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_gather_into_tensor_single" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_reduce_coalesced" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_reduce_non_contig_input" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_reduce_single" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_to_all_single" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_broadcast" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_inplace_op_on_view" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_reduce_scatter_tensor_coalesced" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_reduce_scatter_tensor_single" time="0.000"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_reuse_buffer_after_inplace_collective" time="0.000"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_ranks_and_tag" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_wait_tensor" time="0.001"><failure message="AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'">Traceback (most recent call last):
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
-    yield
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 587, in run
-    self._callSetUp()
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 546, in _callSetUp
-    self.setUp()
-  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 782, in setUp
-    torch.cuda.set_device("cuda:0")
-  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/cuda/__init__.py", line 567, in set_device
-    torch._C._cuda_setDevice(device)
-AttributeError: module 'torch._C' has no attribute '_cuda_setDevice'</failure></testcase></testsuite></testsuites>
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3225, in wrapper
+    method(*args, **kwargs)
+  File "/tmp/xpu-tool/Python/3.10.18/x64/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/jenkins/actions-runner/_work/torch-xpu-ops/torch-xpu-ops/pytorch/test/distributed/test_c10d_functional_native.py", line 1031, in test_inductor_all_gather_into_tensor_coalesced
+    .run(code)
+RuntimeError: Expected to find "buf0 = torch.ops._c10d_functional.all_gather_into_tensor_coalesced.default([arg3_1, arg2_1, arg1_1, arg0_1]" but did not find it
+Searched string:
+# AOT ID: ['4_inference']
+~~~~~~~~~~~~~~~~~~~~~~~~~
+from ctypes import c_void_p, c_long, c_int
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import torch
+~~~~~~~~~~~~
+import math
+~~~~~~~~~~~
+import random
+~~~~~~~~~~~~~ &lt;--- HERE
+import os
+import tempfile
+From CHECK: buf0 = torch.ops._c10d_functional.all_gather_into_tensor_coalesced.default([arg3_1, arg2_1, arg1_1, arg0_1]
+
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/test_c10d_functional_native.py CompileTest.test_inductor_all_gather_into_tensor_coalesced
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_gather_into_tensor_single" time="8.481" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_reduce_coalesced" time="6.546" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_reduce_non_contig_input" time="4.444" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_reduce_single" time="12.355" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_all_to_all_single" time="0.748" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_broadcast" time="6.640" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_inplace_op_on_view" time="2.874" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_reduce_scatter_tensor_coalesced" time="3.684" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_reduce_scatter_tensor_single" time="3.472" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_inductor_reuse_buffer_after_inplace_collective" time="2.898" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_ranks_and_tag" time="2.871" /><testcase classname="test.distributed.test_c10d_functional_native.CompileTest" name="test_wait_tensor" time="6.434" /></testsuite></testsuites>
