@@ -37,7 +37,7 @@ if ret == 0:
             value_to_keys[value] = []
         value_to_keys[value].append(key)
     for key, value in value_to_keys.items():
-        print(','.join(value_to_keys[key]))
+        print(key == ','.join(value_to_keys[key]))
 
     os.environ["ZE_AFFINITY_MASK"] = str(max_affinity)
     print(str("ZE_AFFINITY_MASK=" + os.environ.get("ZE_AFFINITY_MASK")))
@@ -46,6 +46,7 @@ else:
     print("xpu-smi topology failed")
 
     sys.exit(255)
+
 
 
 
