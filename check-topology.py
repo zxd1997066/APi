@@ -1,0 +1,40 @@
+import os
+import sys
+
+# Get the xelink group card affinity
+ret = os.system("xpu-smi topology -m 2>&1|tee topology.log")
+if ret == 0:
+    gpu_dict = {}
+    with open("topology.log") as file:
+        lines = file.readlines()
+        for line in lines:
+            if "CPU Affinity" in line:
+                continue
+            line = line.strip()
+            if line.startswith("GPU "):
+                items = line.split(" ")
+                items = [x for x in items if x]
+                gpu_id = items[1]
+                i = gpu_id.split("/")[0]
+                affinity = ""
+                for j, item in enumerate(items):
+                    if "XL" in item or "S" in item:
+                        if len(affinity) == 0:
+                            affinity = str(j - 2)
+                        else:
+                            affinity = affinity + "," + str(j - 2)
+                print(affinity)
+                gpu_dict[i] = affinity
+        print(gpu_dict)
+
+    max_affinity = ""
+    for key, value in gpu_dict.items():
+        if len(value) > len(max_affinity):
+            max_affinity = value
+
+    os.environ["ZE_AFFINITY_MASK"] = str(max_affinity)
+    print(str("ZE_AFFINITY_MASK=" + os.environ.get("ZE_AFFINITY_MASK")))
+
+else:
+    print("xpu-smi topology failed")
+    sys.exit(255)
