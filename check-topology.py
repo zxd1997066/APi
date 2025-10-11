@@ -18,8 +18,7 @@ if ret == 0:
                 i = gpu_id.split("/")[0]
                 affinity = ""
                 for j, item in enumerate(items):
-                    if "XL" in item or "S" in item:
-                        print(item)
+                    if "SYS" not in item and ("XL" in item or "S" in item):
                         if len(affinity) == 0:
                             affinity = str(j - 2)
                         else:
@@ -40,3 +39,4 @@ else:
     print("xpu-smi topology failed")
 
     sys.exit(255)
+
