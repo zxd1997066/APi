@@ -19,6 +19,7 @@ if ret == 0:
                 affinity = ""
                 for j, item in enumerate(items):
                     if "XL" in item or "S" in item:
+                        print(item)
                         if len(affinity) == 0:
                             affinity = str(j - 2)
                         else:
@@ -37,4 +38,5 @@ if ret == 0:
 
 else:
     print("xpu-smi topology failed")
+
     sys.exit(255)
