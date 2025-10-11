@@ -31,9 +31,12 @@ if ret == 0:
         print(gpu_dict)
 
     max_affinity = ""
+    value_to_keys = {}
     for key, value in gpu_dict.items():
-        if len(value) > len(max_affinity):
-            max_affinity = value
+        if value not in value_to_keys:
+            value_to_keys[value] = []
+        value_to_keys[value].append(key)
+    print(value_to_keys)
 
     os.environ["ZE_AFFINITY_MASK"] = str(max_affinity)
     print(str("ZE_AFFINITY_MASK=" + os.environ.get("ZE_AFFINITY_MASK")))
@@ -42,6 +45,7 @@ else:
     print("xpu-smi topology failed")
 
     sys.exit(255)
+
 
 
 
