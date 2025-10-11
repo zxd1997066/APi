@@ -15,6 +15,10 @@ if ret == 0:
                 items = line.split(" ")
                 items = [x for x in items if x]
                 gpu_id = items[1]
+                cpu_affinity = items[-1].split("-|,")
+                start_cpu = cpu_affinity[0]
+                end_cpu = cpu_affinity[1]
+                print(start_cpu, end_cpu)
                 i = gpu_id.split("/")[0]
                 affinity = ""
                 for j, item in enumerate(items):
@@ -23,7 +27,6 @@ if ret == 0:
                             affinity = str(j - 2)
                         else:
                             affinity = affinity + "," + str(j - 2)
-                print(affinity)
                 gpu_dict[i] = affinity
         print(gpu_dict)
 
@@ -39,4 +42,5 @@ else:
     print("xpu-smi topology failed")
 
     sys.exit(255)
+
 
