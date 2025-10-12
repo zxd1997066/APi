@@ -54,9 +54,10 @@ if ret == 0:
         end_cpu = int(value.split("-")[1])
         threads = end_cpu - start_cpu + 1
         pytest_extra_args = pytest_extra_args + '--tx popen//env:ZE_AFFINITY_MASK={}//env:OMP_NUM_THREADS={}//python="numactl -l -C {} python"'.format(key, threads, value)
-        print(pytest_extra_args)
+    print(pytest_extra_args)
 
 else:
     print("xpu-smi topology failed")
 
     sys.exit(255)
+
