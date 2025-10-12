@@ -17,9 +17,6 @@ if ret == 0:
                 items = [x for x in items if x]
                 gpu_id = items[1]
                 cpu_affinity = items[-1].split(",")[0]
-                start_cpu = cpu_affinity.split("-")[0]
-                end_cpu = cpu_affinity.split("-")[1]
-                print(start_cpu, end_cpu)
                 i = gpu_id.split("/")[0]
                 affinity = ""
                 for j, item in enumerate(items):
@@ -31,7 +28,6 @@ if ret == 0:
                 gpu_dict[i] = affinity
                 cpu_dict[i] = cpu_affinity
 
-    max_affinity = ""
     value_to_keys = {}
     gpu_cpu_dict = {}
     for key, value in gpu_dict.items():
@@ -49,7 +45,17 @@ if ret == 0:
                 cpu_aff.append(cpu_dict[i])
         if len(cpu_aff) == 1:
             gpu_cpu_dict[group] = ','.join(cpu_aff)
-    print(gpu_cpu_dict)
+    if len(gpu_cpu_dict) == 0:
+        print("No Xelink detected")
+        sys.exit(255)
+    pytest_extra_args = ""
+    for key, value in gpu_cpu_dict.items():
+        start_cpu = int(value.split("-")[0])
+        end_cpu = int(value.split("-")[1])
+        threads = end_cpu - start_cpu + 1
+        pytest_extra_args = pytest_extra_args + '--tx popen//env:ZE_AFFINITY_MASK={}//env:OMP_NUM_THREADS={}//python="numactl -l -C {} python"'.format(key, threads, value)
+        print(pytest_extra_args)
+
 else:
     print("xpu-smi topology failed")
 
