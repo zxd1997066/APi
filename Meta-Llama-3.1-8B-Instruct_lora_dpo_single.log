@@ -78,17 +78,17 @@ Optimizer and loss are initialized.
 Loss function is initialized.
 Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
-Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1759137664.txt
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:12<01:51, 12.40s/it]1|1|Loss: 0.6958905458450317:  10%|█         | 1/10 [00:12<01:51, 12.40s/it]1|1|Loss: 0.6958905458450317:  20%|██        | 2/10 [00:23<01:31, 11.39s/it]1|2|Loss: 0.6971314549446106:  20%|██        | 2/10 [00:23<01:31, 11.39s/it]1|2|Loss: 0.6971314549446106:  30%|███       | 3/10 [00:33<01:17, 11.04s/it]1|3|Loss: 0.6966857314109802:  30%|███       | 3/10 [00:33<01:17, 11.04s/it]1|3|Loss: 0.6966857314109802:  40%|████      | 4/10 [00:44<01:04, 10.82s/it]1|4|Loss: 0.695087194442749:  40%|████      | 4/10 [00:44<01:04, 10.82s/it] 1|4|Loss: 0.695087194442749:  50%|█████     | 5/10 [00:54<00:53, 10.73s/it]1|5|Loss: 0.6930612325668335:  50%|█████     | 5/10 [00:54<00:53, 10.73s/it]1|5|Loss: 0.6930612325668335:  60%|██████    | 6/10 [01:05<00:42, 10.65s/it]1|6|Loss: 0.6934196949005127:  60%|██████    | 6/10 [01:05<00:42, 10.65s/it]1|6|Loss: 0.6934196949005127:  70%|███████   | 7/10 [01:15<00:31, 10.58s/it]1|7|Loss: 0.6907178163528442:  70%|███████   | 7/10 [01:15<00:31, 10.58s/it]1|7|Loss: 0.6907178163528442:  80%|████████  | 8/10 [01:26<00:21, 10.55s/it]1|8|Loss: 0.6943687200546265:  80%|████████  | 8/10 [01:26<00:21, 10.55s/it]1|8|Loss: 0.6943687200546265:  90%|█████████ | 9/10 [01:36<00:10, 10.52s/it]1|9|Loss: 0.6917427778244019:  90%|█████████ | 9/10 [01:36<00:10, 10.52s/it]1|9|Loss: 0.6917427778244019: 100%|██████████| 10/10 [01:47<00:00, 10.56s/it]1|10|Loss: 0.7017661333084106: 100%|██████████| 10/10 [01:47<00:00, 10.56s/it]1|10|Loss: 0.7017661333084106: 100%|██████████| 10/10 [01:47<00:00, 10.73s/it]
-iteration:  1 tokens:  16384 time:  12.405302929924801 tokens_per_second_on_single_device:  1320.73
-iteration:  2 tokens:  16384 time:  10.65891007706523 tokens_per_second_on_single_device:  1537.12
-iteration:  3 tokens:  16384 time:  10.626153313089162 tokens_per_second_on_single_device:  1541.86
-iteration:  4 tokens:  16384 time:  10.47083985293284 tokens_per_second_on_single_device:  1564.73
-iteration:  5 tokens:  16384 time:  10.564015622017905 tokens_per_second_on_single_device:  1550.93
-iteration:  6 tokens:  16384 time:  10.475226533133537 tokens_per_second_on_single_device:  1564.07
-iteration:  7 tokens:  16384 time:  10.42877963418141 tokens_per_second_on_single_device:  1571.04
-iteration:  8 tokens:  16384 time:  10.465907386969775 tokens_per_second_on_single_device:  1565.46
-iteration:  9 tokens:  16384 time:  10.432127007981762 tokens_per_second_on_single_device:  1570.53
-iteration:  10 tokens:  16384 time:  10.663414674811065 tokens_per_second_on_single_device:  1536.47
-avg tokens_per_second_on_single_device:  1558.04
-[W929 09:22:56.907107259 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1760346569.txt
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:12<01:52, 12.51s/it]1|1|Loss: 0.6965625286102295:  10%|█         | 1/10 [00:12<01:52, 12.51s/it]1|1|Loss: 0.6965625286102295:  20%|██        | 2/10 [00:23<01:31, 11.48s/it]1|2|Loss: 0.6911943554878235:  20%|██        | 2/10 [00:23<01:31, 11.48s/it]1|2|Loss: 0.6911943554878235:  30%|███       | 3/10 [00:33<01:17, 11.10s/it]1|3|Loss: 0.6983675360679626:  30%|███       | 3/10 [00:33<01:17, 11.10s/it]1|3|Loss: 0.6983675360679626:  40%|████      | 4/10 [00:44<01:05, 10.85s/it]1|4|Loss: 0.6985582113265991:  40%|████      | 4/10 [00:44<01:05, 10.85s/it]1|4|Loss: 0.6985582113265991:  50%|█████     | 5/10 [00:54<00:53, 10.75s/it]1|5|Loss: 0.6941103339195251:  50%|█████     | 5/10 [00:54<00:53, 10.75s/it]1|5|Loss: 0.6941103339195251:  60%|██████    | 6/10 [01:05<00:42, 10.66s/it]1|6|Loss: 0.6974059343338013:  60%|██████    | 6/10 [01:05<00:42, 10.66s/it]1|6|Loss: 0.6974059343338013:  70%|███████   | 7/10 [01:15<00:31, 10.62s/it]1|7|Loss: 0.6969279646873474:  70%|███████   | 7/10 [01:15<00:31, 10.62s/it]1|7|Loss: 0.6969279646873474:  80%|████████  | 8/10 [01:26<00:21, 10.57s/it]1|8|Loss: 0.7008863091468811:  80%|████████  | 8/10 [01:26<00:21, 10.57s/it]1|8|Loss: 0.7008863091468811:  90%|█████████ | 9/10 [01:36<00:10, 10.53s/it]1|9|Loss: 0.6811408996582031:  90%|█████████ | 9/10 [01:36<00:10, 10.53s/it]1|9|Loss: 0.6811408996582031: 100%|██████████| 10/10 [01:47<00:00, 10.59s/it]1|10|Loss: 0.6973754167556763: 100%|██████████| 10/10 [01:47<00:00, 10.59s/it]1|10|Loss: 0.6973754167556763: 100%|██████████| 10/10 [01:47<00:00, 10.76s/it]
+iteration:  1 tokens:  16384 time:  12.507524656131864 tokens_per_second_on_single_device:  1309.93
+iteration:  2 tokens:  16384 time:  10.753539331955835 tokens_per_second_on_single_device:  1523.59
+iteration:  3 tokens:  16384 time:  10.624820904806256 tokens_per_second_on_single_device:  1542.05
+iteration:  4 tokens:  16384 time:  10.464001273969188 tokens_per_second_on_single_device:  1565.75
+iteration:  5 tokens:  16384 time:  10.555378556950018 tokens_per_second_on_single_device:  1552.19
+iteration:  6 tokens:  16384 time:  10.470962831983343 tokens_per_second_on_single_device:  1564.71
+iteration:  7 tokens:  16384 time:  10.527809967985377 tokens_per_second_on_single_device:  1556.26
+iteration:  8 tokens:  16384 time:  10.44924771017395 tokens_per_second_on_single_device:  1567.96
+iteration:  9 tokens:  16384 time:  10.437973250867799 tokens_per_second_on_single_device:  1569.65
+iteration:  10 tokens:  16384 time:  10.712313486030325 tokens_per_second_on_single_device:  1529.45
+avg tokens_per_second_on_single_device:  1555.89
+[W1013 09:11:21.776288721 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

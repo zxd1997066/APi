@@ -2,7 +2,7 @@ import os
 import sys
 
 # Get the xelink group card affinity
-ret = os.system("xpu-smi topology -m 2>&1|tee topology.log")
+ret = os.system("xpu-smi topology -m 2>&1|tee topology.log > /dev/null")
 if ret == 0:
     gpu_dict = {}
     cpu_dict = {}
