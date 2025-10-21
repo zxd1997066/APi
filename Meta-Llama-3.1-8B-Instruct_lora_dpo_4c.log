@@ -1,7 +1,7 @@
-W1013 08:42:51.692000 1004751 site-packages/torch/distributed/run.py:811] 
-W1013 08:42:51.692000 1004751 site-packages/torch/distributed/run.py:811] *****************************************
-W1013 08:42:51.692000 1004751 site-packages/torch/distributed/run.py:811] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W1013 08:42:51.692000 1004751 site-packages/torch/distributed/run.py:811] *****************************************
+W1020 09:48:39.665000 2403528 site-packages/torch/distributed/run.py:811] 
+W1020 09:48:39.665000 2403528 site-packages/torch/distributed/run.py:811] *****************************************
+W1020 09:48:39.665000 2403528 site-packages/torch/distributed/run.py:811] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1020 09:48:39.665000 2403528 site-packages/torch/distributed/run.py:811] *****************************************
 Running LoRADPORecipeDistributed with resolved config:
 
 batch_size: 4
@@ -254,32 +254,32 @@ tokenizer:
   max_seq_len: 256
   path: /tmp/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
 
-[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
-[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 [Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
 Hint: enable_activation_checkpointing is True, but enable_activation_offloading isn't. Enabling activation offloading should reduce memory further.
-Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1760344975.txt
+Writing logs to /tmp/torchtune/llama3_1_8B/lora_dpo/logs/log_1760953722.txt
 metric logger is initialized.
 FSDP is enabled. Instantiating model and loading checkpoint on Rank 0 ...
-2025:10:13-08:42:56:1004828 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:10:13-08:42:56:1004828 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:10:13-08:42:56:1004826 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:10:13-08:42:56:1004826 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:10:13-08:42:56:1004827 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:10:13-08:42:56:1004827 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-2025:10:13-08:42:56:1004825 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
-2025:10:13-08:42:56:1004825 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
-[rank2]:W1013 08:42:57.668000 1004827 site-packages/torch/distributed/tensor/_random.py:209] DTensor is synchronizing RNG states of every rank with the state from rank 0. This behavior is deprecated. Please call `torch.manual_seed()` on every rank that participates in SPMD DTensor Operations with the same seed. If using Pipeline Parallelism, each pipeling state would use a different seed, but all ranks belonging to one pipeline stage would use the same seed.
-[rank1]:W1013 08:42:57.668000 1004826 site-packages/torch/distributed/tensor/_random.py:209] DTensor is synchronizing RNG states of every rank with the state from rank 0. This behavior is deprecated. Please call `torch.manual_seed()` on every rank that participates in SPMD DTensor Operations with the same seed. If using Pipeline Parallelism, each pipeling state would use a different seed, but all ranks belonging to one pipeline stage would use the same seed.
-[rank3]:W1013 08:42:57.668000 1004828 site-packages/torch/distributed/tensor/_random.py:209] DTensor is synchronizing RNG states of every rank with the state from rank 0. This behavior is deprecated. Please call `torch.manual_seed()` on every rank that participates in SPMD DTensor Operations with the same seed. If using Pipeline Parallelism, each pipeling state would use a different seed, but all ranks belonging to one pipeline stage would use the same seed.
+2025:10:20-09:48:43:2403602 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:10:20-09:48:43:2403602 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:10:20-09:48:44:2403605 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:10:20-09:48:44:2403605 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:10:20-09:48:44:2403604 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:10:20-09:48:44:2403604 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+2025:10:20-09:48:44:2403603 |CCL_WARN| did not find MPI-launcher specific variables, switch to ATL/OFI, to force enable ATL/MPI set CCL_ATL_TRANSPORT=mpi
+2025:10:20-09:48:44:2403603 |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+[rank2]:W1020 09:48:45.016000 2403604 site-packages/torch/distributed/tensor/_random.py:209] DTensor is synchronizing RNG states of every rank with the state from rank 0. This behavior is deprecated. Please call `torch.manual_seed()` on every rank that participates in SPMD DTensor Operations with the same seed. If using Pipeline Parallelism, each pipeling state would use a different seed, but all ranks belonging to one pipeline stage would use the same seed.
+[rank3]:W1020 09:48:45.017000 2403605 site-packages/torch/distributed/tensor/_random.py:209] DTensor is synchronizing RNG states of every rank with the state from rank 0. This behavior is deprecated. Please call `torch.manual_seed()` on every rank that participates in SPMD DTensor Operations with the same seed. If using Pipeline Parallelism, each pipeling state would use a different seed, but all ranks belonging to one pipeline stage would use the same seed.
+[rank1]:W1020 09:48:45.018000 2403603 site-packages/torch/distributed/tensor/_random.py:209] DTensor is synchronizing RNG states of every rank with the state from rank 0. This behavior is deprecated. Please call `torch.manual_seed()` on every rank that participates in SPMD DTensor Operations with the same seed. If using Pipeline Parallelism, each pipeling state would use a different seed, but all ranks belonging to one pipeline stage would use the same seed.
 /home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py:453: FutureWarning: lora_attn_modules is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
   validate_missing_and_unexpected_for_lora(
 /home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_mlp is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
   return obj(*args, **kwargs)
 /home/jenkins/xiangdong/torchtune/torchtune/utils/_logging.py:143: FutureWarning: apply_lora_to_output is deprecated for validate_missing_and_unexpected_for_lora and will be removed in future versions. Please use state_dict_keys instead.
   return obj(*args, **kwargs)
-Instantiating model and loading checkpoint took 4.95 secs
+Instantiating model and loading checkpoint took 4.89 secs
 Memory stats after model init:
 	XPU peak memory active: 4.76 GiB
 	XPU peak memory alloc: 4.76 GiB
@@ -288,29 +288,16 @@ Optimizer and loss are initialized.
 Loss is initialized.
 Dataset and Sampler are initialized.
 Learning rate scheduler is initialized.
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:31<04:44, 31.65s/it]1|1|Loss: 2.7788360118865967:  10%|█         | 1/10 [00:31<04:44, 31.65s/it]iteration:  1 tokens:  65536 time:  31.652369166957214 tokens_per_second:  2070.49
-1|1|Loss: 2.7788360118865967:  20%|██        | 2/10 [00:47<03:01, 22.65s/it]1|2|Loss: 2.763838768005371:  20%|██        | 2/10 [00:47<03:01, 22.65s/it] iteration:  2 tokens:  65536 time:  16.330851875944063 tokens_per_second:  4013.02
-1|2|Loss: 2.763838768005371:  30%|███       | 3/10 [01:04<02:17, 19.66s/it]1|3|Loss: 2.7751059532165527:  30%|███       | 3/10 [01:04<02:17, 19.66s/it]iteration:  3 tokens:  65496 time:  16.085330471163616 tokens_per_second:  4071.78
-1|3|Loss: 2.7751059532165527:  40%|████      | 4/10 [01:20<01:49, 18.28s/it]1|4|Loss: 2.7689499855041504:  40%|████      | 4/10 [01:20<01:49, 18.28s/it]iteration:  4 tokens:  65536 time:  16.13593124691397 tokens_per_second:  4061.49
-1|4|Loss: 2.7689499855041504:  50%|█████     | 5/10 [01:36<01:27, 17.51s/it]1|5|Loss: 2.774672508239746:  50%|█████     | 5/10 [01:36<01:27, 17.51s/it] iteration:  5 tokens:  65536 time:  16.151498541934416 tokens_per_second:  4057.58
-1|5|Loss: 2.774672508239746:  60%|██████    | 6/10 [01:52<01:08, 17.06s/it]1|6|Loss: 2.7696967124938965:  60%|██████    | 6/10 [01:52<01:08, 17.06s/it]iteration:  6 tokens:  65536 time:  16.160762103972957 tokens_per_second:  4055.25
-1|6|Loss: 2.7696967124938965:  70%|███████   | 7/10 [02:08<00:50, 16.76s/it]1|7|Loss: 2.772963523864746:  70%|███████   | 7/10 [02:08<00:50, 16.76s/it] iteration:  7 tokens:  65536 time:  16.136049741879106 tokens_per_second:  4061.46
-1|7|Loss: 2.772963523864746:  80%|████████  | 8/10 [02:24<00:33, 16.55s/it]1|8|Loss: 2.76235032081604:  80%|████████  | 8/10 [02:24<00:33, 16.55s/it] iteration:  8 tokens:  65536 time:  16.10011622705497 tokens_per_second:  4070.53
-1|8|Loss: 2.76235032081604:  90%|█████████ | 9/10 [02:41<00:16, 16.43s/it]1|9|Loss: 2.757290840148926:  90%|█████████ | 9/10 [02:41<00:16, 16.43s/it]iteration:  9 tokens:  65304 time:  16.15999889280647 tokens_per_second:  4041.09
-1|9|Loss: 2.757290840148926: 100%|██████████| 10/10 [02:57<00:00, 16.40s/it]1|10|Loss: 2.7721691131591797: 100%|██████████| 10/10 [02:57<00:00, 16.40s/it]iteration:  10 tokens:  65536 time:  16.296376367099583 tokens_per_second:  4021.51
-avg tokens_per_second:  4055.03
-1|10|Loss: 2.7721691131591797: 100%|██████████| 10/10 [02:57<00:00, 17.74s/it]
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 830, in <module>
-[rank1]:     sys.exit(recipe_main())
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
-[rank1]:     sys.exit(recipe_main(conf))
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 825, in recipe_main
-[rank1]:     recipe.train()
-[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 794, in train
-[rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
-[rank1]: ZeroDivisionError: division by zero
-[rank0]:[W1013 08:46:00.679387212 ProcessGroup.hpp:940] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:31<04:44, 31.59s/it]1|1|Loss: 2.7775118350982666:  10%|█         | 1/10 [00:31<04:44, 31.59s/it]iteration:  1 tokens:  65536 time:  31.59047916601412 tokens_per_second:  2074.55
+1|1|Loss: 2.7775118350982666:  20%|██        | 2/10 [00:47<03:00, 22.51s/it]1|2|Loss: 2.7655420303344727:  20%|██        | 2/10 [00:47<03:00, 22.51s/it]iteration:  2 tokens:  65536 time:  16.14142214297317 tokens_per_second:  4060.11
+1|2|Loss: 2.7655420303344727:  30%|███       | 3/10 [01:03<02:17, 19.60s/it]1|3|Loss: 2.7734718322753906:  30%|███       | 3/10 [01:03<02:17, 19.60s/it]iteration:  3 tokens:  65496 time:  16.116484795929864 tokens_per_second:  4063.91
+1|3|Loss: 2.7734718322753906:  40%|████      | 4/10 [01:20<01:49, 18.24s/it]1|4|Loss: 2.7814197540283203:  40%|████      | 4/10 [01:20<01:49, 18.24s/it]iteration:  4 tokens:  65536 time:  16.13990005501546 tokens_per_second:  4060.5
+1|4|Loss: 2.7814197540283203:  50%|█████     | 5/10 [01:36<01:27, 17.50s/it]1|5|Loss: 2.7812037467956543:  50%|█████     | 5/10 [01:36<01:27, 17.50s/it]iteration:  5 tokens:  65536 time:  16.149204699788243 tokens_per_second:  4058.16
+1|5|Loss: 2.7812037467956543:  60%|██████    | 6/10 [01:52<01:08, 17.06s/it]1|6|Loss: 2.774284839630127:  60%|██████    | 6/10 [01:52<01:08, 17.06s/it] iteration:  6 tokens:  65536 time:  16.18419654108584 tokens_per_second:  4049.38
+1|6|Loss: 2.774284839630127:  70%|███████   | 7/10 [02:08<00:50, 16.79s/it]1|7|Loss: 2.7724227905273438:  70%|███████   | 7/10 [02:08<00:50, 16.79s/it]iteration:  7 tokens:  65536 time:  16.227740296861157 tokens_per_second:  4038.52
+1|7|Loss: 2.7724227905273438:  80%|████████  | 8/10 [02:24<00:33, 16.58s/it]1|8|Loss: 2.7667548656463623:  80%|████████  | 8/10 [02:24<00:33, 16.58s/it]iteration:  8 tokens:  65536 time:  16.121793501079082 tokens_per_second:  4065.06
+1|8|Loss: 2.7667548656463623:  90%|█████████ | 9/10 [02:41<00:16, 16.54s/it]1|9|Loss: 2.7661349773406982:  90%|█████████ | 9/10 [02:41<00:16, 16.54s/it]iteration:  9 tokens:  65304 time:  16.42150236410089 tokens_per_second:  3976.74
+1|9|Loss: 2.7661349773406982: 100%|██████████| 10/10 [02:57<00:00, 16.43s/it]1|10|Loss: 2.765298366546631: 100%|██████████| 10/10 [02:57<00:00, 16.43s/it]iteration:  10 tokens:  65536 time:  16.16994021786377 tokens_per_second:  4052.95
 [rank3]: Traceback (most recent call last):
 [rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 830, in <module>
 [rank3]:     sys.exit(recipe_main())
@@ -321,6 +308,18 @@ avg tokens_per_second:  4055.03
 [rank3]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 794, in train
 [rank3]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
 [rank3]: ZeroDivisionError: division by zero
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 830, in <module>
+[rank1]:     sys.exit(recipe_main())
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/torchtune/config/_parse.py", line 99, in wrapper
+[rank1]:     sys.exit(recipe_main(conf))
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 825, in recipe_main
+[rank1]:     recipe.train()
+[rank1]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 794, in train
+[rank1]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
+[rank1]: ZeroDivisionError: division by zero
+avg tokens_per_second:  4045.49
+1|10|Loss: 2.765298366546631: 100%|██████████| 10/10 [02:57<00:00, 17.75s/it]
 [rank2]: Traceback (most recent call last):
 [rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 830, in <module>
 [rank2]:     sys.exit(recipe_main())
@@ -331,13 +330,10 @@ avg tokens_per_second:  4055.03
 [rank2]:   File "/home/jenkins/xiangdong/torchtune/recipes/lora_dpo_distributed.py", line 794, in train
 [rank2]:     print("avg tokens_per_second: ", round(total_tokens / total_time, 2))
 [rank2]: ZeroDivisionError: division by zero
-[rank1]:[W1013 08:46:01.595506325 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
-[rank3]:[W1013 08:46:01.700095800 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
-[rank2]:[W1013 08:46:01.701325680 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
-W1013 08:46:01.979000 1004751 site-packages/torch/distributed/elastic/multiprocessing/api.py:940] Sending process 1004825 closing signal SIGTERM
-W1013 08:46:01.980000 1004751 site-packages/torch/distributed/elastic/multiprocessing/api.py:940] Sending process 1004827 closing signal SIGTERM
-W1013 08:46:01.980000 1004751 site-packages/torch/distributed/elastic/multiprocessing/api.py:940] Sending process 1004828 closing signal SIGTERM
-E1013 08:46:02.095000 1004751 site-packages/torch/distributed/elastic/multiprocessing/api.py:914] failed (exitcode: 1) local_rank: 1 (pid: 1004826) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
+[rank0]:[W1020 09:51:48.844194532 ProcessGroup.hpp:940] Warning: No backend of type 0 found for Process Group with name undefined. Assuming no hooks are registered. (function hasHooks)
+W1020 09:51:49.057000 2403528 site-packages/torch/distributed/elastic/multiprocessing/api.py:940] Sending process 2403602 closing signal SIGTERM
+W1020 09:51:49.058000 2403528 site-packages/torch/distributed/elastic/multiprocessing/api.py:940] Sending process 2403603 closing signal SIGTERM
+E1020 09:51:49.172000 2403528 site-packages/torch/distributed/elastic/multiprocessing/api.py:914] failed (exitcode: 1) local_rank: 2 (pid: 2403604) of binary: /home/jenkins/.conda/envs/xpu_op_/bin/python3.10
 Running with torchrun...
 Traceback (most recent call last):
   File "/home/jenkins/.conda/envs/xpu_op_/bin/tune", line 7, in <module>
@@ -364,34 +360,33 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 ------------------------------------------------------------
 Failures:
 [1]:
-  time      : 2025-10-13_08:46:02
-  host      : dut7358
-  rank      : 0 (local_rank: 0)
-  exitcode  : -15 (pid: 1004825)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 1004825
-[2]:
-  time      : 2025-10-13_08:46:02
-  host      : dut7358
-  rank      : 2 (local_rank: 2)
-  exitcode  : -15 (pid: 1004827)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 1004827
-[3]:
-  time      : 2025-10-13_08:46:02
+  time      : 2025-10-20_09:51:49
   host      : dut7358
   rank      : 3 (local_rank: 3)
-  exitcode  : -15 (pid: 1004828)
+  exitcode  : 1 (pid: 2403605)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 1004828
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2025-10-20_09:51:49
+  host      : dut7358
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 2403602)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 2403602
+[3]:
+  time      : 2025-10-20_09:51:49
+  host      : dut7358
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2403603)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2025-10-13_08:46:01
+  time      : 2025-10-20_09:51:49
   host      : dut7358
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 1004826)
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 2403604)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
-[W1013 08:46:02.506975716 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
