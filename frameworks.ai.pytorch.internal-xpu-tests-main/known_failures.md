@@ -1,0 +1,174 @@
+# Same test cases failing on both XPU and CUDA. They were ran on both Intel XPU and Nvidia CUDA GPU
+
+## torch.special
+
+### igamma
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive-dtype1-shape0] - NotImplementedError: "igamma_cuda" not implemented for 'BFloat16'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive-dtype1-shape1] - NotImplementedError: "igamma_cuda" not implemented for 'BFloat16'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive-dtype1-shape2] - NotImplementedError: "igamma_cuda" not implemented for 'BFloat16'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive-dtype2-shape0] - NotImplementedError: "igamma_cuda" not implemented for 'Half'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive-dtype2-shape1] - NotImplementedError: "igamma_cuda" not implemented for 'Half'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive-dtype2-shape2] - NotImplementedError: "igamma_cuda" not implemented for 'Half'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive_small-dtype1-shape0] - NotImplementedError: "igamma_cuda" not implemented for 'BFloat16'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive_small-dtype1-shape1] - NotImplementedError: "igamma_cuda" not implemented for 'BFloat16'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive_small-dtype1-shape2] - NotImplementedError: "igamma_cuda" not implemented for 'BFloat16'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive_small-dtype2-shape0] - NotImplementedError: "igamma_cuda" not implemented for 'Half'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive_small-dtype2-shape1] - NotImplementedError: "igamma_cuda" not implemented for 'Half'
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_gammainc_ops[positive_small-dtype2-shape2] - NotImplementedError: "igamma_cuda" not implemented for 'Half'
+
+### test_special_zeta
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[normal-dtype4-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[normal-dtype4-shape1] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[normal-dtype4-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[normal-dtype5-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[normal-dtype5-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[uniform-dtype4-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[uniform-dtype4-shape1] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[uniform-dtype4-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[uniform-dtype5-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[uniform-dtype5-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[positive-dtype4-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[positive-dtype4-shape1] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[positive-dtype4-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[positive-dtype5-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[positive-dtype5-shape1] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_zeta[positive-dtype5-shape2] - AssertionError: Tensor-likes are not close!
+
+### test_special_logit
+# FIX in https://github.com/intel/torch-xpu-ops/pull/2156
+
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[None-uniform-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[None-uniform-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[None-range_neg1_1-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[1e-06-uniform-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[1e-06-uniform-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[1e-06-range_neg1_1-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.001-uniform-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.001-uniform-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.001-uniform-dtype2-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.001-uniform-dtype2-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.001-range_neg1_1-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.001-range_neg1_1-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-uniform-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-uniform-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-uniform-dtype2-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-range_neg1_1-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-range_neg1_1-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-range_neg1_1-dtype2-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.01-range_neg1_1-dtype2-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.1-uniform-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.1-range_neg1_1-dtype1-shape0] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_logit[0.1-range_neg1_1-dtype1-shape2] - AssertionError: Tensor-likes are not close!
+
+### test_special_polynomial_ops
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[10-dtype0-uniform-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[10-dtype0-range_neg1_1-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape0-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape0-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-normal-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-uniform-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-uniform-shape0-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-uniform-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-uniform-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-uniform-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-uniform-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape0-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape1-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape0-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape0-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[50-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape0-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-normal-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape0-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape1-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-uniform-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape0-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape1-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape1-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape1-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-positive_small-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape0-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape1-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_t] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_u] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_v] - AssertionError: Tensor-likes are not close!
+- FAILED test_special_cuda.py::TestSpecialCUDA::test_special_polynomial_ops[500-dtype0-range_neg1_1-shape2-shifted_chebyshev_polynomial_w] - AssertionError: Tensor-likes are not close!
