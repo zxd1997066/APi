@@ -1,0 +1,100 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.19, pytest-9.0.1, pluggy-1.6.0 -- /home/jenkins/.conda/envs/torch_20251123/bin/python
+cachedir: .pytest_cache
+rootdir: /home/jenkins/ruijie/APi/frameworks.ai.pytorch.internal-xpu-tests-main
+collecting ... collected 2 items
+
+test_jvp.py::test_vmap_jvp_vjp[cpu] PASSED
+test_jvp.py::test_vmap_jvp_vjp[xpu] FAILED
+
+=================================== FAILURES ===================================
+____________________________ test_vmap_jvp_vjp[xpu] ____________________________
+
+device = 'xpu'
+
+    @pytest.mark.parametrize("device", ["cpu", "xpu"])
+    def test_vmap_jvp_vjp(device):
+        primal_in = torch.tensor(12.34, device=device, requires_grad=True)
+        cotangent_in = torch.tensor([1.0, 3.0, 2.0, 4.5], device=device)
+    
+        def push_vjp(primal_in, cotangent_in):
+            _, vjp_fn = vjp(torch.nn.functional.logsigmoid, primal_in)
+            (grad,) = vjp_fn(cotangent_in)
+            return grad
+    
+        def jvp_of_vjp(primal_in, cotangent_in, primal_tangent_in, cotangent_tangent_in):
+            return jvp(
+                push_vjp,
+                (primal_in, cotangent_in),
+                (primal_tangent_in, cotangent_tangent_in),
+            )
+    
+        # Compare VMap (throwing error) vs looping individual cotangent_ins
+>       vmap_results = vmap(jvp_of_vjp, in_dims=(None, 0, None, None))(
+            primal_in,
+            cotangent_in,
+            torch.tensor(1.0, device=device),
+            torch.tensor(1.0, device=device)
+        )
+
+test_jvp.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/apis.py:208: in wrapped
+    return vmap_impl(
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/vmap.py:283: in vmap_impl
+    return _flat_vmap(
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/vmap.py:433: in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+test_jvp.py:17: in jvp_of_vjp
+    return jvp(
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py:1043: in jvp
+    return _jvp_with_argnums(
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py:1102: in _jvp_with_argnums
+    result_duals = func(*duals)
+test_jvp.py:13: in push_vjp
+    (grad,) = vjp_fn(cotangent_in)
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py:396: in wrapper
+    result = _autograd_grad(
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py:143: in _autograd_grad
+    grad_inputs = torch.autograd.grad(
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/autograd/__init__.py:515: in grad
+    result = _engine_run_backward(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+t_outputs = (GradTrackingTensor(lvl=-2, value=
+    GradTrackingTensor(lvl=-2, value=
+        tensor(-4.3733e-06, device='xpu:0', grad_fn=<LogSigmoidBackward0>)
+    )
+),)
+args = ((GradTrackingTensor(lvl=-2, value=
+    BatchedTensor(lvl=1, bdim=0, value=
+        tensor([1.0000, 3.0000, 2.0000, 4....   GradTrackingTensor(lvl=-2, value=
+        tensor(12.3400, device='xpu:0', grad_fn=<AliasBackward0>)
+    )
+),), True)
+kwargs = {'accumulate_grad': False}, attach_logging_hooks = False
+
+    def _engine_run_backward(
+        t_outputs: Sequence[Union[torch.Tensor, GradientEdge]],
+        *args: Any,
+        **kwargs: Any,
+    ) -> tuple[torch.Tensor, ...]:
+        attach_logging_hooks = log.getEffectiveLevel() <= logging.DEBUG
+        if attach_logging_hooks:
+            unregister_hooks = _register_logging_hooks_on_whole_graph(t_outputs)
+        try:
+>           return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+                t_outputs, *args, **kwargs
+            )  # Calls into the C++ engine to run the backward pass
+E           RuntimeError: Trying to set a forward gradient that has a different size than that of the original Tensor, this is not supported. Tensor is of size [1] while the given forward gradient is of size [].
+
+../../../.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/autograd/graph.py:865: RuntimeError
+=============================== warnings summary ===============================
+test_jvp.py: 18 warnings
+  /home/jenkins/.conda/envs/torch_20251123/lib/python3.10/site-packages/torch/jit/_script.py:1480: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED test_jvp.py::test_vmap_jvp_vjp[xpu] - RuntimeError: Trying to set a fo...
+=================== 1 failed, 1 passed, 18 warnings in 2.74s ===================

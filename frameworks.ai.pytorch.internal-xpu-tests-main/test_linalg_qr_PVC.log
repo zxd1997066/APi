@@ -1,0 +1,62 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.19, pytest-9.0.1, pluggy-1.6.0 -- /home/jenkins/.conda/envs/torch_20251123/bin/python
+cachedir: .pytest_cache
+rootdir: /home/jenkins/ruijie/APi/frameworks.ai.pytorch.internal-xpu-tests-main
+collecting ... collected 48 items
+
+test_linalg_qr.py::test_linalg_qr[shape0-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape0-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape0-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape1-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape1-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape1-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape2-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape2-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape2-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape3-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape3-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape3-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape4-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape4-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape4-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape5-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape5-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape5-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape6-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape6-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape6-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape7-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape7-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape7-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape8-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape8-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape8-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape9-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape9-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape9-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape10-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape10-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape10-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape11-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape11-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape11-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape12-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape12-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape12-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape13-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape13-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape13-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape14-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape14-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape14-r-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape15-reduced-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape15-complete-dtype0] PASSED
+test_linalg_qr.py::test_linalg_qr[shape15-r-dtype0] PASSED
+
+=============================== warnings summary ===============================
+test_linalg_qr.py::test_linalg_qr[shape0-reduced-dtype0]
+  /home/jenkins/ruijie/APi/frameworks.ai.pytorch.internal-xpu-tests-main/test_linalg_qr.py:37: UserWarning: Aten Op fallback from XPU to CPU happends. This may have performance implications. If need debug the fallback ops please set environment variable `PYTORCH_DEBUG_XPU_FALLBACK=1`  (Triggered internally at /pytorch/build/xpu/ATen/RegisterXPU_0.cpp:54717.)
+    Q_xpu, R_xpu = torch.linalg.qr(A_xpu, mode=mode)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 48 passed, 1 warning in 1.33s =========================

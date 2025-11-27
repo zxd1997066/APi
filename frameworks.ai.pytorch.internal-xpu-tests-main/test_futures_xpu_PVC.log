@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.19, pytest-9.0.1, pluggy-1.6.0 -- /home/jenkins/.conda/envs/torch_20251123/bin/python
+cachedir: .pytest_cache
+rootdir: /home/jenkins/ruijie/APi/frameworks.ai.pytorch.internal-xpu-tests-main
+collecting ... collected 22 items
+
+test_futures_xpu.py::TestFuture::test_add_done_callback_error_is_ignored PASSED
+test_futures_xpu.py::TestFuture::test_add_done_callback_maintains_callback_order PASSED
+test_futures_xpu.py::TestFuture::test_add_done_callback_no_arg_error_is_ignored PASSED
+test_futures_xpu.py::TestFuture::test_add_done_callback_simple PASSED
+test_futures_xpu.py::TestFuture::test_chained_then PASSED
+test_futures_xpu.py::TestFuture::test_collect_all PASSED
+test_futures_xpu.py::TestFuture::test_done PASSED
+test_futures_xpu.py::TestFuture::test_done_exception PASSED
+test_futures_xpu.py::TestFuture::test_interleaving_then_and_add_done_callback_maintains_callback_order PASSED
+test_futures_xpu.py::TestFuture::test_interleaving_then_and_add_done_callback_propagates_error PASSED
+test_futures_xpu.py::TestFuture::test_mark_future_twice PASSED
+test_futures_xpu.py::TestFuture::test_pickle_future PASSED
+test_futures_xpu.py::TestFuture::test_set_exception PASSED
+test_futures_xpu.py::TestFuture::test_set_exception_multithreading PASSED
+test_futures_xpu.py::TestFuture::test_then PASSED
+test_futures_xpu.py::TestFuture::test_then_no_arg PASSED
+test_futures_xpu.py::TestFuture::test_then_raise PASSED
+test_futures_xpu.py::TestFuture::test_then_wrong_arg PASSED
+test_futures_xpu.py::TestFuture::test_wait PASSED
+test_futures_xpu.py::TestFuture::test_wait_all [1, 2]
+PASSED
+test_futures_xpu.py::TestFuture::test_wait_multi_thread PASSED
+test_futures_xpu.py::TestFuture::test_wait_none PASSED
+
+============================== 22 passed in 2.80s ==============================

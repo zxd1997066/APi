@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.19, pytest-9.0.1, pluggy-1.6.0 -- /home/jenkins/.conda/envs/torch_20251123/bin/python
+cachedir: .pytest_cache
+rootdir: /home/jenkins/ruijie/APi/frameworks.ai.pytorch.internal-xpu-tests-main
+collecting ... collected 2 items
+
+test_misc_xpu.py::test_out_warning[cpu] PASSED
+test_misc_xpu.py::test_out_warning[xpu] FAILED
+
+=================================== FAILURES ===================================
+____________________________ test_out_warning[xpu] _____________________________
+
+device = 'xpu'
+
+    @pytest.mark.parametrize("device", ["cpu", "xpu"])
+    def test_out_warning(device):
+        dtype = torch.float32
+        input_tensor = torch.randn(3, 3, dtype=dtype, device=device)
+        out = torch.randn(3, 4, dtype=dtype, device=device)  # Wrong shape
+    
+        # Should warn when resizing non-empty tensor with wrong shape
+>       with pytest.warns(UserWarning, match="An output with one or more elements"):
+E       Failed: DID NOT WARN. No warnings of type (<class 'UserWarning'>,) were emitted.
+E        Emitted warnings: [].
+
+test_misc_xpu.py:11: Failed
+=========================== short test summary info ============================
+FAILED test_misc_xpu.py::test_out_warning[xpu] - Failed: DID NOT WARN. No war...
+========================= 1 failed, 1 passed in 1.16s ==========================
