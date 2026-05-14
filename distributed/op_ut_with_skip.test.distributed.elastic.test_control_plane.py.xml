@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.145" timestamp="2026-05-13T09:56:59.263194-07:00" hostname="bmg816374.jf.intel.com"><testcase classname="" name="test.distributed.elastic.test_control_plane" time="0.000"><error message="collection failure">ImportError while importing test module '/home/jenkins/xiangdong/pytorch/test/distributed/elastic/test_control_plane.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+../../../../test/distributed/elastic/test_control_plane.py:12: in &lt;module&gt;
+    from urllib3.connection import HTTPConnection
+E   ModuleNotFoundError: No module named 'urllib3'</error></testcase></testsuite></testsuites>

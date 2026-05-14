@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="304.446" timestamp="2026-05-13T06:32:24.090888-07:00" hostname="bmg816374.jf.intel.com"><testcase classname="test.distributed.test_c10d_logger.C10dErrorLoggerTest" name="test_exception_logger" time="300.044"><failure message="RuntimeError: Process 0 terminated or timed out after 300.03236961364746 seconds">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1195, in _check_return_codes
+    raise RuntimeError(
+RuntimeError: Process 0 terminated or timed out after 300.03236961364746 seconds</failure></testcase><testcase classname="test.distributed.test_c10d_logger.C10dErrorLoggerTest" name="test_get_or_create_logger" time="3.616" /></testsuite></testsuites>

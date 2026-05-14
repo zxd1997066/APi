@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.710" timestamp="2026-05-13T12:20:52.775528-07:00" hostname="bmg816374.jf.intel.com"><testcase classname="test.distributed._pycute.test_typing.TestTyping" name="test_typing" time="0.670" /></testsuite></testsuites>

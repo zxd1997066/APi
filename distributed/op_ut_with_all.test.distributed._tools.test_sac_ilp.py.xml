@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="4" time="7.125" timestamp="2026-05-13T10:28:26.921587-07:00" hostname="bmg816374.jf.intel.com"><testcase classname="test.distributed._tools.test_sac_ilp.TestSACILP" name="test_sac_ilp_case1" time="3.681"><failure message="ImportError: Please install pwlf and numpy package.">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 556, in _get_sac_tradeoff_pwlf_stats
+    import pwlf  # type: ignore[import-untyped, import-not-found]
+ModuleNotFoundError: No module named 'pwlf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2207, in wrap_fn
+    return fn(self, *args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_tools/test_sac_ilp.py", line 157, in test_sac_ilp_case1
+    mod_info = self._collect_module_info_with_fake_tensor_mode()
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_tools/test_sac_ilp.py", line 140, in _collect_module_info_with_fake_tensor_mode
+    mod_info = aggregate_stats(
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/ilp_utils.py", line 119, in aggregate_stats
+    sac_estimator.pwlf_sac_tradeoff_curve()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 885, in pwlf_sac_tradeoff_curve
+    self.sac_mod_tradeoff_stats[mod_fqn] = self._get_sac_tradeoff_pwlf_stats(
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 558, in _get_sac_tradeoff_pwlf_stats
+    raise ImportError("Please install pwlf and numpy package.") from err
+ImportError: Please install pwlf and numpy package.</failure></testcase><testcase classname="test.distributed._tools.test_sac_ilp.TestSACILP" name="test_sac_ilp_case2" time="1.245"><failure message="ImportError: Please install pwlf and numpy package.">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 556, in _get_sac_tradeoff_pwlf_stats
+    import pwlf  # type: ignore[import-untyped, import-not-found]
+ModuleNotFoundError: No module named 'pwlf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_tools/test_sac_ilp.py", line 200, in test_sac_ilp_case2
+    mod_info = self._collect_module_info_with_fake_tensor_mode()
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_tools/test_sac_ilp.py", line 140, in _collect_module_info_with_fake_tensor_mode
+    mod_info = aggregate_stats(
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/ilp_utils.py", line 119, in aggregate_stats
+    sac_estimator.pwlf_sac_tradeoff_curve()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 885, in pwlf_sac_tradeoff_curve
+    self.sac_mod_tradeoff_stats[mod_fqn] = self._get_sac_tradeoff_pwlf_stats(
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 558, in _get_sac_tradeoff_pwlf_stats
+    raise ImportError("Please install pwlf and numpy package.") from err
+ImportError: Please install pwlf and numpy package.</failure></testcase><testcase classname="test.distributed._tools.test_sac_ilp.TestSACILP" name="test_sac_ilp_case3" time="1.362"><failure message="ImportError: Please install pwlf and numpy package.">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 556, in _get_sac_tradeoff_pwlf_stats
+    import pwlf  # type: ignore[import-untyped, import-not-found]
+ModuleNotFoundError: No module named 'pwlf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_tools/test_sac_ilp.py", line 216, in test_sac_ilp_case3
+    mod_info = self._collect_module_info_with_fake_tensor_mode()
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_tools/test_sac_ilp.py", line 140, in _collect_module_info_with_fake_tensor_mode
+    mod_info = aggregate_stats(
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/ilp_utils.py", line 119, in aggregate_stats
+    sac_estimator.pwlf_sac_tradeoff_curve()
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 885, in pwlf_sac_tradeoff_curve
+    self.sac_mod_tradeoff_stats[mod_fqn] = self._get_sac_tradeoff_pwlf_stats(
+  File "/home/jenkins/miniforge3/envs/dist_test/lib/python3.10/site-packages/torch/distributed/_tools/sac_estimator.py", line 558, in _get_sac_tradeoff_pwlf_stats
+    raise ImportError("Please install pwlf and numpy package.") from err
+ImportError: Please install pwlf and numpy package.</failure></testcase><testcase classname="test.distributed._tools.test_sac_ilp.TestOptimalCheckpointingPolicy" name="test_get_optimial_checkpointing_policy_per_module" time="0.035" /></testsuite></testsuites>
