@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.810" timestamp="2026-05-14T12:22:41.970194-07:00" hostname="bmg816790"><testcase classname="test.distributed._pycute.test_coalesce.TestCoalesce" name="test_coalesce" time="0.769" /></testsuite></testsuites>

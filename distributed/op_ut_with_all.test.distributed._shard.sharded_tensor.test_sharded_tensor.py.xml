@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="12" skipped="0" tests="74" time="578.612" timestamp="2026-05-14T09:20:11.429253-07:00" hostname="bmg816790"><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorMetadata" name="test_serialize_and_deserialize" time="0.023" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestCreateTensorFromParams" name="test_empty" time="0.483" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardParameter" name="test_shard_parameter" time="7.524" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardParameter" name="test_shard_parameter_errors" time="7.423" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardTensor" name="test_shard_tensor" time="7.524" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardTensor" name="test_shard_tensor_errors" time="7.325" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardTensor" name="test_shard_tensor_with_empty_shard" time="7.624" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestModuleHookApi" name="test_collect_local_shard" time="7.424" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestModuleHookApi" name="test_reshard_output" time="7.625" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestLocalTensor" name="test_local_tensor" time="7.626" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestLocalTensor" name="test_local_tensor_error" time="7.024" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_cleanup" time="9.428" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_complete_world_size" time="7.926"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 566, in test_complete_world_size&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_complete_world_size&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 566, in test_complete_world_size&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_complete_world_size&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 566, in test_complete_world_size
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_complete_world_size
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 566, in test_complete_world_size
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_complete_world_size
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_create_sharded_tensor_like" time="10.229" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_create_sharded_tensor_with_full" time="9.029" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_create_sharded_tensor_with_ones" time="8.927" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_create_sharded_tensor_with_rand" time="9.526" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_create_sharded_tensor_with_zeros" time="9.226" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_gather_even" time="8.924" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_gather_uneven" time="9.328" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_insufficient_sharding_dims" time="4.618" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_invalid_pg_rpc_ranks" time="5.320" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_invalid_sharding" time="7.825" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_load_state_dict_errors" time="7.926" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_multiple_local_shards" time="7.725"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 999, in test_multiple_local_shards&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_multiple_local_shards&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 999, in test_multiple_local_shards&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_multiple_local_shards&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 999, in test_multiple_local_shards
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_multiple_local_shards
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 999, in test_multiple_local_shards
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_multiple_local_shards
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_new_group" time="8.828"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 942, in test_new_group&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_new_group&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 942, in test_new_group
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_new_group
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_partial_world_size" time="8.527"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 886, in test_partial_world_size&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_partial_world_size&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 886, in test_partial_world_size
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorChunked.test_partial_world_size
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_sharded_tensor_metadata" time="9.329" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_sharded_tensor_sizes" time="9.529" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_sharding_columns" time="5.019" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_state_dict" time="9.829" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_state_dict_new_group" time="10.129" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorChunked" name="test_state_dict_no_sharded_tensors" time="9.629" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_create_sharded_tensor_with_ones" time="9.329" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_gather_even" time="9.429" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_gather_uneven" time="9.027" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_grid_sharding" time="7.223"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 1561, in test_grid_sharding&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_grid_sharding&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 1561, in test_grid_sharding
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_grid_sharding
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_multiple_local_shards" time="8.226"><failure message="RuntimeError: Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2233, in test_multiple_local_shards&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_multiple_local_shards&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2233, in test_multiple_local_shards
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_multiple_local_shards
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_new_group" time="8.425"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2148, in test_new_group&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_new_group&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2148, in test_new_group
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_new_group
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_partial_world_size" time="9.128"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2078, in test_partial_world_size&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_partial_world_size&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2078, in test_partial_world_size&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_partial_world_size&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2078, in test_partial_world_size
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_partial_world_size
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2078, in test_partial_world_size
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_partial_world_size
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_sharded_tensor_device" time="9.529" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_sharded_tensor_metadata" time="9.929" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_sharded_tensor_to_accelerator" time="9.128" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_sharded_tensor_to_cpu" time="9.831" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_sharded_tensor_to_test" time="9.629" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_uneven_shards" time="5.020" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorEnumerable" name="test_with_rpc_names" time="7.825"><failure message="RuntimeError: Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2305, in test_with_rpc_names&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_with_rpc_names&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2305, in test_with_rpc_names
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorEnumerable.test_with_rpc_names
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalTensor" name="test_init_from_local_tensor" time="7.827"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2380, in test_init_from_local_tensor&#10;    self._generate_st_from_chunk_local_tensor([20, 10], spec)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2368, in _generate_st_from_chunk_local_tensor&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalTensor.test_init_from_local_tensor&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 3 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2380, in test_init_from_local_tensor&#10;    self._generate_st_from_chunk_local_tensor([20, 10], spec)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2368, in _generate_st_from_chunk_local_tensor&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalTensor.test_init_from_local_tensor&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2380, in test_init_from_local_tensor
+    self._generate_st_from_chunk_local_tensor([20, 10], spec)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2368, in _generate_st_from_chunk_local_tensor
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalTensor.test_init_from_local_tensor
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 3 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2380, in test_init_from_local_tensor
+    self._generate_st_from_chunk_local_tensor([20, 10], spec)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2368, in _generate_st_from_chunk_local_tensor
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalTensor.test_init_from_local_tensor
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalTensor" name="test_init_from_local_tensor_errors" time="9.530" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards" time="11.032"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2506, in test_init_from_local_shards&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalShards.test_init_from_local_shards&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2506, in test_init_from_local_shards
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalShards.test_init_from_local_shards
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_and_global_metadata" time="7.626"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py&quot;, line 102, in wrapper&#10;    func(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py&quot;, line 2951, in test_init_from_local_shards_and_global_metadata&#10;    shard = remote_shard.to_here()&#10;RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalShards.test_init_from_local_shards_and_global_metadata&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_shard/sharded_tensor/__init__.py", line 102, in wrapper
+    func(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/_shard/sharded_tensor/test_sharded_tensor.py", line 2951, in test_init_from_local_shards_and_global_metadata
+    shard = remote_shard.to_here()
+RuntimeError: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/_shard/sharded_tensor/test_sharded_tensor.py TestShardedTensorFromLocalShards.test_init_from_local_shards_and_global_metadata
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_and_global_metadata_invalid_shards" time="9.127" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_and_global_metadata_with_all_zeros" time="7.224" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_and_global_metadata_with_local_view" time="7.124" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_invalid_local_shards" time="9.830" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_invalid_pin_memory" time="6.923" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_invalid_property_cross_ranks" time="9.528" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_invalid_shards_gaps" time="9.730" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_invalid_shards_overlap" time="10.029" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_new_group" time="10.733" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_init_from_local_shards_with_different_glb_size" time="7.325" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_local_shards" time="6.924" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_non_rw_sharded_recalc_for_metadata" time="7.324" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_recalc_for_metadata" time="7.224" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorFromLocalShards" name="test_st_base_init_from_local_shards_and_global_metadata" time="6.323" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorCustomOps" name="test_custom_op" time="11.132" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorCustomOps" name="test_custom_op_errors" time="9.831" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorCustomOps" name="test_custom_op_override" time="10.132" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardMetadata" name="test_create_shard_with_no_placement" time="9.228" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardMetadata" name="test_shard_metadata_init" time="9.928" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorSubGroupInit" name="test_sub_process_group_placement_validation" time="0.009" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestShardedTensorSubGroupInit" name="test_sub_process_group_sharded_tensor_init" time="0.013" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestCreateTensorNoProcessGroupMode" name="test_init_from_local_shards_and_global_metadata" time="0.001" /><testcase classname="test.distributed._shard.sharded_tensor.test_sharded_tensor.TestCreateTensorNoProcessGroupMode" name="test_non_contiguous_local_shards" time="0.001" /></testsuite></testsuites>

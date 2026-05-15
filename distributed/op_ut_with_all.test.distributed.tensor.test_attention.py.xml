@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="4" tests="24" time="460.901" timestamp="2026-05-14T07:44:49.888117-07:00" hostname="bmg816790"><testcase classname="test.distributed.tensor.test_attention.RingAttentionTest" name="test_is_causal_behavior" time="4.423" /><testcase classname="test.distributed.tensor.test_attention.RingAttentionTest" name="test_ring_attention_sdpa" time="51.418"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 902, in wrapper&#10;    raise e&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 899, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 115, in test_ring_attention_sdpa&#10;    self.run_subtests(&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 694, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1327, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 290, in _test_ring_attention_sdpa&#10;    cp_out, cp_dq, cp_dk, cp_dv = self._ring_attention_sdpa(&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 194, in _ring_attention_sdpa&#10;    cp_out = fn_eval(&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 236, in fn_eval&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/distributed/tensor/experimental/_context_parallel/_attention.py&quot;, line 977, in inner_fn&#10;    outputs = target_fn(*args, **kwargs)&#10;RuntimeError: aten.add.Tensor got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py RingAttentionTest.test_ring_attention_sdpa&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 2 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 2185, in wrapper&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 902, in wrapper&#10;    raise e&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 899, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 115, in test_ring_attention_sdpa&#10;    self.run_subtests(&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 694, in run_subtests&#10;    return run_subtests(self, *args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1327, in run_subtests&#10;    test_fn(*test_args, **test_kwargs, **subtest_kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 290, in _test_ring_attention_sdpa&#10;    cp_out, cp_dq, cp_dk, cp_dv = self._ring_attention_sdpa(&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 194, in _ring_attention_sdpa&#10;    cp_out = fn_eval(&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 236, in fn_eval&#10;    return fn(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/distributed/tensor/experimental/_context_parallel/_attention.py&quot;, line 977, in inner_fn&#10;    outputs = target_fn(*args, **kwargs)&#10;RuntimeError: aten.add.Tensor got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py RingAttentionTest.test_ring_attention_sdpa&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 902, in wrapper
+    raise e
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 899, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 115, in test_ring_attention_sdpa
+    self.run_subtests(
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 694, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1327, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 290, in _test_ring_attention_sdpa
+    cp_out, cp_dq, cp_dk, cp_dv = self._ring_attention_sdpa(
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 194, in _ring_attention_sdpa
+    cp_out = fn_eval(
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 236, in fn_eval
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/distributed/tensor/experimental/_context_parallel/_attention.py", line 977, in inner_fn
+    outputs = target_fn(*args, **kwargs)
+RuntimeError: aten.add.Tensor got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py RingAttentionTest.test_ring_attention_sdpa
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 2 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 2185, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 902, in wrapper
+    raise e
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 899, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 115, in test_ring_attention_sdpa
+    self.run_subtests(
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 694, in run_subtests
+    return run_subtests(self, *args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1327, in run_subtests
+    test_fn(*test_args, **test_kwargs, **subtest_kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 290, in _test_ring_attention_sdpa
+    cp_out, cp_dq, cp_dk, cp_dv = self._ring_attention_sdpa(
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 194, in _ring_attention_sdpa
+    cp_out = fn_eval(
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 236, in fn_eval
+    return fn(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/distributed/tensor/experimental/_context_parallel/_attention.py", line 977, in inner_fn
+    outputs = target_fn(*args, **kwargs)
+RuntimeError: aten.add.Tensor got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py RingAttentionTest.test_ring_attention_sdpa
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.test_attention.CPFlexAttentionTest" name="test_cp_flex_attention_causal_mask" time="91.596" /><testcase classname="test.distributed.tensor.test_attention.CPFlexAttentionTest" name="test_cp_flex_attention_document_mask" time="217.950" /><testcase classname="test.distributed.tensor.test_attention.TestCPCustomOps" name="test_flex_cp_custom_op" time="8.924" /><testcase classname="test.distributed.tensor.test_attention.TestSharding" name="test_attention_shard_without_cp" time="8.022"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 902, in wrapper&#10;    raise e&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 899, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 931, in test_attention_shard_without_cp&#10;    self.assertNotEqual(&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4579, in assertNotEqual&#10;    with self.assertRaises(AssertionError, msg=msg):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py&quot;, line 226, in __exit__&#10;    self._raiseFailure(&quot;{} not raised&quot;.format(exc_name))&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py&quot;, line 163, in _raiseFailure&#10;    raise self.test_case.failureException(msg)&#10;AssertionError: AssertionError not raised : Placement (Shard(dim=2),)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py TestSharding.test_attention_shard_without_cp&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0&#10;&#10;Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 902, in wrapper&#10;    raise e&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py&quot;, line 899, in wrapper&#10;    func(self, *args, **kwargs)  # type: ignore[misc]&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py&quot;, line 931, in test_attention_shard_without_cp&#10;    self.assertNotEqual(&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4579, in assertNotEqual&#10;    with self.assertRaises(AssertionError, msg=msg):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py&quot;, line 226, in __exit__&#10;    self._raiseFailure(&quot;{} not raised&quot;.format(exc_name))&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py&quot;, line 163, in _raiseFailure&#10;    raise self.test_case.failureException(msg)&#10;AssertionError: AssertionError not raised : Placement (Shard(dim=2),)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py TestSharding.test_attention_shard_without_cp&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 902, in wrapper
+    raise e
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 899, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 931, in test_attention_shard_without_cp
+    self.assertNotEqual(
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4579, in assertNotEqual
+    with self.assertRaises(AssertionError, msg=msg):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 226, in __exit__
+    self._raiseFailure("{} not raised".format(exc_name))
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 163, in _raiseFailure
+    raise self.test_case.failureException(msg)
+AssertionError: AssertionError not raised : Placement (Shard(dim=2),)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py TestSharding.test_attention_shard_without_cp
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0
+
+Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 902, in wrapper
+    raise e
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 899, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 931, in test_attention_shard_without_cp
+    self.assertNotEqual(
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4579, in assertNotEqual
+    with self.assertRaises(AssertionError, msg=msg):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 226, in __exit__
+    self._raiseFailure("{} not raised".format(exc_name))
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 163, in _raiseFailure
+    raise self.test_case.failureException(msg)
+AssertionError: AssertionError not raised : Placement (Shard(dim=2),)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py TestSharding.test_attention_shard_without_cp
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.test_attention.TestSharding" name="test_context_parallel_shard" time="7.821" /><testcase classname="test.distributed.tensor.test_attention.TestSharding" name="test_context_parallel_shard_with_positions" time="7.622" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyle" name="test_flex_input_fn_all_keyword" time="7.722" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyle" name="test_flex_input_fn_all_positional" time="7.621" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyle" name="test_flex_input_fn_qk_positional_v_keyword" time="7.622" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyle" name="test_flex_input_fn_query_positional_kv_keyword" time="7.523" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyle" name="test_flex_input_fn_with_extra_args" time="7.622" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyleSDPA" name="test_sdpa_input_fn_all_keyword" time="7.220" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyleSDPA" name="test_sdpa_input_fn_all_positional" time="7.321" /><testcase classname="test.distributed.tensor.test_attention.TestContextParallelStyleSDPA" name="test_sdpa_input_fn_query_positional_kv_keyword" time="7.522" /><testcase classname="test.distributed.tensor.test_attention.RingAttentionTestWithLocalTensor" name="test_is_causal_behavior" time="0.374" /><testcase classname="test.distributed.tensor.test_attention.RingAttentionTestWithLocalTensor" name="test_ring_attention_sdpa" time="0.002"><skipped type="pytest.skip" message="Skipped test">/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py:1255: Skipped test</skipped></testcase><testcase classname="test.distributed.tensor.test_attention.CPFlexAttentionTestWithLocalTensor" name="test_cp_flex_attention_causal_mask" time="0.001"><skipped type="pytest.skip" message="Skipped test">/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py:1255: Skipped test</skipped></testcase><testcase classname="test.distributed.tensor.test_attention.CPFlexAttentionTestWithLocalTensor" name="test_cp_flex_attention_document_mask" time="0.001"><skipped type="pytest.skip" message="Skipped test">/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py:1255: Skipped test</skipped></testcase><testcase classname="test.distributed.tensor.test_attention.TestCPCustomOpsWithLocalTensor" name="test_flex_cp_custom_op" time="0.001"><skipped type="pytest.skip" message="Skipped test">/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py:1255: Skipped test</skipped></testcase><testcase classname="test.distributed.tensor.test_attention.TestShardingWithLocalTensor" name="test_attention_shard_without_cp" time="0.608"><failure message="AssertionError: AssertionError not raised : Placement (Shard(dim=2),)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py TestShardingWithLocalTensor.test_attention_shard_without_cp&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 1198, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 1235, in wrapped
+    out = fn(self)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 902, in wrapper
+    raise e
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/distributed/_tensor/common_dtensor.py", line 899, in wrapper
+    func(self, *args, **kwargs)  # type: ignore[misc]
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/tensor/test_attention.py", line 931, in test_attention_shard_without_cp
+    self.assertNotEqual(
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4579, in assertNotEqual
+    with self.assertRaises(AssertionError, msg=msg):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 226, in __exit__
+    self._raiseFailure("{} not raised".format(exc_name))
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 163, in _raiseFailure
+    raise self.test_case.failureException(msg)
+AssertionError: AssertionError not raised : Placement (Shard(dim=2),)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/tensor/test_attention.py TestShardingWithLocalTensor.test_attention_shard_without_cp
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="test.distributed.tensor.test_attention.TestShardingWithLocalTensor" name="test_context_parallel_shard" time="0.407" /><testcase classname="test.distributed.tensor.test_attention.TestShardingWithLocalTensor" name="test_context_parallel_shard_with_positions" time="0.042" /></testsuite></testsuites>

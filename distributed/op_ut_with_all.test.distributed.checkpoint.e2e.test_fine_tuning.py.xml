@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="10.064" timestamp="2026-05-14T09:35:26.101631-07:00" hostname="bmg816790"><testcase classname="test.distributed.checkpoint.e2e.test_fine_tuning.TestFineTuning" name="test_fine_tuning" time="9.231" /></testsuite></testsuites>

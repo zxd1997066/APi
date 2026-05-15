@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="9.265" timestamp="2026-05-14T05:55:04.789261-07:00" hostname="bmg816790"><testcase classname="test.distributed.fsdp.test_fsdp_uneven.TestUnevenParamShardXPU" name="test_one_iteration_xpu" time="8.079" /></testsuite></testsuites>

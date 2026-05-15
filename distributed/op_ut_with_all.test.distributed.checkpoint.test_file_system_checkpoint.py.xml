@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.990" timestamp="2026-05-14T09:38:06.208513-07:00" hostname="bmg816790"><testcase classname="" name="test.distributed.checkpoint.test_file_system_checkpoint" time="0.000"><error message="collection failure">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/runner.py", line 353, in from_call
+    result: TResult | None = func()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/runner.py", line 398, in collect
+    return list(collector.collect())
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/python.py", line 563, in collect
+    self._register_setup_module_fixture()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/python.py", line 576, in _register_setup_module_fixture
+    self.obj, ("setUpModule", "setup_module")
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/python.py", line 289, in obj
+    self._obj = obj = self._getobj()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/python.py", line 560, in _getobj
+    return importtestmodule(self.path, self.config)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/python.py", line 507, in importtestmodule
+    mod = import_path(
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/_pytest/pathlib.py", line 587, in import_path
+    importlib.import_module(module_name)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "&lt;frozen importlib._bootstrap&gt;", line 1050, in _gcd_import
+  File "&lt;frozen importlib._bootstrap&gt;", line 1027, in _find_and_load
+  File "&lt;frozen importlib._bootstrap&gt;", line 1006, in _find_and_load_unlocked
+  File "&lt;frozen importlib._bootstrap&gt;", line 688, in _load_unlocked
+  File "&lt;frozen importlib._bootstrap_external&gt;", line 883, in exec_module
+  File "&lt;frozen importlib._bootstrap&gt;", line 241, in _call_with_frames_removed
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/checkpoint/test_file_system_checkpoint.py", line 169, in &lt;module&gt;
+    class TestDistributedStateDictSaveLoadWithSharedTensor(ShardedTensorTestBase):
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/checkpoint/test_file_system_checkpoint.py", line 177, in TestDistributedStateDictSaveLoadWithSharedTensor
+    @parametrize("extensions", [None, [Rot13Example()], [ZStandard()]])
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/distributed/checkpoint/_extension.py", line 114, in __init__
+    raise ValueError(
+ValueError: ZStandard extension is unavailable because no module named 'zstandard' or 'pyzstd'</error></testcase></testsuite></testsuites>

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.794" timestamp="2026-05-14T09:52:03.095527-07:00" hostname="bmg816790"><testcase classname="test.distributed.elastic.timer.api_test.TimerApiTest" name="test_run_watchdog" time="0.752" /></testsuite></testsuites>

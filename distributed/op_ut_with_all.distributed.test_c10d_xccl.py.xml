@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="36" time="281.675" timestamp="2026-05-14T02:58:21.812181-07:00" hostname="bmg816790"><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.RendezvousEnvTest" name="test_common_errors" time="0.022" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_close_multi_pg_unordered" time="7.123" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_file_store_check" time="5.517" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_nan_assert_bfloat16" time="8.722" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_nan_assert_float16" time="8.923" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_nan_assert_float32" time="8.521" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_nan_assert_float64" time="8.122" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_nan_assert_float8_e4m3fn" time="8.422" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_nan_assert_float8_e5m2" time="8.321" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_oom" time="41.578"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py&quot;, line 419, in test_oom&#10;    torch.xpu.synchronize()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/xpu/__init__.py&quot;, line 694, in synchronize&#10;    return torch._C._xpu_synchronize(device)&#10;RuntimeError: level_zero backend failed with error: 20 (UR_RESULT_ERROR_DEVICE_LOST)&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py ProcessGroupXCCLTest.test_oom&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 419, in test_oom
+    torch.xpu.synchronize()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/xpu/__init__.py", line 694, in synchronize
+    return torch._C._xpu_synchronize(device)
+RuntimeError: level_zero backend failed with error: 20 (UR_RESULT_ERROR_DEVICE_LOST)
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py ProcessGroupXCCLTest.test_oom
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_send_recv_non_dense_tensor" time="4.714" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.ProcessGroupXCCLTest" name="test_set_process_group_desc" time="3.513" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_all_gather_into_tensor" time="6.920" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_all_reduce_coalesced_manager_xccl" time="7.220" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_all_reduce_coalesced_xccl" time="6.920" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_broadcast_coalesced_xccl" time="7.322" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_pass_xccl_options_high_priority_stream" time="6.719" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_reduce_scatter_base_k" time="6.619" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_reduce_scatter_tensor_coalesced" time="6.919" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_single_p2p" time="6.820" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_tensor_dtype_complex" time="6.719" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_unwaited" time="6.720" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_wait_tensor" time="6.819" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_xccl_barrier" time="7.421" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.CommTest" name="test_xccl_barrier_device_ids" time="6.618" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_allgather_uneven_timing_enabled_False" time="6.419"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 607, in instantiated_test&#10;    test(self, **param_kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py&quot;, line 1271, in test_allgather_uneven&#10;    self.assertEqual(len(t[&quot;entries&quot;]), self.world_size)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4570, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not equal!&#10;&#10;Expected 2 but got 3.&#10;Absolute difference: 1&#10;Relative difference: 0.5&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py XCCLTraceTest.test_allgather_uneven_timing_enabled_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 825, in _join_processes
+    super()._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 607, in instantiated_test
+    test(self, **param_kwargs)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 1271, in test_allgather_uneven
+    self.assertEqual(len(t["entries"]), self.world_size)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4570, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 2 but got 3.
+Absolute difference: 1
+Relative difference: 0.5
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py XCCLTraceTest.test_allgather_uneven_timing_enabled_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_barrier_profiling" time="6.719" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_batched_send_recv_op_sizes_per_coalesce0_timing_enabled_False" time="6.318"><failure message="RuntimeError: Process 1 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 607, in instantiated_test&#10;    test(self, **param_kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py&quot;, line 1145, in test_batched_send_recv&#10;    self.assertEqual(len(t[&quot;entries&quot;]), num_coalesced_ops * ops_per_coalesce)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4570, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not equal!&#10;&#10;Expected 20 but got 40.&#10;Absolute difference: 20&#10;Relative difference: 1.0&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py XCCLTraceTest.test_batched_send_recv_op_sizes_per_coalesce0_timing_enabled_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 825, in _join_processes
+    super()._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 1 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 607, in instantiated_test
+    test(self, **param_kwargs)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 1145, in test_batched_send_recv
+    self.assertEqual(len(t["entries"]), num_coalesced_ops * ops_per_coalesce)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4570, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 20 but got 40.
+Absolute difference: 20
+Relative difference: 1.0
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py XCCLTraceTest.test_batched_send_recv_op_sizes_per_coalesce0_timing_enabled_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_batched_send_recv_op_sizes_per_coalesce1_timing_enabled_False" time="6.417"><failure message="RuntimeError: Process 0 exited with error code 10 and exception:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1035, in run_test&#10;    getattr(self, test_name)()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 882, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 607, in instantiated_test&#10;    test(self, **param_kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py&quot;, line 1145, in test_batched_send_recv&#10;    self.assertEqual(len(t[&quot;entries&quot;]), num_coalesced_ops * ops_per_coalesce)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 4570, in assertEqual&#10;    raise error_metas.pop()[0].to_error(  # type: ignore[index]&#10;AssertionError: Scalars are not equal!&#10;&#10;Expected 60 but got 80.&#10;Absolute difference: 20&#10;Relative difference: 0.3333333333333333&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py XCCLTraceTest.test_batched_send_recv_op_sizes_per_coalesce1_timing_enabled_False&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 880, in wrapper
+    self._join_processes(fn)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 825, in _join_processes
+    super()._join_processes(fn)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1150, in _join_processes
+    self._check_return_codes(fn, elapsed_time)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1190, in _check_return_codes
+    raise RuntimeError(error)
+RuntimeError: Process 0 exited with error code 10 and exception:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1035, in run_test
+    getattr(self, test_name)()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 882, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 607, in instantiated_test
+    test(self, **param_kwargs)
+  File "/home/jenkins/xiangdong/pytorch/third_party/torch-xpu-ops/test/xpu/distributed/test_c10d_xccl.py", line 1145, in test_batched_send_recv
+    self.assertEqual(len(t["entries"]), num_coalesced_ops * ops_per_coalesce)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 4570, in assertEqual
+    raise error_metas.pop()[0].to_error(  # type: ignore[index]
+AssertionError: Scalars are not equal!
+
+Expected 60 but got 80.
+Absolute difference: 20
+Relative difference: 0.3333333333333333
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/xpu/distributed/test_c10d_xccl.py XCCLTraceTest.test_batched_send_recv_op_sizes_per_coalesce1_timing_enabled_False
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_coalescing_manager_collective_timing_enabled_False" time="6.919" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_dump_pipe" time="7.950" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_individual_send_recv_op_sizes0_timing_enabled_False" time="6.623" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_individual_send_recv_op_sizes1_timing_enabled_False" time="6.722" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_long" time="6.622" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_short_pickle_include_collectives_False" time="7.424" /><testcase classname="third_party.torch-xpu-ops.test.xpu.distributed.test_c10d_xccl.XCCLTraceTest" name="test_short_pickle_include_collectives_True" time="7.624" /></testsuite></testsuites>

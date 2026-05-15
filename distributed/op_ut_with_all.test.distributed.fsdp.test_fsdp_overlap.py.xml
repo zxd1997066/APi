@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="8.868" timestamp="2026-05-14T10:39:30.744429-07:00" hostname="bmg816790"><testcase classname="test.distributed.fsdp.test_fsdp_overlap.TestForwardOverlapWorldSizeOneXPU" name="test_forward_overlap_xpu" time="8.070"><failure message="RuntimeError: Exception in worker process:&#10;Traceback (most recent call last):&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1918, in _worker_loop&#10;    cls._run_test_given_id(test_id)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 1871, in _run_test_given_id&#10;    test_fn(**kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 2161, in wrapper&#10;    fn()&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py&quot;, line 3552, in wrapper&#10;    method(*args, **kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py&quot;, line 535, in instantiated_test&#10;    result = test(self, **param_kwargs)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py&quot;, line 261, in wrapper&#10;    return func(*args, **kwargs)&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/fsdp/test_fsdp_overlap.py&quot;, line 256, in test_forward_overlap&#10;    self._dist_train()&#10;  File &quot;/home/jenkins/xiangdong/pytorch/test/distributed/fsdp/test_fsdp_overlap.py&quot;, line 229, in _dist_train&#10;    self.assertTrue(s * 10 &lt; l)&#10;  File &quot;/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py&quot;, line 687, in assertTrue&#10;    raise self.failureException(msg)&#10;AssertionError: False is not true&#10;&#10;To execute this test, run the following from the base repo dir:&#10;    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_overlap.py TestForwardOverlapWorldSizeOneXPU.test_forward_overlap_xpu&#10;&#10;This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0">Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 591, in run
+    self._callTestMethod(testMethod)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 549, in _callTestMethod
+    method()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 2158, in wrapper
+    raise deferred_exception
+RuntimeError: Exception in worker process:
+Traceback (most recent call last):
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1918, in _worker_loop
+    cls._run_test_given_id(test_id)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 1871, in _run_test_given_id
+    test_fn(**kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 2161, in wrapper
+    fn()
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_utils.py", line 3552, in wrapper
+    method(*args, **kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_device_type.py", line 535, in instantiated_test
+    result = test(self, **param_kwargs)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/site-packages/torch/testing/_internal/common_distributed.py", line 261, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/fsdp/test_fsdp_overlap.py", line 256, in test_forward_overlap
+    self._dist_train()
+  File "/home/jenkins/xiangdong/pytorch/test/distributed/fsdp/test_fsdp_overlap.py", line 229, in _dist_train
+    self.assertTrue(s * 10 &lt; l)
+  File "/home/jenkins/miniforge3/envs/dist/lib/python3.10/unittest/case.py", line 687, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true
+
+To execute this test, run the following from the base repo dir:
+    PYTORCH_TEST_WITH_SLOW=1 python test/distributed/fsdp/test_fsdp_overlap.py TestForwardOverlapWorldSizeOneXPU.test_forward_overlap_xpu
+
+This message can be suppressed by setting PYTORCH_PRINT_REPRO_ON_FAILURE=0</failure></testcase></testsuite></testsuites>
